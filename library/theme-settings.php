@@ -17,7 +17,7 @@
   	-menu
 	3. Colors
   4. Layout
-  	-Breakpoints1
+  	-Breakpoints
   	-The Grid
   	-Off Canvas
   5. Typography
@@ -167,7 +167,7 @@ class SolWP_Settings {
 			'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
 													<li class="accordion-item" data-accordion-item>
 														<a href="#panel-global-colors" role="tab" class="accordion-title" id="panel-global-colors-heading" aria-controls="panel-global-colors">
-															<h5>Global Styles</h5>
+															<h6>Global Styles</h6>
 														</a>
 								    				<div id="panel-global" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-global-heading">',
 			'name' => __( 'Font Size', $this->prefix ),
@@ -194,21 +194,43 @@ class SolWP_Settings {
 		$cmb->add_field( array(
 			'before_row'  => '<li class="accordion-item" data-accordion-item>
 													<a href="#panel-global-colors" role="tab" class="accordion-title" id="panel-global-colors-heading" aria-controls="panel-global-colors">
-														<h5>Global Color Palette</h5>
+														<h6>Global Color Palette</h6>
 													</a>
 								    			<div id="panel-global-colors" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-global-colors-heading">',
 			'name'    => __( 'Primary Color', $this->prefix ),
-			'desc'    => __( 'The theme\'s primary color in hex (default: #1779ba)', $this->prefix ),
+			'desc'    => __( 'The theme\'s primary color in hex (default: #3F51B5)', $this->prefix ),
 			'id'      => $this->prefix . '_global_primary_color',
 			'type'    => 'colorpicker',
-			'default' => '#1779ba'
+			'default' => '#3F51B5'
+		) );
+		$cmb->add_field( array(
+			'name'    => __( 'Dark Primary Color', $this->prefix ),
+			'desc'    => __( 'The theme\'s dark primary color in hex (default: #303F9F)', $this->prefix ),
+			'id'      => $this->prefix . '_global_dark_primary_color',
+			'type'    => 'colorpicker',
+			'default' => '#303F9F'
+		) );
+		$cmb->add_field( array(
+			'name'    => __( 'Light Primary Color', $this->prefix ),
+			'desc'    => __( 'The theme\'s light primary color in hex (default: #C5CAE9)', $this->prefix ),
+			'id'      => $this->prefix . '_global_light_primary_color',
+			'type'    => 'colorpicker',
+			'default' => '#303F9F'
+		) );
+		// accent color maybe: #2c3840?
+		$cmb->add_field( array(
+			'name'    => __( 'Accent Color', $this->prefix ),
+			'desc'    => __( 'The theme\'s accent color in hex (default: #607D8B)', $this->prefix ),
+			'id'      => $this->prefix . '_global_accent_color',
+			'type'    => 'colorpicker',
+			'default' => '#607D8B'
 		) );
 		$cmb->add_field( array(
 			'name'    => __( 'Secondary Color', $this->prefix ),
-			'desc'    => __( 'The theme\'s secondary color in hex (default: #767676)', $this->prefix ),
+			'desc'    => __( 'The theme\'s secondary color in hex (default: #757575)', $this->prefix ),
 			'id'      => $this->prefix . '_global_secondary_color',
 			'type'    => 'colorpicker',
-			'default' => '#767676'
+			'default' => '#757575'
 		) );
 		$cmb->add_field( array(
 			'name'    => __( 'Success Color', $this->prefix ),
@@ -225,11 +247,52 @@ class SolWP_Settings {
 			'default' => '#ffae00'
 		) );
 		$cmb->add_field( array(
-			'name'    => __( 'Alert Color', $this->prefix ),
-			'desc'    => __( 'Color for alert notifications in hex (default: #cc4b37)', $this->prefix ),
-			'id'      => $this->prefix . '_global_alert_color',
+			'name'   		=> __( 'Alert Color', $this->prefix ),
+			'desc'    	=> __( 'Color for alert notifications in hex (default: #cc4b37)', $this->prefix ),
+			'id'      	=> $this->prefix . '_global_alert_color',
+			'type'    	=> 'colorpicker',
+			'default' 	=> '#cc4b37',
+			'after_row' => '</div></li>'
+		) );
+		$cmb->add_field( array(
+			'before_row'  => '<li class="accordion-item" data-accordion-item>
+													<a href="#panel-global-grays" role="tab" class="accordion-title" id="panel-global-grays-heading" aria-controls="panel-global-grays">
+														<h6>Black, White, & Grays</h6>
+													</a>
+													<div id="panel-global-grays" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-global-grays-heading">',
+			'name'    => __( 'Light Gray', $this->prefix ),
+			'desc'    => __( 'Color for light gray in hex (default: #e6e6e6)', $this->prefix ),
+			'id'      => $this->prefix . '_global_light_gray_color',
 			'type'    => 'colorpicker',
-			'default' => '#cc4b37',
+			'default' => '#e6e6e6',
+		) );
+		$cmb->add_field( array(
+			'name'    => __( 'Medium Gray', $this->prefix ),
+			'desc'    => __( 'Color for medium gray in hex (default: #cacaca)', $this->prefix ),
+			'id'      => $this->prefix . '_global_medium_gray_color',
+			'type'    => 'colorpicker',
+			'default' => '#cacaca',
+		) );
+		$cmb->add_field( array(
+			'name'    => __( 'Dark Gray', $this->prefix ),
+			'desc'    => __( 'Color for dark gray in hex (default: #8a8a8a)', $this->prefix ),
+			'id'      => $this->prefix . '_global_dark_gray_color',
+			'type'    => 'colorpicker',
+			'default' => '#8a8a8a',
+		) );
+		$cmb->add_field( array(
+			'name'    => __( 'White', $this->prefix ),
+			'desc'    => __( 'Color for white in hex (default: #fefefe)', $this->prefix ),
+			'id'      => $this->prefix . '_global_white_color',
+			'type'    => 'colorpicker',
+			'default' => '#fefefe',
+		) );
+		$cmb->add_field( array(
+			'name'    => __( 'Black', $this->prefix ),
+			'desc'    => __( 'Color for black in hex (default: #212121)', $this->prefix ),
+			'id'      => $this->prefix . '_global_black_color',
+			'type'    => 'colorpicker',
+			'default' => '#212121',
 			'after_row' => '</div></li></ul>'
 		) );
 

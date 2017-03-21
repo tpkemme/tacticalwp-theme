@@ -1,25 +1,28 @@
 {
-  "name": "foundationpress",
-  "title": "FoundationPress",
-  "version": "2.9.0",
-  "description": "FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb",
+  "name": "solwp",
+  "title": "SolWP Theme",
+  "version": "1.0.0",
+  "description": "SolWP is a WordPress starter theme based on FoundationPress",
   "keywords": [
     "FoundationPress",
     "WordPress",
     "starter theme",
-    "Foundation",
+    "solwp",
     "semantic",
     "mobile first",
     "customizable",
-    "responsive"
+    "responsive",
+    "sole",
+    "soul",
+    "sol"
   ],
-  "homepage": "http://foundationpress.olefredrik.com/",
-  "bugs": "https://github.com/olefredrik/FoundationPress/issues",
+  "homepage": "https://solwp.com/",
+  "bugs": "https://github.com/tpkemme/solwp-theme/issues",
   "license": "MIT",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/olefredrik/FoundationPress.git"
+    "url": "https://github.com/tpkemme/solwp-theme.git"
   },
   "devDependencies": {
     "autoprefixer": "^6.1.0",

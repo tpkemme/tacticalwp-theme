@@ -1,4 +1,4 @@
-# Copyright (C) 2015 Ole Fredrik Lie
+# Copyright (C) 2015 Tyler Kemme
 # This file is distributed under the MIT License.
 msgid ""
 msgstr ""
@@ -249,8 +249,8 @@ msgstr ""
 "av Zurb"
 
 #. Author of the plugin/theme
-msgid "Ole Fredrik Lie"
-msgstr "Ole Fredrik Lie"
+msgid "Tyler Kemme"
+msgstr "Tyler Kemme"
 
 #. Author URI of the plugin/theme
 msgid "http://olefredrik.com/"

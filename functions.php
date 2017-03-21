@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: Ole Fredrik Lie
+ * Author: Tyler Kemme
  * URL: http://olefredrik.com
  *
  * FoundationPress functions and definitions

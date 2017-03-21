@@ -16,8 +16,7 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 			// Enqueue the main Stylesheet.
 			wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/foundation.css', array(), '2.9.0', 'all' );
 
-			// Enqueue the Material Design Stylesheet.
-			wp_enqueue_style( 'material-design-stylesheet', get_template_directory_uri() . '/assets/components/material-foundation/css/material-foundation.css', array(), '2.9.0', 'all' );
+			// Enqueue Material Stylesheet
 
 			// Deregister the jquery version bundled with WordPress.
 			wp_deregister_script( 'jquery' );
@@ -43,8 +42,7 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// Enqueue the main Stylesheet.
 		wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/foundation.css', array(), '2.9.0', 'all' );
 
-		// Enqueue the Material Design Stylesheet.
-		wp_enqueue_style( 'material-design-stylesheet', get_template_directory_uri() . '/assets/components/material-foundation/css/material-foundation.css', array(), '2.9.0', 'all' );
+		// Enqueue Material Stylesheet
 
 		// Deregister the jquery version bundled with WordPress.
 		wp_deregister_script( 'jquery' );
