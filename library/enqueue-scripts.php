@@ -14,7 +14,7 @@ if ( ! function_exists( 'solwp_scripts' ) ) :
 	function solwp_admin_scripts( $hook ) {
 		if( $hook === 'toplevel_page_solwp_options' ){
 			// Enqueue the main Stylesheet.
-			wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/solwp.css', array(), '2.9.0', 'all' );
+		  wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/solwp.css', array(), '2.9.0', 'all' );
 
 			// Deregister the jquery version bundled with WordPress.
 			wp_deregister_script( 'jquery' );
@@ -37,6 +37,10 @@ endif;
 
 if ( ! function_exists( 'solwp_scripts' ) ) :
 	function solwp_scripts() {
+
+    wp_register_style('google-fonts', '//fonts.googleapis.com/css?family=' . str_replace( '/s', '+', solwp_get_option( 'solwp_global_font_family' ) ) );
+    wp_enqueue_style( 'google-fonts');
+
 		// Enqueue the main Stylesheet.
 		wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/solwp.css', array(), '2.9.0', 'all' );
 

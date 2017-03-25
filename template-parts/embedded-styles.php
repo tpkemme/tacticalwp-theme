@@ -345,15 +345,35 @@
 	 	}
 
 		/*
-			Global Background Color
+			Global Background
 			================================
 		 */
-		body, .fieldset legend  {
-			background: <?php solwp( 'global_background_color' ) ?>;
-		}
-		.dropdown-pane{
-			background-color: <?php solwp( 'global_background_color' ) ?>;
-		}
+		<?php if( solwp_get_option( 'solwp_global_background_type' ) === 'color' ): ?>
+			body, .fieldset legend  {
+				background: <?php solwp( 'global_background_color' ) ?>;
+			}
+			.dropdown-pane{
+				background-color: <?php solwp( 'global_background_color' ) ?>;
+			}
+		<?php elseif( solwp_get_option( 'solwp_global_background_type' ) === 'image' ): ?>
+			body, .fieldset legend  {
+				background-color: <?php solwp( 'global_background_color' ) ?>;
+				background: url('<?php solwp( 'global_background_image' ) ?>');
+				background-repeat: no-repeat;
+				background-size: cover;
+    		background-attachment: fixed;
+			}
+			.dropdown-pane{
+				background-color: <?php solwp( 'global_background_color' ) ?>;
+			}
+		<?php else: ?>
+			body, .fieldset legend  {
+				background: <?php solwp( 'global_background_color' ) ?>;
+			}
+			.dropdown-pane{
+				background-color: <?php solwp( 'global_background_color' ) ?>;
+			}
+		<?php endif; ?>
 
 		/*
 			Global Font Color
@@ -366,6 +386,43 @@
 			color: <?php solwp( 'global_font_color' ) ?>
 		}
 
+		/*
+			Global Font Color
+			================================
+		 */
+		body, h1, h2, h3, h4, h5, h6 {
+			font-family: <?php '"' . solwp( 'global_font_family' ) . '"' ?>;
+		}
+
+		/*
+			Global Margins
+			================================
+		 */
+		 .button, .breadcrumbs {
+			 margin: 0 0 <?php solwp( 'global_margin_size' ) ?> 0;
+		 }
+		 .card, .media-object, .pagination, .progress, .switch, table, .thumbnail{
+			 margin-bottom: <?php solwp( 'global_margin_size' ) ?>;
+		 }
+
+		/*
+			Global padding
+			================================
+		 */
+		 .card-divider, .card-section, .reveal{
+			 padding: <?php solwp( 'global_padding_size' ) ?>;
+		 }
+		 .media-object-section:first-child{
+			 padding-right: <?php solwp( 'global_padding_size' ) ?>;
+		 }
+		 .media-object-section:last-child:not(:nth-child(2)){
+			 padding-left: <?php solwp( 'global_padding_size' ) ?>;
+		 }
+		 @media screen and (max-width: 39.9375em) {
+	    .media-object.stack-for-small .media-object-section {
+			 	padding-bottom: <?php solwp( 'global_padding_size' ) ?>;
+			}
+		 }
 
 
 
@@ -374,7 +431,7 @@
 		================================
 	  */
 
- 	 .card {
+ 	 /*.card {
  	     box-shadow: 0 1px 1px rgba(0,0,0,.1) !important;
  	     margin: 10px 0 !important;
  	     border-radius: 4px !important;
@@ -474,6 +531,6 @@
  	 p, .help-text{
  	     font-weight: 400;
  	     color: #8a8a8a;
- 	 }
+ 	 }*/
 
 </style>

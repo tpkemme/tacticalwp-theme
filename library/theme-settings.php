@@ -199,11 +199,82 @@ class SolWP_Settings
             'default' => '1.5'
         ));
         $cmb->add_field(array(
+            'name' => __('Global Margins', $this->prefix),
+            'desc' => __('Global margins size and units (default: 1rem)', $this->prefix),
+            'id'   => $this->prefix . '_global_margin_size',
+            'type' => 'text_small',
+            'default' => '1rem'
+        ));
+        $cmb->add_field(array(
+            'name' => __('Global Padding', $this->prefix),
+            'desc' => __('Global padding size and units (default: 1rem)', $this->prefix),
+            'id'   => $this->prefix . '_global_padding_size',
+            'type' => 'text_small',
+            'default' => '1rem'
+        ));
+        $cmb->add_field(array(
+            'name' => __('Background Type', $this->prefix),
+						'desc'    => __('Choose the type of background (default: Color)', $this->prefix),
+            'id'      => $this->prefix . '_global_background_type',
+            'type'    => 'select',
+            'default' => 'color',
+						'options' => array(
+							'color' => 'Color',
+							'image' => 'Image',
+							'video' => 'Video'
+						),
+						'attributes' => array(
+							'data-conditional-parent' => $this->prefix . '_global_background_type'
+						)
+        ));
+        $cmb->add_field(array(
             'name' => __('Background Color', $this->prefix),
 						'desc'    => __('Global background color in hex (default: #202533)', $this->prefix),
             'id'      => $this->prefix . '_global_background_color',
             'type'    => 'colorpicker',
-            'default' => '#202533'
+            'default' => '#202533',
+						'attributes' => array(
+							'data-conditional-id'    => $this->prefix . '_global_background_type',
+							'data-conditional-value' => 'color'
+						)
+        ));
+        $cmb->add_field(array(
+            'name' => __('Background Image', $this->prefix),
+						'desc'    => __('Global background image from url or media library.', $this->prefix),
+            'id'      => $this->prefix . '_global_background_image',
+						'type'    => 'file',
+						'options' => array(
+							'url' => true,
+						),
+						'text'    => array(
+							'add_upload_file_text' => 'Add Image' // Change upload button text. Default: "Add or Upload File"
+						),
+						'query_args' => array(
+							'type' => 'image',
+						),
+						'attributes' => array(
+							'data-conditional-id'    => $this->prefix . '_global_background_type',
+							'data-conditional-value' => 'image'
+						)
+        ));
+        $cmb->add_field(array(
+            'name' => __('Background Video', $this->prefix),
+						'desc'    => __('Global background video from url or media library)', $this->prefix),
+            'id'      => $this->prefix . '_global_background_video',
+						'type'    => 'file',
+						'options' => array(
+							'url' => true,
+						),
+						'text'    => array(
+							'add_upload_file_text' => 'Add Video' // Change upload button text. Default: "Add or Upload File"
+						),
+						'query_args' => array(
+							'type' => 'video',
+						),
+						'attributes' => array(
+							'data-conditional-id'    => $this->prefix . '_global_background_type',
+							'data-conditional-value' => 'video'
+						)
         ));
         $cmb->add_field(array(
             'name' => __('Body Font Color', $this->prefix),
@@ -211,6 +282,15 @@ class SolWP_Settings
             'id'      => $this->prefix . '_global_font_color',
             'type'    => 'colorpicker',
             'default' => '#f5faff',
+        ));
+        $cmb->add_field(array(
+            'name' => __('Body Font Family', $this->prefix),
+						'desc'    => __('Global body font family (default: Droid Sans)', $this->prefix),
+						'id'			=> $this->prefix . '_global_font_family',
+						'type'             => 'select',
+						'show_option_none' => true,
+						'default'          => 'Source+Sans+Pro',
+						'options_cb'       => array($this, 'solwop_google_fonts'),
             'after_row' => '</div></li>'
         ));
         $cmb->add_field(array(
@@ -389,6 +469,25 @@ class SolWP_Settings
     }
 
     /**
+     * Gets a list of google fonts for font settings
+     *
+     * @since  0.1.0
+     * @return $options array of fonts
+     */
+    public function solwop_google_fonts()
+    {
+				$json_google_fonts = file_get_contents( get_template_directory_uri() . '/assets/fonts/google-fonts.json' );
+				$jgf = json_decode( $json_google_fonts );
+				$options = array();
+
+				foreach( $jgf->items as $gfont ){
+					$options[ str_replace( '/s', '+', $gfont->family ) ] = $gfont->family;
+				}
+				array_shift( $options );
+				return $options;
+    }
+
+    /**
      * Register settings notices for display
      *
      * @since  0.1.0
@@ -396,7 +495,7 @@ class SolWP_Settings
      * @param  array $updated   Array of updated fields
      * @return void
      */
-    public function settings_notices($object_id, $updated)
+    public function settings_notices( $object_id, $updated )
     {
         if ($object_id !== $this->key || empty($updated)) {
             return;
