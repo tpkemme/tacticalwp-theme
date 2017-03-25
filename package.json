@@ -2,9 +2,9 @@
   "name": "solwp",
   "title": "SolWP Theme",
   "version": "1.0.0",
-  "description": "SolWP is a WordPress starter theme based on FoundationPress",
+  "description": "SolWP is a WordPress starter theme based on SolWP",
   "keywords": [
-    "FoundationPress",
+    "SolWP",
     "WordPress",
     "starter theme",
     "solwp",
@@ -17,12 +17,12 @@
     "sol"
   ],
   "homepage": "https://solwp.com/",
-  "bugs": "https://github.com/tpkemme/solwp-theme/issues",
+  "bugs": "https://github.com/tpkemme/solwp/issues",
   "license": "MIT",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tpkemme/solwp-theme.git"
+    "url": "https://github.com/tpkemme/solwp.git"
   },
   "devDependencies": {
     "autoprefixer": "^6.1.0",

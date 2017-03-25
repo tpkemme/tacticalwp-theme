@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foundationpress-libsass-template 5.4.0\n"
+"Project-Id-Version: solwp-libsass-template 5.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-05 16:58+0300\n"
 "PO-Revision-Date: 2016-10-16 10:07+0200\n"
@@ -181,8 +181,8 @@ msgstr "נראה שאנחנו לא מוצאים מה שאתה מחפש. אולי
 
 #. /archive/search.
 #. *
-#. * @subpackage FoundationPress
-#. * @since FoundationPress 1.0.0
+#. * @subpackage SolWP
+#. * @since SolWP 1.0.0
 #.
 #: content.php:16
 msgid "Continue reading..."
@@ -202,27 +202,27 @@ msgstr "פורסם ב-: %1$s ב-: %2$s."
 msgid "Written by"
 msgstr "נכתב ע”י"
 
-#: library/foundation.php:16
+#: library/solwp.php:16
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: library/foundation.php:17
+#: library/solwp.php:17
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: library/foundation.php:40
+#: library/solwp.php:40
 #, php-format
 msgid ""
 "Please assign a menu to the primary menu location under %1$s or %2$s the "
 "design."
 msgstr "נא הקצה תפריט אל המיקום בתפריט הראשי תחת %1$s או %2$s העיצוב."
 
-#: library/foundation.php:41
+#: library/solwp.php:41
 #, php-format
 msgid "<a href=\"%s\">Menus</a>"
 msgstr "<a href=\"%s\">תפריטים</a>"
 
-#: library/foundation.php:44
+#: library/solwp.php:44
 #, php-format
 msgid "<a href=\"%s\">Customize</a>"
 msgstr "<a href=\"%s\">התאמה אישית</a>"

@@ -1,8 +1,8 @@
 /*
 Theme Name:         SolWP
 Theme URI:          https://solwp.com
-Github Theme URI:   https://github.com/tpkemme/solwp-theme
-Description:        SolWP is a WordPress starter theme based on FoundationPress
+Github Theme URI:   https://github.com/tpkemme/solwp
+Description:        SolWP is a WordPress starter theme based on SolWP
 Version:            1.0.0
 Author:             Tyler Kemme
 Author URI:         https://tylerkemme.com/
@@ -23,12 +23,12 @@ License URI:        http://www.opensource.org/licenses/mit-license.php
   the easiest way to customize Foundation.
 
   All Sass files are located in the /assets/scss folder.
-  Please note that none of your scss files will be compiled to /stylesheets/foundation.css before you run
+  Please note that none of your scss files will be compiled to /stylesheets/solwp.css before you run
   'npm run watch' or 'npm run build'.
 
   Please read the README.md file before getting started. More info on how
   to use Sass with Foundation can be found here:
-  http://foundation.zurb.com/docs/sass.html
+  http://solwp.zurb.com/docs/sass.html
 
   If you for some reason would like to write plain css instead of using Sass,
   you could just enqueue this file (style.css) to the header and add your styles in this file

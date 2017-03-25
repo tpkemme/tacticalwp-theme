@@ -1,12 +1,12 @@
 <?php
 /**
- * FoundationPress Comments
+ * SolWP Comments
  *
- * @package FoundationPress
+ * @package SolWP
  */
 
-if ( ! class_exists( 'Foundationpress_Comments' ) ) :
-class Foundationpress_Comments extends Walker_Comment {
+if ( ! class_exists( 'SolWP_Comments' ) ) :
+class SolWP_Comments extends Walker_Comment {
 
 	// Init classwide variables.
 	public $tree_type = 'comment';
@@ -22,7 +22,7 @@ class Foundationpress_Comments extends Walker_Comment {
 	 * start_lvl() only goes as high as 1 deep nested comments */
 	function __construct() { ?>
 
-		<h3><?php comments_number( __( 'No Responses to', 'foundationpress' ), __( 'One Response to', 'foundationpress' ), __( '% Responses to', 'foundationpress' ) ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
+		<h3><?php comments_number( __( 'No Responses to', 'solwp' ), __( 'One Response to', 'solwp' ), __( '% Responses to', 'solwp' ) ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 		<ol class="comment-list">
 
 	<?php }
@@ -65,7 +65,7 @@ class Foundationpress_Comments extends Walker_Comment {
 			<?php
 				/* translators: %s: comment author link */
 				printf( __(
-					'<cite class="fn">%s</cite>', 'foundationpress' ),
+					'<cite class="fn">%s</cite>', 'solwp' ),
 					get_comment_author_link()
 				);
 			?>

@@ -1,8 +1,8 @@
-# Travis CI (MIT License) configuration file for the FoundationPress WordPress theme.
+# Travis CI (MIT License) configuration file for the SolWP WordPress theme.
 # @link https://travis-ci.org/
 
-# For use with the FoundationPress WordPress theme.
-# @link https://github.com/olefredrik/foundationpress
+# For use with the SolWP WordPress theme.
+# @link https://github.com/tpkemme/solwp
 
 # Declare project language.
 # @link http://about.travis-ci.org/docs/user/languages/php/

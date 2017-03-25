@@ -6,11 +6,14 @@
 
   $(window).bind('load resize orientationChange', function () {
 
-    var pos = $footer.position(),
-        height = ($(window).height() - pos.top) - ($footer.height() -1);
+    var pos = $footer.position();
 
-    if (height > 0) {
-       $footer.css('margin-top', height);
+    if(pos){
+          height = ($(window).height() - pos.top) - ($footer.height() -1);
+
+      if (height > 0) {
+         $footer.css('margin-top', height);
+      }
     }
 
   });

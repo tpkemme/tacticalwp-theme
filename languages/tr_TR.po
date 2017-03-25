@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foundationpress-libsass-template 5.4.0\n"
+"Project-Id-Version: solwp-libsass-template 5.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-19 14:45+0300\n"
 "PO-Revision-Date: 2016-10-16 10:08+0200\n"
@@ -187,8 +187,8 @@ msgstr ""
 
 #. /archive/search.
 #. *
-#. * @subpackage FoundationPress
-#. * @since FoundationPress 1.0.0
+#. * @subpackage SolWP
+#. * @since SolWP 1.0.0
 #.
 #: content.php:16
 msgid "Continue reading..."
@@ -208,15 +208,15 @@ msgstr "Yayınlanma tarihi %1$s Yayınlanma zamanı %2$s."
 msgid "Written by"
 msgstr "Tarafından yazılmıştır"
 
-#: library/foundation.php:16
+#: library/solwp.php:16
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: library/foundation.php:17
+#: library/solwp.php:17
 msgid "&raquo;"
 msgstr "&laquo;"
 
-#: library/foundation.php:40
+#: library/solwp.php:40
 #, php-format
 msgid ""
 "Please assign a menu to the primary menu location under %1$s or %2$s the "
@@ -224,12 +224,12 @@ msgid ""
 msgstr ""
 "Lütfen birincil menü konumu tasarımı altına %1$s ya da %2$s bir menü atayın"
 
-#: library/foundation.php:41
+#: library/solwp.php:41
 #, php-format
 msgid "<a href=\"%s\">Menus</a>"
 msgstr "<a href=\"%s\">Menü</a>"
 
-#: library/foundation.php:44
+#: library/solwp.php:44
 #, php-format
 msgid "<a href=\"%s\">Customize</a>"
 msgstr "<a href=\"%s\">Özelleştir</a>"

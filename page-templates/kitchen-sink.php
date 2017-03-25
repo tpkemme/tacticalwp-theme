@@ -63,7 +63,7 @@ get_header(); ?>
 					  <div class="row">
 					    <div class="medium-6 columns">
 					      <label>URL Pattern, not required, but throws error if it doesn't match the Regular Expression for a valid URL.
-					        <input type="text" placeholder="http://foundation.zurb.com" pattern="url">
+					        <input type="text" placeholder="http://solwp.zurb.com" pattern="url">
 					      </label>
 					    </div>
 					    <div class="medium-6 columns">
@@ -822,7 +822,7 @@ get_header(); ?>
 						<div class="title-bar">
 						  <div class="title-bar-left">
 						    <button class="menu-icon" type="button"></button>
-						    <span class="title-bar-title">FoundationPress</span>
+						    <span class="title-bar-title">SolWP</span>
 						  </div>
 						  <div class="title-bar-right">
 						    <button class="menu-icon" type="button"></button>

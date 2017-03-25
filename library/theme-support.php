@@ -2,14 +2,14 @@
 /**
  * Register theme support for languages, menus, post-thumbnails, post-formats etc.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package SolWP
+ * @since SolWP 1.0.0
  */
 
-if ( ! function_exists( 'foundationpress_theme_support' ) ) :
-function foundationpress_theme_support() {
+if ( ! function_exists( 'solwp_theme_support' ) ) :
+function solwp_theme_support() {
 	// Add language support
-	load_theme_textdomain( 'foundationpress', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'solwp', get_template_directory() . '/languages' );
 
 	// Switch default core markup for search form, comment form, and comments to output valid HTML5
 	add_theme_support( 'html5', array(
@@ -38,9 +38,9 @@ function foundationpress_theme_support() {
 	// Declare WooCommerce support per http://docs.woothemes.com/document/third-party-custom-theme-compatibility/
 	add_theme_support( 'woocommerce' );
 
-	// Add foundation.css as editor style https://codex.wordpress.org/Editor_Style
-	add_editor_style( 'assets/stylesheets/foundation.css' );
+	// Add solwp.css as editor style https://codex.wordpress.org/Editor_Style
+	add_editor_style( 'assets/stylesheets/solwp.css' );
 }
 
-add_action( 'after_setup_theme', 'foundationpress_theme_support' );
+add_action( 'after_setup_theme', 'solwp_theme_support' );
 endif;

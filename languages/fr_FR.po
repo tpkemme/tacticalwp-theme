@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: FoundationPress\n"
+"Project-Id-Version: SolWP\n"
 "POT-Creation-Date: 2014-07-10 10:45-0500\n"
 "PO-Revision-Date: 2016-10-16 10:06+0200\n"
 "Last-Translator: \n"
@@ -201,27 +201,27 @@ msgstr "Posté le %1$s à %2$s."
 msgid "Written by"
 msgstr "Écrit par"
 
-#: ../library/foundation.php:16
+#: ../library/solwp.php:16
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: ../library/foundation.php:17
+#: ../library/solwp.php:17
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: ../library/foundation.php:40
+#: ../library/solwp.php:40
 #, php-format
 msgid ""
 "Please assign a menu to the primary menu location under %1$s or %2$s the "
 "design."
 msgstr "Assignez un menu à l'emplacement primaire de menu dans %1$s ou %2$s."
 
-#: ../library/foundation.php:41
+#: ../library/solwp.php:41
 #, php-format
 msgid "<a href=\"%s\">Menus</a>"
 msgstr "<a href=\"%s\">Menus</a>"
 
-#: ../library/foundation.php:44
+#: ../library/solwp.php:44
 #, php-format
 msgid "<a href=\"%s\">Customize</a>"
 msgstr "<a href=\"%s\">Personnaliser</a>"

@@ -5,7 +5,7 @@ node_modules/
 assets/stylesheets/
 assets/components/
 assets/javascript/vendor/
-assets/javascript/foundation.js
+assets/javascript/solwp.js
 assets/javascript/custom/demosite.js
 packaged/
 wpcs/

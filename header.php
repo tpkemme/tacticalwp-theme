@@ -4,8 +4,8 @@
  *
  * Displays all of the head element and everything up until the "container" div.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package SolWP
+ * @since SolWP 1.0.0
  */
 
 ?>
@@ -18,7 +18,7 @@
 		<?php /* embedded styles set with theme settings */ get_template_part( 'template-parts/embedded-styles' ); ?>
 	</head>
 	<body <?php body_class(); ?>>
-	<?php do_action( 'foundationpress_after_body' ); ?>
+	<?php do_action( 'solwp_after_body' ); ?>
 
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
 	<div class="off-canvas-wrapper">
@@ -26,7 +26,7 @@
 		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 	<?php endif; ?>
 
-	<?php do_action( 'foundationpress_layout_start' ); ?>
+	<?php do_action( 'solwp_layout_start' ); ?>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="title-bar" data-responsive-toggle="mobile-menu">
@@ -38,7 +38,7 @@
 
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 			<div class="top-bar-left">
-					<?php foundationpress_top_bar_r(); ?>
+					<?php solwp_top_bar_r(); ?>
 				</ul>
 			</div>
 			<div class="top-bar-right">
@@ -54,4 +54,4 @@
 	</header>
 
 	<section class="container">
-		<?php do_action( 'foundationpress_after_header' );
+		<?php do_action( 'solwp_after_header' );

@@ -2,13 +2,13 @@
 /**
  * Foundation PHP template
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package SolWP
+ * @since SolWP 1.0.0
  */
 
 // Pagination.
-if ( ! function_exists( 'foundationpress_pagination' ) ) :
-function foundationpress_pagination() {
+if ( ! function_exists( 'solwp_pagination' ) ) :
+function solwp_pagination() {
 	global $wp_query;
 
 	$big = 999999999; // This needs to be an unlikely integer
@@ -21,8 +21,8 @@ function foundationpress_pagination() {
 		'total' => $wp_query->max_num_pages,
 		'mid_size' => 5,
 		'prev_next' => true,
-	    'prev_text' => __( '&laquo;', 'foundationpress' ),
-	    'next_text' => __( '&raquo;', 'foundationpress' ),
+	    'prev_text' => __( '&laquo;', 'solwp' ),
+	    'next_text' => __( '&raquo;', 'solwp' ),
 		'type' => 'list',
 	) );
 
@@ -46,17 +46,17 @@ endif;
  * A fallback when no navigation is selected by default.
  */
 
-if ( ! function_exists( 'foundationpress_menu_fallback' ) ) :
-function foundationpress_menu_fallback() {
+if ( ! function_exists( 'solwp_menu_fallback' ) ) :
+function solwp_menu_fallback() {
 	echo '<div class="alert-box secondary">';
 	/* translators: %1$s: link to menus, %2$s: link to customize. */
-	printf( __( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'foundationpress' ),
+	printf( __( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'solwp' ),
 		/* translators: %s: menu url */
-		sprintf(  __( '<a href="%s">Menus</a>', 'foundationpress' ),
+		sprintf(  __( '<a href="%s">Menus</a>', 'solwp' ),
 			get_admin_url( get_current_blog_id(), 'nav-menus.php' )
 		),
 		/* translators: %s: customize url */
-		sprintf(  __( '<a href="%s">Customize</a>', 'foundationpress' ),
+		sprintf(  __( '<a href="%s">Customize</a>', 'solwp' ),
 			get_admin_url( get_current_blog_id(), 'customize.php' )
 		)
 	);
@@ -65,22 +65,22 @@ function foundationpress_menu_fallback() {
 endif;
 
 // Add Foundation 'active' class for the current menu item.
-if ( ! function_exists( 'foundationpress_active_nav_class' ) ) :
-function foundationpress_active_nav_class( $classes, $item ) {
+if ( ! function_exists( 'solwp_active_nav_class' ) ) :
+function solwp_active_nav_class( $classes, $item ) {
 	if ( 1 === $item->current || true === $item->current_item_ancestor ) {
 		$classes[] = 'active';
 	}
 	return $classes;
 }
-add_filter( 'nav_menu_css_class', 'foundationpress_active_nav_class', 10, 2 );
+add_filter( 'nav_menu_css_class', 'solwp_active_nav_class', 10, 2 );
 endif;
 
 /**
  * Use the active class of ZURB Foundation on wp_list_pages output.
  * From required+ Foundation http://themes.required.ch.
  */
-if ( ! function_exists( 'foundationpress_active_list_pages_class' ) ) :
-function foundationpress_active_list_pages_class( $input ) {
+if ( ! function_exists( 'solwp_active_list_pages_class' ) ) :
+function solwp_active_list_pages_class( $input ) {
 
 	$pattern = '/current_page_item/';
 	$replace = 'current_page_item active';
@@ -89,15 +89,15 @@ function foundationpress_active_list_pages_class( $input ) {
 
 	return $output;
 }
-add_filter( 'wp_list_pages', 'foundationpress_active_list_pages_class', 10, 2 );
+add_filter( 'wp_list_pages', 'solwp_active_list_pages_class', 10, 2 );
 endif;
 
 /**
  * Enable Foundation responsive embeds for WP video embeds
  */
 
-if ( ! function_exists( 'foundationpress_responsive_video_oembed_html' ) ) :
-function foundationpress_responsive_video_oembed_html( $html, $url, $attr, $post_id ) {
+if ( ! function_exists( 'solwp_responsive_video_oembed_html' ) ) :
+function solwp_responsive_video_oembed_html( $html, $url, $attr, $post_id ) {
 
 	// Whitelist of oEmbed compatible sites that **ONLY** support video.
 	// Cannot determine if embed is a video or not from sites that
@@ -155,5 +155,5 @@ function foundationpress_responsive_video_oembed_html( $html, $url, $attr, $post
 	}
 
 }
-add_filter( 'embed_oembed_html', 'foundationpress_responsive_video_oembed_html', 10, 4 );
+add_filter( 'embed_oembed_html', 'solwp_responsive_video_oembed_html', 10, 4 );
 endif;

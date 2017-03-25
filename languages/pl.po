@@ -183,8 +183,8 @@ msgstr ""
 
 #. /archive/search.
 #. *
-#. * @subpackage FoundationPress
-#. * @since FoundationPress 1.0.0
+#. * @subpackage SolWP
+#. * @since SolWP 1.0.0
 #.
 #: content.php:16
 msgid "Continue reading..."
@@ -204,27 +204,27 @@ msgstr "Opublikowano %1$s o %2$s."
 msgid "Written by"
 msgstr "Napisane przez"
 
-#: library/foundation.php:16
+#: library/solwp.php:16
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: library/foundation.php:17
+#: library/solwp.php:17
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: library/foundation.php:40
+#: library/solwp.php:40
 #, php-format
 msgid ""
 "Please assign a menu to the primary menu location under %1$s or %2$s the "
 "design."
 msgstr "Prosimy o dodanie menu do głównaj nawigacji w %1$s lub %2$s projekcie."
 
-#: library/foundation.php:41
+#: library/solwp.php:41
 #, php-format
 msgid "<a href=\"%s\">Menus</a>"
 msgstr "<a href=\"%s\">Menu</a>"
 
-#: library/foundation.php:44
+#: library/solwp.php:44
 #, php-format
 msgid "<a href=\"%s\">Customize</a>"
 msgstr "<a href=\"%s\">Dostosuj</a>"

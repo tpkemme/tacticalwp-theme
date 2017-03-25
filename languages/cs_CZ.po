@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foundationpress-libsass-template 5.4.0\n"
+"Project-Id-Version: solwp-libsass-template 5.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-05 11:14+0200\n"
 "PO-Revision-Date: 2016-10-16 10:05+0200\n"
@@ -70,7 +70,7 @@ msgstr "Novější příspěvky &rarr;"
 msgid "Reply"
 msgstr "Odpovědět"
 
-#: comments.php:35 library/foundation.php:157
+#: comments.php:35 library/solwp.php:157
 msgid "Your comment is awaiting moderation."
 msgstr "Váš komentář čeká na schválení administrátorem."
 
@@ -163,15 +163,15 @@ msgstr "Publikováno %1$s v %2$s."
 msgid "Written by"
 msgstr "Napsal"
 
-#: library/foundation.php:24
+#: library/solwp.php:24
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: library/foundation.php:25
+#: library/solwp.php:25
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: library/foundation.php:53
+#: library/solwp.php:53
 #, php-format
 msgid ""
 "Please assign a menu to the primary menu location under %1$s or %2$s the "
@@ -180,29 +180,29 @@ msgstr ""
 "Prosím přiřaďte menu jako primární menu umístění pod %1$s nebo %2$s v "
 "rozložení stránky."
 
-#: library/foundation.php:54
+#: library/solwp.php:54
 #, php-format
 msgid "<a href=\"%s\">Menus</a>"
 msgstr "<a href=\"%s\">Menu</a>"
 
-#: library/foundation.php:57
+#: library/solwp.php:57
 #, php-format
 msgid "<a href=\"%s\">Customize</a>"
 msgstr "<a href=\"%s\">Přizpůsobit</a>"
 
-#: library/foundation.php:107
+#: library/solwp.php:107
 msgid "No Responses to"
 msgstr "Žádná reakce na"
 
-#: library/foundation.php:107
+#: library/solwp.php:107
 msgid "One Response to"
 msgstr "Jedna reakce na"
 
-#: library/foundation.php:107
+#: library/solwp.php:107
 msgid "% Responses to"
 msgstr "% reakcí na"
 
-#: library/foundation.php:147
+#: library/solwp.php:147
 #, php-format
 msgid "<cite class=\"fn\">%s</cite>"
 msgstr "<cite class=\"fn\">%s</cite>"

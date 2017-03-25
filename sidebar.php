@@ -2,13 +2,13 @@
 /**
  * The sidebar containing the main widget area
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package SolWP
+ * @since SolWP 1.0.0
  */
 
 ?>
 <aside class="sidebar">
-	<?php do_action( 'foundationpress_before_sidebar' ); ?>
+	<?php do_action( 'solwp_before_sidebar' ); ?>
 	<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
-	<?php do_action( 'foundationpress_after_sidebar' ); ?>
+	<?php do_action( 'solwp_after_sidebar' ); ?>
 </aside>

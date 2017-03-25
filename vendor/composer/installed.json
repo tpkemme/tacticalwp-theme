@@ -1,18 +1,21 @@
 [
     {
         "name": "composer/installers",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/composer/installers.git",
-            "reference": "e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41"
+            "reference": "d78064c68299743e0161004f2de3a0204e33b804"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/composer/installers/zipball/e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41",
-            "reference": "e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41",
+            "url": "https://api.github.com/repos/composer/installers/zipball/d78064c68299743e0161004f2de3a0204e33b804",
+            "reference": "d78064c68299743e0161004f2de3a0204e33b804",
             "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0"
         },
         "replace": {
             "roundcube/plugin-installer": "*",
@@ -22,18 +25,18 @@
             "composer/composer": "1.0.*@dev",
             "phpunit/phpunit": "4.1.*"
         },
-        "time": "2015-06-13T15:30:38+00:00",
-        "type": "composer-installer",
+        "time": "2016-08-13T20:53:52+00:00",
+        "type": "composer-plugin",
         "extra": {
-            "class": "Composer\\Installers\\Installer",
+            "class": "Composer\\Installers\\Plugin",
             "branch-alias": {
                 "dev-master": "1.0-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
-            "psr-0": {
-                "Composer\\Installers\\": "src/"
+            "psr-4": {
+                "Composer\\Installers\\": "src/Composer/Installers"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -48,28 +51,35 @@
             }
         ],
         "description": "A multi-framework Composer library installer",
-        "homepage": "http://composer.github.com/installers/",
+        "homepage": "https://composer.github.io/installers/",
         "keywords": [
             "Craft",
             "Dolibarr",
             "Hurad",
+            "ImageCMS",
             "MODX Evo",
+            "Mautic",
             "OXID",
+            "Plentymarkets",
+            "RadPHP",
             "SMF",
             "Thelia",
             "WolfCMS",
             "agl",
             "aimeos",
             "annotatecms",
+            "attogram",
             "bitrix",
             "cakephp",
             "chef",
+            "cockpit",
             "codeigniter",
             "concrete5",
             "croogo",
             "dokuwiki",
             "drupal",
             "elgg",
+            "expressionengine",
             "fuelphp",
             "grav",
             "installer",
@@ -86,12 +96,14 @@
             "piwik",
             "ppi",
             "puppet",
+            "reindex",
             "roundcube",
             "shopware",
             "silverstripe",
             "symfony",
             "typo3",
             "wordpress",
+            "yawik",
             "zend",
             "zikula"
         ]

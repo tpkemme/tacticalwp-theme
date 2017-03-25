@@ -1,11 +1,11 @@
-# Romanian translation for FoundationPress.
+# Romanian translation for SolWP.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Alex Bohariuc <alex.bohariuc@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foundationpress-libsass-template 5.4.0\n"
+"Project-Id-Version: solwp-libsass-template 5.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-06 02:25+0200\n"
 "PO-Revision-Date: 2016-10-16 10:08+0200\n"
@@ -189,8 +189,8 @@ msgstr "Nu am găsit ceea ce căutai. Folosește formularul de căutare."
 
 #. /archive/search.
 #. *
-#. * @subpackage FoundationPress
-#. * @since FoundationPress 1.0.0
+#. * @subpackage SolWP
+#. * @since SolWP 1.0.0
 #.
 #: content.php:16
 msgid "Continue reading..."
@@ -210,15 +210,15 @@ msgstr "Postat în %1$s la %2$s."
 msgid "Written by"
 msgstr "Scris de"
 
-#: library/foundation.php:16
+#: library/solwp.php:16
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: library/foundation.php:17
+#: library/solwp.php:17
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: library/foundation.php:40
+#: library/solwp.php:40
 #, php-format
 msgid ""
 "Please assign a menu to the primary menu location under %1$s or %2$s the "
@@ -227,12 +227,12 @@ msgstr ""
 "Te rugăm să atribui un meniu pentru secțiunea principală sub  %1$s sau %2$s "
 "la design."
 
-#: library/foundation.php:41
+#: library/solwp.php:41
 #, php-format
 msgid "<a href=\"%s\">Menus</a>"
 msgstr "<a href=\"%s\">Meniuri</a>"
 
-#: library/foundation.php:44
+#: library/solwp.php:44
 #, php-format
 msgid "<a href=\"%s\">Customize</a>"
 msgstr "<a href=\"%s\">Personalizare</a>"
