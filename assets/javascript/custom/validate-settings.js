@@ -3,8 +3,8 @@
 jQuery(document).ready(function($) {
 
   function validateSettings(){
-    $('.tabs-panel.is-active [data-fieldtype="text_small"] input.cmb2-text-small:not([name$="line_height"])').each(function(){
-      if( this.value.match(/^(auto|0|\s*)$|^[+-]?[0-9]+.?([0-9]+)?(rem|px|em|ex|%|in|cm|mm|pt|pc)$/g)){
+    $('.tabs-panel.is-active [data-fieldtype="text_small"]:not([class$="symbol"]) input.cmb2-text-small:not([name$="line_height"])').each(function(){
+      if( this.value.match(/^(auto|0|\s*)$|^[+-]?[0-9]+.?([0-9]+)?(rem|px|em|ex|%|in|cm|mm|pt|pc)$|^[+-]?.+([0-9]+)?(rem|px|em|ex|%|in|cm|mm|pt|pc)$/g)){
         return true;
       }
       else{
@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
       }
     });
 
-    $('.tabs-panel.is-active [data-fieldtype="text_small"] input.cmb2-text-small[name$="line_height"]').each(function(){
+    $('.tabs-panel.is-active [data-fieldtype="text_small"]:not([class$="symbol"]) input.cmb2-text-small[name$="line_height"]').each(function(){
       if( this.value.match(/^(\d+(\.\d+)?|\.\d+|^\s*)$/g)){
         return true;
       }

@@ -146,8 +146,8 @@ class SolWP_Settings
         <div class="wrap cmb2-options-page <?php echo $this->key; ?>">
             <h3 id="tabs" class="docs-heading" data-magellan-target="tabs"><a href="#tabs"></a><?php echo esc_html(get_admin_page_title()); ?></h3>
             <br>
-            <ul class="tabs" data-tabs id="settings-tabs">
-                <li class="tabs-title is-active"><a href="#global" aria-selected="true">Global</a></li>
+            <ul class="tabs" data-deep-link="true" data-tabs id="settings-tabs">
+                <li class="tabs-title is-active"><a href="#global">Global</a></li>
                 <li class="tabs-title"><a href="#nav">Navigation</a></li>
                 <li class="tabs-title"><a href="#colors">Colors</a></li>
                 <li class="tabs-title"><a href="#posts">Posts</a></li>
@@ -633,33 +633,167 @@ class SolWP_Settings
      */
     function add_options_page_nav_metabox()
     {
-        // hook in our save notices
-        add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-nav", array( $this, 'settings_notices' ), 10, 2);
-        $cmb = new_cmb2_box(array(
-            'id'         => $this->metabox_id . '-nav',
-            'hookup'     => false,
-            'cmb_styles' => false,
-            'show_on'    => array(
-                // These are important, don't remove
-                'key'   => 'options-page',
-                'value' => array( $this->key . "-nav", )
-            ),
-        ));
-        // Set our CMB2 fields
-        $cmb->add_field(array(
-            'name' => __('Nav Text', $this->prefix),
-            'desc' => __('field description (optional)', $this->prefix),
-            'id'   => 'nav_test_text',
-            'type' => 'text',
-            'default' => 'Default Text'
-        ));
-        $cmb->add_field(array(
-            'name'    => __('Test Color Picker', $this->prefix),
-            'desc'    => __('field description (optional)', $this->prefix),
-            'id'      => 'nav_test_colorpicker',
-            'type'    => 'colorpicker',
-            'default' => '#bada55',
-        ));
+		// hook in our save notices
+		add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-nav", array( $this, 'settings_notices' ), 10, 2);
+		$cmb = new_cmb2_box(array(
+				'id'         => $this->metabox_id . '-nav',
+				'hookup'     => false,
+				'cmb_styles' => false,
+				'show_on'    => array(
+						// These are important, don't remove
+						'key'   => 'options-page',
+						'value' => array( $this->key . "-nav", )
+				),
+		));
+		// Set our CMB2 fields
+		$cmb->add_field(array(
+				'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
+						<li class="accordion-item" data-accordion-item>
+							<a href="#panel-nav-base" role="tab" class="accordion-title" id="panel-nav-base-heading" aria-controls="panel-nav-base">
+								<h6>Menus and Breadcrumbs</h6>
+							</a>
+							<div id="panel-nav-base" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-typ-base-heading">',
+				'name' => __('Menu Margin', $this->prefix),
+				'desc'    => __('Space around all menu objects. (default: 0rem)', $this->prefix),
+				'id'            => $this->prefix . '_nav_menu_margin',
+				'type'             => 'text_small',
+				'default'          => '0rem',
+				'attributes'			 => array(
+					'data-default'	 => '0rem'
+				),
+		));
+		$cmb->add_field(array(
+				'name' => __('Menu Item Padding', $this->prefix),
+				'desc' => __('Space around menu item text (default = .7rem)', $this->prefix),
+				'id'            => $this->prefix . '_nav_menu_padding',
+				'type'             => 'text_small',
+				'default'          => '.7rem',
+				'attributes'			 => array(
+					'data-default'	 => '.7rem'
+				),
+		));
+		$cmb->add_field(array(
+				'name' => __('Submenu Background Color', $this->prefix),
+				'desc'    => __('Color for submenus like drilldown or dropdown menus. (default: #15171d)', $this->prefix),
+				'id'            => $this->prefix . '_nav_submenu_background_color',
+				'type'             => 'colorpicker',
+				'default'          => '#15171d',
+				'attributes'			 => array(
+					'data-default'	 => '#15171d',
+				),
+		));
+		$cmb->add_field(array(
+				'name' => __('Breadcrumb Font Color', $this->prefix),
+				'desc'    => __('The color for breadcrumb navigation links. (default: #cc4b37)', $this->prefix),
+				'id'            => $this->prefix . '_nav_breadcrumb_color',
+				'type'             => 'colorpicker',
+				'default'          => '#cc4b37',
+				'attributes'			 => array(
+					'data-default'	 => '#cc4b37',
+				),
+		));
+		$cmb->add_field(array(
+				'name' => __('Breadcrumb Hover Font Color', $this->prefix),
+				'desc'    => __('The hover color for breadcrumb navigation links. (default: #a53b2a)', $this->prefix),
+				'id'            => $this->prefix . '_nav_breadcrumb_hover_color',
+				'type'             => 'colorpicker',
+				'default'          => '#a53b2a',
+				'attributes'			 => array(
+					'data-default'	 => '#a53b2a',
+				),
+		));
+		$cmb->add_field(array(
+				'name' => __('Breadcrumb Current Font Color', $this->prefix),
+				'desc'    => __('The color for breadcrumb link of the current page. (default: #f5faff)', $this->prefix),
+				'id'            => $this->prefix . '_nav_breadcrumb_current_color',
+				'type'             => 'colorpicker',
+				'default'          => '#f5faff',
+				'attributes'			 => array(
+					'data-default'	 => '#f5faff',
+				),
+		));
+		$cmb->add_field(array(
+				'name' => __('Breadcrumb Divider Color', $this->prefix),
+				'desc'    => __('The color for divider between breadcrumb links. (default: #f5faff)', $this->prefix),
+				'id'            => $this->prefix . '_nav_breadcrumb_divider_color',
+				'type'             => 'colorpicker',
+				'default'          => '#f5faff',
+				'attributes'			 => array(
+					'data-default'	 => '#f5faff',
+				),
+		));
+		$cmb->add_field(array(
+				'name' => __('Breadcrumb Divider Symbol', $this->prefix),
+				'desc'    => __('The symbol for the divider between breadcrumb links. (default: >)', $this->prefix),
+				'id'            => $this->prefix . '_nav_breadcrumb_divider_symbol',
+				'type'             => 'text_small',
+				'default'          => '>',
+				'attributes'			 => array(
+					'data-default'	 => '>',
+				),
+		));
+		$cmb->add_field(array(
+				'name' => __('Breadcrumb Font Size', $this->prefix),
+				'desc'    => __('The font size for breadcrumb links. (default: 0.75rem)', $this->prefix),
+				'id'            => $this->prefix . '_nav_breadcrumb_font_size',
+				'type'             => 'text_small',
+				'default'          => '0.75rem',
+				'attributes'			 => array(
+					'data-default'	 => '0.75rem',
+				),
+		));
+		$cmb->add_field(array(
+				'name' => __('Breadcrumb Font Uppercase', $this->prefix),
+				'desc' => __('Choose the case of the breadcrumb links.  (default = uppercase)', $this->prefix),
+				'id'   => $this->prefix . '_nav_breadcrumb_font_uppercase',
+				'type'    => 'select',
+				'default' => 'uppercase',
+				'options' => array(
+						'uppercase' => 'Uppercase',
+						'lowercase' => 'Lowercase',
+						'none' => 'Default'
+				),
+				'attributes' => array(
+						'data-default' => 'uppercase'
+				),
+				'after_row' => '</div></li>'
+		));
+		$cmb->add_field(array(
+				'before_row'  => '<li class="accordion-item" data-accordion-item>
+						<a href="#panel-nav-top" role="tab" class="accordion-title" id="panel-nav-top-heading" aria-controls="panel-nav-top">
+							<h6>Topbar</h6>
+						</a>
+						<div id="panel-nav-top" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-nav-top-heading">',
+				'name' => __('Topbar Padding', $this->prefix),
+				'desc'    => __('Space around the top menu bar. (default: 0rem)', $this->prefix),
+				'id'            => $this->prefix . '_nav_top_padding',
+				'type'    => 'text_small',
+				'default' => '0rem',
+				'attributes'			 => array(
+					'data-default'	 => '0rem'
+				),
+		));
+		$cmb->add_field(array(
+				'name' => __('Topbar Background Color', $this->prefix),
+				'desc'    => __('Background color of the top menu bar. (default: #5c6bc0)', $this->prefix),
+				'id'            => $this->prefix . '_nav_top_background_color',
+				'type'    => 'colorpicker',
+				'default' => '#5c6bc0',
+				'attributes'			 => array(
+					'data-default'	 => '#5c6bc0'
+				),
+		));
+		$cmb->add_field(array(
+				'name' => __('Topbar Item Background Color', $this->prefix),
+				'desc'    => __('Background color of the topbar menu items. (default: #5c6bc0)', $this->prefix),
+				'id'            => $this->prefix . '_nav_top_item_background_color',
+				'type'    => 'colorpicker',
+				'default' => '#5c6bc0',
+				'attributes'			 => array(
+					'data-default'	 => '#5c6bc0'
+				),
+				'after_row' => '</div></li></ul>'
+		));
 				array_push($this->option_names, $cmb);
     }
 
@@ -889,7 +1023,7 @@ class SolWP_Settings
         ));
         $cmb->add_field(array(
             'name' => __('Header Margin Bottom', $this->prefix),
-            'desc' => __('Set the how much space is below each header element (default = 0.65rem)', $this->prefix),
+            'desc' => __('Space below each header element (default = 0.65rem)', $this->prefix),
             'id'   => $this->prefix . '_typo_header_margin_bottom',
             'type'    => 'text_small',
             'default' => '0.65rem',
@@ -1030,7 +1164,7 @@ class SolWP_Settings
 										</a>
 										<div id="panel-typo-body" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-typo-body-heading">',
             'name' => __('Small Font Size', $this->prefix),
-            'desc'    => __('Font size for small text elements like meta information. (default: 80%)', $this->prefix),
+            'desc'    => __('Font size for small text like meta info. (default: 80%)', $this->prefix),
             'id'            => $this->prefix . '_typo_body_small_size',
             'type'             => 'text_small',
             'default'          => '80%',
@@ -1040,7 +1174,7 @@ class SolWP_Settings
         ));
 				$cmb->add_field(array(
 						'name' => __('Small Font Color', $this->prefix),
-            'desc'    => __('Font color for small text elements like meta information. (default: #7b829d)', $this->prefix),
+            'desc'    => __('Font color for small text like meta info. (default: #7b829d)', $this->prefix),
             'id'            => $this->prefix . '_typo_body_small_color',
             'type'             => 'colorpicker',
             'default'          => '#7b829d',
@@ -1128,7 +1262,7 @@ class SolWP_Settings
 									</a>
 									<div id="panel-typo-hr" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-typo-hr-heading">',
 						'name' => __('Horizontal Line Width', $this->prefix),
-						'desc'    => __('Width of horizontal line used to separate body elements. (default: 1200px)', $this->prefix),
+						'desc'    => __('Width of horizontal line used to separate elements. (default: 1200px)', $this->prefix),
 						'id'            => $this->prefix . '_typo_body_hr_width',
 						'type'    => 'text_small',
 						'default' => '1200px',
@@ -1138,7 +1272,7 @@ class SolWP_Settings
 				));
 				$cmb->add_field(array(
 						'name' => __('Horizontal Line Thickness', $this->prefix),
-						'desc'    => __('Thickness of horizontal line used to separate body elements. (default: 1px)', $this->prefix),
+						'desc'    => __('Thickness of horizontal line used to separate elements. (default: 1px)', $this->prefix),
 						'id'            => $this->prefix . '_typo_body_hr_thickness',
 						'type'    => 'text_small',
 						'default' => '1px',
@@ -1168,7 +1302,7 @@ class SolWP_Settings
 				));
 				$cmb->add_field(array(
 						'name' => __('Horizontal Line Color', $this->prefix),
-						'desc'    => __('Color of horizontal line used to separate body elements. (default: #7b829d)', $this->prefix),
+						'desc'    => __('Color of horizontal line used to separate elements. (default: #7b829d)', $this->prefix),
 						'id'            => $this->prefix . '_typo_body_hr_color',
 						'type'    => 'colorpicker',
 						'default' => '#7b829d',
@@ -1184,6 +1318,77 @@ class SolWP_Settings
 						'default' => '1.6rem',
 						'attributes'			 => array(
 							'data-default'	 => '1.6rem'
+						),
+						'after_row' => '</div></li>'
+				));
+				$cmb->add_field(array(
+						'before_row'  => '<li class="accordion-item" data-accordion-item>
+								<a href="#panel-typo-list" role="tab" class="accordion-title" id="panel-typo-list-heading" aria-controls="panel-typo-list">
+									<h6>Lists</h6>
+								</a>
+								<div id="panel-typo-list" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-typo-list-heading">',
+						'name' => __('List Line height', $this->prefix),
+						'desc'    => __('Line height of all list elements. (default: 1.6)', $this->prefix),
+						'id'            => $this->prefix . '_typo_list_line_height',
+						'type'    => 'text_small',
+						'default' => '1.6',
+						'attributes'			 => array(
+							'data-default'	 => '1.6'
+						),
+				));
+				$cmb->add_field(array(
+						'name' => __('List Margin Bottom', $this->prefix),
+						'desc'    => __('Space below all list elements. (default: 1rem)', $this->prefix),
+						'id'            => $this->prefix . '_typo_list_margin_bottom',
+						'type'    => 'text_small',
+						'default' => '1rem',
+						'attributes'			 => array(
+							'data-default'	 => '1rem'
+						),
+				));
+				$cmb->add_field(array(
+						'name' => __('List Style Type', $this->prefix),
+						'desc'    => __('Style of list item markers. (default: disc)', $this->prefix),
+						'id'            => $this->prefix . '_typo_list_style_type',
+						'type'    => 'select',
+						'default' => 'disc',
+						'options' => array(
+							'disc' 					=> 'Disc',
+							'circle	'				=> 'Circle',
+							'square'				=> 'Square',
+							'decimal'   	  => 'Number',
+							'lower-alpha'		=> 'Lowercase Letters',
+							'lower-roman'		=> 'Lowercase Roman Numerals',
+							'upper-alpha'		=> 'Uppercase Letters',
+							'upper-roman'		=> 'Uppercase Roman Numerals',
+							'none'					=> 'None'
+						),
+						'attributes'			 => array(
+							'data-default'	 => 'disc'
+						),
+				));
+				$cmb->add_field(array(
+						'name' => __('List Style Position', $this->prefix),
+						'desc'    => __('Position of list item markers. (default: outside)', $this->prefix),
+						'id'            => $this->prefix . '_typo_list_style_position',
+						'type'    => 'select',
+						'default' => 'outside',
+						'options' => array(
+							'outside' 			=> 'Outside',
+							'inside	'				=> 'Inside'
+						),
+						'attributes'			 => array(
+							'data-default'	 => 'outside'
+						),
+				));
+				$cmb->add_field(array(
+						'name' => __('List Margin left', $this->prefix),
+						'desc'    => __('Space left of list elements. (default: 1.25rem)', $this->prefix),
+						'id'            => $this->prefix . '_typo_list_margin_left',
+						'type'    => 'text_small',
+						'default' => '1.25rem',
+						'attributes'			 => array(
+							'data-default'	 => '1.25rem'
 						),
 						'after_row' => '</div></li></ul>'
 				));
