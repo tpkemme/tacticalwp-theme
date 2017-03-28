@@ -17,8 +17,10 @@
 
 if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
 	require_once dirname( __FILE__ ) . '/cmb2/init.php';
+	require_once dirname( __FILE__ ) . '/cmb2/includes/CMB2_Options.php';
 } elseif ( file_exists( dirname( __FILE__ ) . '/CMB2/init.php' ) ) {
 	require_once dirname( __FILE__ ) . '/CMB2/init.php';
+	require_once dirname( __FILE__ ) . '/CMB2/includes/CMB2_Options.php';
 }
 
 /**
@@ -87,6 +89,8 @@ function solwp_display_text_small_column( $field_args, $field ) {
 	</div>
 	<?php
 }
+
+
 
 /**
  * Conditionally displays a message if the $post_id is 2

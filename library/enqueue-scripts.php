@@ -13,6 +13,10 @@
 if ( ! function_exists( 'solwp_scripts' ) ) :
 	function solwp_admin_scripts( $hook ) {
 		if( $hook === 'toplevel_page_solwp_options' ){
+
+			wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=' . str_replace( '/s', '+', solwp_get_option( 'solwp_global_font_family' ) ) . '|' . str_replace( '/s', '+', solwp_get_option( 'solwp_typo_header_family' ) ) . '|' . str_replace( '/s', '+', solwp_get_option( 'solwp_typo_sub_header_family' ) ) );
+			wp_enqueue_style(  'google-fonts');
+
 			// Enqueue the main Stylesheet.
 		  wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/solwp.css', array(), '2.9.0', 'all' );
 
@@ -38,8 +42,8 @@ endif;
 if ( ! function_exists( 'solwp_scripts' ) ) :
 	function solwp_scripts() {
 
-    wp_register_style('google-fonts', '//fonts.googleapis.com/css?family=' . str_replace( '/s', '+', solwp_get_option( 'solwp_global_font_family' ) ) );
-    wp_enqueue_style( 'google-fonts');
+		wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=' . str_replace( '/s', '+', solwp_get_option( 'solwp_global_font_family' ) ) . '|' . str_replace( '/s', '+', solwp_get_option( 'solwp_typo_header_family' ) ) . '|' . str_replace( '/s', '+', solwp_get_option( 'solwp_typo_sub_header_family' ) ) );
+		wp_enqueue_style(  'google-fonts');
 
 		// Enqueue the main Stylesheet.
 		wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/solwp.css', array(), '2.9.0', 'all' );
