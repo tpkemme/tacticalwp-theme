@@ -1,9 +1,11 @@
 # SolWP [![Build Status](https://travis-ci.org/olefredrik/SolWP.svg?branch=master)](https://travis-ci.org/olefredrik/SolWP)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tpkemme/solwp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-This is a starter-theme for WordPress based on Foundation 6, the most advanced responsive (mobile-first) framework in the world. The purpose of SolWP, is to act as a small and handy toolbox that contains the essentials needed to build any design. SolWP is meant to be a starting point, not the final product.
+SolWP is a Dark Material theme for WordPress created using Foundationpress, CMB2, and Gulp. The purpose of SolWP, is to act as a small and handy toolbox that contains the essentials needed to build any design using Wordpress.
 
-Please fork, copy, modify, delete, share or do whatever you like with this.
+One of the advantages of using a framework like Foundation 6 is that the structure for all site elements is already created before you start.  This was the intended purpose of Foundationpress, the Wordpress Theme built upon Foundation 6.  However, Foundationpress lacked real Wordpress integrations: Foundation elements could only be configured using HTML.
+
+This is where SolWP really shines: every Foundation element of SolWP has an associated shortcode and widget.  Users can insert customized Foundation elements anywhere on the site by simply generating a shortcode or adding a widget to his/her page-builder plugin.  If that's not enough, the SolWP Theme settings will give users complete control over every part of the site's design.  Although SolWP has a sleek, modern design already configured, every piece of SolWP can be customized to the user's liking.
 
 All contributions are welcome!
 
