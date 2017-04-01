@@ -24,4 +24,25 @@
 		}
 	endif;
 
+	if ( ! function_exists( 'solwp_google_fonts' ) ) :
+		/**
+		 * Gets a list of google fonts for font settings
+		 *
+		 * @since  0.1.0
+		 * @return $options array of fonts
+		 */
+		function solwp_google_fonts()
+		{
+				$json_google_fonts = file_get_contents(get_template_directory_uri() . '/assets/fonts/google-fonts.json');
+				$jgf = json_decode($json_google_fonts);
+				$options = array();
+
+				foreach ($jgf->items as $gfont) {
+						$options[ str_replace('/s', '+', $gfont->family) ] = $gfont->family;
+				}
+				array_shift($options);
+				return $options;
+		}
+	endif;
+
 ?>

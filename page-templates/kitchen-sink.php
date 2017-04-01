@@ -867,7 +867,7 @@ get_header(); ?>
 						    </ul>
 						  </div>
 
-							<div class="top-bar-right">
+							<div class="top-bar-right top-bar-search">
 						    <ul class="menu">
 						      <li><input type="search" placeholder="Search"></li>
 						      <li><button type="button" class="button">Search</button></li>

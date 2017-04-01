@@ -143,6 +143,8 @@ class SolWP_Settings
     public function admin_page_display()
     {
         ?>
+				<?php /* embedded styles set with theme settings */ get_template_part( 'template-parts/embedded-styles' ); ?>
+
         <div class="wrap cmb2-options-page <?php echo $this->key; ?>">
             <h3 id="tabs" class="docs-heading" data-magellan-target="tabs"><a href="#tabs"></a><?php echo esc_html(get_admin_page_title()); ?></h3>
             <br>
@@ -335,295 +337,7 @@ class SolWP_Settings
                 'value' => array( $this->key, )
             )
         ));
-        $cmb->add_field(array(
-            'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
-																<li class="accordion-item" data-accordion-item>
-																	<a href="#panel-global" role="tab" class="accordion-title" id="panel-global-heading" aria-controls="panel-global">
-																		<h6>Global Styles</h6>
-																	</a>
-								    							<div id="panel-global" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-global-heading">',
-            'name' => __('Font Size', $this->prefix),
-            'desc' => __('Global font size and units (default: 100%)', $this->prefix),
-            'id'   => $this->prefix . '_global_font_size',
-            'type' => 'text_small',
-            'default' => '100%',
-            'attributes' => array(
-              'data-default' => '100%'
-            )
-        ));
-        $cmb->add_field(array(
-            'name' => __('Site Width', $this->prefix),
-            'desc' => __('Global site width and units (default: 1200px)', $this->prefix),
-            'id'   => $this->prefix . '_global_site_width',
-            'type' => 'text_small',
-            'default' => '1200px',
-            'attributes' => array(
-              'data-default' => '1200px'
-            )
-        ));
-        $cmb->add_field(array(
-            'name' => __('Line Height', $this->prefix),
-            'desc' => __('Global line height (default: 1.5)', $this->prefix),
-            'id'   => $this->prefix . '_global_line_height',
-            'type' => 'text_small',
-            'default' => '1.5',
-            'attributes' => array(
-              'data-default' => '1.5'
-            )
-        ));
-				$cmb->add_field(array(
-            'name' => __('Body Font Color', $this->prefix),
-                        'desc'    => __('Global body font color in hex (default: #b9bed5)', $this->prefix),
-            'id'      => $this->prefix . '_global_font_color',
-            'type'    => 'colorpicker',
-            'default' => '#b9bed5',
-            'attributes' => array(
-              'data-default' => '#b9bed5'
-            )
-        ));
-        $cmb->add_field(array(
-            'name' => __('Body Font Family', $this->prefix),
-            'desc'    => __('Global body font family (default: Quicksand)', $this->prefix),
-            'id'            => $this->prefix . '_global_font_family',
-            'type'             => 'select',
-            'show_option_none' => false,
-            'default'          => 'Quicksand',
-            'attributes' => array(
-              'data-default' => 'Quicksand'
-            ),
-            'options_cb'       => array($this, 'solwp_google_fonts'),
-        ));
-        $cmb->add_field(array(
-            'name' => __('Global Margins', $this->prefix),
-            'desc' => __('Global margins size and units (default: 1rem)', $this->prefix),
-            'id'   => $this->prefix . '_global_margin_size',
-            'type' => 'text_small',
-            'default' => '1rem',
-            'attributes' => array(
-              'data-default' => '1rem'
-            )
-        ));
-        $cmb->add_field(array(
-            'name' => __('Global Padding', $this->prefix),
-            'desc' => __('Global padding size and units (default: 1rem)', $this->prefix),
-            'id'   => $this->prefix . '_global_padding_size',
-            'type' => 'text_small',
-            'default' => '1rem',
-            'attributes' => array(
-              'data-default' => '1rem'
-            )
-        ));
-        $cmb->add_field(array(
-            'name' => __('Background Type', $this->prefix),
-                        'desc'    => __('Choose the type of background (default: Color)', $this->prefix),
-            'id'      => $this->prefix . '_global_background_type',
-            'type'    => 'select',
-            'default' => 'color',
-            'options' => array(
-                'color' => 'Color',
-                'image' => 'Image',
-                'video' => 'Video'
-            ),
-            'attributes' => array(
-                'data-conditional-parent' => $this->prefix . '_global_background_type',
-                'data-default' => 'color'
-            )
-        ));
-        $cmb->add_field(array(
-            'name' => __('Background Color', $this->prefix),
-                        'desc'    => __('Global background color in hex (default: #202533)', $this->prefix),
-            'id'      => $this->prefix . '_global_background_color',
-            'type'    => 'colorpicker',
-            'default' => '#202533',
-            'attributes' => array(
-                'data-conditional-id'    => $this->prefix . '_global_background_type',
-                'data-conditional-value' => 'color',
-                'data-default' => '#202533'
-            )
-        ));
-        $cmb->add_field(array(
-            'name' => __('Background Image', $this->prefix),
-                        'desc'    => __('Global background image from url or media library.)', $this->prefix),
-            'id'      => $this->prefix . '_global_background_image',
-            'type'    => 'file',
-            'options' => array(
-                'url' => true,
-            ),
-            'text'    => array(
-                'add_upload_file_text' => 'Add Image' // Change upload button text. "Add or Upload File"
-            ),
-            'query_args' => array(
-                'type' => 'image',
-            ),
-            'attributes' => array(
-                'data-conditional-id'    => $this->prefix . '_global_background_type',
-                'data-conditional-value' => 'image',
-                'data-default' => ''
-            )
-        ));
-        $cmb->add_field(array(
-            'name' => __('Background Video', $this->prefix),
-                        'desc'    => __('Global background video from url or media library)', $this->prefix),
-            'id'      => $this->prefix . '_global_background_video',
-            'type'    => 'file',
-            'options' => array(
-                'url' => true,
-            ),
-            'text'    => array(
-                'add_upload_file_text' => 'Add Video' // Change upload button text. Default: "Add or Upload File"
-            ),
-            'query_args' => array(
-                'type' => 'video',
-            ),
-            'attributes' => array(
-                'data-conditional-id'    => $this->prefix . '_global_background_type',
-                'data-conditional-value' => 'video',
-                'data-default' => ''
-            ),
-						'after_row' => '</div></li>'
-        ));
-        $cmb->add_field(array(
-            'before_row'  => '<li class="accordion-item" data-accordion-item>
-																<a href="#panel-global-colors" role="tab" class="accordion-title" id="panel-global-colors-heading" aria-controls="panel-global-colors">
-																	<h6>Global Color Palette</h6>
-																</a>
-								    						<div id="panel-global-colors" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-global-colors-heading">',
-            'name'    => __('Primary Color', $this->prefix),
-            'desc'    => __('The theme\'s primary color in hex (default: #5274ff)', $this->prefix),
-            'id'      => $this->prefix . '_global_primary_color',
-            'type'    => 'colorpicker',
-            'default' => '#5274ff',
-            'attributes' => array(
-              'data-default' => '#5274ff'
-            )
-        ));
-        $cmb->add_field(array(
-            'name'    => __('Dark Primary Color', $this->prefix),
-            'desc'    => __('The theme\'s dark primary color in hex (default: #3F51B5)', $this->prefix),
-            'id'      => $this->prefix . '_global_dark_primary_color',
-            'type'    => 'colorpicker',
-            'default' => '#3F51B5',
-            'attributes' => array(
-              'data-default' => '#3F51B5'
-            )
-        ));
-        $cmb->add_field(array(
-            'name'    => __('Light Primary Color', $this->prefix),
-            'desc'    => __('The theme\'s light primary color in hex (default: #5c6bc0)', $this->prefix),
-            'id'      => $this->prefix . '_global_light_primary_color',
-            'type'    => 'colorpicker',
-            'default' => '#5c6bc0',
-            'attributes' => array(
-              'data-default' => '#5c6bc0'
-            )
-        ));
-        $cmb->add_field(array(
-            'name'    => __('Accent Color', $this->prefix),
-            'desc'    => __('The theme\'s accent color in hex (default: #33a0ff)', $this->prefix),
-            'id'      => $this->prefix . '_global_accent_color',
-            'type'    => 'colorpicker',
-            'default' => '#33a0ff',
-            'attributes' => array(
-              'data-default' => '#33a0ff'
-            )
-        ));
-        $cmb->add_field(array(
-            'name'    => __('Secondary Color', $this->prefix),
-            'desc'    => __('The theme\'s secondary color in hex (default: #9aefea)', $this->prefix),
-            'id'      => $this->prefix . '_global_secondary_color',
-            'type'    => 'colorpicker',
-            'default' => '#9aefea',
-            'attributes' => array(
-              'data-default' => '#9aefea'
-            )
-        ));
-        $cmb->add_field(array(
-            'name'    => __('Success Color', $this->prefix),
-            'desc'    => __('Color for success notifications in hex (default: #43d08a)', $this->prefix),
-            'id'      => $this->prefix . '_global_success_color',
-            'type'    => 'colorpicker',
-            'default' => '#43d08a',
-            'attributes' => array(
-              'data-default' => '#43d08a'
-            )
-        ));
-        $cmb->add_field(array(
-            'name'    => __('Warning Color', $this->prefix),
-            'desc'    => __('Color for warning notifications in hex (default: #e0c285)', $this->prefix),
-            'id'      => $this->prefix . '_global_warning_color',
-            'type'    => 'colorpicker',
-            'default' => '#e0c285',
-            'attributes' => array(
-              'data-default' => '#e0c285'
-            )
-        ));
-        $cmb->add_field(array(
-            'name'          => __('Alert Color', $this->prefix),
-            'desc'      => __('Color for alert notifications in hex (default: #e05252)', $this->prefix),
-            'id'        => $this->prefix . '_global_alert_color',
-            'type'      => 'colorpicker',
-            'default'   => '#e05252',
-            'attributes' => array(
-              'data-default' => '#e05252'
-            ),
-            'after_row' => '</div></li>'
-        ));
-        $cmb->add_field(array(
-            'before_row'  => '<li class="accordion-item" data-accordion-item>
-															<a href="#panel-global-grays" role="tab" class="accordion-title" id="panel-global-grays-heading" aria-controls="panel-global-grays">
-																<h6>Global Monochromes</h6>
-															</a>
-															<div id="panel-global-grays" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-global-grays-heading">',
-            'name'    => __('Light Gray', $this->prefix),
-            'desc'    => __('Color for light gray in hex (default: #b9bed5)', $this->prefix),
-            'id'      => $this->prefix . '_global_light_gray_color',
-            'type'    => 'colorpicker',
-            'default' => '#b9bed5',
-            'attributes' => array(
-              'data-default' => '#b9bed5'
-            )
-        ));
-        $cmb->add_field(array(
-            'name'    => __('Medium Gray', $this->prefix),
-            'desc'    => __('Color for medium gray in hex (default: #7b829d)', $this->prefix),
-            'id'      => $this->prefix . '_global_medium_gray_color',
-            'type'    => 'colorpicker',
-            'default' => '#7b829d',
-            'attributes' => array(
-              'data-default' => '#7b829d'
-            )
-        ));
-        $cmb->add_field(array(
-            'name'    => __('Dark Gray', $this->prefix),
-            'desc'    => __('Color for dark gray in hex (default: #5f6786)', $this->prefix),
-            'id'      => $this->prefix . '_global_dark_gray_color',
-            'type'    => 'colorpicker',
-            'default' => '#5f6786',
-            'attributes' => array(
-              'data-default' => '#5f6786'
-            )
-        ));
-        $cmb->add_field(array(
-            'name'    => __('White', $this->prefix),
-            'desc'    => __('Color for white in hex (default: #f5faff)', $this->prefix),
-            'id'      => $this->prefix . '_global_white_color',
-            'type'    => 'colorpicker',
-            'default' => '#f5faff',
-            'attributes' => array(
-              'data-default' => '#f5faff'
-            )
-        ));
-        $cmb->add_field(array(
-            'name'    => __('Black', $this->prefix),
-            'desc'    => __('Color for black in hex (default: #262831)', $this->prefix),
-            'id'      => $this->prefix . '_global_black_color',
-            'type'    => 'colorpicker',
-            'default' => '#262831',
-            'attributes' => array(
-              'data-default' => '#262831'
-            ),
-            'after_row' => '</div></li></ul>'
-        ));
+        solwp_add_global_settings( $cmb, 'solwp' );
         array_push($this->option_names, $cmb);
     }
 
@@ -633,168 +347,20 @@ class SolWP_Settings
      */
     function add_options_page_nav_metabox()
     {
-		// hook in our save notices
-		add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-nav", array( $this, 'settings_notices' ), 10, 2);
-		$cmb = new_cmb2_box(array(
-				'id'         => $this->metabox_id . '-nav',
-				'hookup'     => false,
-				'cmb_styles' => false,
-				'show_on'    => array(
-						// These are important, don't remove
-						'key'   => 'options-page',
-						'value' => array( $this->key . "-nav", )
-				),
-		));
-		// Set our CMB2 fields
-		$cmb->add_field(array(
-				'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
-						<li class="accordion-item" data-accordion-item>
-							<a href="#panel-nav-base" role="tab" class="accordion-title" id="panel-nav-base-heading" aria-controls="panel-nav-base">
-								<h6>Menus and Breadcrumbs</h6>
-							</a>
-							<div id="panel-nav-base" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-typ-base-heading">',
-				'name' => __('Menu Margin', $this->prefix),
-				'desc'    => __('Space around all menu objects. (default: 0rem)', $this->prefix),
-				'id'            => $this->prefix . '_nav_menu_margin',
-				'type'             => 'text_small',
-				'default'          => '0rem',
-				'attributes'			 => array(
-					'data-default'	 => '0rem'
-				),
-		));
-		$cmb->add_field(array(
-				'name' => __('Menu Item Padding', $this->prefix),
-				'desc' => __('Space around menu item text (default = .7rem)', $this->prefix),
-				'id'            => $this->prefix . '_nav_menu_padding',
-				'type'             => 'text_small',
-				'default'          => '.7rem',
-				'attributes'			 => array(
-					'data-default'	 => '.7rem'
-				),
-		));
-		$cmb->add_field(array(
-				'name' => __('Submenu Background Color', $this->prefix),
-				'desc'    => __('Color for submenus like drilldown or dropdown menus. (default: #15171d)', $this->prefix),
-				'id'            => $this->prefix . '_nav_submenu_background_color',
-				'type'             => 'colorpicker',
-				'default'          => '#15171d',
-				'attributes'			 => array(
-					'data-default'	 => '#15171d',
-				),
-		));
-		$cmb->add_field(array(
-				'name' => __('Breadcrumb Font Color', $this->prefix),
-				'desc'    => __('The color for breadcrumb navigation links. (default: #cc4b37)', $this->prefix),
-				'id'            => $this->prefix . '_nav_breadcrumb_color',
-				'type'             => 'colorpicker',
-				'default'          => '#cc4b37',
-				'attributes'			 => array(
-					'data-default'	 => '#cc4b37',
-				),
-		));
-		$cmb->add_field(array(
-				'name' => __('Breadcrumb Hover Font Color', $this->prefix),
-				'desc'    => __('The hover color for breadcrumb navigation links. (default: #a53b2a)', $this->prefix),
-				'id'            => $this->prefix . '_nav_breadcrumb_hover_color',
-				'type'             => 'colorpicker',
-				'default'          => '#a53b2a',
-				'attributes'			 => array(
-					'data-default'	 => '#a53b2a',
-				),
-		));
-		$cmb->add_field(array(
-				'name' => __('Breadcrumb Current Font Color', $this->prefix),
-				'desc'    => __('The color for breadcrumb link of the current page. (default: #f5faff)', $this->prefix),
-				'id'            => $this->prefix . '_nav_breadcrumb_current_color',
-				'type'             => 'colorpicker',
-				'default'          => '#f5faff',
-				'attributes'			 => array(
-					'data-default'	 => '#f5faff',
-				),
-		));
-		$cmb->add_field(array(
-				'name' => __('Breadcrumb Divider Color', $this->prefix),
-				'desc'    => __('The color for divider between breadcrumb links. (default: #f5faff)', $this->prefix),
-				'id'            => $this->prefix . '_nav_breadcrumb_divider_color',
-				'type'             => 'colorpicker',
-				'default'          => '#f5faff',
-				'attributes'			 => array(
-					'data-default'	 => '#f5faff',
-				),
-		));
-		$cmb->add_field(array(
-				'name' => __('Breadcrumb Divider Symbol', $this->prefix),
-				'desc'    => __('The symbol for the divider between breadcrumb links. (default: >)', $this->prefix),
-				'id'            => $this->prefix . '_nav_breadcrumb_divider_symbol',
-				'type'             => 'text_small',
-				'default'          => '>',
-				'attributes'			 => array(
-					'data-default'	 => '>',
-				),
-		));
-		$cmb->add_field(array(
-				'name' => __('Breadcrumb Font Size', $this->prefix),
-				'desc'    => __('The font size for breadcrumb links. (default: 0.75rem)', $this->prefix),
-				'id'            => $this->prefix . '_nav_breadcrumb_font_size',
-				'type'             => 'text_small',
-				'default'          => '0.75rem',
-				'attributes'			 => array(
-					'data-default'	 => '0.75rem',
-				),
-		));
-		$cmb->add_field(array(
-				'name' => __('Breadcrumb Font Uppercase', $this->prefix),
-				'desc' => __('Choose the case of the breadcrumb links.  (default = uppercase)', $this->prefix),
-				'id'   => $this->prefix . '_nav_breadcrumb_font_uppercase',
-				'type'    => 'select',
-				'default' => 'uppercase',
-				'options' => array(
-						'uppercase' => 'Uppercase',
-						'lowercase' => 'Lowercase',
-						'none' => 'Default'
-				),
-				'attributes' => array(
-						'data-default' => 'uppercase'
-				),
-				'after_row' => '</div></li>'
-		));
-		$cmb->add_field(array(
-				'before_row'  => '<li class="accordion-item" data-accordion-item>
-						<a href="#panel-nav-top" role="tab" class="accordion-title" id="panel-nav-top-heading" aria-controls="panel-nav-top">
-							<h6>Topbar</h6>
-						</a>
-						<div id="panel-nav-top" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-nav-top-heading">',
-				'name' => __('Topbar Padding', $this->prefix),
-				'desc'    => __('Space around the top menu bar. (default: 0rem)', $this->prefix),
-				'id'            => $this->prefix . '_nav_top_padding',
-				'type'    => 'text_small',
-				'default' => '0rem',
-				'attributes'			 => array(
-					'data-default'	 => '0rem'
-				),
-		));
-		$cmb->add_field(array(
-				'name' => __('Topbar Background Color', $this->prefix),
-				'desc'    => __('Background color of the top menu bar. (default: #5c6bc0)', $this->prefix),
-				'id'            => $this->prefix . '_nav_top_background_color',
-				'type'    => 'colorpicker',
-				'default' => '#5c6bc0',
-				'attributes'			 => array(
-					'data-default'	 => '#5c6bc0'
-				),
-		));
-		$cmb->add_field(array(
-				'name' => __('Topbar Item Background Color', $this->prefix),
-				'desc'    => __('Background color of the topbar menu items. (default: #5c6bc0)', $this->prefix),
-				'id'            => $this->prefix . '_nav_top_item_background_color',
-				'type'    => 'colorpicker',
-				'default' => '#5c6bc0',
-				'attributes'			 => array(
-					'data-default'	 => '#5c6bc0'
-				),
-				'after_row' => '</div></li></ul>'
-		));
-				array_push($this->option_names, $cmb);
+			// hook in our save notices
+			add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-nav", array( $this, 'settings_notices' ), 10, 2);
+			$cmb = new_cmb2_box(array(
+					'id'         => $this->metabox_id . '-nav',
+					'hookup'     => false,
+					'cmb_styles' => false,
+					'show_on'    => array(
+							// These are important, don't remove
+							'key'   => 'options-page',
+							'value' => array( $this->key . "-nav", )
+					),
+			));
+			solwp_add_nav_settings( $cmb, 'solwp' );
+			array_push($this->option_names, $cmb);
     }
 
     /**
@@ -803,34 +369,34 @@ class SolWP_Settings
      */
     function add_options_page_colors_metabox()
     {
-        // hook in our save notices
-        add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-colors", array( $this, 'settings_notices' ), 10, 2);
-        $cmb = new_cmb2_box(array(
-            'id'         => $this->metabox_id . '-colors',
-            'hookup'     => false,
-            'cmb_styles' => false,
-            'show_on'    => array(
-                // These are important, don't remove
-                'key'   => 'options-page',
-                'value' => array( $this->key . "-colors", )
-            ),
-        ));
-        // Set our CMB2 fields
-        $cmb->add_field(array(
-            'name' => __('Colors test', $this->prefix),
-            'desc' => __('field description (optional)', $this->prefix),
-            'id'   => 'colors_test_text',
-            'type' => 'text',
-            'default' => 'Default Text'
-        ));
-        $cmb->add_field(array(
-            'name'    => __('Test Color Picker', $this->prefix),
-            'desc'    => __('field description (optional)', $this->prefix),
-            'id'      => 'colors_est_colorpicker',
-            'type'    => 'colorpicker',
-            'default' => '#bada55',
-        ));
-        array_push($this->option_names, $cmb);
+      // hook in our save notices
+      add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-colors", array( $this, 'settings_notices' ), 10, 2);
+      $cmb = new_cmb2_box(array(
+          'id'         => $this->metabox_id . '-colors',
+          'hookup'     => false,
+          'cmb_styles' => false,
+          'show_on'    => array(
+              // These are important, don't remove
+              'key'   => 'options-page',
+              'value' => array( $this->key . "-colors", )
+          ),
+      ));
+      // Set our CMB2 fields
+      $cmb->add_field(array(
+          'name' => __('Colors test', $this->prefix),
+          'desc' => __('field description (optional)', $this->prefix),
+          'id'   => 'colors_test_text',
+          'type' => 'text',
+          'default' => 'Default Text'
+      ));
+      $cmb->add_field(array(
+          'name'    => __('Test Color Picker', $this->prefix),
+          'desc'    => __('field description (optional)', $this->prefix),
+          'id'      => 'colors_est_colorpicker',
+          'type'    => 'colorpicker',
+          'default' => '#bada55',
+      ));
+      array_push($this->option_names, $cmb);
     }
 
     /**
@@ -839,34 +405,34 @@ class SolWP_Settings
      */
     function add_options_page_posts_metabox()
     {
-        // hook in our save notices
-        add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-posts", array( $this, 'settings_notices' ), 10, 2);
-        $cmb = new_cmb2_box(array(
-            'id'         => $this->metabox_id . '-posts',
-            'hookup'     => false,
-            'cmb_styles' => false,
-            'show_on'    => array(
-                // These are important, don't remove
-                'key'   => 'options-page',
-                'value' => array( $this->key . "-posts", )
-            ),
-        ));
-        // Set our CMB2 fields
-        $cmb->add_field(array(
-            'name' => __('Posts Text', $this->prefix),
-            'desc' => __('field description (optional)', $this->prefix),
-            'id'   => 'posts_test_text',
-            'type' => 'text',
-            'default' => 'Default Text'
-        ));
-        $cmb->add_field(array(
-            'name'    => __('Test Color Picker', $this->prefix),
-            'desc'    => __('field description (optional)', $this->prefix),
-            'id'      => 'posts_test_colorpicker',
-            'type'    => 'colorpicker',
-            'default' => '#bada55',
-        ));
-        array_push($this->option_names, $cmb);
+      // hook in our save notices
+      add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-posts", array( $this, 'settings_notices' ), 10, 2);
+      $cmb = new_cmb2_box(array(
+          'id'         => $this->metabox_id . '-posts',
+          'hookup'     => false,
+          'cmb_styles' => false,
+          'show_on'    => array(
+              // These are important, don't remove
+              'key'   => 'options-page',
+              'value' => array( $this->key . "-posts", )
+          ),
+      ));
+      // Set our CMB2 fields
+      $cmb->add_field(array(
+          'name' => __('Posts Text', $this->prefix),
+          'desc' => __('field description (optional)', $this->prefix),
+          'id'   => 'posts_test_text',
+          'type' => 'text',
+          'default' => 'Default Text'
+      ));
+      $cmb->add_field(array(
+          'name'    => __('Test Color Picker', $this->prefix),
+          'desc'    => __('field description (optional)', $this->prefix),
+          'id'      => 'posts_test_colorpicker',
+          'type'    => 'colorpicker',
+          'default' => '#bada55',
+      ));
+      array_push($this->option_names, $cmb);
     }
 
     /**
@@ -875,53 +441,53 @@ class SolWP_Settings
      */
     function add_options_page_layout_metabox()
     {
-        // hook in our save notices
-        add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-layout", array( $this, 'settings_notices' ), 10, 2);
-        $cmb = new_cmb2_box(array(
-            'id'         => $this->metabox_id . '-layout',
-            'hookup'     => false,
-            'cmb_styles' => false,
-            'show_on'    => array(
-                // These are important, don't remove
-                'key'   => 'options-page',
-                'value' => array( $this->key . "-layout", )
-            ),
-        ));
-        // Set our CMB2 fields
-        $cmb->add_field(array(
-                    'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
-														<li class="accordion-item" data-accordion-item>
-															<a href="#panel-layout-grid" role="tab" class="accordion-title" id="panel-layout-grid-heading" aria-controls="panel-layout-grid">
-																<h6>The Grid</h6>
-															</a>
-															<div id="panel-layout-grid" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-layout-grid-heading">',
-          'name' => __('Grid column count', $this->prefix),
-          'desc' => __('Set the grid for tablet devices in the vertical layout (default = 640px)', $this->prefix),
-          'id'   => $this->prefix . '_layout_grid_tablet_vertical',
-          'type' => 'text_small',
-          'default' => '640px'
-        ));
-        $cmb->add_field(array(
-                    'name' => __('Tablet Horizontal Breakpoint', $this->prefix),
-                    'desc' => __('Set the grid for tablet devices in the vertical layout (default = 1024px)', $this->prefix),
-                    'id'   => $this->prefix . '_layout_grid_tablet_horizontal',
-                    'type' => 'text_small',
-                    'default' => '1024px'
-        ));
-        $cmb->add_field(array(
-                    'name' => __('Desktop Breakpoint', $this->prefix),
-                    'desc' => __('Set the grid for desktop devices (default = 1200px)', $this->prefix),
-                    'id'   => $this->prefix . '_layout_grid_desktop',
-                    'type'    => 'select',
-                    'default' => 'color',
-                    'options' => array(
-                        '300' => 'Color',
-                        '500' => 'Image',
-                        '700' => 'Video'
-                    ),
-                    'after_row' => '</div></li></ul>'
-        ));
-				array_push($this->option_names, $cmb);
+      // hook in our save notices
+      add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-layout", array( $this, 'settings_notices' ), 10, 2);
+      $cmb = new_cmb2_box(array(
+          'id'         => $this->metabox_id . '-layout',
+          'hookup'     => false,
+          'cmb_styles' => false,
+          'show_on'    => array(
+              // These are important, don't remove
+              'key'   => 'options-page',
+              'value' => array( $this->key . "-layout", )
+          ),
+      ));
+      // Set our CMB2 fields
+      $cmb->add_field(array(
+                  'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
+													<li class="accordion-item" data-accordion-item>
+														<a href="#panel-layout-grid" role="tab" class="accordion-title" id="panel-layout-grid-heading" aria-controls="panel-layout-grid">
+															<h6>The Grid</h6>
+														</a>
+														<div id="panel-layout-grid" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-layout-grid-heading">',
+        'name' => __('Grid column count', $this->prefix),
+        'desc' => __('Set the grid for tablet devices in the vertical layout (default = 640px)', $this->prefix),
+        'id'   => $this->prefix . '_layout_grid_tablet_vertical',
+        'type' => 'text_small',
+        'default' => '640px'
+      ));
+      $cmb->add_field(array(
+                  'name' => __('Tablet Horizontal Breakpoint', $this->prefix),
+                  'desc' => __('Set the grid for tablet devices in the vertical layout (default = 1024px)', $this->prefix),
+                  'id'   => $this->prefix . '_layout_grid_tablet_horizontal',
+                  'type' => 'text_small',
+                  'default' => '1024px'
+      ));
+      $cmb->add_field(array(
+                  'name' => __('Desktop Breakpoint', $this->prefix),
+                  'desc' => __('Set the grid for desktop devices (default = 1200px)', $this->prefix),
+                  'id'   => $this->prefix . '_layout_grid_desktop',
+                  'type'    => 'select',
+                  'default' => 'color',
+                  'options' => array(
+                      '300' => 'Color',
+                      '500' => 'Image',
+                      '700' => 'Video'
+                  ),
+                  'after_row' => '</div></li></ul>'
+      ));
+			array_push($this->option_names, $cmb);
     }
 
     /**
@@ -942,457 +508,7 @@ class SolWP_Settings
                 'value' => array( $this->key . "-typo", )
             ),
         ));
-        // Set our CMB2 fields
-        $cmb->add_field(array(
-            'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
-								<li class="accordion-item" data-accordion-item>
-									<a href="#panel-typo-base" role="tab" class="accordion-title" id="panel-typo-base-heading" aria-controls="panel-typo-base">
-										<h6>Header Typography</h6>
-									</a>
-									<div id="panel-typo-base" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-typ-base-heading">',
-            'name' => __('Header Font Family', $this->prefix),
-            'desc'    => __('Font family for header elements h1, h2, and h3. (default: Josefin Sans)', $this->prefix),
-            'id'            => $this->prefix . '_typo_header_family',
-            'type'             => 'select',
-            'show_option_none' => false,
-            'default'          => 'Josefin Sans',
-            'options_cb'       => array($this, 'solwp_google_fonts'),
-						'attributes'			 => array(
-							'data-default'	 => 'Josefin Sans'
-						),
-        ));
-        $cmb->add_field(array(
-            'name' => __('Header Font Weight', $this->prefix),
-            'desc' => __('Set the weight of the header font (default = 300)', $this->prefix),
-            'id'   => $this->prefix . '_typo_header_weight',
-            'type'    => 'select',
-            'default' => '300',
-            'options' => array(
-                '100' => '100',
-                '200' => '200',
-                '300' => '300',
-                '400' => '400',
-                '500' => '500',
-                '600' => '600',
-                '700' => '700'
-            ),
-						'attributes'			 => array(
-							'data-default'	 => '300'
-						),
-        ));
-        $cmb->add_field(array(
-            'name' => __('Sub-Header Font Family', $this->prefix),
-            'desc'    => __('Font family for header elements h4, h5, h6 (default: Archivo Narrow)', $this->prefix),
-            'id'            => $this->prefix . '_typo_sub_header_family',
-            'type'             => 'select',
-            'show_option_none' => false,
-            'default'          => 'Archivo Narrow',
-            'options_cb'       => array($this, 'solwp_google_fonts'),
-						'attributes'			 => array(
-							'data-default'	 => 'Archivo Narrow',
-						),
-        ));
-        $cmb->add_field(array(
-            'name' => __('Sub-Header Font Weight', $this->prefix),
-            'desc' => __('Set the font weight for h4, h5, and h6 (default = 700)', $this->prefix),
-            'id'   => $this->prefix . '_typo_sub_header_weight',
-            'type'    => 'select',
-            'default' => '700',
-            'options' => array(
-                '100' => '100',
-                '200' => '200',
-                '300' => '300',
-                '400' => '400',
-                '500' => '500',
-                '600' => '600',
-                '700' => '700'
-            ),
-						'attributes'			 => array(
-							'data-default'	 => '700'
-						),
-        ));
-        $cmb->add_field(array(
-            'name' => __('Header Line Height', $this->prefix),
-            'desc' => __('Set the line height of the header text (default = 1.4)', $this->prefix),
-            'id'   => $this->prefix . '_typo_header_line_height',
-            'type'    => 'text_small',
-            'default' => '1.4',
-						'attributes'			 => array(
-							'data-default'	 => '1.4'
-						),
-        ));
-        $cmb->add_field(array(
-            'name' => __('Header Margin Bottom', $this->prefix),
-            'desc' => __('Space below each header element (default = 0.65rem)', $this->prefix),
-            'id'   => $this->prefix . '_typo_header_margin_bottom',
-            'type'    => 'text_small',
-            'default' => '0.65rem',
-						'attributes'			 => array(
-							'data-default'	 => '0.65rem'
-						),
-            'after_row' => '</div></li>'
-        ));
-        $cmb->add_field(array(
-            'before_row'  => '<li class="accordion-item" data-accordion-item>
-										<a href="#panel-typo-headers" role="tab" class="accordion-title" id="panel-typo-headers-heading" aria-controls="panel-typo-headers">
-											<h6>Individual Header Settings</h6>
-										</a>
-										<div id="panel-typo-headers" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-typo-headers-heading">',
-            'name' => __('H1 Font Size', $this->prefix),
-            'desc' => __('Font size of all h1 elements (default: 1.75rem)', $this->prefix),
-            'id'   => $this->prefix . '_typo_h1_size',
-            'type' => 'text_small',
-            'default' => '1.75rem',
-						'attributes'			 => array(
-							'data-default'	 => '1.75rem'
-						),
-        ));
-        $cmb->add_field(array(
-            'name' => __('H1 Font Color', $this->prefix),
-            'desc' => __('Font color of all h1 elements (default: #f5faff)', $this->prefix),
-            'id'   => $this->prefix . '_typo_h1_color',
-            'type' => 'colorpicker',
-            'default' => '#f5faff',
-						'attributes'			 => array(
-							'data-default'	 => '#f5faff'
-						),
-        ));
-        $cmb->add_field(array(
-            'name' => __('H2 Font Size', $this->prefix),
-            'desc' => __('Font size of all h2 elements (default: 1.5rem)', $this->prefix),
-            'id'   => $this->prefix . '_typo_h2_size',
-            'type' => 'text_small',
-            'default' => '1.5rem',
-						'attributes'			 => array(
-							'data-default'	 => '1.5rem'
-						),
-        ));
-        $cmb->add_field(array(
-            'name' => __('H2 Font Color', $this->prefix),
-            'desc' => __('Font color of all h2 elements (default: #93ddfb)', $this->prefix),
-            'id'   => $this->prefix . '_typo_h2_color',
-            'type' => 'colorpicker',
-            'default' => '#93ddfb',
-						'attributes'			 => array(
-							'data-default'	 => '#93ddfb'
-						),
-        ));
-        $cmb->add_field(array(
-            'name' => __('H3 Font Size', $this->prefix),
-            'desc' => __('Font size of all h3 elements (default: 1.25rem)', $this->prefix),
-            'id'   => $this->prefix . '_typo_h3_size',
-            'type' => 'text_small',
-            'default' => '1.25rem',
-						'attributes'			 => array(
-							'data-default'	 => '1.25rem'
-						)
-        ));
-        $cmb->add_field(array(
-            'name' => __('H3 Font Color', $this->prefix),
-            'desc' => __('Font color of all h3 elements (default: #85b1e0)', $this->prefix),
-            'id'   => $this->prefix . '_typo_h3_color',
-            'type' => 'colorpicker',
-            'default' => '#85b1e0',
-						'attributes'			 => array(
-							'data-default'	 => '#85b1e0'
-						)
-        ));
-        $cmb->add_field(array(
-            'name' => __('H4 Font Size', $this->prefix),
-            'desc' => __('Font size of all h4 elements (default: 1rem)', $this->prefix),
-            'id'   => $this->prefix . '_typo_h4_size',
-            'type' => 'text_small',
-            'default' => '1rem',
-						'attributes'			 => array(
-							'data-default'	 => '1rem'
-						)
-        ));
-        $cmb->add_field(array(
-            'name' => __('H4 Font Color', $this->prefix),
-            'desc' => __('Font color of all h4 elements (default: #9aefea)', $this->prefix),
-            'id'   => $this->prefix . '_typo_h4_color',
-            'type' => 'colorpicker',
-            'default' => '#9aefea',
-						'attributes'			 => array(
-							'data-default'	 => '#9aefea'
-						)
-        ));
-        $cmb->add_field(array(
-            'name' => __('H5 Font Size', $this->prefix),
-            'desc' => __('Font size of all h5 elements (default: 0.875rem)', $this->prefix),
-            'id'   => $this->prefix . '_typo_h5_size',
-            'type' => 'text_small',
-            'default' => '0.875rem',
-						'attributes'			 => array(
-							'data-default'	 => '0.875rem'
-						)
-        ));
-        $cmb->add_field(array(
-            'name' => __('H5 Font Color', $this->prefix),
-            'desc' => __('Font color of all h5 elements (default: #7e7edd)', $this->prefix),
-            'id'   => $this->prefix . '_typo_h5_color',
-            'type' => 'colorpicker',
-            'default' => '#7e7edd',
-						'attributes'			 => array(
-							'data-default'	 => '#7e7edd'
-						)
-        ));
-        $cmb->add_field(array(
-            'name' => __('H6 Font Size', $this->prefix),
-            'desc' => __('Font size of all h6 elements (default: 0.85rem)', $this->prefix),
-            'id'   => $this->prefix . '_typo_h6_size',
-            'type' => 'text_small',
-            'default' => '0.75rem',
-						'attributes'			 => array(
-							'data-default'	 => '0.75rem'
-						)
-        ));
-        $cmb->add_field(array(
-            'name' => __('H6 Font Color', $this->prefix),
-            'desc' => __('Font color of all h6 elements (default: #99adff)', $this->prefix),
-            'id'   => $this->prefix . '_typo_h6_color',
-            'type' => 'colorpicker',
-            'default' => '#99adff',
-						'attributes'			 => array(
-							'data-default'	 => '#99adff'
-						)
-        ));
-				$cmb->add_field(array(
-            'before_row'  => '<li class="accordion-item" data-accordion-item>
-										<a href="#panel-typo-body" role="tab" class="accordion-title" id="panel-typo-body-heading" aria-controls="panel-typo-body">
-											<h6>Body Typography</h6>
-										</a>
-										<div id="panel-typo-body" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-typo-body-heading">',
-            'name' => __('Small Font Size', $this->prefix),
-            'desc'    => __('Font size for small text like meta info. (default: 80%)', $this->prefix),
-            'id'            => $this->prefix . '_typo_body_small_size',
-            'type'             => 'text_small',
-            'default'          => '80%',
-						'attributes'			 => array(
-							'data-default'	 => '80%'
-						),
-        ));
-				$cmb->add_field(array(
-						'name' => __('Small Font Color', $this->prefix),
-            'desc'    => __('Font color for small text like meta info. (default: #7b829d)', $this->prefix),
-            'id'            => $this->prefix . '_typo_body_small_color',
-            'type'             => 'colorpicker',
-            'default'          => '#7b829d',
-						'attributes'			 => array(
-							'data-default'	 => '#7b829d'
-						),
-        ));
-				$cmb->add_field(array(
-						'name' => __('Paragraph Line Height', $this->prefix),
-						'desc'    => __('Line height for paragraph elements. (default: 1.6)', $this->prefix),
-						'id'            => $this->prefix . '_typo_body_paragraph_line_height',
-						'type'             => 'text_small',
-						'default'          => '1.6',
-						'attributes'			 => array(
-							'data-default'	 => '1.6'
-						),
-				));
-				$cmb->add_field(array(
-						'name' => __('Paragraph Margin Bottom', $this->prefix),
-						'desc'    => __('Extra space below paragraph elements. (default: 1rem)', $this->prefix),
-						'id'            => $this->prefix . '_typo_body_paragraph_margin_bottom',
-						'type'             => 'text_small',
-						'default'          => '1rem',
-						'attributes'			 => array(
-							'data-default'	 => '1rem'
-						),
-				));
-				$cmb->add_field(array(
-						'name' => __('Link Font Color', $this->prefix),
-						'desc'    => __('Font color of all links. (default: #5274ff)', $this->prefix),
-						'id'            => $this->prefix . '_typo_body_link_font_color',
-						'type'             => 'colorpicker',
-						'default'          => '#5274ff',
-						'attributes'			 => array(
-							'data-default'	 => '#5274ff'
-						),
-				));
-				$cmb->add_field(array(
-						'name' => __('Link Hover Font Color', $this->prefix),
-						'desc'    => __('Hover color for all links. (default: #5c6bc0)', $this->prefix),
-						'id'            => $this->prefix . '_typo_body_link_hover_font_color',
-						'type'             => 'colorpicker',
-						'default'          => '#5c6bc0',
-						'attributes'			 => array(
-							'data-default'	 => '#5c6bc0'
-						),
-				));
-				$cmb->add_field(array(
-						'name' => __('Link Font Decoration', $this->prefix),
-						'desc'    => __('Font decoration for all links. (default: none)', $this->prefix),
-						'id'            => $this->prefix . '_typo_body_link_font_decoration',
-						'type'    => 'select',
-						'default' => 'none',
-						'options' => array(
-								'none' 					=> 'none',
-								'underline' 		=> 'underline',
-								'overline' 			=> 'overline',
-								'line-through' 	=> 'line-through',
-						),
-						'attributes'			 => array(
-							'data-default'	 => 'none'
-						),
-				));
-				$cmb->add_field(array(
-					'name' => __('Link Hover Font Decoration', $this->prefix),
-					'desc'    => __('Font decoration for all hovered links. (default: none)', $this->prefix),
-					'id'            => $this->prefix . '_typo_body_link_hover_font_decoration',
-					'type'    => 'select',
-					'default' => 'none',
-					'options' => array(
-							'none' 					=> 'none',
-							'underline' 		=> 'underline',
-							'overline' 			=> 'overline',
-							'line-through' 	=> 'line-through',
-					),
-					'attributes'			 => array(
-						'data-default'	 => 'none'
-					),
-					'after_row' => '</div></li>'
-				));
-				$cmb->add_field(array(
-						'before_row'  => '<li class="accordion-item" data-accordion-item>
-									<a href="#panel-typo-hr" role="tab" class="accordion-title" id="panel-typo-hr-heading" aria-controls="panel-typo-hr">
-										<h6>Horizontal Lines</h6>
-									</a>
-									<div id="panel-typo-hr" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-typo-hr-heading">',
-						'name' => __('Horizontal Line Width', $this->prefix),
-						'desc'    => __('Width of horizontal line used to separate elements. (default: 1200px)', $this->prefix),
-						'id'            => $this->prefix . '_typo_body_hr_width',
-						'type'    => 'text_small',
-						'default' => '1200px',
-						'attributes'			 => array(
-							'data-default'	 => '1200px'
-						),
-				));
-				$cmb->add_field(array(
-						'name' => __('Horizontal Line Thickness', $this->prefix),
-						'desc'    => __('Thickness of horizontal line used to separate elements. (default: 1px)', $this->prefix),
-						'id'            => $this->prefix . '_typo_body_hr_thickness',
-						'type'    => 'text_small',
-						'default' => '1px',
-						'attributes'			 => array(
-							'data-default'	 => '1px'
-						),
-				));
-				$cmb->add_field(array(
-						'name' => __('Horizontal Line Style', $this->prefix),
-						'desc'    => __('Style of horizontal line used to separate body elements. (default: solid)', $this->prefix),
-						'id'            => $this->prefix . '_typo_body_hr_style',
-						'type'    => 'select',
-						'default' => 'solid',
-						'options' => array(
-							'solid' 		=> 'Solid',
-							'dotted'		=> 'Dotted',
-							'dashed'		=> 'Dashed',
-							'double'    => 'Double',
-							'groove'		=> 'Groove',
-							'ridge'			=> 'Ridge',
-							'inset'			=> 'Inset',
-							'outset'		=> 'Outset',
-						),
-						'attributes'			 => array(
-							'data-default'	 => 'solid'
-						),
-				));
-				$cmb->add_field(array(
-						'name' => __('Horizontal Line Color', $this->prefix),
-						'desc'    => __('Color of horizontal line used to separate elements. (default: #7b829d)', $this->prefix),
-						'id'            => $this->prefix . '_typo_body_hr_color',
-						'type'    => 'colorpicker',
-						'default' => '#7b829d',
-						'attributes'			 => array(
-							'data-default'	 => '#7b829d'
-						),
-				));
-				$cmb->add_field(array(
-						'name' => __('Horizontal Line Margin', $this->prefix),
-						'desc'    => __('Space above and below horizontal lines. (default: 1.6rem)', $this->prefix),
-						'id'            => $this->prefix . '_typo_body_hr_margin',
-						'type'    => 'text_small',
-						'default' => '1.6rem',
-						'attributes'			 => array(
-							'data-default'	 => '1.6rem'
-						),
-						'after_row' => '</div></li>'
-				));
-				$cmb->add_field(array(
-						'before_row'  => '<li class="accordion-item" data-accordion-item>
-								<a href="#panel-typo-list" role="tab" class="accordion-title" id="panel-typo-list-heading" aria-controls="panel-typo-list">
-									<h6>Lists</h6>
-								</a>
-								<div id="panel-typo-list" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-typo-list-heading">',
-						'name' => __('List Line height', $this->prefix),
-						'desc'    => __('Line height of all list elements. (default: 1.6)', $this->prefix),
-						'id'            => $this->prefix . '_typo_list_line_height',
-						'type'    => 'text_small',
-						'default' => '1.6',
-						'attributes'			 => array(
-							'data-default'	 => '1.6'
-						),
-				));
-				$cmb->add_field(array(
-						'name' => __('List Margin Bottom', $this->prefix),
-						'desc'    => __('Space below all list elements. (default: 1rem)', $this->prefix),
-						'id'            => $this->prefix . '_typo_list_margin_bottom',
-						'type'    => 'text_small',
-						'default' => '1rem',
-						'attributes'			 => array(
-							'data-default'	 => '1rem'
-						),
-				));
-				$cmb->add_field(array(
-						'name' => __('List Style Type', $this->prefix),
-						'desc'    => __('Style of list item markers. (default: disc)', $this->prefix),
-						'id'            => $this->prefix . '_typo_list_style_type',
-						'type'    => 'select',
-						'default' => 'disc',
-						'options' => array(
-							'disc' 					=> 'Disc',
-							'circle	'				=> 'Circle',
-							'square'				=> 'Square',
-							'decimal'   	  => 'Number',
-							'lower-alpha'		=> 'Lowercase Letters',
-							'lower-roman'		=> 'Lowercase Roman Numerals',
-							'upper-alpha'		=> 'Uppercase Letters',
-							'upper-roman'		=> 'Uppercase Roman Numerals',
-							'none'					=> 'None'
-						),
-						'attributes'			 => array(
-							'data-default'	 => 'disc'
-						),
-				));
-				$cmb->add_field(array(
-						'name' => __('List Style Position', $this->prefix),
-						'desc'    => __('Position of list item markers. (default: outside)', $this->prefix),
-						'id'            => $this->prefix . '_typo_list_style_position',
-						'type'    => 'select',
-						'default' => 'outside',
-						'options' => array(
-							'outside' 			=> 'Outside',
-							'inside	'				=> 'Inside'
-						),
-						'attributes'			 => array(
-							'data-default'	 => 'outside'
-						),
-				));
-				$cmb->add_field(array(
-						'name' => __('List Margin left', $this->prefix),
-						'desc'    => __('Space left of list elements. (default: 1.25rem)', $this->prefix),
-						'id'            => $this->prefix . '_typo_list_margin_left',
-						'type'    => 'text_small',
-						'default' => '1.25rem',
-						'attributes'			 => array(
-							'data-default'	 => '1.25rem'
-						),
-						'after_row' => '</div></li></ul>'
-				));
-
+				solwp_add_typo_settings( $cmb, 'solwp' );
         array_push($this->option_names, $cmb);
     }
 
@@ -1403,53 +519,19 @@ class SolWP_Settings
     function add_options_page_obj_metabox()
     {
         // hook in our save notices
-        add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-obj", array( $this, 'settings_notices' ), 10, 2);
-        $cmb = new_cmb2_box(array(
-            'id'         => $this->metabox_id . '-obj',
-            'hookup'     => false,
-            'cmb_styles' => false,
-            'show_on'    => array(
-                // These are important, don't remove
-                'key'   => 'options-page',
-                'value' => array( $this->key . "-obj", )
-            ),
-        ));
-        // Set our CMB2 fields
-        $cmb->add_field(array(
-            'name' => __('Object Text', $this->prefix),
-            'desc' => __('field description (optional)', $this->prefix),
-            'id'   => 'test_text',
-            'type' => 'text',
-            'default' => 'Default Text'
-        ));
-        $cmb->add_field(array(
-            'name'    => __('Test Color Picker', $this->prefix),
-            'desc'    => __('field description (optional)', $this->prefix),
-            'id'      => 'test_colorpicker',
-            'type'    => 'colorpicker',
-            'default' => '#bada55',
-        ));
-
-                array_push($this->option_names, $cmb);
-    }
-
-    /**
-     * Gets a list of google fonts for font settings
-     *
-     * @since  0.1.0
-     * @return $options array of fonts
-     */
-    public function solwp_google_fonts()
-    {
-        $json_google_fonts = file_get_contents(get_template_directory_uri() . '/assets/fonts/google-fonts.json');
-        $jgf = json_decode($json_google_fonts);
-        $options = array();
-
-        foreach ($jgf->items as $gfont) {
-            $options[ str_replace('/s', '+', $gfont->family) ] = $gfont->family;
-        }
-        array_shift($options);
-        return $options;
+				add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-obj", array( $this, 'settings_notices' ), 10, 2);
+				$cmb = new_cmb2_box(array(
+						'id'         => $this->metabox_id . '-obj',
+						'hookup'     => false,
+						'cmb_styles' => false,
+						'show_on'    => array(
+								// These are important, don't remove
+								'key'   => 'options-page',
+								'value' => array( $this->key . "-obj", )
+						),
+				));
+				solwp_add_obj_settings( $cmb, 'solwp' );
+        array_push($this->option_names, $cmb);
     }
 
     /**
