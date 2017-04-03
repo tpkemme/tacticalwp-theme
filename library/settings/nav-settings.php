@@ -243,20 +243,6 @@
           ),
       ));
       $cmb->add_field(array(
-          'name' => __('Topbar Menu Shadow', $prefix),
-          'desc'    => __('Whether or not to show a shadow on the topbar menu. (default: Show)', $prefix),
-          'id'            => $prefix . '_nav_top_menu_shadow',
-          'type'    => 'radio_inline',
-          'options' => array(
-            'show' => __( 'Show', 'solwp' ),
-            'hide'   => __( 'Hide', 'solwp' ),
-          ),
-          'default' => 'show',
-          'attributes'			 => array(
-            'data-default'	 => 'show'
-          ),
-      ));
-      $cmb->add_field(array(
           'name' => __('Topbar Menu Alignment', $prefix),
           'desc'    => __('Alignment of the topbar menu. (default: Left)', $prefix),
           'id'            => $prefix . '_nav_top_menu_alignment',
@@ -292,7 +278,7 @@
       ));
       $cmb->add_field(array(
           'name' => __('Search Button Color', $prefix),
-          'desc'    => __('Color of the search button in the topbar. (default: show)', $prefix),
+          'desc'    => __('Color of the search button in the topbar. (default: #5274ff)', $prefix),
           'id'            => $prefix . '_nav_top_search_button_color',
           'type'    => 'colorpicker',
           'default' => '#5274ff',
@@ -311,13 +297,23 @@
           ),
       ));
       $cmb->add_field(array(
-          'name' => __('Search Button Text', $prefix),
-          'desc'    => __('Text of the search button in the topbar. (default: Search)', $prefix),
-          'id'            => $prefix . '_nav_top_search_button_text',
-          'type'    => 'text_medium',
-          'default' => 'Search',
+          'name' => __('Search Button Text Color', $prefix),
+          'desc'    => __('Color of the search button text in the topbar. (default: #333333)', $prefix),
+          'id'            => $prefix . '_nav_top_search_button_text_color',
+          'type'    => 'colorpicker',
+          'default' => '#333333',
           'attributes'			 => array(
-            'data-default'	 => 'Search'
+            'data-default'	 => '#333333'
+          ),
+      ));
+      $cmb->add_field(array(
+          'name' => __('Search Button Text Hover Color', $prefix),
+          'desc'    => __('Hover color of the search button text in the topbar. (default: #444444)', $prefix),
+          'id'            => $prefix . '_nav_top_search_button_text_hover_color',
+          'type'    => 'colorpicker',
+          'default' => '#444444',
+          'attributes'			 => array(
+            'data-default'	 => '#444444'
           ),
       ));
       $cmb->add_field(array(
@@ -368,6 +364,20 @@
 					),
 					'options_cb'       => 'solwp_google_fonts',
       ));
+			$cmb->add_field(array(
+					'name' => __('Title Background Shadow', $prefix),
+					'desc'    => __('Whether or not to show a shadow on the title and/or logo. (default: Show)', $prefix),
+					'id'            => $prefix . '_nav_top_title_shadow',
+					'type'    => 'radio_inline',
+					'options' => array(
+						'show' => __( 'Show', 'solwp' ),
+						'hide'   => __( 'Hide', 'solwp' ),
+					),
+					'default' => 'show',
+					'attributes'			 => array(
+						'data-default'	 => 'show'
+					),
+			));
 			$cmb->add_field(array(
 					'name' => __('Logo Image', $prefix),
 											'desc'    => __('Logo image for topbar, as url or image. (no default)', $prefix),

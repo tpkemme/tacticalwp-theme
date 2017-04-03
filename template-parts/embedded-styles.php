@@ -7,6 +7,35 @@
  */
 ?>
 <style>
+
+/* Font Faces */
+
+<?php
+// Only enqueue Google Font families if they're being used
+$families = array();
+$global_family	  = 	solwp_get_option( 'solwp_global_font_family' );
+$header_family	  = 	solwp_get_option( 'solwp_typo_header_family' );
+$subheader_family = 	solwp_get_option( 'solwp_typo_sub_header_family' );
+$title_family 		= 	solwp_get_option( 'solwp_nav_title_font_family' );
+$menu_family 			= 	solwp_get_option( 'solwp_nav_top_item_font_family' );
+if( !in_array($global_family, 	 $families)) array_push( $families , $global_family );
+if( !in_array($header_family, 	 $families)) array_push( $families , $header_family );
+if( !in_array($subheader_family, $families)) array_push( $families , $subheader_family );
+if( !in_array($title_family, 	   $families)) array_push( $families , $title_family );
+if( !in_array($menu_family,	     $families)) array_push( $families , $menu_family );
+foreach( $families as $family ){
+	$variants = solwp_google_fonts_src( $family );
+	$variants_string = '';
+	foreach( $variants as $variant){
+		$variants_string .=  $variant . ',';
+	}
+	$fontUrl = substr( $family . ':' . $variants_string, 0, -1);
+	?>
+	@import url('https://fonts.googleapis.com/css?family=<?php echo $fontUrl; ?>');
+	<?php
+}
+
+?>
 /*
 	Global Font Size
 	================================
@@ -164,7 +193,7 @@ input.is-invalid-input::placeholder, textarea::placeholder{
 .alert, .disabled.alert, .disabled.alert:hover,
 .disabled.alert:focus, [disabled].alert, [disabled].alert:hover,
 [disabled].alert:focus, .label.alert, .button-group.alert,
-.progress.alert .progress-meter, .callout.alert, .button.alert,
+.progress.alert .progress-meter,
 button.button[type="reset"] {
 	background-color: <?php solwp( 'global_alert_color' ) ?>;
 	color: <?php solwp( 'global_white_color' ) ?>; }
@@ -233,10 +262,10 @@ textarea{
 	================================
 */
 .orbit-bullets button{
- background-color: <?php solwp( 'global_medium_gray_color' ) ?>;
+	background-color: <?php solwp( 'global_medium_gray_color' ) ?>;
 }
 .switch-paddle{
- background: <?php solwp( 'global_medium_gray_color' ) ?>;
+	background: <?php solwp( 'global_medium_gray_color' ) ?>;
 }
 h1 small, h2 small, h3 small,
 h4 small, h5 small, h6 small,
@@ -245,13 +274,13 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder,
 input::placeholder, textarea::placeholder,
 .breadcrumbs li:not(:last-child)::after, .breadcrumbs .disabled,
 .pagination .disabled {
- color: <?php solwp( 'global_medium_gray_color' ) ?>;
+	color: <?php solwp( 'global_medium_gray_color' ) ?>;
 }
 hr{
- border-bottom: 1px solid <?php solwp( 'global_medium_gray_color' ) ?>;
+	border-bottom: 1px solid <?php solwp( 'global_medium_gray_color' ) ?>;
 }
 blockquote {
- border-left: 1px solid <?php solwp( 'global_medium_gray_color' ) ?>;
+	border-left: 1px solid <?php solwp( 'global_medium_gray_color' ) ?>;
 }
 [type='text'], [type='password'], [type='date'],
 [type='datetime'], [type='datetime-local'], [type='month'],
@@ -259,20 +288,20 @@ blockquote {
 [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
 textarea, .input-group-label, .fieldset, select, .dropdown-pane,
 .is-dropdown-submenu, .reveal {
- border: 1px solid <?php solwp( 'global_medium_gray_color' ) ?>;
+	border: 1px solid <?php solwp( 'global_medium_gray_color' ) ?>;
 }
 [type='text']:focus, [type='password']:focus, [type='date']:focus,
 [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus,
 [type='week']:focus, [type='email']:focus, [type='number']:focus,
 [type='search']:focus, [type='tel']:focus, [type='time']:focus,
 [type='url']:focus, [type='color']:focus, textarea:focus, select:focus {
- -webkit-box-shadow: 0 0 5px <?php solwp( 'global_medium_gray_color' ) ?>;
+	-webkit-box-shadow: 0 0 5px <?php solwp( 'global_medium_gray_color' ) ?>;
 				 box-shadow: 0 0 5px <?php solwp( 'global_medium_gray_color' ) ?>;
 }
 .menu-icon:hover::after {
- background: <?php solwp( 'global_medium_gray_color' ) ?>;
- -webkit-box-shadow: 0  7px 0 <?php solwp( 'global_medium_gray_color' ) ?>,
-  									 0 14px 0 <?php solwp( 'global_medium_gray_color' ) ?>;
+	background: <?php solwp( 'global_medium_gray_color' ) ?>;
+	-webkit-box-shadow: 0  7px 0 <?php solwp( 'global_medium_gray_color' ) ?>,
+										 0 14px 0 <?php solwp( 'global_medium_gray_color' ) ?>;
 				 box-shadow: 0  7px 0 <?php solwp( 'global_medium_gray_color' ) ?>,
 				  					 0 14px 0 <?php solwp( 'global_medium_gray_color' ) ?>;
 }
@@ -282,7 +311,7 @@ textarea, .input-group-label, .fieldset, select, .dropdown-pane,
  ================================
 */
 blockquote, blockquote p, .subheader, .close-button{
- color: <?php solwp( 'global_dark_gray_color' ) ?>;
+	color: <?php solwp( 'global_dark_gray_color' ) ?>;
 }
 pre, blockquote, [type='text']:focus, [type='password']:focus,
 [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus,
@@ -290,20 +319,20 @@ pre, blockquote, [type='text']:focus, [type='password']:focus,
 [type='number']:focus, [type='search']:focus, [type='tel']:focus,
 [type='time']:focus, [type='url']:focus, [type='color']:focus,
 textarea:focus, select:focus {
- border: 1px solid <?php solwp( 'global_dark_gray_color' ) ?>;
+	border: 1px solid <?php solwp( 'global_dark_gray_color' ) ?>;
 }
 .menu-icon.dark:hover::after {
- background: <?php solwp( 'global_dark_gray_color' ) ?>;
- -webkit-box-shadow: 0  7px 0 <?php solwp( 'global_dark_gray_color' ) ?>,
- 										 0 14px 0 <?php solwp( 'global_dark_gray_color' ) ?>;
+	background: <?php solwp( 'global_dark_gray_color' ) ?>;
+	-webkit-box-shadow: 0  7px 0 <?php solwp( 'global_dark_gray_color' ) ?>,
+											 0 14px 0 <?php solwp( 'global_dark_gray_color' ) ?>;
 				 box-shadow: 0  7px 0 <?php solwp( 'global_dark_gray_color' ) ?>,
 				 						 0 14px 0 <?php solwp( 'global_dark_gray_color' ) ?>;
 }
 .orbit-bullets button:hover, .orbit-bullets button.is-active{
- background-color: <?php solwp( 'global_dark_gray_color' ) ?>;
+	background-color: <?php solwp( 'global_dark_gray_color' ) ?>;
 }
 .has-tip {
- border-bottom: <?php solwp( 'global_dark_gray_color' ) ?>;
+	border-bottom: <?php solwp( 'global_dark_gray_color' ) ?>;
 }
 
 /*
@@ -322,29 +351,29 @@ abbr, body, code, kdb, label, .help-text, .input-group-label, select, .button.su
 .callout.secondary, .callout.success, .callout.warning, .card, .close-button:hover,
 .close-button:focus, .label.success, .label.warning, .pagination button, .pagination .ellipsis::after,
 table thead, table tfoot, .tabs-content{
- color: <?php solwp( 'global_black_color' ) ?>
+	color: <?php solwp( 'global_black_color' ) ?>
 }
 abbr {
- border-bottom: 1px dotted <?php solwp( 'global_black_color' ) ?>;
+	border-bottom: 1px dotted <?php solwp( 'global_black_color' ) ?>;
 }
 .menu-icon.dark::after {
- background: <?php solwp( 'global_black_color' ) ?>;
- -webkit-box-shadow: 0  7px 0 <?php solwp( 'global_black_color' ) ?>,
-  									 0 14px 0 <?php solwp( 'global_black_color' ) ?>;
+	background: <?php solwp( 'global_black_color' ) ?>;
+	-webkit-box-shadow: 0  7px 0 <?php solwp( 'global_black_color' ) ?>,
+										 0 14px 0 <?php solwp( 'global_black_color' ) ?>;
 				 box-shadow: 0  7px 0 <?php solwp( 'global_black_color' ) ?>,
 				 						 0 14px 0 <?php solwp( 'global_black_color' ) ?>;
 }
 .tooltip{
- background-color: <?php solwp( 'global_black_color' ) ?>;
+	background-color: <?php solwp( 'global_black_color' ) ?>;
 }
 .tooltip.top::before {
- border-color: <?php solwp( 'global_black_color' ) ?> transparent transparent;
+	border-color: <?php solwp( 'global_black_color' ) ?> transparent transparent;
 }
 .tooltip.left::before {
- border-color: transparent transparent transparent <?php solwp( 'global_black_color' ) ?>;
+	border-color: transparent transparent transparent <?php solwp( 'global_black_color' ) ?>;
 }
 .tooltip.right::before {
- border-color: transparent <?php solwp( 'global_black_color' ) ?> transparent transparent;
+	border-color: transparent <?php solwp( 'global_black_color' ) ?> transparent transparent;
 }
 
 /*
@@ -352,7 +381,7 @@ abbr {
  ================================
 */
 body, fieldset legend, .accordion, .card, .is-drilldown-submenu, .is-dropdown-submenu {
- color: <?php solwp( 'global_white_color' ) ?>;
+	color: <?php solwp( 'global_white_color' ) ?>;
 }
 [type='text']:focus, [type='password']:focus,
 [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus,
@@ -360,7 +389,7 @@ body, fieldset legend, .accordion, .card, .is-drilldown-submenu, .is-dropdown-su
 [type='number']:focus, [type='search']:focus, [type='tel']:focus,
 [type='time']:focus, [type='url']:focus, [type='color']:focus,
 textarea:focus, select, select:focus, .accordion-content, .dropdown-pane {
- color: <?php solwp( 'global_white_color' ) ?>;
+	color: <?php solwp( 'global_white_color' ) ?>;
 }
 .button:hover, .button:focus, .button.alert, .button.alert:focus,
 .button.alert:hover, .button.primary, .button.primary:hover,
@@ -371,16 +400,16 @@ textarea:focus, select, select:focus, .accordion-content, .dropdown-pane {
 .button[disabled].primary:focus, .badge, .badge.primary, .button-group.primary .button,
 .button-group.primary .button:hover, .button-group.primary .button:focus,
 .menu .active > a {
- color: <?php solwp( 'global_white_color' ) ?>;
+c	olor: <?php solwp( 'global_white_color' ) ?>;
 }
 .button.dropdown::after {
- border-color: <?php solwp( 'global_white_color' ) ?> transparent transparent;
+	border-color: <?php solwp( 'global_white_color' ) ?> transparent transparent;
 }
 .menu-icon::after {
- background: <?php solwp( 'global_white_color' ) ?>;
- -webkit-box-shadow: 0 7px 0 <?php solwp( 'global_white_color' ) ?>, 0 14px 0 <?php solwp( 'global_white_color' ) ?>;
-				 box-shadow: 0 7px 0 <?php solwp( 'global_white_color' ) ?>, 0 14px 0 <?php solwp( 'global_white_color' ) ?>;
-	}
+	 background: <?php solwp( 'global_white_color' ) ?>;
+	 -webkit-box-shadow: 0 7px 0 <?php solwp( 'global_white_color' ) ?>, 0 14px 0 <?php solwp( 'global_white_color' ) ?>;
+	 box-shadow: 0 7px 0 <?php solwp( 'global_white_color' ) ?>, 0 14px 0 <?php solwp( 'global_white_color' ) ?>;
+}
 
 /*
 	Global Background
@@ -504,21 +533,18 @@ font-weight: <?php solwp( 'typo_sub_header_weight' ) ?>;
 font-size: <?php solwp( 'typo_h4_size' ) ?>;
 color: <?php solwp( 'typo_h4_color' ) ?>;
 font-family: <?php '"' . solwp( 'typo_sub_header_family' ) . '"' ?>;
-letter-spacing: 0.05em;
 }
 h5 {
 font-weight: <?php solwp( 'typo_sub_header_weight' ) ?>;
 font-size: <?php solwp( 'typo_h5_size' ) ?>;
 color: <?php solwp( 'typo_h5_color' ) ?>;
 font-family: <?php '"' . solwp( 'typo_sub_header_family' ) . '"' ?>;
-letter-spacing: 0.05em;
 }
 h6 {
 font-weight: <?php solwp( 'typo_sub_header_weight' ) ?>;
 font-size: <?php solwp( 'typo_h6_size' ) ?>;
 color: <?php solwp( 'typo_h6_color' ) ?>;
 font-family: <?php '"' . solwp( 'typo_sub_header_family' ) . '"' ?>;
-letter-spacing: 0.05em;
  }
 @media print, screen and (min-width: 40em) {
  h1 {
@@ -680,34 +706,32 @@ ul ul, ol ul, ul ol, ol ol {
 .top-bar {
   padding: <?php solwp( 'nav_top_padding' ) ?>;
   background: <?php solwp( 'nav_top_background_color') ?>;
-  box-shadow: 0 0.1625rem 0.25rem rgba(0, 0, 0, 0.12), 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.24); }
+  box-shadow: 0 2px 5px rgba(0,0,0,.26), 0 4px 10px rgba(0,0,0,.26); 	}
 .top-bar ul{
 	background: <?php solwp( 'nav_top_item_background_color') ?>; }
-<?php if( solwp_get_option( 'solwp_nav_top_menu_shadow') === 'show' ): ?>
-	<?php if( solwp_get_option( 'solwp_nav_top_menu_alignment') === 'right' ): ?>
-		.top-bar .top-bar-left:not(.top-bar-search) ul{
-			box-shadow: -0.1625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.12), -0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.24); }
-		.top-bar .top-bar-right:not(.top-bar-search) ul{
-			box-shadow: -0.1625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.12), -0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.24); }
-	<?php else: ?>
-		.top-bar .top-bar-left:not(.top-bar-search) ul{
-			box-shadow: 0.1625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.12), 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.24); }
-		.top-bar .top-bar-right:not(.top-bar-search) ul{
-			box-shadow: 0.1625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.12), 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.24); }
-	<?php endif; ?>
+<?php if( solwp_get_option( 'solwp_nav_top_title_shadow') === 'show' ): ?>
+	.top-bar ul.title-bar-title li a{
+		box-shadow: 0px 0px 4px 0px rgba(0,0,0,.26), 1px 0px 8px 0px rgba(0,0,0,.26);
+	 	position: relative;
+		z-index: 999;
+		transition: .2s ease-in-out;}
+	.top-bar ul.title-bar-title li a:hover{
+		box-shadow: 0 0 6px 0px rgba(0,0,0,.26), 1px 0px 12px 0px rgba(0,0,0,.26);
+	 	position: relative;
+		z-index: 999;
+		transform: rotate3d(0%, 50%, 100%); }
 <?php endif; ?>
 .top-bar ul li{
 	border-right: none !important; }
 .top-bar .menu:not(.submenu) a:hover:not(.button){
 	background: <?php solwp( 'nav_top_item_hover_background_color') ?>;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
 	position: relative;
 	z-index: 1; }
 .top-bar ul li.current-menu-item a{
 	border-bottom: .2rem solid <?php solwp( 'global_accent_color') ?> !important;
 	padding-bottom: .8rem; }
 .top-bar ul.submenu li.current-menu-item a{
-	border-right: .2rem solid <?php solwp( 'global_accent_color') ?> !important;
+	border-right: .25rem solid <?php solwp( 'global_accent_color') ?> !important;
 	padding-right: .8rem;
 	border-bottom: none !important;
 	padding-bottom: <?php solwp( 'global_padding_size' ) ?>; }
@@ -722,57 +746,51 @@ ul ul, ol ul, ul ol, ol ol {
 .top-bar ul li a:hover{
   color: <?php solwp( 'nav_top_item_hover_font_color' ) ?>;
 }
+.top-bar .menu > li:not(.menu-text) > a {
+    padding: .85rem;
+}
 
 /* sticky topbar */
 <?php if ( solwp_get_option( 'solwp_nav_top_sticky' ) === 'sticky' ): ?>
-.logged-in .site-header {
-    position: fixed;
-    top: 32px;
-    width: 100vw;
-}
 .site-header {
-    position: fixed;
-    top: 0px;
-    width: 100vw;
-    z-index: 999;
+  position: fixed;
+  top: 32px;
+  width: 100vw;
+  z-index: 888;
 }
 
 .site-header + .container {
-    padding-top: 32px;
+  padding-top: 32px;
 }
 .logged-in .site-header + .container {
-	<?php $p_top = strval( ( floatval( solwp_get_option( 'solwp_nav_top_padding' ) ) + 1.40625 )  * 2.0 ); ?>
+	<?php $p_top = strval( ( floatval( solwp_get_option( 'solwp_nav_top_padding' ) ) + 1 )  * 2.0 ); ?>
 	<?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_nav_top_padding' ) ); ?>
-	padding-top:   <?php echo $p_top . $units ?>;
+	padding-top: <?php echo $p_top . $units ?>;
+}
+@media screen and (max-width: 782px){
+	.logged-in .site-header {
+	  position: fixed;
+	  top: 46px;
+	  width: 100vw;
+	}
+	.site-header + .container {
+    padding-top: 46px;
+	}
 }
 <?php endif; ?>
 
 /* search */
 .top-bar .top-bar-search button {
-    background-color: <?php solwp( 'nav_top_search_button_color' ) ?>;
-}
+  background-color: <?php solwp( 'nav_top_search_button_color' ) ?>;
+  color: <?php solwp( 'nav_top_search_button_text_color' ) ?>; }
 .top-bar .top-bar-search button:hover {
-    background-color: <?php solwp( 'nav_top_search_button_hover_color' ) ?>;
-}
-.top-bar .top-bar-search input {
-  max-width: 200px;
-  margin-right: 0;
-  <?php $p_top = strval( floatval( solwp_get_option( 'solwp_nav_top_padding' ) ) + 1.4 ); ?>
-  <?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_nav_top_padding' ) ); ?>
-  padding:   <?php echo $p_top . $units ?> <?php solwp( 'global_padding_size' ) ?> <?php echo $p_top . $units ?>;
-  border: none;
-  -webkit-box-shadow: inset 0px 0px 3px 1px <?php solwp( 'global_black_color') ?>;
-  -moz-box-shadow: inset 0px 0px 3px 1px <?php solwp( 'global_black_color') ?>;
-  box-shadow: inset 0px 0px 3px 1px <?php solwp( 'global_black_color') ?>; }
-
+  background-color: <?php solwp( 'nav_top_search_button_hover_color' ) ?>;
+	color: <?php solwp( 'nav_top_search_button_text_hover_color' ) ?>; }
 .top-bar .top-bar-search input:focus{
 	border: none; }
 
 .top-bar .top-bar-search button{
-  <?php $p_top = strval( floatval( solwp_get_option( 'solwp_nav_top_padding' ) ) + .9); ?>
-  <?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_nav_top_padding' ) ); ?>
-  padding: <?php echo $p_top . $units ?> <?php solwp( 'global_padding_size' ) ?> <?php echo $p_top . $units ?>;
-}
+	margin-right: <?php solwp( 'global_margin_size' ) ?>; }
 
 .top-bar ul li a,
 .top-bar .menu a{
@@ -780,31 +798,78 @@ ul ul, ol ul, ul ol, ol ol {
   font-family: <?php solwp( 'nav_top_item_font_family' ) ?>;
   font-size: <?php solwp( 'nav_top_item_font_size' ) ?>; }
 .top-bar .menu.desktop-menu {
-    display: inline-flex; }
+  display: inline-flex; }
 
 /* Title bar */
-.title-bar-title li {
+.top-bar ul.title-bar-title li {
 	padding: 0; }
-.title-bar-title li a {
-  height: auto !important;
-	color: <?php solwp( 'nav_title_font_color' ) ?> !important	;
-	font-size: <?php solwp( 'nav_title_font_size' ) ?> !important;
-	padding:  <?php solwp( 'global_padding_size' ) ?> !important;
-	line-height: 0.55 !important; }
-.top-bar .title-bar-title {
-  box-shadow: none !important; }
-.top-bar .title-bar-title:hover {
-	box-shadow: -0.1625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.12), -0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.24) !important; }
+.top-bar ul.title-bar-title li a {
+	height: auto;
+	color: <?php solwp( 'nav_title_font_color' ) ?>	;
+	font-size: <?php solwp( 'nav_title_font_size' ) ?>;
+	padding:  <?php solwp( 'global_padding_size' ) ?>;
+	font-family: <?php solwp( 'nav_title_font_family' ) ?>;
+	line-height: 0.55; }
 
+.top-bar .title-bar-title {
+	box-shadow: none; }
 
 /* Logo */
 .menu > li > a img.site-logo {
-    width: 80px;
-    display: inline-block;
-    margin-right: .25rem;
-    margin-top: -100%;
-    position: relative;
-    transform: translateY(95%); }
+	width: 80px;
+	display: inline-block;
+	margin-right: .25rem;
+	margin-top: -100%;
+	position: relative;
+	transform: translateY(95%); }
+
+/* ===================================================================*/
+/*																																		*/
+/* These are all just plain styles they're supposed to be settings... */
+/* 																																		*/
+/* ===================================================================*/
+.top-bar .top-bar-right:not(.top-bar-search) button:hover,
+.top-bar .top-bar-right:not(.top-bar-search) .button:hover,
+.top-bar .top-bar-right:not(.top-bar-search) .btn:hover{
+	box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+	box-shadow: none;
+	transform: translate(0px, -2px) scale(1.01); }
+.top-bar .top-bar-right.top-bar-search button:hover,
+.top-bar .top-bar-right.top-bar-search .button:hover,
+.top-bar .top-bar-right.top-bar-search .btn:hover{
+	box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+	box-shadow: none;
+	transform: scale(1.01); }
+.top-bar .top-bar-search input {
+  max-width: 200px;
+  margin-right: 1rem;
+  <?php $p_top = strval( floatval( solwp_get_option( 'solwp_nav_top_padding' ) ) + .75 ); ?>
+  <?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_nav_top_padding' ) ); ?>
+  padding:   <?php echo $p_top . $units ?> <?php solwp( 'global_padding_size' ) ?> <?php echo $p_top . $units ?>;
+	//border-radius: 8px;
+	margin-left: -25px;
+	top: -1px;
+	position: relative;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+  border-right-width: 0; }
+
+.top-bar-right.top-bar-search {
+  position: relative;
+  top: 4px; }
+.top-bar-right.top-bar-search button{
+  position: relative;
+  top: -1px; }
+.top-bar .top-bar-search button{
+	//border-radius: 8px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	margin-left: -25px;
+	<?php $p_top = strval( floatval( solwp_get_option( 'solwp_nav_top_padding' ) ) + .725 ); ?>
+  <?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_nav_top_padding' ) ); ?>
+  padding:   <?php echo $p_top . $units ?> <?php solwp( 'global_padding_size' ) ?> <?php echo $p_top . $units ?>;  }
+
+
 /* Object Defaults */
 
 /* Forms */
@@ -823,9 +888,6 @@ ul ul, ol ul, ul ol, ol ol {
 	background-color: <?php solwp( 'obj_form_background_color' ) ?>;
 	border-color: <?php solwp( 'obj_form_border_color' ) ?>;
 	padding: 8px 30px 8px 10px;
-	-webkit-box-shadow: inset 2px 2px 3px 0px <?php solwp( 'global_black_color') ?>;
-	-moz-box-shadow: inset 2px 2px 3px 0px <?php solwp( 'global_black_color') ?>;
-	box-shadow: inset 2px 2px 3px 0px <?php solwp( 'global_black_color') ?>;
 	color: <?php solwp( 'obj_form_input_color' ) ?>;
 }
 [type='text']:focus, [type='password']:focus, [type='date']:focus,
@@ -863,7 +925,7 @@ input::placeholder, textarea::placeholder{
   cursor: pointer;
   position: relative;
   padding-left: 25px;
-  margin-right: <?php solwp( 'global_pmargin_size' ) ?>;
+  margin-right: <?php solwp( 'global_margin_size' ) ?>;
   margin-bottom: <?php solwp( 'global_margin_size' ) ?>;
   line-height: 1.0625rem; }
 
@@ -878,137 +940,88 @@ input::placeholder, textarea::placeholder{
   left: 0;
   bottom: 1px;
   background-color: <?php solwp( 'obj_form_background_color' ) ?>;
-  box-shadow: inset 1px 0px 3px 0px rgba(0, 0, 0, .3), inset 1px 0px 4px -1px rgba(0, 0, 0, .75); }
+  border-radius: 8px; }
 
 [type="radio"] + label[for]:before{
   border-radius: 8px; }
 
 input[type=radio]:checked + label:before {
-    content: "\2022";
-    color: <?php solwp( 'obj_form_input_color' ) ?>;
-    font-size: 30px;
-    text-align: center;
-    line-height: <?php solwp( 'global_padding_size' ) ?>; }
+	content: "\2022";
+	color: <?php solwp( 'obj_form_input_color' ) ?>;
+	font-size: 30px;
+	text-align: center;
+	line-height: <?php solwp( 'global_padding_size' ) ?>; }
 
 input[type=checkbox]:not(.switch-input):checked + label:before {
   content: "\2713";
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
   font-size: 15px;
   color: <?php solwp( 'obj_form_input_color' ) ?>;
   text-align: center;
   line-height: <?php solwp( 'global_padding_size' ) ?>; }
 
 .input-group-label:first-child {
-    border-right: 0;
-    padding: 8px <?php solwp( 'global_padding_size' ) ?>;}
+  border-right: 0;
+  padding: 8px <?php solwp( 'global_padding_size' ) ?>;}
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after{
+	display: none; }
+
+/* ===================================================================*/
+/*																																		*/
+/* These are all just plain styles they're supposed to be settings... */
+/* 																																		*/
+/* ===================================================================*/
+
+/* Box Shadows? */
+.card, button, .button, .btn, section.container button,
+section.container .button, section.container.btn{
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+	box-shadow: none;
+	transition: .2s ease-out; }
+.card:hover, section.container button:hover,
+section.container .button:hover, section.container.btn:hover{
+	box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+	box-shadow: none;
+	transform: translate(0px, -2px) scale(1.01); }
 
 
+/* ===================================================================*/
+/*																																		*/
+/* These are all just plain styles they're supposed to be settings... */
+/* 																																		*/
+/* ===================================================================*/
 
-	 /*
-	 	SolWP Theme Overrides
-		================================
-	  */
+/* Card Styles */
+.card {
+  border: none;
+  border-radius: 15px; }
+.card-divider, .pagination button:hover, .tabs-title > a:focus, .tabs-title > a[aria-selected='true'] {
+  background: #5968d7;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  position: relative; }
+.card {
+  color: #333333;
+  background-color: #ffffff; }
+.card .card-content{
+  padding: 1rem }
 
- 	 /*.card {
- 	     box-shadow: 0 1px 1px rgba(0,0,0,.1) !important;
- 	     margin: 10px 0 !important;
- 	     border-radius: 4px !important;
- 	     display: block !important;
- 	     position: relative !important;
- 	     -webkit-transition: all .15s ease-in-out !important;
- 	     transition: all .15s ease-in-out !important;
- 	     background: #fff !important;
- 	 }
+/* ===================================================================*/
+/*																																		*/
+/* These are all just plain styles they're supposed to be settings... */
+/* 																																		*/
+/* ===================================================================*/
 
- 	 .card:hover {
- 	     box-shadow: 0 4px 20px 0 rgba(168,182,191,.6) !important;
- 	 }
-
- 	 .top-bar{
- 	   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26) !important;
- 	   background-color: #4a5ab9 !important;
- 	   color: white !important;
- 	   font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif  !important;
- 	   font-size: 14px  !important;
- 	   -webkit-font-smoothing: antialiased  !important;
- 	   line-height: 1.42857143  !important;
- 	 }
-
- 	 .top-bar li a{
- 	   background: #4a5ab9;
- 	   color: #fefefe;
- 	 }
-
- 	 .top-bar li a:hover:not(.button){
- 	   background-color: #4a5ab9 !important;
- 	 }
- 	 .top-bar .menu li:not(:last-child){
- 	   border: none !important;
- 	 }
- 	 .top-bar-right .button {
- 	     background: #2c3840;
- 	     top: 3px;
- 	     position: relative;
- 	 }
- 	 .top-bar-right .button:hover {
- 	     background: #607D8B;
- 	     position: relative;
- 	 }
- 	 .top-bar-right input[type="search"]{
- 	     position: relative !important;
- 	     top: 3px !important;
- 	 }
-
- 	 .top-bar ul {
- 	     background-color: #2c3840;
- 	     height: 45px !important;
- 	     position: relative;
- 	 }
-
- 	 .button {
- 	     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
- 	 }
- 	 .button:hover {
- 	     -webkit-transform: translate3d(0,-1px,0);
- 	     transform: translate3d(0,-1px,0);
- 	     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
- 	 }
-
- 	 .progress-meter {
- 	     float: left;
- 	     width: 0;
- 	     height: 100%;
- 	     font-size: 12px;
- 	     line-height: 20px;
- 	     color: #fff;
- 	     text-align: center;
- 	     background-color: #337ab7;
- 	     -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
- 	     box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
- 	     -webkit-transition: width .6s ease;
- 	     -o-transition: width .6s ease;
- 	     transition: width .6s ease;
- 	     animation: progress-bar-stripes 2s linear infinite;
- 	     -webkit-animation: progress-bar-stripes 2s linear infinite;
- 	 }
- 	 .top-bar .menu li:first-child a {
- 	     background-color: #2c3840;
- 	     padding: 1rem 1.5rem;
- 	     font-size: 30px;
- 	     line-height: 10px;
- 	     font-weight: 300;
- 	 }
- 	 .top-bar .menu li:not(:first-child) a {
- 	     font-size: .9rem;
- 	 }
- 	 h1, h2, h3, h4{
- 	     font-weight: 300 !important;
- 	     font-family: 'Helvetica Neue';
- 	 }
-
- 	 p, .help-text{
- 	     font-weight: 400;
- 	     color: #8a8a8a;
- 	 }*/
+/* Close Button */
+button.close-button {
+	position: absolute;
+  padding: .3rem .7rem;
+}
+.close-button span {
+  top: -2px;
+  position: relative;
+	color: white;
+}
 
 </style>

@@ -258,13 +258,23 @@
 					),
 					'after_row' => '</div></li>'
 			));
-			$cmb->add_field(array(
+      $cmb->add_field(array(
 					'before_row'  => '<li class="accordion-item" data-accordion-item>
 														<a href="#panel-global-grays" role="tab" class="accordion-title" id="panel-global-grays-heading" aria-controls="panel-global-grays">
 															<h6>Global Monochromes</h6>
 														</a>
 														<div id="panel-global-grays" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-global-grays-heading">',
-					'name'    => __('Light Gray', $prefix),
+          'name'    => __('White', $prefix),
+          'desc'    => __('Color for white in hex (default: #f5faff)', $prefix),
+          'id'      => $prefix . '_global_white_color',
+          'type'    => 'colorpicker',
+          'default' => '#f5faff',
+          'attributes' => array(
+            'data-default' => '#f5faff'
+          )
+      ));
+			$cmb->add_field(array(
+          'name'    => __('Light Gray', $prefix),
 					'desc'    => __('Color for light gray in hex (default: #b9bed5)', $prefix),
 					'id'      => $prefix . '_global_light_gray_color',
 					'type'    => 'colorpicker',
@@ -291,16 +301,6 @@
 					'default' => '#5f6786',
 					'attributes' => array(
 						'data-default' => '#5f6786'
-					)
-			));
-			$cmb->add_field(array(
-					'name'    => __('White', $prefix),
-					'desc'    => __('Color for white in hex (default: #f5faff)', $prefix),
-					'id'      => $prefix . '_global_white_color',
-					'type'    => 'colorpicker',
-					'default' => '#f5faff',
-					'attributes' => array(
-						'data-default' => '#f5faff'
 					)
 			));
 			$cmb->add_field(array(

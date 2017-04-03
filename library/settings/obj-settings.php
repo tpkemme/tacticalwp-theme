@@ -65,13 +65,13 @@
 				),
 			));
 			$cmb->add_field(array(
-				'name' => __('Form Label Text Size', $prefix),
-				'desc'    => __('The font size of form input labels. (default: 0.875rem)', $prefix),
+				'name' => __('Form Helper Text Size', $prefix),
+				'desc'    => __('The font size of form input helper text. (default: 0.75rem)', $prefix),
 				'id'            => $prefix . '_obj_form_helptext_font_size',
 				'type'             => 'text_small',
-				'default'          => '0.875rem',
+				'default'          => '0.75rem',
 				'attributes'			 => array(
-					'data-default'	 => '0.875rem',
+					'data-default'	 => '0.75rem',
 				),
 			));
 			$cmb->add_field(array(
