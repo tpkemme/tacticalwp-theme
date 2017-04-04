@@ -112,11 +112,11 @@ class SolWP_Settings
         add_action('admin_menu', array( $this, 'add_options_page' ));
         add_action('cmb2_admin_init', array( $this, 'add_options_page_metabox' ));
         add_action('cmb2_admin_init', array( $this, 'add_options_page_nav_metabox' ));
-        add_action('cmb2_admin_init', array( $this, 'add_options_page_colors_metabox' ));
         add_action('cmb2_admin_init', array( $this, 'add_options_page_posts_metabox' ));
         add_action('cmb2_admin_init', array( $this, 'add_options_page_layout_metabox' ));
         add_action('cmb2_admin_init', array( $this, 'add_options_page_typo_metabox' ));
         add_action('cmb2_admin_init', array( $this, 'add_options_page_obj_metabox' ));
+				add_action('cmb2_admin_init', array( $this, 'add_options_page_advanced_metabox' ));
     }
     /**
      * Register our setting to WP
@@ -151,11 +151,11 @@ class SolWP_Settings
             <ul class="tabs" data-deep-link="true" data-tabs id="settings-tabs">
                 <li class="tabs-title is-active"><a href="#global">Global</a></li>
                 <li class="tabs-title"><a href="#nav">Navigation</a></li>
-                <li class="tabs-title"><a href="#colors">Colors</a></li>
                 <li class="tabs-title"><a href="#posts">Posts</a></li>
                 <li class="tabs-title"><a href="#layout">Layout</a></li>
                 <li class="tabs-title"><a href="#typo">Typography</a></li>
                 <li class="tabs-title"><a href="#obj">Object Defaults</a></li>
+                <li class="tabs-title"><a href="#advanced">Advanced</a></li>
             </ul>
 
             <div class="tabs-content" data-tabs-content="settings-tabs">
@@ -195,28 +195,6 @@ class SolWP_Settings
 																							<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
 																							<p>Are you sure you want to continue?</p>
 																							<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-nav" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
-																						</p>
-																						<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
-																							<span aria-hidden="true">&times;</span>
-																						</button>
-																					</div>
-																				</form>',
-										)); ?>
-                </div>
-                <div class="tabs-panel" id="colors">
-                    <?php cmb2_metabox_form($this->metabox_id . '-colors', $this->key, array(
-											'save_button' => 'Save Settings',
-											'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
-																					<input type="hidden" name="object_id" value="%2$s">
-																					%3$s
-																					<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-colors" class="button button-primary" value="%4$s" /></p>
-																					<p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
-																					<br/><br/><i>Reset all the settings on this page to their default values.</i></p>
-																					<div class="reveal" id="resetSettingsModal" data-reveal>
-																						<p class="reset-confirmation">
-																							<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
-																							<p>Are you sure you want to continue?</p>
-																							<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-colors" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
 																						</p>
 																						<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
 																							<span aria-hidden="true">&times;</span>
@@ -313,6 +291,28 @@ class SolWP_Settings
 																				</form>',
 										)); ?>
                 </div>
+                <div class="tabs-panel" id="advanced">
+                    <?php cmb2_metabox_form($this->metabox_id . '-advanced', $this->key, array(
+                      'save_button' => 'Save Settings',
+                      'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
+                                          <input type="hidden" name="object_id" value="%2$s">
+                                          %3$s
+                                          <p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-advanced" class="button button-primary" value="%4$s" /></p>
+                                          <p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
+                                          <br/><br/><i>Reset all the settings on this page to their default values.</i></p>
+                                          <div class="reveal" id="resetSettingsModal" data-reveal>
+                                            <p class="reset-confirmation">
+                                              <h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
+                                              <p>Are you sure you want to continue?</p>
+                                              <button style="color:white" name="reset-confirmation-global" id="reset-confirmation-colors" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
+                                            </p>
+                                            <button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                          </div>
+                                        </form>',
+                    )); ?>
+                </div>
             </div>
         </div>
         <?php // this is so all our javascript is happy ?>
@@ -361,42 +361,6 @@ class SolWP_Settings
 			));
 			solwp_add_nav_settings( $cmb, 'solwp' );
 			array_push($this->option_names, $cmb);
-    }
-
-    /**
-     * Add the options metabox to the array of metaboxes
-     * @since  0.1.0
-     */
-    function add_options_page_colors_metabox()
-    {
-      // hook in our save notices
-      add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-colors", array( $this, 'settings_notices' ), 10, 2);
-      $cmb = new_cmb2_box(array(
-          'id'         => $this->metabox_id . '-colors',
-          'hookup'     => false,
-          'cmb_styles' => false,
-          'show_on'    => array(
-              // These are important, don't remove
-              'key'   => 'options-page',
-              'value' => array( $this->key . "-colors", )
-          ),
-      ));
-      // Set our CMB2 fields
-      $cmb->add_field(array(
-          'name' => __('Colors test', $this->prefix),
-          'desc' => __('field description (optional)', $this->prefix),
-          'id'   => 'colors_test_text',
-          'type' => 'text',
-          'default' => 'Default Text'
-      ));
-      $cmb->add_field(array(
-          'name'    => __('Test Color Picker', $this->prefix),
-          'desc'    => __('field description (optional)', $this->prefix),
-          'id'      => 'colors_est_colorpicker',
-          'type'    => 'colorpicker',
-          'default' => '#bada55',
-      ));
-      array_push($this->option_names, $cmb);
     }
 
     /**
@@ -531,6 +495,28 @@ class SolWP_Settings
 						),
 				));
 				solwp_add_obj_settings( $cmb, 'solwp' );
+        array_push($this->option_names, $cmb);
+    }
+
+    /**
+     * Add the options metabox to the array of metaboxes
+     * @since  0.1.0
+     */
+    function add_options_page_advanced_metabox()
+    {
+        // hook in our save notices
+				add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-advanced", array( $this, 'settings_notices' ), 10, 2);
+				$cmb = new_cmb2_box(array(
+						'id'         => $this->metabox_id . '-advanced',
+						'hookup'     => false,
+						'cmb_styles' => false,
+						'show_on'    => array(
+								// These are important, don't remove
+								'key'   => 'options-page',
+								'value' => array( $this->key . "-advanced", )
+						),
+				));
+				solwp_add_advanced_settings( $cmb, 'solwp' );
         array_push($this->option_names, $cmb);
     }
 

@@ -610,7 +610,9 @@ h6 small {
 
 /* Paragraph Styles */
 p {
+ color: <?php solwp( 'typo_body_paragraph_color' ) ?>;
  line-height: <?php solwp( 'typo_body_paragraph_line_height' ) ?>;
+ font-weight: <?php solwp( 'typo_body_paragraph_weight' ) ?>;
  margin-bottom: <?php solwp( 'typo_body_paragraph_margin_bottom' ) ?>;
 }
 
@@ -706,20 +708,20 @@ ul ul, ol ul, ul ol, ol ol {
 .top-bar {
   padding: <?php solwp( 'nav_top_padding' ) ?>;
   background: <?php solwp( 'nav_top_background_color') ?>;
-  box-shadow: 0 2px 5px rgba(0,0,0,.26), 0 4px 10px rgba(0,0,0,.26); 	}
+  box-shadow: 0 2px 5px rgba(0,0,0,.18), 0 4px 10px rgba(0,0,0,.15); 	}
 .top-bar ul{
 	background: <?php solwp( 'nav_top_item_background_color') ?>; }
 <?php if( solwp_get_option( 'solwp_nav_top_title_shadow') === 'show' ): ?>
 	.top-bar ul.title-bar-title li a{
-		box-shadow: 0px 0px 4px 0px rgba(0,0,0,.26), 1px 0px 8px 0px rgba(0,0,0,.26);
+		box-shadow: 0px 0px 4px 0px rgba(0,0,0,.18), 1px 0px 8px 0px rgba(0,0,0,.15);
 	 	position: relative;
 		z-index: 999;
 		transition: .2s ease-in-out;}
 	.top-bar ul.title-bar-title li a:hover{
-		box-shadow: 0 0 6px 0px rgba(0,0,0,.26), 1px 0px 12px 0px rgba(0,0,0,.26);
+		box-shadow: 0 0 6px 0px rgba(0,0,0,.18), 1px 0px 12px 0px rgba(0,0,0,.15);
 	 	position: relative;
 		z-index: 999;
-		transform: rotate3d(0%, 50%, 100%); }
+		transform: rotate3d(0%, 50%, 100%, 20deg); }
 <?php endif; ?>
 .top-bar ul li{
 	border-right: none !important; }
@@ -748,19 +750,22 @@ ul ul, ol ul, ul ol, ol ol {
 }
 .top-bar .menu > li:not(.menu-text) > a {
     padding: .85rem;
+		font-weight: 300;
 }
 
 /* sticky topbar */
 <?php if ( solwp_get_option( 'solwp_nav_top_sticky' ) === 'sticky' ): ?>
 .site-header {
   position: fixed;
-  top: 32px;
+  top: 0px;
   width: 100vw;
   z-index: 888;
 }
-
+.logged-in .site-header{
+	top: 32px;
+}
 .site-header + .container {
-  padding-top: 32px;
+  padding-top: 45px;
 }
 .logged-in .site-header + .container {
 	<?php $p_top = strval( ( floatval( solwp_get_option( 'solwp_nav_top_padding' ) ) + 1 )  * 2.0 ); ?>
@@ -770,12 +775,15 @@ ul ul, ol ul, ul ol, ol ol {
 @media screen and (max-width: 782px){
 	.logged-in .site-header {
 	  position: fixed;
-	  top: 46px;
+	  top: 66px;
 	  width: 100vw;
 	}
 	.site-header + .container {
-    padding-top: 46px;
+    padding-top: 66px;
 	}
+}
+body.elementor-editor-active .site-header {
+    top: 0px;
 }
 <?php endif; ?>
 
@@ -831,14 +839,12 @@ ul ul, ol ul, ul ol, ol ol {
 .top-bar .top-bar-right:not(.top-bar-search) button:hover,
 .top-bar .top-bar-right:not(.top-bar-search) .button:hover,
 .top-bar .top-bar-right:not(.top-bar-search) .btn:hover{
-	box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
-	box-shadow: none;
-	transform: translate(0px, -2px) scale(1.01); }
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,.28), 0 8px 16px 0 rgba(0,0,0,.25);
+	transform: translate(0px, -1px) scale(1.01); }
 .top-bar .top-bar-right.top-bar-search button:hover,
 .top-bar .top-bar-right.top-bar-search .button:hover,
 .top-bar .top-bar-right.top-bar-search .btn:hover{
-	box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
-	box-shadow: none;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,.28), 0 8px 16px 0 rgba(0,0,0,.25);
 	transform: scale(1.01); }
 .top-bar .top-bar-search input {
   max-width: 200px;
@@ -846,7 +852,6 @@ ul ul, ol ul, ul ol, ol ol {
   <?php $p_top = strval( floatval( solwp_get_option( 'solwp_nav_top_padding' ) ) + .75 ); ?>
   <?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_nav_top_padding' ) ); ?>
   padding:   <?php echo $p_top . $units ?> <?php solwp( 'global_padding_size' ) ?> <?php echo $p_top . $units ?>;
-	//border-radius: 8px;
 	margin-left: -25px;
 	top: -1px;
 	position: relative;
@@ -861,7 +866,6 @@ ul ul, ol ul, ul ol, ol ol {
   position: relative;
   top: -1px; }
 .top-bar .top-bar-search button{
-	//border-radius: 8px;
 	border-top-left-radius: 0px;
 	border-bottom-left-radius: 0px;
 	margin-left: -25px;
@@ -975,14 +979,12 @@ input[type=checkbox]:not(.switch-input):checked + label:before {
 /* Box Shadows? */
 .card, button, .button, .btn, section.container button,
 section.container .button, section.container.btn{
-	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-	box-shadow: none;
-	transition: .2s ease-out; }
+	box-shadow: 0 0px 4px 0 rgba(0,0,0,.26), 0 2px 8px 0 rgba(0,0,0,.22);
+	transition: .2s ease-in; }
 .card:hover, section.container button:hover,
 section.container .button:hover, section.container.btn:hover{
-	box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
-	box-shadow: none;
-	transform: translate(0px, -2px) scale(1.01); }
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,.26), 0 4px 12px 0 rgba(0,0,0,.22);
+	transform: translate(0px, -1px) scale(1.01); }
 
 
 /* ===================================================================*/
@@ -999,8 +1001,9 @@ section.container .button:hover, section.container.btn:hover{
   background: #5968d7;
   color: #ffffff;
   border: none;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-  position: relative; }
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26), 0 2px 10px 0 rgba(0,0,0,.22);
+	box-shadow: none;
+	position: relative; }
 .card {
   color: #333333;
   background-color: #ffffff; }

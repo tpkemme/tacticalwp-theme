@@ -4,11 +4,10 @@
  * builder with a live editor (such as SiteOrigin Page Builder and Elementor)
  */
 
-(function($) {
+ jQuery(document).ready(function($) {
 
-  if( $('#wpadminbar').length > 0 ){
-    $( 'header.site-header' ).hide();
-
+  if( $('.so-preview').length > 0 ){
+    $( 'header.site-header' ).css( 'top', 0 );
   }
 
-})(jQuery);
+});

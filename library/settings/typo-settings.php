@@ -262,6 +262,37 @@
           ),
       ));
       $cmb->add_field(array(
+          'name' => __('Paragraph Font Color', $prefix),
+          'desc'    => __('Font color for paragraph text. (default: #8d8d8d)', $prefix),
+          'id'            => $prefix . '_typo_body_paragraph_color',
+          'type'             => 'colorpicker',
+          'default'          => '#8d8d8d',
+          'attributes'			 => array(
+            'data-default'	 => '#8d8d8d'
+          ),
+      ));
+      $cmb->add_field(array(
+          'name' => __('Paragraph Font Weight', $prefix),
+          'desc' => __('Set the weight of the paragraph font (default = 300)', $prefix),
+          'id'   => $prefix . '_typo_paragraph_weight',
+          'type'    => 'select',
+          'default' => '300',
+          'options' => array(
+            '100' => '100',
+            '200' => '200',
+            '300' => '300',
+            '400' => '400',
+            '500' => '500',
+            '600' => '600',
+            '700' => '700',
+            '800' => '800',
+            '900' => '900'
+          ),
+          'attributes'			 => array(
+            'data-default'	 => '300'
+          ),
+      ));
+      $cmb->add_field(array(
           'name' => __('Paragraph Line Height', $prefix),
           'desc'    => __('Line height for paragraph elements. (default: 1.6)', $prefix),
           'id'            => $prefix . '_typo_body_paragraph_line_height',

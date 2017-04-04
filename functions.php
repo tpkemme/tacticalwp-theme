@@ -62,6 +62,7 @@ require_once( 'library/settings/global-settings.php' );
 require_once( 'library/settings/nav-settings.php' );
 require_once( 'library/settings/typo-settings.php' );
 require_once( 'library/settings/obj-settings.php' );
+require_once( 'library/settings/advanced-settings.php' );
 require_once( 'library/theme-settings.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
