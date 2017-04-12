@@ -20,6 +20,10 @@ require_once( 'library/cmb2-functions.php' );
 /** Utilities and helper functions */
 require_once( 'library/utilities.php' );
 
+/** Shortcodes **/
+require_once( 'library/shortcode/accordion.php' );
+require_once( 'library/shortcode/table.php' );
+
 /** Various clean up functions */
 require_once( 'library/cleanup.php' );
 

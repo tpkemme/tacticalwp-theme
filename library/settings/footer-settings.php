@@ -36,12 +36,12 @@
       ));
       $cmb->add_field(array(
           'name' => __('Footer Text Color', $prefix),
-          'desc'    => __('Color of text in the footer. (default: #d5d5d5)', $prefix),
+          'desc'    => __('Color of text in the footer. (default: #8d8d8d)', $prefix),
           'id'            => $prefix . '_footer_font_color',
           'type'             => 'colorpicker',
-          'default'          => '#d5d5d5',
+          'default'          => '#8d8d8d',
           'attributes'			 => array(
-            'data-default'	 => '#d5d5d5',
+            'data-default'	 => '#8d8d8d',
           ),
       ));
       $cmb->add_field(array(

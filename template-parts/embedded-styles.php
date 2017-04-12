@@ -925,13 +925,14 @@ body.elementor-editor-active .site-header {
 
 
 /* Object Defaults */
-
 /* Accordions */
 .accordion{
 	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
 	border: none;
 }
-
+.accordion-title::before{
+  font-size: 20px;
+}
 .accordion .accordion-item{
 	border: none;
 	transition: all 0.2s cubic-bezier(.25,.8,.25,1);
@@ -942,6 +943,7 @@ body.elementor-editor-active .site-header {
 
 .accordion .accordion-content{
 	border: none;
+	padding: 1.5rem;
 }
 
 .accordion .accordion-title

@@ -68,4 +68,19 @@
 		}
 	endif;
 
+	/**
+	 * Break shortcode
+	 *
+	 * @since  1.0.0
+	 * @param  $family	name of the family to retrieve variants
+	 * @return $files   array of font source urls or false if family doesn't exist
+	 */
+	if ( ! function_exists( 'solwp_br' ) ) :
+		function solwp_br( $family )
+		{
+				return "<br/>";
+		}
+		add_shortcode( 'br', 'solwp_br' );
+	endif;
+
 ?>
