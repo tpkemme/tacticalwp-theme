@@ -62,7 +62,7 @@ get_header(); ?>
 					  </div>
 					  <div class="row">
 					    <div class="medium-6 columns">
-					      <label>URL Pattern, not required, but throws error if it doesn't match the Regular Expression for a valid URL.
+					      <label>URL Pattern, not required
 					        <input type="text" placeholder="http://solwp.zurb.com" pattern="url">
 					      </label>
 					    </div>
@@ -817,19 +817,6 @@ get_header(); ?>
 						</div>
 					<hr>
 
-					<!-- Title Bar -->
-					<h2 id="title-bar" class="docs-heading" data-magellan-target="title-bar"><a href="#title-bar"></a>Title Bar</h2>
-						<div class="title-bar">
-						  <div class="title-bar-left">
-						    <button class="menu-icon" type="button"></button>
-						    <span class="title-bar-title">SolWP</span>
-						  </div>
-						  <div class="title-bar-right">
-						    <button class="menu-icon" type="button"></button>
-						  </div>
-						</div>
-					<hr>
-
 					<!-- Toggler -->
 					<h2 id="toggler" class="docs-heading" data-magellan-target="toggler"><a href="#toggler"></a>Toggler</h2>
 					<p><button class="button small primary" type="button" data-toggle="menuBar">Toggle width</button></p>
@@ -845,35 +832,6 @@ get_header(); ?>
 					<!-- Tooltip -->
 					<h2 id="tooltip" class="docs-heading" data-magellan-target="tooltip"><a href="#tooltip"></a>Tooltip</h2>
 							<p>The <span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' tabindex=1 title="Fancy word for a beetle.">scarabaeus</span> hung quite clear of any branches, and, if allowed to fall, would have fallen at our feet. Legrand immediately took the scythe, and cleared with it a circular space, three or four yards in diameter, just beneath the insect, and, having accomplished this, ordered Jupiter to let go the string and come down from the tree.</p>
-					<hr>
-
-					<!-- Top bar -->
-					<h2 id="top-bar" class="docs-heading" data-magellan-target="top-bar"><a href="#top-bar"></a>Top Bar</h2>
-						<div class="top-bar">
-
-							<div class="top-bar-left">
-						    <ul class="dropdown menu" data-dropdown-menu>
-						      <li class="menu-text">Site Title</li>
-						      <li class="has-submenu">
-						        <a href="#">One</a>
-						        <ul class="submenu menu vertical" data-submenu>
-						          <li><a href="#">One</a></li>
-						          <li><a href="#">Two</a></li>
-						          <li><a href="#">Three</a></li>
-						        </ul>
-						      </li>
-						      <li><a href="#">Two</a></li>
-						      <li><a href="#">Three</a></li>
-						    </ul>
-						  </div>
-
-							<div class="top-bar-right top-bar-search">
-						    <ul class="menu">
-						      <li><input type="search" placeholder="Search"></li>
-						      <li><button type="button" class="button">Search</button></li>
-						    </ul>
-						  </div>
-						</div>
 					<hr>
 
 					<!-- Visibility Classes -->
@@ -944,10 +902,8 @@ get_header(); ?>
 							<li><a href="#table">Table</a></li>
 							<li><a href="#tabs">Tabs</a></li>
 							<li><a href="#thumbnail">Thumbnail</a></li>
-							<li><a href="#title-bar">Title Bar</a></li>
 							<li><a href="#toggler">Toggler</a></li>
 							<li><a href="#tooltip">Tooltip</a></li>
-							<li><a href="#top-bar">Top Bar</a></li>
 							<li><a href="#visibility-classes">Visibility Classes</a></li>
 						</ul>
 					</div>

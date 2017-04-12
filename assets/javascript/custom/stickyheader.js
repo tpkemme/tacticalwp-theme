@@ -5,9 +5,16 @@
  */
 
  jQuery(document).ready(function($) {
+  function resizeHeader(){
+    if( $('.so-preview').length > 0 ){
+      $( 'header.site-header' ).css( 'top', 0 );
+    }
 
-  if( $('.so-preview').length > 0 ){
-    $( 'header.site-header' ).css( 'top', 0 );
+    if( $('.elementor-editor-preview92').length > 0 ){
+      $( 'header.site-header' ).css( 'top', 0 );
+    }
   }
+  resizeHeader();
+  $(window).on( 'resize', resizeHeader() );
 
 });

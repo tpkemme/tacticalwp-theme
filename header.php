@@ -31,7 +31,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 		<?php if( solwp_get_option( 'solwp_nav_top_menu_alignment') === 'right' ): ?>
-  		<?php if( solwp_get_option( 'solwp_nav_top_search') !== 'hide' ): ?>
+  		<?php if( solwp_get_option( 'solwp_nav_top_search') === 'show' ): ?>
 				<div class="top-bar-right top-bar-search">
 	  				<ul class="menu">
 	  					<li><input type="search" placeholder="Search"></li>
@@ -75,7 +75,7 @@
 				</div>
 			</div>
 			<?php solwp_top_bar_r(); ?>
-      <?php if( solwp_get_option( 'solwp_nav_top_search') !== 'hide' ): ?>
+      <?php if( solwp_get_option( 'solwp_nav_top_search') === 'show' ): ?>
   			<div class="top-bar-right top-bar-search">
   				<ul class="menu">
   					<li><input type="search" placeholder="<?php solwp( 'nav_top_search_placeholder_text' ) ?>"></li>

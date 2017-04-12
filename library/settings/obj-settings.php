@@ -123,6 +123,144 @@
 				'attributes'			 => array(
 					'data-default'	 => '#5f6786',
 				),
+				'after_row' => '</div></li>'
+			));
+			$cmb->add_field(array(
+				'before_row'  => '<li class="accordion-item" data-accordion-item>
+							<a href="#panel-obj-tabs" role="tab" class="accordion-title" id="panel-obj-tabs-heading" aria-controls="panel-obj-tabs">
+								<h6>Tabs</h6>
+							</a>
+							<div id="panel-obj-tabs" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-nav-tabs-heading">',
+				'name' => __('Tab Active Color', $prefix),
+				'desc'    => __('Color of active tab menu items. (default: #5364fc)', $prefix),
+				'id'            => $prefix . '_obj_tab_active_color',
+				'type'             => 'colorpicker',
+				'default'          => '#5364fc',
+				'attributes'			 => array(
+					'data-default'	 => '#5364fc',
+				),
+			));
+			$cmb->add_field(array(
+				'name' => __('Tab Inactive Color', $prefix),
+				'desc'    => __('Color of inactive tab menu items. (default: #8ab1ff)', $prefix),
+				'id'            => $prefix . '_obj_tab_inactive_color',
+				'type'             => 'colorpicker',
+				'default'          => '#8ab1ff',
+				'attributes'			 => array(
+					'data-default'	 => '#8ab1ff',
+				),
+			));
+			$cmb->add_field(array(
+				'name' => __('Tab Hover Color', $prefix),
+				'desc'    => __('Color of tab menu items on hover. (default: #5b92ff)', $prefix),
+				'id'            => $prefix . '_obj_tab_hover_color',
+				'type'             => 'colorpicker',
+				'default'          => '#5b92ff',
+				'attributes'			 => array(
+					'data-default'	 => '#5b92ff',
+				),
+			));
+			$cmb->add_field(array(
+				'name' => __('Tab Font Color', $prefix),
+				'desc'    => __('Color of tab menu items on hover. (default: #ffffff)', $prefix),
+				'id'            => $prefix . '_obj_tab_font_color',
+				'type'             => 'colorpicker',
+				'default'          => '#ffffff',
+				'attributes'			 => array(
+					'data-default'	 => '#ffffff',
+				),
+				'after_row' => '</div></li>'
+			));
+			$cmb->add_field(array(
+				'before_row'  => '<li class="accordion-item" data-accordion-item>
+							<a href="#panel-obj-accord" role="tab" class="accordion-title" id="panel-obj-accord-heading" aria-controls="panel-obj-accord">
+								<h6>Accordions</h6>
+							</a>
+							<div id="panel-obj-accord" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-nav-accord-heading">',
+				'name' => __('Accordion Active Color', $prefix),
+				'desc'    => __('Color of active tab menu items. (default: #5364fc)', $prefix),
+				'id'            => $prefix . '_obj_accord_active_color',
+				'type'             => 'colorpicker',
+				'default'          => '#5364fc',
+				'attributes'			 => array(
+					'data-default'	 => '#5364fc',
+				),
+			));
+			$cmb->add_field(array(
+				'name' => __('Accordion Inactive Color', $prefix),
+				'desc'    => __('Color of inactive tab menu items. (default: #8ab1ff)', $prefix),
+				'id'            => $prefix . '_obj_accord_inactive_color',
+				'type'             => 'colorpicker',
+				'default'          => '#8ab1ff',
+				'attributes'			 => array(
+					'data-default'	 => '#8ab1ff',
+				),
+			));
+			$cmb->add_field(array(
+				'name' => __('Accordion Hover Color', $prefix),
+				'desc'    => __('Color of tab menu items on hover. (default: #5b92ff)', $prefix),
+				'id'            => $prefix . '_obj_accord_hover_color',
+				'type'             => 'colorpicker',
+				'default'          => '#5b92ff',
+				'attributes'			 => array(
+					'data-default'	 => '#5b92ff',
+				),
+			));
+			$cmb->add_field(array(
+				'name' => __('Accordion Font Color', $prefix),
+				'desc'    => __('Color of tab menu items on hover. (default: #ffffff)', $prefix),
+				'id'            => $prefix . '_obj_accord_font_color',
+				'type'             => 'colorpicker',
+				'default'          => '#ffffff',
+				'attributes'			 => array(
+					'data-default'	 => '#ffffff',
+				),
+				'after_row' 			=> '</div></li>',
+			));
+			$cmb->add_field(array(
+				'before_row'  => '<li class="accordion-item" data-accordion-item>
+							<a href="#panel-obj-table" role="tab" class="accordion-title" id="panel-obj-table-heading" aria-controls="panel-obj-table">
+								<h6>Tables</h6>
+							</a>
+							<div id="panel-obj-table" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-nav-table-heading">',
+				'name' => __('Table Header Color', $prefix),
+				'desc'    => __('Color of table header row. (default: #dceeff)', $prefix),
+				'id'            => $prefix . '_obj_table_header_color',
+				'type'             => 'colorpicker',
+				'default'          => '#dceeff',
+				'attributes'			 => array(
+					'data-default'	 => '#dceeff',
+				),
+			));
+			$cmb->add_field(array(
+				'name' => __('Table Even Row Color', $prefix),
+				'desc'    => __('Color of even rows in a table. (default: #f5faff)', $prefix),
+				'id'            => $prefix . '_obj_table_even_color',
+				'type'             => 'colorpicker',
+				'default'          => '#f5faff',
+				'attributes'			 => array(
+					'data-default'	 => '#f5faff',
+				),
+			));
+			$cmb->add_field(array(
+				'name' => __('Table Odd Row Color', $prefix),
+				'desc'    => __('Color of odd rows in a table. (default: #e9f4ff)', $prefix),
+				'id'            => $prefix . '_obj_table_odd_color',
+				'type'             => 'colorpicker',
+				'default'          => '#e9f4ff',
+				'attributes'			 => array(
+					'data-default'	 => '#e9f4ff',
+				),
+			));
+			$cmb->add_field(array(
+				'name' => __('Table Font Color', $prefix),
+				'desc'    => __('Color of table text. (default: #ffffff)', $prefix),
+				'id'            => $prefix . '_obj_table_font_color',
+				'type'             => 'colorpicker',
+				'default'          => '#ffffff',
+				'attributes'			 => array(
+					'data-default'	 => '#ffffff',
+				),
 				'after_row' => '</div></li></ul>'
 			));
 			return $cmb;

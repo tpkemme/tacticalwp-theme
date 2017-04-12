@@ -112,7 +112,7 @@ class SolWP_Settings
         add_action('admin_menu', array( $this, 'add_options_page' ));
         add_action('cmb2_admin_init', array( $this, 'add_options_page_metabox' ));
         add_action('cmb2_admin_init', array( $this, 'add_options_page_nav_metabox' ));
-        add_action('cmb2_admin_init', array( $this, 'add_options_page_posts_metabox' ));
+        add_action('cmb2_admin_init', array( $this, 'add_options_page_footer_metabox' ));
         add_action('cmb2_admin_init', array( $this, 'add_options_page_layout_metabox' ));
         add_action('cmb2_admin_init', array( $this, 'add_options_page_typo_metabox' ));
         add_action('cmb2_admin_init', array( $this, 'add_options_page_obj_metabox' ));
@@ -151,7 +151,7 @@ class SolWP_Settings
             <ul class="tabs" data-deep-link="true" data-tabs id="settings-tabs">
                 <li class="tabs-title is-active"><a href="#global">Global</a></li>
                 <li class="tabs-title"><a href="#nav">Navigation</a></li>
-                <li class="tabs-title"><a href="#posts">Posts</a></li>
+                <li class="tabs-title"><a href="#footer">Footer</a></li>
                 <li class="tabs-title"><a href="#layout">Layout</a></li>
                 <li class="tabs-title"><a href="#typo">Typography</a></li>
                 <li class="tabs-title"><a href="#obj">Object Defaults</a></li>
@@ -203,20 +203,20 @@ class SolWP_Settings
 																				</form>',
 										)); ?>
                 </div>
-                <div class="tabs-panel" id="posts">
-                    <?php cmb2_metabox_form($this->metabox_id . '-posts', $this->key, array(
+                <div class="tabs-panel" id="footer">
+                    <?php cmb2_metabox_form($this->metabox_id . '-footer', $this->key, array(
 											'save_button' => 'Save Settings',
 											'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
 																					<input type="hidden" name="object_id" value="%2$s">
 																					%3$s
-																					<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-posts" class="button button-primary" value="%4$s" /></p>
+																					<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-footer" class="button button-primary" value="%4$s" /></p>
 																					<p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
 																					<br/><br/><i>Reset all the settings on this page to their default values.</i></p>
 																					<div class="reveal" id="resetSettingsModal" data-reveal>
 																						<p class="reset-confirmation">
 																							<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
 																							<p>Are you sure you want to continue?</p>
-																							<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-posts" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
+																							<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-footer" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
 																						</p>
 																						<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
 																							<span aria-hidden="true">&times;</span>
@@ -367,35 +367,21 @@ class SolWP_Settings
      * Add the options metabox to the array of metaboxes
      * @since  0.1.0
      */
-    function add_options_page_posts_metabox()
+    function add_options_page_footer_metabox()
     {
       // hook in our save notices
-      add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-posts", array( $this, 'settings_notices' ), 10, 2);
+      add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-footer", array( $this, 'settings_notices' ), 10, 2);
       $cmb = new_cmb2_box(array(
-          'id'         => $this->metabox_id . '-posts',
+          'id'         => $this->metabox_id . '-footer',
           'hookup'     => false,
           'cmb_styles' => false,
           'show_on'    => array(
               // These are important, don't remove
               'key'   => 'options-page',
-              'value' => array( $this->key . "-posts", )
+              'value' => array( $this->key . "-footer", )
           ),
       ));
-      // Set our CMB2 fields
-      $cmb->add_field(array(
-          'name' => __('Posts Text', $this->prefix),
-          'desc' => __('field description (optional)', $this->prefix),
-          'id'   => 'posts_test_text',
-          'type' => 'text',
-          'default' => 'Default Text'
-      ));
-      $cmb->add_field(array(
-          'name'    => __('Test Color Picker', $this->prefix),
-          'desc'    => __('field description (optional)', $this->prefix),
-          'id'      => 'posts_test_colorpicker',
-          'type'    => 'colorpicker',
-          'default' => '#bada55',
-      ));
+      solwp_add_footer_settings( $cmb, 'solwp' );
       array_push($this->option_names, $cmb);
     }
 
@@ -417,40 +403,7 @@ class SolWP_Settings
               'value' => array( $this->key . "-layout", )
           ),
       ));
-      // Set our CMB2 fields
-      $cmb->add_field(array(
-                  'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
-													<li class="accordion-item" data-accordion-item>
-														<a href="#panel-layout-grid" role="tab" class="accordion-title" id="panel-layout-grid-heading" aria-controls="panel-layout-grid">
-															<h6>The Grid</h6>
-														</a>
-														<div id="panel-layout-grid" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-layout-grid-heading">',
-        'name' => __('Grid column count', $this->prefix),
-        'desc' => __('Set the grid for tablet devices in the vertical layout (default = 640px)', $this->prefix),
-        'id'   => $this->prefix . '_layout_grid_tablet_vertical',
-        'type' => 'text_small',
-        'default' => '640px'
-      ));
-      $cmb->add_field(array(
-                  'name' => __('Tablet Horizontal Breakpoint', $this->prefix),
-                  'desc' => __('Set the grid for tablet devices in the vertical layout (default = 1024px)', $this->prefix),
-                  'id'   => $this->prefix . '_layout_grid_tablet_horizontal',
-                  'type' => 'text_small',
-                  'default' => '1024px'
-      ));
-      $cmb->add_field(array(
-                  'name' => __('Desktop Breakpoint', $this->prefix),
-                  'desc' => __('Set the grid for desktop devices (default = 1200px)', $this->prefix),
-                  'id'   => $this->prefix . '_layout_grid_desktop',
-                  'type'    => 'select',
-                  'default' => 'color',
-                  'options' => array(
-                      '300' => 'Color',
-                      '500' => 'Image',
-                      '700' => 'Video'
-                  ),
-                  'after_row' => '</div></li></ul>'
-      ));
+      solwp_add_layout_settings( $cmb, 'solwp' );
 			array_push($this->option_names, $cmb);
     }
 

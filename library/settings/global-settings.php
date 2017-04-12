@@ -219,12 +219,22 @@
 			));
 			$cmb->add_field(array(
 					'name'    => __('Success Color', $prefix),
-					'desc'    => __('Color for success notifications in hex (default: #43d08a)', $prefix),
+					'desc'    => __('Color for success notifications in hex (default: #15da78)', $prefix),
 					'id'      => $prefix . '_global_success_color',
 					'type'    => 'colorpicker',
-					'default' => '#43d08a',
+					'default' => '#15da78',
 					'attributes' => array(
-						'data-default' => '#43d08a'
+						'data-default' => '#15da78'
+					)
+			));
+			$cmb->add_field(array(
+					'name'    => __('Success Hover Color', $prefix),
+					'desc'    => __('Hover color for success notifications in hex (default: #27e26d)', $prefix),
+					'id'      => $prefix . '_global_success_hover_color',
+					'type'    => 'colorpicker',
+					'default' => '#27e26d',
+					'attributes' => array(
+						'data-default' => '#27e26d'
 					)
 			));
 			$cmb->add_field(array(

@@ -170,7 +170,7 @@
           ),
       ));
 			$cmb->add_field(array(
-				'name' => __('Topbar Menu Item Font Size', $prefix),
+				'name' => __('Topbar Menu Font Size', $prefix),
 				'desc'    => __('Font size of the topbar menu. (default: 80%)', $prefix),
 				'id'            => $prefix . '_nav_top_item_font_size',
 				'type'    => 'text_small',
@@ -180,7 +180,7 @@
 				),
 			));
 			$cmb->add_field(array(
-					'name' => __('Topbar Menu Item Font Family', $prefix),
+					'name' => __('Topbar Menu Font Family', $prefix),
 					'desc'    => __('Font family of the topbar menu. (default: Josefin Sans)', $prefix),
 					'id'            => $prefix . '_nav_top_item_font_family',
 					'type'             => 'select',
@@ -192,7 +192,7 @@
 					'options_cb'       => 'solwp_google_fonts',
 			));
 			$cmb->add_field(array(
-					'name' => __('Topbar Menu Item Font Color', $prefix),
+					'name' => __('Topbar Menu Font Color', $prefix),
 					'desc'    => __('Font color of the topbar menu items. (default: #f5faff)', $prefix),
 					'id'            => $prefix . '_nav_top_item_font_color',
 					'type'    => 'colorpicker',
@@ -202,7 +202,7 @@
 					),
 			));
 			$cmb->add_field(array(
-					'name' => __('Topbar Menu Item Hover Font Color', $prefix),
+					'name' => __('Topbar Menu Hover Font Color', $prefix),
 					'desc'    => __('Hover font color of the topbar menu items. (default: #f5faff)', $prefix),
 					'id'            => $prefix . '_nav_top_item_hover_font_color',
 					'type'    => 'colorpicker',
@@ -212,7 +212,7 @@
 					),
 			));
 			$cmb->add_field(array(
-					'name' => __('Topbar Menu Item Background Color', $prefix),
+					'name' => __('Topbar Menu Background Color', $prefix),
 					'desc'    => __('Background color of the topbar menu items. (default: #4a569a)', $prefix),
 					'id'            => $prefix . '_nav_top_item_background_color',
 					'type'    => 'colorpicker',
@@ -222,7 +222,7 @@
 					),
 			));
       $cmb->add_field(array(
-          'name' => __('Topbar Menu Item Hover Background Color', $prefix),
+          'name' => __('Topbar Menu Hover Background Color', $prefix),
           'desc'    => __('Background color of the topbar menu items. (default: #3f51b5)', $prefix),
           'id'            => $prefix . '_nav_top_item_hover_background_color',
           'type'    => 'colorpicker',
@@ -231,7 +231,6 @@
             'data-default'	 => '#3f51b5'
           ),
       ));
-
       $cmb->add_field(array(
           'name' => __('Topbar Submenu Background Color', $prefix),
           'desc'    => __('Background color of the topbar submenu items. (default: #5c6bc0)', $prefix),
@@ -240,6 +239,36 @@
           'default' => '#5c6bc0',
           'attributes'			 => array(
             'data-default'	 => '#5c6bc0'
+          ),
+      ));
+      $cmb->add_field(array(
+          'name' => __('Topbar Submenu Hover Background Color', $prefix),
+          'desc'    => __('Background color of the topbar submenu items on hover. (default: #5c6bc0)', $prefix),
+          'id'            => $prefix . '_nav_top_submenu_hover_background_color',
+          'type'    => 'colorpicker',
+          'default' => '#5c6bc0',
+          'attributes'			 => array(
+            'data-default'	 => '#5c6bc0'
+          ),
+      ));
+      $cmb->add_field(array(
+          'name' => __('Topbar Submenu Font Color', $prefix),
+          'desc'    => __('Font color of the topbar submenu items. (default: #f5faff)', $prefix),
+          'id'            => $prefix . '_nav_top_submenu_font_color',
+          'type'    => 'colorpicker',
+          'default' => '#f5faff',
+          'attributes'			 => array(
+            'data-default'	 => '#f5faff'
+          ),
+      ));
+      $cmb->add_field(array(
+          'name' => __('Topbar Submenu Hover Font Color', $prefix),
+          'desc'    => __('Hover font color of the topbar menu items. (default: #f5faff)', $prefix),
+          'id'            => $prefix . '_nav_top_submenu_hover_font_color',
+          'type'    => 'colorpicker',
+          'default' => '#f5faff',
+          'attributes'			 => array(
+            'data-default'	 => '#f5faff'
           ),
       ));
       $cmb->add_field(array(

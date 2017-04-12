@@ -60,6 +60,8 @@ require_once( 'library/responsive-images.php' );
 /** User-set theme settings */
 require_once( 'library/settings/global-settings.php' );
 require_once( 'library/settings/nav-settings.php' );
+require_once( 'library/settings/footer-settings.php' );
+require_once( 'library/settings/layout-settings.php' );
 require_once( 'library/settings/typo-settings.php' );
 require_once( 'library/settings/obj-settings.php' );
 require_once( 'library/settings/advanced-settings.php' );
