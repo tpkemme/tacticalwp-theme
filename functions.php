@@ -31,6 +31,7 @@ require_once( 'library/shortcode/card.php' );
 require_once( 'library/shortcode/drilldown-menu.php' );
 require_once( 'library/shortcode/dropdown-menu.php' );
 require_once( 'library/shortcode/dropdown-pane.php' );
+require_once( 'library/shortcode/video.php' );
 require_once( 'library/shortcode/table.php' );
 
 /** Various clean up functions */

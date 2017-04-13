@@ -1361,4 +1361,9 @@ table tbody tr:nth-child(odd){
 	box-shadow: 0 6px 12px rgba(0,0,0,0.19), 0 6px 12px rgba(0,0,0,0.23);
 	transform: translate(0px, -1px) scale(1.1); }
 
+/* Videos */
+.flex-video{
+	padding-bottom: 56%;
+}
+
 </style>

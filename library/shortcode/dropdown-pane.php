@@ -1,6 +1,6 @@
 <?php
 /**
- * Button shortcode
+ * Dropdown Pane shortcode
  *
  * @package SolWP
  * @since 1.0.0
