@@ -22,6 +22,15 @@ require_once( 'library/utilities.php' );
 
 /** Shortcodes **/
 require_once( 'library/shortcode/accordion.php' );
+require_once( 'library/shortcode/accordion-menu.php' );
+require_once( 'library/shortcode/badge.php' );
+require_once( 'library/shortcode/breadcrumbs.php' );
+require_once( 'library/shortcode/button.php' );
+require_once( 'library/shortcode/callout.php' );
+require_once( 'library/shortcode/card.php' );
+require_once( 'library/shortcode/drilldown-menu.php' );
+require_once( 'library/shortcode/dropdown-menu.php' );
+require_once( 'library/shortcode/dropdown-pane.php' );
 require_once( 'library/shortcode/table.php' );
 
 /** Various clean up functions */

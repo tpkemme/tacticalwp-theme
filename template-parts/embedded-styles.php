@@ -18,11 +18,13 @@ $header_family	  = 	solwp_get_option( 'solwp_typo_header_family' );
 $subheader_family = 	solwp_get_option( 'solwp_typo_sub_header_family' );
 $title_family 		= 	solwp_get_option( 'solwp_nav_title_font_family' );
 $menu_family 			= 	solwp_get_option( 'solwp_nav_top_item_font_family' );
+$code_family 			= 	solwp_get_option( 'solwp_typo_code_font_family' );
 if( !in_array($global_family, 	 $families)) array_push( $families , $global_family );
 if( !in_array($header_family, 	 $families)) array_push( $families , $header_family );
 if( !in_array($subheader_family, $families)) array_push( $families , $subheader_family );
 if( !in_array($title_family, 	   $families)) array_push( $families , $title_family );
 if( !in_array($menu_family,	     $families)) array_push( $families , $menu_family );
+if( !in_array($code_family,	     $families)) array_push( $families , $code_family );
 foreach( $families as $family ){
 	$variants = solwp_google_fonts_src( $family );
 	$variants_string = '';
@@ -36,6 +38,8 @@ foreach( $families as $family ){
 }
 
 ?>
+
+
 /*
 	Global Font Size
 	================================
@@ -43,7 +47,9 @@ foreach( $families as $family ){
 html {
 	font-size: <?php solwp( 'global_font_size' ) ?>;
 }
-
+:focus {
+    outline: none;
+}
 /*
 	Global Site Width
 	================================
@@ -79,13 +85,13 @@ body {
 	Primary Color
 	================================
 */
-a, .hollow.primary {
+a, .hollow.primary, .button.hollow, .button.hollow:focus {
 	color: <?php solwp( 'global_primary_color' ) ?>;
 }
-a:hover, .hollow.primary:hover {
+a:hover, .hollow.primary:hover, .button.hollow:hover {
 	color: <?php solwp( 'global_light_primary_color' ) ?>;
 }
-button, .button, .button.primary {
+button, .button, .button.primary, button:focus, .button:focus, .button.primary:focus {
 	background-color: <?php solwp( 'global_primary_color' ) ?>;
 }
 button:hover, .button:hover, .button.primary:hover, .button.disabled.primary:hover,
@@ -97,14 +103,18 @@ button:hover, .button:hover, .button.primary:hover, .button.disabled.primary:hov
 .progress.primary .progress-meter {
 	background-color: <?php solwp( 'global_primary_color' ) ?>;
 }
-.button.hollow.primary {
+.button.hollow.primary, .button.hollow, .button.hollow:focus {
 	border-color: <?php solwp( 'global_primary_color' ) ?>;
+}
+.button.hollow.primary:hover, .button.hollow:hover {
+	border-color: <?php solwp( 'global_secondary_color' ) ?>;
 }
 .button.dropdown.hollow.primary::after {
 	border-top-color: <?php solwp( 'global_primary_color' ) ?>;
 }
 .badge.primary, .active {
 	background: <?php solwp( 'global_primary_color' ) ?> !important;
+	color: <?php solwp( 'global_white_color' ) ?> !important;
 }
 
 /*
@@ -117,7 +127,7 @@ button:hover, .button:hover, .button.primary:hover, .button.disabled.primary:hov
 .secondary, .disabled.secondary, .disabled.secondary:hover,
 .disabled.secondary:focus, [disabled].secondary, [disabled].secondary:hover,
 [disabled].secondary:focus, .button-group.secondary .button, .label.secondary,
-.progress.secondary .progress-meter, .button:focus {
+.progress.secondary .progress-meter, .button.secondary:focus {
 	background-color: <?php solwp( 'global_secondary_color' ) ?>;
 }
 .hollow.secondary {
@@ -128,6 +138,7 @@ button:hover, .button:hover, .button.primary:hover, .button.disabled.primary:hov
 }
 .badge.secondary {
 	background: <?php solwp( 'global_secondary_color' ) ?>;
+	color: <?php solwp( 'global_white_color' ) ?> !important;
 }
 
 /*
@@ -144,7 +155,7 @@ button:hover, .button:hover, .button.primary:hover, .button.disabled.primary:hov
 	background-color: <?php solwp( 'global_success_color' ) ?>;
 }
 
-.button.success{
+.button.success, button.success, .button.success:focus, button.success:focus{
 	color: <?php solwp( 'global_white_color' ) ?> !important;
   background-color: <?php solwp( 'global_success_color' )?>; }
 .button.success:hover{
@@ -159,6 +170,7 @@ button:hover, .button:hover, .button.primary:hover, .button.disabled.primary:hov
 }
 .badge.success {
 	background: <?php solwp( 'global_success_color' ) ?>;
+	color: <?php solwp( 'global_white_color' ) ?> !important;
 }
 
 /*
@@ -182,6 +194,7 @@ button:hover, .button:hover, .button.primary:hover, .button.disabled.primary:hov
 }
 .badge.warning {
 	background: <?php solwp( 'global_warning_color' ) ?>;
+	color: <?php solwp( 'global_white_color' ) ?> !important;
 }
 
 /*
@@ -203,7 +216,8 @@ input.is-invalid-input::placeholder, textarea::placeholder{
 [disabled].alert:focus, .label.alert, .button-group.alert,
 .progress.alert .progress-meter,
 button.button[type="reset"],
-.button.alert {
+.button.alert, .button.alert:focus, button.alert:focus,
+button.button[type="reset"]:focus, .alert:focus {
 	background-color: <?php solwp( 'global_alert_color' ) ?>;
 	color: <?php solwp( 'global_white_color' ) ?>;  }
 
@@ -215,7 +229,9 @@ button.button[type="reset"],
 	border-top-color: <?php solwp( 'global_alert_color' ) ?>; }
 
 .badge.alert{
-background: <?php solwp( 'global_alert_color' ) ?>; }
+	background: <?php solwp( 'global_alert_color' ) ?>;
+	color: <?php solwp( 'global_white_color' ) ?> !important;
+}
 
 .button.alert:hover, button.alert:hover, button.button[type="reset"]:hover{
 	background-color: <?php solwp( 'global_alert_hover_color' ) ?>;
@@ -236,7 +252,7 @@ background: <?php solwp( 'global_alert_color' ) ?>; }
 	Light Gray
 	================================
 */
-code, .acordion-title, .accordion-content, .card,
+code, .code, .acordion-title, .accordion-content, .card,
 .menu.menu-bordered li, .tabs, .tabs-content,
 .tabs-content.vertical {
  border: 1px solid <?php solwp( 'global_light_gray_color' ) ?>; }
@@ -351,7 +367,7 @@ textarea:focus, select:focus {
  Black
  ================================
 */
-abbr, body, code, kdb, label, .help-text, .input-group-label, select, .button.success,
+abbr, body, code, .code, kdb, label, .help-text, .input-group-label, select, .button.success,
 .button.success:hover, .button.success:focus, .button.warning, .button.warning:hover, .button.warning:focus,
 .button.disabled.success, .button.disabled.success:hover, .button.disabled.success:focus,
 .button[disabled].success, .button[disabled].success:hover, .button[disabled].success:focus,
@@ -634,33 +650,38 @@ a {
 	color: <?php solwp( 'typo_body_link_font_color' ) ?>;
 	text-decoration: <?php solwp( 'typo_body_link_font_decoration' ) ?>;}
 .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
-	border-color: <?php solwp( 'typo_body_link_font_color' ) ?> transparent transparent;}
+	border-color: <?php solwp( 'global_primary_color' ) ?> transparent transparent;}
 .dropdown.menu.vertical > li.opens-left > a::after {
-	border-color: transparent <?php solwp( 'typo_body_link_font_color' ) ?> transparent transparent; }
+	border-color: transparent <?php solwp( 'global_primary_color' ) ?> transparent transparent; }
 .dropdown.menu.vertical > li.opens-right > a::after {
-	border-color: transparent transparent transparent <?php solwp( 'typo_body_link_font_color' ) ?>; }
+	border-color: transparent transparent transparent <?php solwp( 'global_primary_color' ) ?>; }
 .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a::after {
-	border-color: <?php solwp( 'typo_body_link_font_color' ) ?> transparent transparent; }
+	border-color: <?php solwp( 'global_primary_color' ) ?> transparent transparent; }
 @media print, screen and (min-width: 40em) {
 	.dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a::after {
-		border-color: <?php solwp( 'typo_body_link_font_color' ) ?> transparent transparent;
+		border-color: <?php solwp( 'global_primary_color' ) ?> transparent transparent;
 		margin-top: -3px; }
 	.dropdown.menu.medium-vertical > li.opens-left > a::after {
-		border-color: transparent <?php solwp( 'typo_body_link_font_color' ) ?> transparent transparent; }
+		border-color: transparent <?php solwp( 'global_primary_color' ) ?> transparent transparent; }
 	.dropdown.menu.medium-vertical > li.opens-right > a::after {
-		border-color: transparent transparent transparent <?php solwp( 'typo_body_link_font_color' ) ?>; } }
+		border-color: transparent transparent transparent <?php solwp( 'global_primary_color' ) ?>; } }
 @media print, screen and (min-width: 64em) {
 	.dropdown.menu.large-horizontal > li.is-dropdown-submenu-parent > a::after {
-		border-color: <?php solwp( 'typo_body_link_font_color' ) ?> transparent transparent; }
+		border-color: <?php solwp( 'global_primary_color' ) ?> transparent transparent; }
 	.dropdown.menu.large-vertical > li.opens-left > a::after {
-		border-color: transparent <?php solwp( 'typo_body_link_font_color' ) ?> transparent transparent; }
+		border-color: transparent <?php solwp( 'global_primary_color' ) ?> transparent transparent; }
 	.dropdown.menu.large-vertical > li.opens-right > a::after {
 		border-color: transparent transparent transparent <?php solwp( 'typo_body_link_font_color' ) ?>; } }
 .is-dropdown-submenu .is-dropdown-submenu-parent.opens-left > a::after {
-	border-color: transparent <?php solwp( 'typo_body_link_font_color' ) ?> transparent transparent; }
+	border-color: transparent <?php solwp( 'global_primary_color' ) ?> transparent transparent; }
 .is-dropdown-submenu .is-dropdown-submenu-parent.opens-right > a::after {
-	border-color: transparent transparent transparent <?php solwp( 'typo_body_link_font_color' ) ?>; }
-
+	border-color: transparent transparent transparent <?php solwp( 'global_primary_color' ) ?>; }
+.is-dropdown-submenu-parent{
+	padding-right: 25px;
+}
+.dropdown-pane {
+    width: auto;
+}
 a:hover, a:focus {
 	color: <?php solwp( 'typo_body_link_hover_font_color' ) ?>;
 	text-decoration: <?php solwp( 'typo_body_link_hover_font_decoration' ) ?>;}
@@ -689,6 +710,26 @@ ul ul, ol ul, ul ol, ol ol {
 	margin-left: <?php solwp( 'typo_list_margin_left' ) ?>;
 	margin-bottom: 0; }
 
+/* Code */
+code, .code{
+	padding: 0.125rem 0.3125rem 0.0625rem;
+  border: 1px solid <?php solwp( 'typo_code_border_color' ) ?>;
+  background-color: <?php solwp( 'typo_code_background_color' ) ?>;
+  font-family: <?php solwp( 'typo_code_font_family' ) ?>;
+  font-weight: normal;
+}
+.code-container {
+	overflow: auto;
+	display: block;
+}
+.code {
+  display: inline-block;
+  white-space: nowrap;
+}
+.code-wrapper{
+	display: inline;
+}
+
 /* Menu Settings */
 .menu{
 	margin: <?php solwp( 'nav_menu_margin' ) ?>;
@@ -697,10 +738,24 @@ ul ul, ol ul, ul ol, ol ol {
 	padding: <?php solwp( 'nav_menu_padding' ) ?> <?php solwp( 'global_padding_size' ) ?>;
 }
 .is-drilldown-submenu, .is-dropdown-submenu {
-    background: <?php solwp( 'nav_submenu_background_color' ) ?>;
-		border: none;
+  background: <?php solwp( 'nav_submenu_background_color' ) ?>;
+	border: none;
+}
+.is-drilldown-submenu-parent > a::after {
+  right: 1.5rem;
+  border-left-color: <?php solwp( 'global_primary_color' ) ?>;
+}
+.js-drilldown-back > a::before {
+  right: 1.5rem;
+  border-right-color: <?php solwp( 'global_primary_color' ) ?>;
+}
+.is-accordion-submenu-parent > a::after{
+	border-top-color:  <?php solwp( 'global_primary_color' ) ?>;
 }
 
+.submenu.is-dropdown-submenu{
+	white-space: nowrap;
+}
 /* Breadcrumbs */
   .breadcrumbs li {
     font-size: <?php solwp( 'nav_breadcrumb_font_size' ) ?>;
@@ -764,9 +819,7 @@ ul ul, ol ul, ul ol, ol ol {
   color: <?php solwp( 'nav_top_item_font_color' ) ?>;
 }
 .top-bar ul li a:hover{
-  color: <?php solwp( 'nav_top_item_hover_font_color' ) ?>;
-	box-shadow: 0 1px 3px 0 rgba(0,0,0,.28), 0 1px 3px 0 rgba(0,0,0,.25);
-	transform: translate(0px, 1px) scale(1.01);
+  color: <?php solwp( 'nav_top_item_hover_font_color' ) ?>;;
 }
 .top-bar ul ul li a{
   color: <?php solwp( 'nav_top_submenu_font_color' ) ?>;
@@ -774,13 +827,11 @@ ul ul, ol ul, ul ol, ol ol {
 }
 .top-bar ul ul li a:hover{
 	background-color: <?php solwp( 'nav_top_submenu_hover_background_color') ?>;
-  color: <?php solwp( 'nav_top_submenu_hover_font_color' ) ?>;
-	box-shadow: 0 1px 3px 0 rgba(0,0,0,.28), 0 1px 3px 0 rgba(0,0,0,.25);
-	transform: translate(0px, 1px) scale(1.01);
+  color: <?php solwp( 'nav_top_submenu_hover_font_color' ) ?>;;
 }
 .top-bar .menu > li:not(.menu-text) > a {
   padding: .85rem;
-	font-weight: 300;
+	font-weight: 400;
 }
 
 /* sticky topbar */
@@ -791,19 +842,19 @@ ul ul, ol ul, ul ol, ol ol {
   width: 100vw;
   z-index: 888;
 }
-.logged-in .site-header{
+.admin-bar .site-header{
 	top: 32px;
 }
 .site-header + .container {
   padding-top: 45px;
 }
-.logged-in .site-header + .container {
+.admin-bar .site-header + .container {
 	<?php $p_top = strval( ( floatval( solwp_get_option( 'solwp_nav_top_padding' ) ) + 1 )  * 2.0 ); ?>
 	<?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_nav_top_padding' ) ); ?>
 	padding-top: <?php echo $p_top . $units ?>;
 }
 @media screen and (max-width: 782px){
-	.logged-in .site-header {
+	.admin-bar .site-header {
 	  position: fixed;
 	  top: 46px;
 	  width: 100vw;
@@ -981,6 +1032,12 @@ body.elementor-editor-active .site-header {
 }
 :last-child:not(.is-active) > .accordion-title, :last-child > .accordion-content:last-child{
 	border: none;
+}
+
+/* badges */
+.badge {
+  position: relative;
+  top: -3px;
 }
 
 /* buttons */
@@ -1164,8 +1221,7 @@ section.container .button:hover, section.container.btn:hover{
   border-radius: 15px; }
 .card-divider, .pagination button:hover {
   background: <?php solwp( 'global_secondary_color' )?>;
-  border: none;
-	position: relative; }
+  border: none; }
 .card {
   color: <?php solwp( 'global_black_color' )?>;
   background-color: <?php solwp( 'global_white_color' )?>; }
@@ -1178,6 +1234,9 @@ section.container .button:hover, section.container.btn:hover{
   text-transform: uppercase;
   font-weight: 900;
   font-size: 150%;
+}
+.card p img {
+    margin-bottom: -20px;
 }
 /* Close Button */
 button.close-button {

@@ -9,9 +9,6 @@
  /**
 	* Outputs an table when the [solwp-table]
 	*
-	* Echos output of solwp_get_option( $prefix . 'option_name' ).  This function
-	* isn't necessary but it keeps the embedded styles template a lot cleaner
-	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
 	* @return	output of shortcode

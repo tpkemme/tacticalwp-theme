@@ -500,7 +500,45 @@
           'attributes'			 => array(
             'data-default'	 => '1.25rem'
           ),
-          'after_row' => '</div></li></ul>'
+          'after_row' => '</div></li>'
+      ));
+      $cmb->add_field(array(
+          'before_row'  => '<li class="accordion-item" data-accordion-item>
+              <a href="#panel-typo-code" role="tab" class="accordion-title" id="panel-typo-code-heading" aria-controls="panel-typo-code">
+                <h6>Code</h6>
+              </a>
+          		<div id="panel-typo-code" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-typo-code-heading">',
+					'name' => __('Code Font Family', $prefix),
+          'desc'    => __('Font family for code elements, should monospaced (default: Roboto Mono)', $prefix),
+          'id'            => $prefix . '_typo_code_font_family',
+          'type'             => 'select',
+          'show_option_none' => false,
+          'default'          => 'Roboto Mono',
+          'options_cb'       => 'solwp_google_fonts',
+          'attributes'			 => array(
+            'data-default'	 => 'Roboto Mono',
+          ),
+      ));
+      $cmb->add_field(array(
+          'name' => __('Code Border Color', $prefix),
+          'desc'    => __('Color of the border around code elements. (default: #cacaca)', $prefix),
+          'id'            => $prefix . '_typo_code_border_color',
+          'type'    => 'colorpicker',
+          'default' => '#cacaca',
+          'attributes'			 => array(
+            'data-default'	 => '#cacaca'
+          ),
+      ));
+      $cmb->add_field(array(
+				'name' => __('Code Background Color', $prefix),
+				'desc'    => __('Color of the background around code elements. (default: #e3ecff)', $prefix),
+				'id'            => $prefix . '_typo_code_background_color',
+				'type'    => 'colorpicker',
+				'default' => '#e3ecff',
+				'attributes'			 => array(
+					'data-default'	 => '#e3ecff'
+				),
+        'after_row' => '</div></li></ul>'
       ));
 			return $cmb;
 		}

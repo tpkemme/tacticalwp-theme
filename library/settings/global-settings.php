@@ -271,7 +271,7 @@
       $cmb->add_field(array(
 					'before_row'  => '<li class="accordion-item" data-accordion-item>
 														<a href="#panel-global-grays" role="tab" class="accordion-title" id="panel-global-grays-heading" aria-controls="panel-global-grays">
-															<h6>Global Monochromes</h6>
+															<h6>Global Blacks & Whites</h6>
 														</a>
 														<div id="panel-global-grays" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-global-grays-heading">',
           'name'    => __('White', $prefix),

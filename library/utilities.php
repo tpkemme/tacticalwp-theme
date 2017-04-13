@@ -72,15 +72,28 @@
 	 * Break shortcode
 	 *
 	 * @since  1.0.0
-	 * @param  $family	name of the family to retrieve variants
-	 * @return $files   array of font source urls or false if family doesn't exist
+	 * @return html break
 	 */
 	if ( ! function_exists( 'solwp_br' ) ) :
-		function solwp_br( $family )
+		function solwp_br()
 		{
-				return "<br/>";
+				return '<br/>';
 		}
 		add_shortcode( 'br', 'solwp_br' );
+	endif;
+
+	/**
+	 * code shortcode
+	 *
+	 * @since  1.0.0
+	 * @return html div with code class
+	 */
+	if ( ! function_exists( 'solwp_code' ) ) :
+		function solwp_code( $atts, $content = '')
+		{
+				return '<div class="code-wrapper"><div class="code-container"><div class="code">'. do_shortcode($content) .'</div></div></div>';
+		}
+		add_shortcode( 'code', 'solwp_code' );
 	endif;
 
 ?>
