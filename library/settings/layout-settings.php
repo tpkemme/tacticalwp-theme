@@ -73,4 +73,62 @@
 		}
 	endif;
 
+ /**
+	*	Adds all fields for layout settings the edit page screen
+	*
+	* @param 	[cmb] 	 $cmb 	 [ custom metabox (cmb), required ]
+	* @param 	[string] $prefix [ plugin prefix (solwp), optional ]
+	* @return	[cmb]		 $CMB2	 [ cmb with fields added ]
+	* @since 	1.0.0
+	* @version 1.0.0
+	*/
+	if ( ! function_exists( 'solwp_add_layout_edit_settings' ) ) :
+		function solwp_add_layout_edit_settings( $cmb, $prefix = 'solwp' ){
+			// Add fields to edit screen for pages only at this point
+			$cmb = new_cmb2_box( array(
+          'id'           => 'solwp-layout-edit',
+					'title'				 => 'SolWP Page Overrides',
+          'hookup'       => true,
+          'save_fields'  => true,
+					'object_types' => array( 'page' ), // post type
+					'context'      => 'normal', //  'normal', 'advanced', or 'side'
+					'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+					'show_names'   => true,
+      ) );
+
+			$cmb->add_field( array(
+					'name'    => __( 'Page Title', $prefix ),
+					'id'      => $prefix . '_page_title_single',
+					'description' => 'Change the layout for this specific page.',
+					'type'    => 'select',
+					'options' => array(
+						'Hide' => 'Hide',
+						'Show' => 'Show',
+					),
+					'default' => __( 'Show', $prefix ),
+					'attributes'			 => array(
+						'data-default'	 => 'Show'
+					),
+			) );
+
+      $cmb->add_field( array(
+          'name'    => __( 'Page Layout', $prefix ),
+          'id'      => $prefix . '_page_layout_single',
+					'description' => 'Change the layout for this specific page.',
+          'type'    => 'select',
+					'options' => array(
+						'Default' => 'Default',
+						'Page Left Sidebar' => 'Page Left Sidebar',
+						'Left & Right Sidebar' => 'Left & Right Sidebar',
+						'Full Width' => 'Full Width',
+					),
+          'default' => __( 'Default', $prefix ),
+					'attributes'			 => array(
+						'data-default'	 => 'Default'
+					),
+      ) );
+			return $cmb;
+		}
+	endif;
+
 ?>

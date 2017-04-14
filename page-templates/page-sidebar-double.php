@@ -1,27 +1,18 @@
 <?php
 /*
-Template Full Width
+Template Left & Right Sidebar
 */
 ?>
-
-<div id="page-full-width" role="main">
+<div id="page-sidebar-left" role="main">
+<?php get_sidebar(); ?>
 
 <?php do_action( 'solwp_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
   <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-			<?php $showtitle = get_post_meta( get_the_ID(), 'solwp_page_title_single', true ); ?>
 			<?php if( solwp_get_option( 'solwp_layout_title_show' ) === 'show' ): ?>
-				<?php if( $showtitle === 'Show' ): ?>
-					<header>
-							<h1 class="entry-title"><?php the_title(); ?></h1>
-					</header>
-				<?php endif; ?>
-			<?php else: ?>
-				<?php if( $showtitle === 'Show' ): ?>
-					<header>
-							<h1 class="entry-title"><?php the_title(); ?></h1>
-					</header>
-				<?php endif; ?>
+				<header>
+						<h1 class="entry-title"><?php the_title(); ?></h1>
+				</header>
 			<?php endif; ?>
       <?php do_action( 'solwp_page_before_entry_content' ); ?>
       <div class="entry-content">
@@ -42,8 +33,9 @@ Template Full Width
       <?php comments_template(); ?>
       <?php do_action( 'solwp_page_after_comments' ); ?>
   </article>
-<?php endwhile; ?>
+<?php endwhile;?>
 
 <?php do_action( 'solwp_after_content' ); ?>
+<?php get_sidebar(); ?>
 
 </div>

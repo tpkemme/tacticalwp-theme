@@ -1,11 +1,8 @@
 <?php
 /*
-Template Name: Left Sidebar
+Template Left Sidebar
 */
-get_header(); ?>
-
-<?php get_template_part( 'template-parts/featured-image' ); ?>
-
+?>
 <div id="page-sidebar-left" role="main">
 
 <?php do_action( 'solwp_before_content' ); ?>
@@ -41,5 +38,3 @@ get_header(); ?>
 <?php get_sidebar(); ?>
 
 </div>
-
-<?php get_footer();

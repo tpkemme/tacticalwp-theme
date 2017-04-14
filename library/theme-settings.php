@@ -45,15 +45,16 @@
 class SolWP_Settings
 {
     /**
+    * Theme prefix
+    * @var string
+    */
+    private $prefix = 'solwp';
+
+    /**
      * Option key, and option page slug
      * @var string
      */
     private $key = 'solwp_options';
-    /**
-     * Theme prefix
-     * @var string
-     */
-    private $prefix = 'solwp';
     /**
      * Options page metabox id
      * @var string
@@ -337,7 +338,7 @@ class SolWP_Settings
                 'value' => array( $this->key, )
             )
         ));
-        solwp_add_global_settings( $cmb, 'solwp' );
+        solwp_add_global_settings( $cmb, $this->prefix );
         array_push($this->option_names, $cmb);
     }
 
@@ -359,7 +360,7 @@ class SolWP_Settings
 							'value' => array( $this->key . "-nav", )
 					),
 			));
-			solwp_add_nav_settings( $cmb, 'solwp' );
+			solwp_add_nav_settings( $cmb, $this->prefix );
 			array_push($this->option_names, $cmb);
     }
 
@@ -381,7 +382,7 @@ class SolWP_Settings
               'value' => array( $this->key . "-footer", )
           ),
       ));
-      solwp_add_footer_settings( $cmb, 'solwp' );
+      solwp_add_footer_settings( $cmb, $this->prefix );
       array_push($this->option_names, $cmb);
     }
 
@@ -403,8 +404,22 @@ class SolWP_Settings
               'value' => array( $this->key . "-layout", )
           ),
       ));
-      solwp_add_layout_settings( $cmb, 'solwp' );
+      solwp_add_layout_settings( $cmb, $this->prefix );
 			array_push($this->option_names, $cmb);
+
+      $cmb2 = new_cmb2_box( array(
+          'id'           => $this->prefix . '-layout-edit',
+					'title'				 => 'SolWP Page Overrides',
+          'hookup'       => true,
+          'save_fields'  => true,
+					'object_types' => array( 'page' ), // post type
+					'context'      => 'normal', //  'normal', 'advanced', or 'side'
+					'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+					'show_names'   => true,
+      ) );
+
+      solwp_add_layout_edit_settings( $cmb2, $this->prefix );
+
     }
 
     /**
@@ -425,7 +440,7 @@ class SolWP_Settings
                 'value' => array( $this->key . "-typo", )
             ),
         ));
-				solwp_add_typo_settings( $cmb, 'solwp' );
+				solwp_add_typo_settings( $cmb, $this->prefix );
         array_push($this->option_names, $cmb);
     }
 
@@ -447,7 +462,7 @@ class SolWP_Settings
 								'value' => array( $this->key . "-obj", )
 						),
 				));
-				solwp_add_obj_settings( $cmb, 'solwp' );
+				solwp_add_obj_settings( $cmb, $this->prefix );
         array_push($this->option_names, $cmb);
     }
 
@@ -469,7 +484,7 @@ class SolWP_Settings
 								'value' => array( $this->key . "-advanced", )
 						),
 				));
-				solwp_add_advanced_settings( $cmb, 'solwp' );
+				solwp_add_advanced_settings( $cmb, $this->prefix );
         array_push($this->option_names, $cmb);
     }
 

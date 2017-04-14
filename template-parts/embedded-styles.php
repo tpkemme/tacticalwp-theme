@@ -538,6 +538,7 @@ Global padding
 h1,h2,h3,h4,h5,h6 {
 line-height: <?php solwp( 'typo_header_line_height' ) ?>;
 margin-bottom: <?php solwp( 'typo_header_margin_bottom' ) ?>;
+letter-spacing: -0.04rem;
 }
 h1 {
 font-weight: <?php solwp( 'typo_header_weight' ) ?>;
