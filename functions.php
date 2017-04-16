@@ -31,6 +31,11 @@ require_once( 'library/shortcode/card.php' );
 require_once( 'library/shortcode/drilldown-menu.php' );
 require_once( 'library/shortcode/dropdown-menu.php' );
 require_once( 'library/shortcode/dropdown-pane.php' );
+require_once( 'library/shortcode/label.php' );
+require_once( 'library/shortcode/modal.php' );
+require_once( 'library/shortcode/motion.php' );
+require_once( 'library/shortcode/progress-bar.php' );
+require_once( 'library/shortcode/slider.php' );
 require_once( 'library/shortcode/video.php' );
 require_once( 'library/shortcode/table.php' );
 

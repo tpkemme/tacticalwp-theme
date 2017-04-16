@@ -112,11 +112,15 @@ button:hover, .button:hover, .button.primary:hover, .button.disabled.primary:hov
 .button.dropdown.hollow.primary::after {
 	border-top-color: <?php solwp( 'global_primary_color' ) ?>;
 }
-.badge.primary, .active {
+.badge.primary, .active{
 	background: <?php solwp( 'global_primary_color' ) ?> !important;
 	color: <?php solwp( 'global_white_color' ) ?> !important;
 }
-
+.label.primary, .label.primary * {
+	background: <?php solwp( 'global_primary_color' ) ?> !important;
+	color: <?php solwp( 'global_white_color' ) ?> !important;
+	margin-bottom: 0;
+}
 /*
 	Secondary Color
 	================================
@@ -136,11 +140,15 @@ button:hover, .button:hover, .button.primary:hover, .button.disabled.primary:hov
 .dropdown.hollow.secondary::after {
 	border-top-color: <?php solwp( 'global_secondary_color' ) ?>;
 }
-.badge.secondary {
+.badge.secondary{
 	background: <?php solwp( 'global_secondary_color' ) ?>;
 	color: <?php solwp( 'global_white_color' ) ?> !important;
 }
-
+.label.secondary, .label.secondary * {
+	background: <?php solwp( 'global_secondary_color' ) ?> !important;
+	color: <?php solwp( 'global_white_color' ) ?> !important;
+	margin-bottom: 0;
+}
 /*
 	Success Color
 	================================
@@ -168,11 +176,15 @@ button:hover, .button:hover, .button.primary:hover, .button.disabled.primary:hov
 .dropdown.hollow.success::after {
 	border-top-color: <?php solwp( 'global_success_color' ) ?>;
 }
-.badge.success {
+.badge.success{
 	background: <?php solwp( 'global_success_color' ) ?>;
 	color: <?php solwp( 'global_white_color' ) ?> !important;
 }
-
+.label.success, .label.success * {
+	background: <?php solwp( 'global_success_color' ) ?> !important;
+	color: <?php solwp( 'global_white_color' ) ?> !important;
+	margin-bottom: 0;
+}
 /*
 	Warning Color
 	================================
@@ -192,11 +204,15 @@ button:hover, .button:hover, .button.primary:hover, .button.disabled.primary:hov
 .dropdown.hollow.warning::after {
 	border-top-color: <?php solwp( 'global_warning_color' ) ?>;
 }
-.badge.warning {
+.badge.warning{
 	background: <?php solwp( 'global_warning_color' ) ?>;
 	color: <?php solwp( 'global_white_color' ) ?> !important;
 }
-
+.label.warning, .label.warning * {
+	background: <?php solwp( 'global_warning_color' ) ?> !important;
+	color: <?php solwp( 'global_white_color' ) ?> !important;
+	margin-bottom: 0;
+}
 /*
 	Alert Color
 	================================
@@ -232,7 +248,11 @@ button.button[type="reset"]:focus, .alert:focus {
 	background: <?php solwp( 'global_alert_color' ) ?>;
 	color: <?php solwp( 'global_white_color' ) ?> !important;
 }
-
+.label.alert, .label.alert * {
+	background: <?php solwp( 'global_alert_color' ) ?> !important;
+	color: <?php solwp( 'global_white_color' ) ?> !important;
+	margin-bottom: 0;
+}
 .button.alert:hover, button.alert:hover, button.button[type="reset"]:hover{
 	background-color: <?php solwp( 'global_alert_hover_color' ) ?>;
 	border-color: <?php solwp( 'global_alert_hover_color' ) ?>; }
@@ -494,10 +514,10 @@ body, abbr, .accordion-content, .callout,
 }
 
 /*
-	Global Font Color
+	Global Font family
 	================================
  */
-body, h1, h2, h3, h4, h5, h6 {
+body {
 	font-family: <?php '"' . solwp( 'global_font_family' ) . '"' ?>;
 }
 
@@ -542,79 +562,91 @@ letter-spacing: -0.04rem;
 }
 h1 {
 font-weight: <?php solwp( 'typo_header_weight' ) ?>;
-font-size: <?php solwp( 'typo_h1_size' ) ?>;
+<?php $h1 =  strval( floatval( solwp_get_option( 'solwp_typo_h1_size' ) ) / 2.0 );
+$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_typo_h1_size' ) ); ?>
+font-size: <?php echo $h1 . $units ?>;
 color: <?php solwp( 'typo_h1_color' ) ?>;
 font-family: <?php '"' . solwp( 'typo_header_family' ) . '"' ?>;
 }
 h2 {
 font-weight: <?php solwp( 'typo_header_weight' ) ?>;
-font-size: <?php solwp( 'typo_h2_size' ) ?>;
+<?php $h2 =  strval( floatval( solwp_get_option( 'solwp_typo_h2_size' ) ) / 2.0 );
+$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_typo_h2_size' ) ); ?>
+font-size: <?php echo $h2 . $units ?>;
 color: <?php solwp( 'typo_h2_color' ) ?>;
 font-family: <?php '"' . solwp( 'typo_header_family' ) . '"' ?>;
 }
 h3 {
 font-weight: <?php solwp( 'typo_header_weight' ) ?>;
-font-size: <?php solwp( 'typo_h3_size' ) ?>;
+<?php $h3 =  strval( floatval( solwp_get_option( 'solwp_typo_h3_size' ) ) / 2.0 );
+$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_typo_h3_size' ) ); ?>
+font-size: <?php echo $h3 . $units ?>;
 color: <?php solwp( 'typo_h3_color' ) ?>;
 font-family: <?php '"' . solwp( 'typo_header_family' ) . '"' ?>;
 }
 h4 {
 font-weight: <?php solwp( 'typo_sub_header_weight' ) ?>;
-font-size: <?php solwp( 'typo_h4_size' ) ?>;
+<?php $h4 =  strval( floatval( solwp_get_option( 'solwp_typo_h4_size' ) ) / 2.0 );
+$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_typo_h4_size' ) ); ?>
+font-size: <?php echo $h4 . $units ?>;
 color: <?php solwp( 'typo_h4_color' ) ?>;
 font-family: <?php '"' . solwp( 'typo_sub_header_family' ) . '"' ?>;
 }
 h5 {
 font-weight: <?php solwp( 'typo_sub_header_weight' ) ?>;
-font-size: <?php solwp( 'typo_h5_size' ) ?>;
+<?php $h5 =  strval( floatval( solwp_get_option( 'solwp_typo_h5_size' ) ) / 2.0 );
+$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_typo_h5_size' ) ); ?>
+font-size: <?php echo $h5 . $units ?>;
 color: <?php solwp( 'typo_h5_color' ) ?>;
 font-family: <?php '"' . solwp( 'typo_sub_header_family' ) . '"' ?>;
 }
 h6 {
 font-weight: <?php solwp( 'typo_sub_header_weight' ) ?>;
-font-size: <?php solwp( 'typo_h6_size' ) ?>;
+<?php $h6 =  strval( floatval( solwp_get_option( 'solwp_typo_h6_size' ) ) / 2.0 );
+$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_typo_h6_size' ) ); ?>
+font-size: <?php echo $h6 . $units ?>;
 color: <?php solwp( 'typo_h6_color' ) ?>;
 font-family: <?php '"' . solwp( 'typo_sub_header_family' ) . '"' ?>;
  }
 @media print, screen and (min-width: 40em) {
  h1 {
 	 <?php
-	 		$h1 =  strval( floatval( solwp_get_option( 'solwp_typo_h1_size' ) ) * 2.0 );
+	 		$h1 =  strval( floatval( solwp_get_option( 'solwp_typo_h1_size' ) ) );
 			$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_typo_h1_size' ) );
 	  ?>
    font-size: <?php echo $h1 . $units ?>;
  }
  h2 {
 	 <?php
-	 		$h2 =  strval( floatval( solwp_get_option( 'solwp_typo_h2_size' ) ) * 2.0 );
+	 		$h2 =  strval( floatval( solwp_get_option( 'solwp_typo_h2_size' ) ) );
 			$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_typo_h2_size' ) );
 	  ?>
    font-size: <?php echo $h2 . $units ?>;
  }
  h3 {
 	 <?php
-	 		$h3 =  strval( floatval( solwp_get_option( 'solwp_typo_h3_size' ) ) * 2.0 );
+	 		$h3 =  strval( floatval( solwp_get_option( 'solwp_typo_h3_size' ) ) );
 			$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_typo_h3_size' ) );
 	  ?>
    font-size: <?php echo $h3 . $units ?>;
  }
  h4 {
 	 <?php
-	 		$h4 =  strval( floatval( solwp_get_option( 'solwp_typo_h4_size' ) ) * 2.0 );
+	 		$h4 =  strval( floatval( solwp_get_option( 'solwp_typo_h4_size' ) ) );
 			$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_typo_h4_size' ) );
 	  ?>
    font-size: <?php echo $h4 . $units ?>;
  }
  h5 {
 	 <?php
-	 		$h5 =  strval( floatval( solwp_get_option( 'solwp_typo_h5_size' ) ) * 2.0 );
+	 		$h5 =  strval( floatval( solwp_get_option( 'solwp_typo_h5_size' ) ) );
 			$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_typo_h5_size' ) );
 	  ?>
    font-size: <?php echo $h5 . $units ?>;
  }
  h6 {
 	 <?php
-	 		$h6 =  strval( floatval( solwp_get_option( 'solwp_typo_h6_size' ) ) * 2.0 );
+	 		$h6 =  strval( floatval( solwp_get_option( 'solwp_typo_h6_size' ) ) );
 			$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_typo_h6_size' ) );
 	  ?>
    font-size: <?php echo $h6 . $units ?>;
@@ -774,6 +806,7 @@ code, .code{
     color: #<?php solwp( 'global_white_color' ) ?>; }
 
 /* Topbar */
+/* TODO: clean this */
 .top-bar {
   padding: <?php solwp( 'nav_top_padding' ) ?>;
   background: <?php solwp( 'nav_top_background_color') ?>;
@@ -835,6 +868,42 @@ code, .code{
 	font-weight: 400;
 }
 
+.top-bar .top-bar-right:not(.top-bar-search) button:hover,
+.top-bar .top-bar-right:not(.top-bar-search) .button:hover,
+.top-bar .top-bar-right:not(.top-bar-search) .btn:hover{
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,.28), 0 8px 16px 0 rgba(0,0,0,.25);
+	transform: translate(0px, -1px) scale(1.01); }
+.top-bar .top-bar-right.top-bar-search button:hover,
+.top-bar .top-bar-right.top-bar-search .button:hover,
+.top-bar .top-bar-right.top-bar-search .btn:hover{
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,.28), 0 8px 16px 0 rgba(0,0,0,.25);
+	transform: scale(1.01); }
+.top-bar .top-bar-search input {
+  max-width: 200px;
+  margin-right: 1rem;
+  <?php $p_top = strval( floatval( solwp_get_option( 'solwp_nav_top_padding' ) ) + .75 ); ?>
+  <?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_nav_top_padding' ) ); ?>
+  padding:   <?php echo $p_top . $units ?> <?php solwp( 'global_padding_size' ) ?> <?php echo $p_top . $units ?>;
+	margin-left: -25px;
+	top: -1px;
+	position: relative;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+  border-right-width: 0; }
+
+.top-bar-right.top-bar-search {
+  position: relative;
+  top: 4px; }
+.top-bar-right.top-bar-search button{
+  position: relative;
+  top: -1px; }
+.top-bar .top-bar-search button{
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	margin-left: -25px;
+	<?php $p_top = strval( floatval( solwp_get_option( 'solwp_nav_top_padding' ) ) + .725 ); ?>
+  <?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_nav_top_padding' ) ); ?>
+  padding:   <?php echo $p_top . $units ?> <?php solwp( 'global_padding_size' ) ?> <?php echo $p_top . $units ?>;  }
 /* sticky topbar */
 <?php if ( solwp_get_option( 'solwp_nav_top_sticky' ) === 'sticky' ): ?>
 .site-header {
@@ -933,49 +1002,6 @@ body.elementor-editor-active .site-header {
 }
 
 
-/* ===================================================================*/
-/*																																		*/
-/* These are all just plain styles they're supposed to be settings... */
-/* 																																		*/
-/* ===================================================================*/
-.top-bar .top-bar-right:not(.top-bar-search) button:hover,
-.top-bar .top-bar-right:not(.top-bar-search) .button:hover,
-.top-bar .top-bar-right:not(.top-bar-search) .btn:hover{
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,.28), 0 8px 16px 0 rgba(0,0,0,.25);
-	transform: translate(0px, -1px) scale(1.01); }
-.top-bar .top-bar-right.top-bar-search button:hover,
-.top-bar .top-bar-right.top-bar-search .button:hover,
-.top-bar .top-bar-right.top-bar-search .btn:hover{
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,.28), 0 8px 16px 0 rgba(0,0,0,.25);
-	transform: scale(1.01); }
-.top-bar .top-bar-search input {
-  max-width: 200px;
-  margin-right: 1rem;
-  <?php $p_top = strval( floatval( solwp_get_option( 'solwp_nav_top_padding' ) ) + .75 ); ?>
-  <?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_nav_top_padding' ) ); ?>
-  padding:   <?php echo $p_top . $units ?> <?php solwp( 'global_padding_size' ) ?> <?php echo $p_top . $units ?>;
-	margin-left: -25px;
-	top: -1px;
-	position: relative;
-	border-top-right-radius: 0px;
-	border-bottom-right-radius: 0px;
-  border-right-width: 0; }
-
-.top-bar-right.top-bar-search {
-  position: relative;
-  top: 4px; }
-.top-bar-right.top-bar-search button{
-  position: relative;
-  top: -1px; }
-.top-bar .top-bar-search button{
-	border-top-left-radius: 0px;
-	border-bottom-left-radius: 0px;
-	margin-left: -25px;
-	<?php $p_top = strval( floatval( solwp_get_option( 'solwp_nav_top_padding' ) ) + .725 ); ?>
-  <?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', solwp_get_option( 'solwp_nav_top_padding' ) ); ?>
-  padding:   <?php echo $p_top . $units ?> <?php solwp( 'global_padding_size' ) ?> <?php echo $p_top . $units ?>;  }
-
-
 /* Object Defaults */
 /* Accordions */
 .accordion{
@@ -1044,12 +1070,57 @@ body.elementor-editor-active .site-header {
 /* buttons */
 button, .button{
 	border: none;
+  text-transform: uppercase !important;
 }
+/* Box Shadows? */
+.card, button, .button, .btn, section.container button,
+section.container .button, section.container.btn{
+	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+	transition: all 0.2s cubic-bezier(.25,.8,.25,1); }
+.card:hover, section.container button:hover,
+section.container .button:hover, section.container.btn:hover{
+	box-shadow: 0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
+	transform: translate(0px, -1px) scale(1.01); }
 
 /* Callouts */
 .callout{
 	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
 	border: none;
+}
+
+/* Card Styles */
+.card {
+  border: none;
+  border-radius: 15px; }
+.card-divider, .pagination button:hover {
+  background: <?php solwp( 'global_secondary_color' )?>;
+  border: none; }
+.card {
+  color: <?php solwp( 'global_black_color' )?>;
+  background-color: <?php solwp( 'global_white_color' )?>; }
+.card .card-content{
+  padding: 1rem; }
+.card .card-divider p{
+	color: <?php solwp( 'global_white_color' )?>;
+}
+.card-content h4 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 150%;
+}
+.card p img {
+    margin-bottom: -20px;
+}
+/* Close Button */
+button.close-button {
+	position: absolute;
+  padding: .3rem .7rem;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.close-button span {
+  top: -2px;
+  position: relative;
+	color: white;
 }
 
 /* Drop downs menus */
@@ -1174,83 +1245,6 @@ input[type=checkbox]:not(.switch-input):checked + label:before {
 	border: none !important;
 }
 
-/* Tabs */
-.tabs{
-	border: none;
-	background: transparent;
-	display: inline-block;
-	margin-bottom: -7px;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.24);
-}
-.tabs-content{
-	box-shadow: 0 3px 6px rgba(0,0,0,0.12), 0 3px 6px rgba(0,0,0,0.24);
-	border: none;
-	position: relative;
-	z-index: 0;
-}
-.tabs-title > a{
-	color: <?php solwp( 'obj_tab_font_color') ?>;
-	background-color: <?php solwp( 'obj_tab_inactive_color') ?>; }
-.tabs-title > a[aria-selected="true"]{
-	color: <?php solwp( 'obj_tab_font_color' ) ?>;
-	background-color: <?php solwp( 'obj_tab_active_color' ) ?>;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.12), 0 3px 6px rgba(0,0,0,0.24);
-	position: relative;
-	z-index: 0;
- }
-.tabs-title > a:hover{
-	background: <?php solwp( 'obj_tab_hover_color') ?>;
-	color: <?php solwp( 'obj_tab_font_color' ) ?>; }
-.tabs-title > a[aria-selected="true"]:hover{
-	background-color: <?php solwp( 'obj_tab_active_color') ?>;
-	color: <?php solwp( 'obj_tab_font_color' ) ?>; }
-
-
-/* Box Shadows? */
-.card, button, .button, .btn, section.container button,
-section.container .button, section.container.btn{
-	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
-	transition: all 0.2s cubic-bezier(.25,.8,.25,1); }
-.card:hover, section.container button:hover,
-section.container .button:hover, section.container.btn:hover{
-	box-shadow: 0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
-	transform: translate(0px, -1px) scale(1.01); }
-
-/* Card Styles */
-.card {
-  border: none;
-  border-radius: 15px; }
-.card-divider, .pagination button:hover {
-  background: <?php solwp( 'global_secondary_color' )?>;
-  border: none; }
-.card {
-  color: <?php solwp( 'global_black_color' )?>;
-  background-color: <?php solwp( 'global_white_color' )?>; }
-.card .card-content{
-  padding: 1rem; }
-.card .card-divider p{
-	color: <?php solwp( 'global_white_color' )?>;
-}
-.card-content h4 {
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 150%;
-}
-.card p img {
-    margin-bottom: -20px;
-}
-/* Close Button */
-button.close-button {
-	position: absolute;
-  padding: .3rem .7rem;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-.close-button span {
-  top: -2px;
-  position: relative;
-	color: white;
-}
-
 /* Media object */
 
 /* Orbit/Testimonials */
@@ -1340,6 +1334,37 @@ input:checked ~ .switch-paddle{
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
+/* Tabs */
+.tabs{
+	border: none;
+	background: transparent;
+	display: inline-block;
+	margin-bottom: -7px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.24);
+}
+.tabs-content{
+	box-shadow: 0 3px 6px rgba(0,0,0,0.12), 0 3px 6px rgba(0,0,0,0.24);
+	border: none;
+	position: relative;
+	z-index: 0;
+}
+.tabs-title > a{
+	color: <?php solwp( 'obj_tab_font_color') ?>;
+	background-color: <?php solwp( 'obj_tab_inactive_color') ?>; }
+.tabs-title > a[aria-selected="true"]{
+	color: <?php solwp( 'obj_tab_font_color' ) ?>;
+	background-color: <?php solwp( 'obj_tab_active_color' ) ?>;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.12), 0 3px 6px rgba(0,0,0,0.24);
+	position: relative;
+	z-index: 0;
+ }
+.tabs-title > a:hover{
+	background: <?php solwp( 'obj_tab_hover_color') ?>;
+	color: <?php solwp( 'obj_tab_font_color' ) ?>; }
+.tabs-title > a[aria-selected="true"]:hover{
+	background-color: <?php solwp( 'obj_tab_active_color') ?>;
+	color: <?php solwp( 'obj_tab_font_color' ) ?>; }
+
 /* Tables */
 table thead{
 	background-color: <?php solwp( 'obj_table_header_color') ?>;
@@ -1365,6 +1390,12 @@ table tbody tr:nth-child(odd){
 /* Videos */
 .flex-video{
 	padding-bottom: 56%;
+}
+
+/* posts */
+/* TODO: make an option? */
+.nav-links{
+  display: none;
 }
 
 </style>

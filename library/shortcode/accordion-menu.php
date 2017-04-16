@@ -33,17 +33,21 @@
 		), $atts, 'solwp-accordion-menu' );
 
 		$out = '';
+		$locations = get_nav_menu_locations();
 
-		$out = wp_nav_menu( array(
-			'theme_location' 	=> 'primary',
-			'menu' => $atts['menu'],
-			'menu_class' => 'vertical menu',
-			'menu_id' => $atts['id'],
-			'container' => '',
-			'items_wrap' => '<ul id="%1$s" data-accordion-menu class="%2$s">%3$s</ul>',
-			'echo'			 => false,
-			'walker'		 => new Accordion_Menu_Walker_Nav_Menu()
-		 	));
+		if (0 !== $locations['header']) {
+			$out = wp_nav_menu( array(
+				'theme_location' 	=> 'header',
+				'menu' => $atts['menu'],
+				'menu_class' => 'vertical menu',
+				'menu_id' => $atts['id'],
+				'container' => '',
+				'items_wrap' => '<ul id="%1$s" data-accordion-menu class="%2$s">%3$s</ul>',
+				'echo'			 => false,
+				'walker'		 => new Accordion_Menu_Walker_Nav_Menu(),
+	    	'fallback_cb'    => false
+			));
+		}
 
 		return $out;
 	}

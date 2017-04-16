@@ -3,7 +3,9 @@
 Template Left & Right Sidebar
 */
 ?>
-<div id="page-sidebar-left" role="main">
+
+
+<div id="page-sidebar-double" role="main">
 <?php get_sidebar(); ?>
 
 <?php do_action( 'solwp_before_content' ); ?>

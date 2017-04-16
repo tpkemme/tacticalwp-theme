@@ -518,6 +518,7 @@ get_header(); ?>
 
 					<!-- Label -->
 					<h2 id="label" class="docs-heading" data-magellan-target="label"><a href="#label"></a>Label</h2>
+						<span class="primary label">Primary Label</span>
 						<span class="secondary label">Secondary Label</span>
 						<span class="success label">Success Label</span>
 						<span class="alert label">Alert Label</span>
