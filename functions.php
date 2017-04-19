@@ -36,8 +36,14 @@ require_once( 'library/shortcode/modal.php' );
 require_once( 'library/shortcode/motion.php' );
 require_once( 'library/shortcode/progress-bar.php' );
 require_once( 'library/shortcode/slider.php' );
+require_once( 'library/shortcode/switch.php' );
 require_once( 'library/shortcode/video.php' );
 require_once( 'library/shortcode/table.php' );
+require_once( 'library/shortcode/tabs.php' );
+require_once( 'library/shortcode/thumbnail.php' );
+require_once( 'library/shortcode/toggle.php' );
+require_once( 'library/shortcode/tooltip.php' );
+require_once( 'library/shortcode/visibility.php' );
 
 /** Various clean up functions */
 require_once( 'library/cleanup.php' );

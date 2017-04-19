@@ -1127,7 +1127,12 @@ button.close-button {
 .submenu.is-dropdown-submenu{
 	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
 }
+.dropdown.menu > li .is-dropdown-submenu {padding: 10px 25px 10px 10px;}
 
+.dropdown.menu li {list-style-type: none;}
+.is-dropdown-submenu .is-dropdown-submenu-parent.opens-right > a::after {
+    right: 0px;
+}
 /* Dropdown pane */
 button.dropdown-pane{
 	border: none;
@@ -1333,7 +1338,9 @@ input:checked ~ .switch-paddle{
 .switch-paddle:after{
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
-
+.slider.vertical {
+    transform: scale(1, -1) rotateX(180deg);
+}
 /* Tabs */
 .tabs{
 	border: none;
@@ -1381,6 +1388,8 @@ table tbody tr:nth-child(odd){
 /* Thumbnail */
 .thumbnail{
 	border: none;
+	width: 200px;
+	height: 200px;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.24);
 	transition: all 0.2s cubic-bezier(.25,.8,.25,1); }
 .thumbnail:hover{
@@ -1391,6 +1400,15 @@ table tbody tr:nth-child(odd){
 .flex-video{
 	padding-bottom: 56%;
 }
+
+/* Visibility */
+@media screen and (max-width: 74.9375em) {
+  .show-for-xlarge-only {
+    display: none !important; } }
+
+@media screen and (min-width: 75em) {
+  .hide-for-xlarge-only {
+    display: none !important; } }
 
 /* posts */
 /* TODO: make an option? */

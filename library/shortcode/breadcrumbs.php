@@ -19,7 +19,7 @@
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
-		), $atts, 'solwp-breadcrumb' );
+		), $atts, 'solwp-breadcrumbs' );
 
 		$out = '';
 

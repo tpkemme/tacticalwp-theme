@@ -23,7 +23,7 @@
 			'autoplay' => 'false',
 			'loop'		 => 'false',
 			'muted'		 => 'false',
-			'controls' => 'false',
+			'controls' => 'true',
 		), $atts, 'solwp-video' );
 
 		$autoplay = '';

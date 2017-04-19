@@ -7,7 +7,7 @@
  */
 
  /**
-	* Outputs an progress bar when the [solwp-progressbar] is used
+	* Outputs an slider when the [solwp-slider] is used
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]

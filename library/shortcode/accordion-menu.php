@@ -29,7 +29,7 @@
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
-			'menu' => 'menu-header-menu',
+			'menu' => 'header-menu',
 		), $atts, 'solwp-accordion-menu' );
 
 		$out = '';
