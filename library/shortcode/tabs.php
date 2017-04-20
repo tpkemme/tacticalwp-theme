@@ -2,12 +2,12 @@
 /**
  * tabs shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an tabs when the [solwp-tabs]
+	* Outputs an tabs when the [twp-tabs]
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,14 +15,14 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_tabs( $atts, $content = '' ) {
+	function twp_tabs( $atts, $content = '' ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
 			'position' => 'middle',
 			'title'		 => 'false',
 			'size'		 => 'medium',
-		), $atts, 'solwp-tabs' );
+		), $atts, 'twp-tabs' );
 
 		$out = '';
 
@@ -64,5 +64,5 @@
 		}
 		return $out;
 	}
-	add_shortcode( 'solwp-tabs', 'solwp_tabs' );
+	add_shortcode( 'twp-tabs', 'twp_tabs' );
 ?>

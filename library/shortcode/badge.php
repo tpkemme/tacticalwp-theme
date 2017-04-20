@@ -2,12 +2,12 @@
 /**
  * Badge shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an badge when the [solwp-badge] is used
+	* Outputs an badge when the [twp-badge] is used
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,17 +15,17 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_badge( $atts, $content = '' ) {
+	function twp_badge( $atts, $content = '' ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
 			'type'		 => 'primary',
-		), $atts, 'solwp-badge' );
+		), $atts, 'twp-badge' );
 
 		$out = '';
 
 		$out = '<span id="'.$atts['id'].'" class="'.$atts['type'].' badge">'.do_shortcode($content).'</span>';
 		return $out;
 	}
-	add_shortcode( 'solwp-badge', 'solwp_badge' );
+	add_shortcode( 'twp-badge', 'twp_badge' );
 ?>

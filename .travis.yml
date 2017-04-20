@@ -1,8 +1,8 @@
-# Travis CI (MIT License) configuration file for the SolWP WordPress theme.
+# Travis CI (MIT License) configuration file for the TacticalWP WordPress theme.
 # @link https://travis-ci.org/
 
-# For use with the SolWP WordPress theme.
-# @link https://github.com/tpkemme/solwp
+# For use with the TacticalWP WordPress theme.
+# @link https://github.com/tpkemme/twp
 
 # Declare project language.
 # @link http://about.travis-ci.org/docs/user/languages/php/

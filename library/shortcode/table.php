@@ -2,12 +2,12 @@
 /**
  * Table shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an table when the [solwp-table]
+	* Outputs an table when the [twp-table]
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,14 +15,14 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_table( $atts, $content = '' ) {
+	function twp_table( $atts, $content = '' ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
 			'position' => 'middle',
 			'header'	 => 'false',
 			'final'    => 'false'
-		), $atts, 'solwp-table' );
+		), $atts, 'twp-table' );
 
 		$out = '';
 
@@ -69,5 +69,5 @@
 		}
 		return $out;
 	}
-	add_shortcode( 'solwp-table', 'solwp_table' );
+	add_shortcode( 'twp-table', 'twp_table' );
 ?>

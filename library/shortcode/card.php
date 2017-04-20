@@ -2,12 +2,12 @@
 /**
  * Cards shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an card when the [solwp-card] is used
+	* Outputs an card when the [twp-card] is used
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,7 +15,7 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_card( $atts, $content = '' ) {
+	function twp_card( $atts, $content = '' ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
@@ -24,7 +24,7 @@
 			'title'  => '',
 			'img'    => '',
 			'height' => '',
-		), $atts, 'solwp-card' );
+		), $atts, 'twp-card' );
 
 		$center = '';
 		if( $atts['center'] === 'false' ){
@@ -59,5 +59,5 @@
 
 		return $out . '</div>';
 	}
-	add_shortcode( 'solwp-card', 'solwp_card' );
+	add_shortcode( 'twp-card', 'twp_card' );
 ?>

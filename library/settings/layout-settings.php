@@ -2,7 +2,7 @@
 /**
  * Layout settings
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
@@ -10,13 +10,13 @@
 	*	Adds all fields for layout settings to custom meta box
 	*
 	* @param 	[cmb] 	 $cmb 	 [ custom metabox (cmb), required ]
-	* @param 	[string] $prefix [ plugin prefix (solwp), optional ]
+	* @param 	[string] $prefix [ plugin prefix (twp), optional ]
 	* @return	[cmb]		 $CMB2	 [ cmb with fields added ]
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	if ( ! function_exists( 'solwp_add_layout_settings' ) ) :
-		function solwp_add_layout_settings( $cmb, $prefix = 'solwp' ){
+	if ( ! function_exists( 'twp_add_layout_settings' ) ) :
+		function twp_add_layout_settings( $cmb, $prefix = 'twp' ){
       // Set our CMB2 fields
       $cmb->add_field(array(
           'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
@@ -30,8 +30,8 @@
 					'id'            => $prefix . '_layout_title_show',
 					'type'    => 'radio_inline',
 					'options' => array(
-						'show' => __( 'Show', 'solwp' ),
-						'hide'   => __( 'Hide', 'solwp' ),
+						'show' => __( 'Show', 'twp' ),
+						'hide'   => __( 'Hide', 'twp' ),
 					),
 					'default' => 'show',
 					'attributes'			 => array(
@@ -77,17 +77,17 @@
 	*	Adds all fields for layout settings the edit page screen
 	*
 	* @param 	[cmb] 	 $cmb 	 [ custom metabox (cmb), required ]
-	* @param 	[string] $prefix [ plugin prefix (solwp), optional ]
+	* @param 	[string] $prefix [ plugin prefix (twp), optional ]
 	* @return	[cmb]		 $CMB2	 [ cmb with fields added ]
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	if ( ! function_exists( 'solwp_add_layout_edit_settings' ) ) :
-		function solwp_add_layout_edit_settings( $cmb, $prefix = 'solwp' ){
+	if ( ! function_exists( 'twp_add_layout_edit_settings' ) ) :
+		function twp_add_layout_edit_settings( $cmb, $prefix = 'twp' ){
 			// Add fields to edit screen for pages only at this point
 			$cmb = new_cmb2_box( array(
-          'id'           => 'solwp-layout-edit',
-					'title'				 => 'SolWP Page Overrides',
+          'id'           => 'twp-layout-edit',
+					'title'				 => 'TacticalWP Page Overrides',
           'hookup'       => true,
           'save_fields'  => true,
 					'object_types' => array( 'page' ), // post type

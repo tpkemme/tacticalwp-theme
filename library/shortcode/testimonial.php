@@ -2,12 +2,12 @@
 /**
  * Testimonial shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an testimonial when the [solwp-testimonial] is used
+	* Outputs an testimonial when the [twp-testimonial] is used
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,7 +15,7 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_testimonial( $atts, $content = '' ) {
+	function twp_testimonial( $atts, $content = '' ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
@@ -24,7 +24,7 @@
 			'position' => 'middle',
 			'buttons'  => 'true',
 			'center'   => 'true',
-		), $atts, 'solwp-testimonial' );
+		), $atts, 'twp-testimonial' );
 
 		$out = '';
 
@@ -86,5 +86,5 @@
 
 		return $out;
 	}
-	add_shortcode( 'solwp-testimonial', 'solwp_testimonial' );
+	add_shortcode( 'twp-testimonial', 'twp_testimonial' );
 ?>

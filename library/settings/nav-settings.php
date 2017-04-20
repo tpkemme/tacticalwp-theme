@@ -2,7 +2,7 @@
 /**
  * Navigation settings
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
@@ -10,13 +10,13 @@
 	*	Adds all fields for nav settings to custom meta box
 	*
 	* @param 	[cmb] 	 $cmb 	 [ custom metabox (cmb), required ]
-	* @param 	[string] $prefix [ plugin prefix (solwp), optional ]
+	* @param 	[string] $prefix [ plugin prefix (twp), optional ]
 	* @return	[cmb]		 $CMB2	 [ cmb with fields added ]
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	if ( ! function_exists( 'solwp_add_nav_settings' ) ) :
-		function solwp_add_nav_settings( $cmb, $prefix = 'solwp' ){
+	if ( ! function_exists( 'twp_add_nav_settings' ) ) :
+		function twp_add_nav_settings( $cmb, $prefix = 'twp' ){
       // Set our CMB2 fields
       $cmb->add_field(array(
           'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
@@ -151,8 +151,8 @@
           'id'            => $prefix . '_nav_top_sticky',
           'type'    => 'radio_inline',
           'options' => array(
-            'sticky' => __( 'Sticky', 'solwp' ),
-            'none'   => __( 'Not Sticky', 'solwp' ),
+            'sticky' => __( 'Sticky', 'twp' ),
+            'none'   => __( 'Not Sticky', 'twp' ),
           ),
           'default' => 'sticky',
           'attributes'			 => array(
@@ -189,7 +189,7 @@
 					'attributes' => array(
 						'data-default' => 'Josefin Sans'
 					),
-					'options_cb'       => 'solwp_google_fonts',
+					'options_cb'       => 'twp_google_fonts',
 			));
 			$cmb->add_field(array(
 					'name' => __('Topbar Menu Font Color', $prefix),
@@ -277,8 +277,8 @@
           'id'            => $prefix . '_nav_top_menu_alignment',
           'type'    => 'radio_inline',
           'options' => array(
-            'left' => __( 'Left', 'solwp' ),
-            'right'   => __( 'Right', 'solwp' ),
+            'left' => __( 'Left', 'twp' ),
+            'right'   => __( 'Right', 'twp' ),
           ),
           'default' => 'left',
           'attributes'			 => array(
@@ -297,8 +297,8 @@
           'id'            => $prefix . '_nav_top_search',
           'type'    => 'radio_inline',
           'options' => array(
-            'show' => __( 'Show', 'solwp' ),
-            'hide'   => __( 'Hide', 'solwp' ),
+            'show' => __( 'Show', 'twp' ),
+            'hide'   => __( 'Hide', 'twp' ),
           ),
           'default' => 'show',
           'attributes'			 => array(
@@ -391,7 +391,7 @@
 					'attributes' => array(
 						'data-default' => 'Josefin Sans'
 					),
-					'options_cb'       => 'solwp_google_fonts',
+					'options_cb'       => 'twp_google_fonts',
       ));
 			$cmb->add_field(array(
 					'name' => __('Title Background Shadow', $prefix),
@@ -399,8 +399,8 @@
 					'id'            => $prefix . '_nav_top_title_shadow',
 					'type'    => 'radio_inline',
 					'options' => array(
-						'show' => __( 'Show', 'solwp' ),
-						'hide'   => __( 'Hide', 'solwp' ),
+						'show' => __( 'Show', 'twp' ),
+						'hide'   => __( 'Hide', 'twp' ),
 					),
 					'default' => 'show',
 					'attributes'			 => array(

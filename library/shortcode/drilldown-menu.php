@@ -2,7 +2,7 @@
 /**
  * Drilldown Menu shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
@@ -17,7 +17,7 @@
 	}
 
  /**
-	* Outputs an drilldown menu when the [solwp-drilldown-menu]
+	* Outputs an drilldown menu when the [twp-drilldown-menu]
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -25,12 +25,12 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_drilldown_menu( $atts ) {
+	function twp_drilldown_menu( $atts ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
 			'menu' => 'menu-header-menu',
-		), $atts, 'solwp-drilldown-menu' );
+		), $atts, 'twp-drilldown-menu' );
 
 		$out = '';
 		$locations = get_nav_menu_locations();
@@ -51,5 +51,5 @@
 
 		return $out;
 	}
-	add_shortcode( 'solwp-drilldown-menu', 'solwp_drilldown_menu' );
+	add_shortcode( 'twp-drilldown-menu', 'twp_drilldown_menu' );
 ?>

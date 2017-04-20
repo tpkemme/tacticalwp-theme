@@ -1,11 +1,11 @@
-# SolWP [![Build Status](https://travis-ci.org/olefredrik/SolWP.svg?branch=master)](https://travis-ci.org/olefredrik/SolWP)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tpkemme/solwp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+# TacticalWP [![Build Status](https://travis-ci.org/olefredrik/TacticalWP.svg?branch=master)](https://travis-ci.org/olefredrik/TacticalWP)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tpkemme/twp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-SolWP is a Dark Material theme for WordPress created using Foundationpress, CMB2, and Gulp. The purpose of SolWP, is to act as a small and handy toolbox that contains the essentials needed to build any design using Wordpress.
+TacticalWP is a Dark Material theme for WordPress created using Foundationpress, CMB2, and Gulp. The purpose of TacticalWP, is to act as a small and handy toolbox that contains the essentials needed to build any design using Wordpress.
 
 One of the advantages of using a framework like Foundation 6 is that the structure for all site elements is already created before you start.  This was the intended purpose of Foundationpress, the Wordpress Theme built upon Foundation 6.  However, Foundationpress lacked real Wordpress integrations: Foundation elements could only be configured using HTML.
 
-This is where SolWP really shines: every Foundation element of SolWP has an associated shortcode and widget.  Users can insert customized Foundation elements anywhere on the site by simply generating a shortcode or adding a widget to his/her page-builder plugin.  If that's not enough, the SolWP Theme settings will give users complete control over every part of the site's design.  Although SolWP has a sleek, modern design already configured, every piece of SolWP can be customized to the user's liking.
+This is where TacticalWP really shines: every Foundation element of TacticalWP has an associated shortcode and widget.  Users can insert customized Foundation elements anywhere on the site by simply generating a shortcode or adding a widget to his/her page-builder plugin.  If that's not enough, the TacticalWP settings will give users complete control over every part of the site's design.  Although TacticalWP has a sleek, modern design already configured, every piece of TacticalWP can be customized to the user's liking.
 
 All contributions are welcome!
 
@@ -13,19 +13,19 @@ All contributions are welcome!
 
 **This project requires [Node.js](http://nodejs.org) v4.x.x to v6.9.x to be installed on your machine.** Please be aware that you will most likely encounter problems with the installation if you are using v7.1.0 with all the latest features.
 
-SolWP uses [Sass](http://Sass-lang.com/) (CSS with superpowers). In short, Sass is a CSS pre-processor that allows you to write styles more effectively and tidy.
+TacticalWP uses [Sass](http://Sass-lang.com/) (CSS with superpowers). In short, Sass is a CSS pre-processor that allows you to write styles more effectively and tidy.
 
 The Sass is compiled using libsass, which requires the GCC to be installed on your machine. Windows users can install it through [MinGW](http://www.mingw.org/), and Mac users can install it through the [Xcode Command-line Tools](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/).
 
-If you have not worked with a Sass-based workflow before, I would recommend reading [SolWP for beginners](https://solwp.olefredrik.com/posts/tutorials/solwp-for-beginners), a short blog post that explains what you need to know.
+If you have not worked with a Sass-based workflow before, I would recommend reading [TacticalWP for beginners](https://twp.olefredrik.com/posts/tutorials/twp-for-beginners), a short blog post that explains what you need to know.
 
 ## Quickstart
 
 ### 1. Clone the repository and install with npm
 ```bash
 $ cd my-wordpress-folder/wp-content/themes/
-$ git clone https://github.com/olefredrik/SolWP.git
-$ cd SolWP
+$ git clone https://github.com/olefredrik/TacticalWP.git
+$ cd TacticalWP
 $ npm install
 ```
 
@@ -63,26 +63,26 @@ Running this command will build and minify the theme's assets and place a `.zip`
 
  * `style.css`: Do not worry about this file. (For some reason) it's required by WordPress. All styling are handled in the Sass files described below
 
- * `assets/scss/solwp.scss`: Make imports for all your styles here
+ * `assets/scss/twp.scss`: Make imports for all your styles here
  * `assets/scss/global/*.scss`: Global settings
  * `assets/scss/components/*.scss`: Buttons etc.
  * `assets/scss/modules/*.scss`: Topbar, footer etc.
  * `assets/scss/templates/*.scss`: Page template spesific styling
 
-Please note that you **must** run `npm run build` or `npm run watch` in your terminal for the styles to be copied and concatenated. See the [Gulpfile.js](https://github.com/olefredrik/SolWP/blob/master/gulpfile.js) for details
+Please note that you **must** run `npm run build` or `npm run watch` in your terminal for the styles to be copied and concatenated. See the [Gulpfile.js](https://github.com/olefredrik/TacticalWP/blob/master/gulpfile.js) for details
 
 ### Scripts
 
 * `assets/javascript/custom`: This is the folder where you put all your custom scripts. Every .js file you put in this directory will be minified and concatenated one single .js file. (This is good for site speed and performance)
 
-Please note that you must run `npm run build` or `npm run watch` in your terminal for the scripts to be copied and concatenated. See [Gulpfile.js](https://github.com/olefredrik/SolWP/blob/master/gulpfile.js) for details
+Please note that you must run `npm run build` or `npm run watch` in your terminal for the scripts to be copied and concatenated. See [Gulpfile.js](https://github.com/olefredrik/TacticalWP/blob/master/gulpfile.js) for details
 
 ### The main styles and scripts generated by the build
 
 Version control on these files are turned off because they are automatically generated as part of the build process.
 
-* `assets/stylesheets/solwp.css`: All Sass files are minified and compiled to this file
-* `assets/stylesheets/solwp.css.map`: CSS source maps
+* `assets/stylesheets/twp.css`: All Sass files are minified and compiled to this file
+* `assets/stylesheets/twp.css.map`: CSS source maps
 
 * `assets/javascript/vendor`: Vendor scripts are copied from `assets/components/` to this directory. We use this path for enqueing the vendor scripts in WordPress.
 
@@ -106,23 +106,23 @@ $ npm run phpcbf
 
 ## Demo
 
-* [Clean SolWP install](http://solwp.olefredrik.com/)
-* [SolWP Kitchen Sink - see every single element in action](http://solwp.olefredrik.com/kitchen-sink/)
+* [Clean TacticalWP install](http://twp.olefredrik.com/)
+* [TacticalWP Kitchen Sink - see every single element in action](http://twp.olefredrik.com/kitchen-sink/)
 
 ## Unit Testing With Travis-CI
 
-SolWP is completely ready to be deployed to and tested by Travis-CI for WordPress Coding Standards and best practices. All you need to do to activate the test is sign up and follow the instructions to point Travis-CI towards your repo. Just don't forget to update the status badge to point to your repositories unit test.
+TacticalWP is completely ready to be deployed to and tested by Travis-CI for WordPress Coding Standards and best practices. All you need to do to activate the test is sign up and follow the instructions to point Travis-CI towards your repo. Just don't forget to update the status badge to point to your repositories unit test.
 [Travis-CI](https://travis-ci.org/)
 
 ## UI toolkits for rapid prototyping
 
-* [Foundation UI Kit for Axure RP](https://gumroad.com/l/solwp-ui-kit-axure-rp)
-* [FoundationXD - Foundation UI Kit for Adobe XD](https://gumroad.com/l/solwp-ui-kit-xd)
-* [FoundationPSD - Foundation UI Kit for Photoshop](https://gumroad.com/l/solwp-ui-kit-psd)
+* [Foundation UI Kit for Axure RP](https://gumroad.com/l/twp-ui-kit-axure-rp)
+* [FoundationXD - Foundation UI Kit for Adobe XD](https://gumroad.com/l/twp-ui-kit-xd)
+* [FoundationPSD - Foundation UI Kit for Photoshop](https://gumroad.com/l/twp-ui-kit-psd)
 
 ## Tutorials
 
-* [SolWP for beginners](https://solwp.olefredrik.com/posts/tutorials/solwp-for-beginners/)
+* [TacticalWP for beginners](https://twp.olefredrik.com/posts/tutorials/twp-for-beginners/)
 * [Responsive images in WordPress with Interchange](http://rachievee.com/responsive-images-in-wordpress/)
 * [Build a Responsive WordPress theme](http://www.webdesignermag.co.uk/build-a-responsive-wordpress-theme/)
 * [Learn to use the _settings file to change almost every aspect of a Foundation site](http://zurb.com/university/lessons/66)
@@ -130,7 +130,7 @@ SolWP is completely ready to be deployed to and tested by Travis-CI for WordPres
 
 ## Documentation
 
-* [Zurb Foundation Docs](http://solwp.zurb.com/docs/)
+* [Zurb Foundation Docs](http://twp.zurb.com/docs/)
 * [WordPress Codex](http://codex.wordpress.org/)
 
 ## Showcase
@@ -181,11 +181,11 @@ SolWP is completely ready to be deployed to and tested by Travis-CI for WordPres
 ## Contributing
 #### Here are ways to get involved:
 
-1. [Star](https://github.com/olefredrik/SolWP/stargazers) the project!
-2. Answer questions that come through [GitHub issues](https://github.com/olefredrik/SolWP/issues)
+1. [Star](https://github.com/olefredrik/TacticalWP/stargazers) the project!
+2. Answer questions that come through [GitHub issues](https://github.com/olefredrik/TacticalWP/issues)
 3. Report a bug that you find
-4. Share a theme you've built on top of SolWP
-5. [Tweet](https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fsolwp.olefredrik.com%2F&text=Check%20out%20SolWP%2C%20the%20ultimate%20%23WordPress%20starter-theme%20built%20on%20%23Foundation%206&tw_p=tweetbutton&url=http%3A%2F%2Fsolwp.olefredrik.com&via=olefredrik) and [blog](http://www.justinfriebel.com/my-first-experience-with-solwp-a-wordpress-starter-theme-106/) your experience of SolWP.
+4. Share a theme you've built on top of TacticalWP
+5. [Tweet](https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Ftwp.olefredrik.com%2F&text=Check%20out%20TacticalWP%2C%20the%20ultimate%20%23WordPress%20starter-theme%20built%20on%20%23Foundation%206&tw_p=tweetbutton&url=http%3A%2F%2Ftwp.olefredrik.com&via=olefredrik) and [blog](http://www.justinfriebel.com/my-first-experience-with-twp-a-wordpress-starter-theme-106/) your experience of TacticalWP.
 
 #### Pull Requests
 

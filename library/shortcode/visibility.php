@@ -2,12 +2,12 @@
 /**
  * Visibility shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an visibility when the [solwp-visibility] is used
+	* Outputs an visibility when the [twp-visibility] is used
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,14 +15,14 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_visibility( $atts, $content = '' ) {
+	function twp_visibility( $atts, $content = '' ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
 			'size'		 => '',
 			'orientation' => '',
 			'display'			=> 'show'
-		), $atts, 'solwp-visibility' );
+		), $atts, 'twp-visibility' );
 
 		$size = '';
 		if( $atts['size'] !== '' & $atts['size'] !== 'all' ){
@@ -46,5 +46,5 @@
 		$out = '<span class="'.$size.' '.$orientation.'" id="'.$atts['id'].'">'.do_shortcode($content).'</span>';
 		return $out;
 	}
-	add_shortcode( 'solwp-visibility', 'solwp_visibility' );
+	add_shortcode( 'twp-visibility', 'twp_visibility' );
 ?>

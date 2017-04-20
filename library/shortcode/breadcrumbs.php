@@ -2,12 +2,12 @@
 /**
  * Breadcrumbs shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an breadcrumb when the [solwp-breadcrumbs] is used
+	* Outputs an breadcrumb when the [twp-breadcrumbs] is used
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,17 +15,17 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_breadcrumbs( $atts ) {
+	function twp_breadcrumbs( $atts ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
-		), $atts, 'solwp-breadcrumbs' );
+		), $atts, 'twp-breadcrumbs' );
 
 		$out = '';
 
 
 				// Settings
-				$separator  = solwp_get_option( 'solwp_nav_breadcrumb_divider_symbol' ) || '&gt;';
+				$separator  = twp_get_option( 'twp_nav_breadcrumb_divider_symbol' ) || '&gt;';
 				$id         = $atts['id'];
 				$class      = 'breadcrumbs';
 				$home_title = 'Home';
@@ -153,7 +153,7 @@
 					} elseif ( get_query_var('paged') ) {
 
 						// Paginated archives
-						$out .= '<li class="current item-current-' . get_query_var('paged') . '">' . __('Page', 'solwp' ) . ' ' . get_query_var('paged') . '</li>';
+						$out .= '<li class="current item-current-' . get_query_var('paged') . '">' . __('Page', 'twp' ) . ' ' . get_query_var('paged') . '</li>';
 
 					} elseif ( is_search() ) {
 
@@ -174,5 +174,5 @@
 
 		return $out;
 	}
-	add_shortcode( 'solwp-breadcrumbs', 'solwp_breadcrumbs' );
+	add_shortcode( 'twp-breadcrumbs', 'twp_breadcrumbs' );
 ?>

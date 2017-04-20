@@ -2,8 +2,8 @@
 /**
  * The template for displaying search results pages.
  *
- * @package SolWP
- * @since SolWP 1.0.0
+ * @package TacticalWP
+ * @since TacticalWP 1.0.0
  */
 
 get_header(); ?>
@@ -11,9 +11,9 @@ get_header(); ?>
 <div class="row">
 	<div class="small-12 large-8 columns" role="main">
 
-		<?php do_action( 'solwp_before_content' ); ?>
+		<?php do_action( 'twp_before_content' ); ?>
 
-		<h2><?php _e( 'Search Results for', 'solwp' ); ?> "<?php echo get_search_query(); ?>"</h2>
+		<h2><?php _e( 'Search Results for', 'twp' ); ?> "<?php echo get_search_query(); ?>"</h2>
 
 	<?php if ( have_posts() ) : ?>
 
@@ -26,21 +26,21 @@ get_header(); ?>
 
 	<?php endif;?>
 
-	<?php do_action( 'solwp_before_pagination' ); ?>
+	<?php do_action( 'twp_before_pagination' ); ?>
 
 	<?php
-	if ( function_exists( 'solwp_pagination' ) ) :
-		solwp_pagination();
+	if ( function_exists( 'twp_pagination' ) ) :
+		twp_pagination();
 	elseif ( is_paged() ) :
 	?>
 
 		<nav id="post-nav">
-			<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'solwp' ) ); ?></div>
-			<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'solwp' ) ); ?></div>
+			<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'twp' ) ); ?></div>
+			<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'twp' ) ); ?></div>
 		</nav>
 	<?php endif; ?>
 
-	<?php do_action( 'solwp_after_content' ); ?>
+	<?php do_action( 'twp_after_content' ); ?>
 
 	</div>
 	<?php get_sidebar(); ?>

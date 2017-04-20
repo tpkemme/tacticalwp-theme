@@ -116,7 +116,7 @@
                 if( e.data.accordionMultiExpand !== '' && e.data.accordionMultiExpand !== 'true' ){
                   multiExpand = ' multi-expand="' + e.data.accordionMultiExpand + '" ';
                 }
-                editor.insertContent( '[solwp-accordion' + id + position + title + type + closeAll + multiExpand + '] ACCORDION CONTENT HERE [/solwp-accordion]');
+                editor.insertContent( '[twp-accordion' + id + position + title + type + closeAll + multiExpand + '] ACCORDION CONTENT HERE [/twp-accordion]');
               }
             });
           }
@@ -152,7 +152,7 @@
                     if( e.data.accordionMenuMenu !== '' ){
                       menu = ' menu="' + e.data.accordionMenuMenu + '"';
                     }
-                    editor.insertContent( '[solwp-accordion-menu' + id + ' ' + menu + ']');
+                    editor.insertContent( '[twp-accordion-menu' + id + ' ' + menu + ']');
                   }
               });
           },
@@ -201,7 +201,7 @@
                 if( e.data.badgeType !== '' && e.data.badgeType !== 'primary' ){
                   type = ' type="' + e.data.badgeType + '"';
                 }
-                editor.insertContent( '[solwp-badge' + id + ' ' + type + '] ' + e.data.badgeContent + ' [/solwp-badge]');
+                editor.insertContent( '[twp-badge' + id + ' ' + type + '] ' + e.data.badgeContent + ' [/twp-badge]');
               }
             });
           }
@@ -225,7 +225,7 @@
                 if( e.data.breadcrumbsId !== '' ){
                   id = ' id="' + e.data.breadcrumbsId + '"';
                 }
-                editor.insertContent( '[solwp-breadcrumbs' + id + ']');
+                editor.insertContent( '[twp-breadcrumbs' + id + ']');
               }
             });
           }
@@ -302,7 +302,7 @@
                 if( e.data.buttonToggle !== '' ){
                   toggle = ' toggle="' + e.data.buttonToggle + '"';
                 }
-                editor.insertContent( '[solwp-button' + id + ' ' + type + ' ' + size +  ' ' + toggle + '] ' + e.data.buttonContent + ' [/solwp-button]');
+                editor.insertContent( '[twp-button' + id + ' ' + type + ' ' + size +  ' ' + toggle + '] ' + e.data.buttonContent + ' [/twp-button]');
               }
             });
           }
@@ -344,7 +344,7 @@
                 if( e.data.calloutType !== '' && e.data.calloutType !== 'primary' ){
                   type = ' type="' + e.data.calloutType + '"';
                 }
-                editor.insertContent( '[solwp-callout' + id + ' ' + type + '] CALLOUT CONTENT HERE [/solwp-callout]');
+                editor.insertContent( '[twp-callout' + id + ' ' + type + '] CALLOUT CONTENT HERE [/twp-callout]');
               }
             });
           }
@@ -440,7 +440,7 @@
                 if( e.data.cardHeight !== ''){
                   height = ' height="' + e.data.cardHeight + '"';
                 }
-                editor.insertContent( '[solwp-card' + id + ' ' + type + ' ' + center + ' ' + title + ' ' + img + ' ' + height + '] CARD CONTENT HERE [/solwp-card]');
+                editor.insertContent( '[twp-card' + id + ' ' + type + ' ' + center + ' ' + title + ' ' + img + ' ' + height + '] CARD CONTENT HERE [/twp-card]');
               }
             });
           }
@@ -476,7 +476,7 @@
                 if( e.data.drilldownMenuMenu !== '' ){
                   menu = ' menu="' + e.data.drilldownMenuMenu + '"';
                 }
-                editor.insertContent( '[solwp-drilldown-menu' + id + ' ' + menu + ']');
+                editor.insertContent( '[twp-drilldown-menu' + id + ' ' + menu + ']');
               }
             });
           }
@@ -512,7 +512,7 @@
                 if( e.data.dropdownMenuMenu !== '' ){
                   menu = ' menu="' + e.data.dropdownMenuMenu + '"';
                 }
-                editor.insertContent( '[solwp-dropdown-menu' + id + ' ' + menu + ']');
+                editor.insertContent( '[twp-dropdown-menu' + id + ' ' + menu + ']');
               }
             });
           }
@@ -548,7 +548,7 @@
                 if( e.data.dropdownPaneButton !== '' ){
                   button = ' button="' + e.data.dropdownPaneButton + '"';
                 }
-                editor.insertContent( '[solwp-dropdown-pane' + id + ' ' + button + '] PANE CONTENT HERE [/solwp-dropdown-pane]');
+                editor.insertContent( '[twp-dropdown-pane' + id + ' ' + button + '] PANE CONTENT HERE [/twp-dropdown-pane]');
               }
             });
           }
@@ -597,7 +597,7 @@
                 if( e.data.labelType !== '' && e.data.labelType !== 'primary' ){
                   type = ' type="' + e.data.labelType + '"';
                 }
-                editor.insertContent( '[solwp-label' + id + ' ' + type + '] ' + e.data.labelContent + ' [/solwp-label]');
+                editor.insertContent( '[twp-label' + id + ' ' + type + '] ' + e.data.labelContent + ' [/twp-label]');
               }
             });
           }
@@ -647,7 +647,7 @@
                 if( e.data.modalRevealText !== '' && e.data.modalRevealText !== 'Open Modal' ){
                   revealText = 'reveal-text="' + e.data.modalRevealText + '"';
                 }
-                editor.insertContent( '[solwp-modal' + id + ' ' + type + ' ' + revealText + '] MODAL CONTENT HERE [/solwp-modal]');
+                editor.insertContent( '[twp-modal' + id + ' ' + type + ' ' + revealText + '] MODAL CONTENT HERE [/twp-modal]');
               }
             });
           }
@@ -686,7 +686,7 @@
                 if( e.data.motionType !== '' && e.data.motionType !== 'primary' ){
                   type = ' type="' + e.data.motionType + '"';
                 }
-                editor.insertContent( '[solwp-motion' + id + ' ' + type + '] MOTION CONTENT HERE [/solwp-motion]');
+                editor.insertContent( '[twp-motion' + id + ' ' + type + '] MOTION CONTENT HERE [/twp-motion]');
               }
             });
           }
@@ -746,7 +746,7 @@
                 if( e.data.progressBarSize !== '' && e.data.progressBarSize !== '50%' ){
                   size = ' size="' + e.data.progressBarSize + '"';
                 }
-                editor.insertContent( '[solwp-progress-bar' + id + ' ' + type + ' ' + size + '] ' + e.data.progressBarContent + ' [/solwp-progress-bar]');
+                editor.insertContent( '[twp-progress-bar' + id + ' ' + type + ' ' + size + '] ' + e.data.progressBarContent + ' [/twp-progress-bar]');
               }
             });
           }
@@ -847,7 +847,7 @@
                 if( e.data.videoControls !== '' && e.data.videoControls !== 'true' ){
                   controls = ' controls="' + e.data.videoControls + '"';
                 }
-                editor.insertContent( '[solwp-video' + id + ' ' + url + ' ' + autoplay + ' ' + loop + ' ' + muted + ' ' + controls + ']');
+                editor.insertContent( '[twp-video' + id + ' ' + url + ' ' + autoplay + ' ' + loop + ' ' + muted + ' ' + controls + ']');
               }
             });
           }
@@ -908,7 +908,7 @@
                 if( e.data.sliderTotal !== '' && e.data.sliderTotal !== '100' ){
                   total = ' total="' + e.data.sliderTotal + '"';
                 }
-                editor.insertContent( '[solwp-slider' + id + ' ' + type + ' ' + initial + ' ' + total + ']');
+                editor.insertContent( '[twp-slider' + id + ' ' + type + ' ' + initial + ' ' + total + ']');
               }
             });
           }
@@ -949,7 +949,7 @@
                 if( e.data.switchSize !== '' && e.data.switchSize !== 'normal' ){
                   size = ' type="' + e.data.switchSize + '"';
                 }
-                editor.insertContent( '[solwp-switch' + id + ' ' + size + ']');
+                editor.insertContent( '[twp-switch' + id + ' ' + size + ']');
               }
             });
           }
@@ -1019,7 +1019,7 @@
                 if( e.data.tableFinal !== '' && e.data.tableFinal !== 'false' ){
                   final = ' multi-expand="' + e.data.tableFinal + '" ';
                 }
-                editor.insertContent( '[solwp-table' + id + position + header + final + '] TABLE CONTENT HERE [/solwp-table]');
+                editor.insertContent( '[twp-table' + id + position + header + final + '] TABLE CONTENT HERE [/twp-table]');
               }
             });
           }
@@ -1091,10 +1091,10 @@
                   size = ' size="' + e.data.tabsSize + '" ';
                 }
                 if( e.data.tabsTitle === 'true' ){
-                  editor.insertContent( '[solwp-tabs' + id + position + title + size + '] TAB TITLE HERE [/solwp-tabs]');
+                  editor.insertContent( '[twp-tabs' + id + position + title + size + '] TAB TITLE HERE [/twp-tabs]');
                 }
                 else{
-                  editor.insertContent( '[solwp-tabs' + id + position + title + size + '] TAB CONTENT HERE [/solwp-tabs]');
+                  editor.insertContent( '[twp-tabs' + id + position + title + size + '] TAB CONTENT HERE [/twp-tabs]');
                 }
               }
             });
@@ -1187,7 +1187,7 @@
                 if( e.data.testimonialButtons !== '' && e.data.testimonialButtons !== 'true' ){
                   buttons = ' buttons="' + e.data.testimonialButtons + '" ';
                 }
-                editor.insertContent( '[solwp-testimonial' + id + rating + img + position + buttons + '] TESTIMONIAL CONTENT HERE [/solwp-testimonial]');
+                editor.insertContent( '[twp-testimonial' + id + rating + img + position + buttons + '] TESTIMONIAL CONTENT HERE [/twp-testimonial]');
               }
             });
           }
@@ -1229,7 +1229,7 @@
                 if( e.data.thumbnailImg !== '' ){
                   img = ' url="' + e.data.thumbnailImg + '" ';
                 }
-                editor.insertContent( '[solwp-thumbnail' + id + img + ']');
+                editor.insertContent( '[twp-thumbnail' + id + img + ']');
               }
             });
           }
@@ -1269,7 +1269,7 @@
                 if( e.data.togglerPosition !== '' && e.data.togglerPosition !== 'middle' ){
                   position = ' position="' + e.data.togglerPosition + '" ';
                 }
-                editor.insertContent( '[solwp-toggle' + id + position + '] TOGGLE CONTENT HERE [/solwp-toggle]');
+                editor.insertContent( '[twp-toggle' + id + position + '] TOGGLE CONTENT HERE [/twp-toggle]');
               }
             });
           }
@@ -1304,7 +1304,7 @@
                 if( e.data.tooltipTitle !== '' && e.data.tooltipTitle !== 'middle' ){
                   title = ' title="' + e.data.tooltipTitle + '" ';
                 }
-                editor.insertContent( '[solwp-tooltip' + id + title + '] TOOLTIP HERE [/solwp-tooltip]');
+                editor.insertContent( '[twp-tooltip' + id + title + '] TOOLTIP HERE [/twp-tooltip]');
               }
             });
           }
@@ -1377,7 +1377,7 @@
                 if( e.data.visibilityDisplay !== '' && e.data.visibilityDisplay !== 'true' ){
                   display = ' display="' + e.data.visibilityDisplay + '"';
                 }
-                editor.insertContent( '[solwp-visibility' + id + ' ' + size + ' ' + orientation + ' ' + display + '] VISIBILITY CONTENT HERE [/solwp-visibility]');
+                editor.insertContent( '[twp-visibility' + id + ' ' + size + ' ' + orientation + ' ' + display + '] VISIBILITY CONTENT HERE [/twp-visibility]');
               }
             });
           }

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: SolWP\n"
+"Project-Id-Version: TacticalWP\n"
 "POT-Creation-Date: 2014-11-11 02:10+0900\n"
 "PO-Revision-Date: 2016-10-16 10:07+0200\n"
 "Last-Translator: \n"
@@ -202,27 +202,27 @@ msgstr "投稿日時 %1$s %2$s."
 msgid "Written by"
 msgstr "投稿者"
 
-#: library/solwp.php:16
+#: library/twp.php:16
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: library/solwp.php:17
+#: library/twp.php:17
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: library/solwp.php:40
+#: library/twp.php:40
 #, php-format
 msgid ""
 "Please assign a menu to the primary menu location under %1$s or %2$s the "
 "design."
 msgstr "primary menyにメニューに%1$s もしくは %2$sを設定してください。"
 
-#: library/solwp.php:41
+#: library/twp.php:41
 #, php-format
 msgid "<a href=\"%s\">Menus</a>"
 msgstr "<a href=\"%s\">メニュー</a>"
 
-#: library/solwp.php:44
+#: library/twp.php:44
 #, php-format
 msgid "<a href=\"%s\">Customize</a>"
 msgstr "<a href=\"%s\">カスタマイズ</a>"

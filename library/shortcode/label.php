@@ -2,12 +2,12 @@
 /**
  * Label shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an label when the [solwp-label] is used
+	* Outputs an label when the [twp-label] is used
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,15 +15,15 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_label( $atts, $content = '' ) {
+	function twp_label( $atts, $content = '' ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
 			'type'		 => 'primary',
-		), $atts, 'solwp-label' );
+		), $atts, 'twp-label' );
 
 		$out = '<span class="'.$atts['type'].' label">'.do_shortcode($content).'</span>';
 		return $out;
 	}
-	add_shortcode( 'solwp-label', 'solwp_label' );
+	add_shortcode( 'twp-label', 'twp_label' );
 ?>

@@ -2,8 +2,8 @@
 # This file is distributed under the MIT License.
 msgid ""
 msgstr ""
-"Project-Id-Version: SolWP 5.5.1\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/SolWP\n"
+"Project-Id-Version: TacticalWP 5.5.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/TacticalWP\n"
 "POT-Creation-Date: 2015-03-12 12:58:33+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -165,15 +165,15 @@ msgstr "Postat den %1$s kl %2$s."
 msgid "Written by"
 msgstr "Skrivet av"
 
-#: library/solwp.php:17
+#: library/twp.php:17
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: library/solwp.php:18
+#: library/twp.php:18
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: library/solwp.php:47
+#: library/twp.php:47
 msgid ""
 "Please assign a menu to the primary menu location under %1$s or %2$s the "
 "design."
@@ -181,31 +181,31 @@ msgstr ""
 "Vänligen tilldela en meny till den primära menypositionen under  %1$s eller "
 "%2$s designen."
 
-#: library/solwp.php:48
+#: library/twp.php:48
 msgid "<a href=\"%s\">Menus</a>"
 msgstr "<a href=\"%s\">Menyer</a>"
 
-#: library/solwp.php:51
+#: library/twp.php:51
 msgid "<a href=\"%s\">Customize</a>"
 msgstr "<a href=\"%s\">Anpassa</a>"
 
-#: library/solwp.php:99
+#: library/twp.php:99
 msgid "No Responses to"
 msgstr "Inga kommentarer till"
 
-#: library/solwp.php:99
+#: library/twp.php:99
 msgid "One Response to"
 msgstr "En kommentar till"
 
-#: library/solwp.php:99
+#: library/twp.php:99
 msgid "% Responses to"
 msgstr "% kommentarer till"
 
-#: library/solwp.php:139
+#: library/twp.php:139
 msgid "<cite class=\"fn\">%s</cite>"
 msgstr "<cite class=\"fn\">%s</cite>"
 
-#: library/solwp.php:140
+#: library/twp.php:140
 msgid "%1$s"
 msgstr "%1$s"
 
@@ -234,18 +234,18 @@ msgid "Search"
 msgstr "Sök"
 
 #. Theme Name of the plugin/theme
-msgid "SolWP"
-msgstr "SolWP"
+msgid "TacticalWP"
+msgstr "TacticalWP"
 
 #. Theme URI of the plugin/theme
-msgid "http://solwp.olefredrik.com"
-msgstr "http://solwp.olefredrik.com"
+msgid "http://twp.tpkemme.com"
+msgstr "http://twp.tpkemme.com"
 
 #. Description of the plugin/theme
 msgid ""
-"SolWP is a WordPress starter theme based on Foundation 5 by Zurb"
+"TacticalWP is a WordPress starter theme based on Foundation 5 by Zurb"
 msgstr ""
-"SolWP är ett starter-tema för WordPress baserat på Foundation 5 "
+"TacticalWP är ett starter-tema för WordPress baserat på Foundation 5 "
 "av Zurb"
 
 #. Author of the plugin/theme
@@ -253,8 +253,8 @@ msgid "Tyler Kemme"
 msgstr "Tyler Kemme"
 
 #. Author URI of the plugin/theme
-msgid "http://olefredrik.com/"
-msgstr "http://olefredrik.com/"
+msgid "http://tpkemme.com/"
+msgstr "http://tpkemme.com/"
 
 #. Template Name of the plugin/theme
 msgid "Hero"

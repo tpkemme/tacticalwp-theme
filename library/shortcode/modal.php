@@ -2,12 +2,12 @@
 /**
  * Modal shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an modal when the [solwp-modal] is used
+	* Outputs an modal when the [twp-modal] is used
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,14 +15,14 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_modal( $atts, $content = '' ) {
+	function twp_modal( $atts, $content = '' ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
 			'type'		 => 'button',
 			'size'		 => 'basic',
 			'reveal-text' => 'Open Modal',
-		), $atts, 'solwp-modal' );
+		), $atts, 'twp-modal' );
 
 		$size = '';
 		if( $atts['size'] !== 'full' ){
@@ -48,5 +48,5 @@
 
 		return $out;
 	}
-	add_shortcode( 'solwp-modal', 'solwp_modal' );
+	add_shortcode( 'twp-modal', 'twp_modal' );
 ?>

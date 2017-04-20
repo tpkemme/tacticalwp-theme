@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: solwp-libsass-template 5.4.0\n"
+"Project-Id-Version: twp-libsass-template 5.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-12 21:40+0200\n"
 "PO-Revision-Date: 2016-10-16 10:05+0200\n"
@@ -188,8 +188,8 @@ msgstr ""
 
 #. /archive/search.
 #. *
-#. * @subpackage SolWP
-#. * @since SolWP 1.0.0
+#. * @subpackage TacticalWP
+#. * @since TacticalWP 1.0.0
 #.
 #: content.php:16
 msgid "Continue reading..."
@@ -209,15 +209,15 @@ msgstr "Skrevet den %1$s kl. %2$s."
 msgid "Written by"
 msgstr "Skrevet af"
 
-#: library/solwp.php:16
+#: library/twp.php:16
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: library/solwp.php:17
+#: library/twp.php:17
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: library/solwp.php:40
+#: library/twp.php:40
 #, php-format
 msgid ""
 "Please assign a menu to the primary menu location under %1$s or %2$s the "
@@ -226,12 +226,12 @@ msgstr ""
 "Vælg venligst en menu til den primære menuplacering under %1$s eller %2$s "
 "designet."
 
-#: library/solwp.php:41
+#: library/twp.php:41
 #, php-format
 msgid "<a href=\"%s\">Menus</a>"
 msgstr "<a href=\"%s\">Menuer</a>"
 
-#: library/solwp.php:44
+#: library/twp.php:44
 #, php-format
 msgid "<a href=\"%s\">Customize</a>"
 msgstr "<a href=\"%s\">Tilpas</a>"

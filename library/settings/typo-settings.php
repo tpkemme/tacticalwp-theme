@@ -2,7 +2,7 @@
 /**
  * Typography settings
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
@@ -10,13 +10,13 @@
 	*	Adds all fields for typography settings to custom meta box
 	*
 	* @param 	[cmb] 	 $cmb 	 [ custom metabox (cmb), required ]
-	* @param 	[string] $prefix [ plugin prefix (solwp), optional ]
+	* @param 	[string] $prefix [ plugin prefix (twp), optional ]
 	* @return	[cmb]		 $CMB2	 [ cmb with fields added ]
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	if ( ! function_exists( 'solwp_add_typo_settings' ) ) :
-		function solwp_add_typo_settings( $cmb, $prefix = 'solwp' ){
+	if ( ! function_exists( 'twp_add_typo_settings' ) ) :
+		function twp_add_typo_settings( $cmb, $prefix = 'twp' ){
       // Set our CMB2 fields
       $cmb->add_field(array(
           'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
@@ -31,7 +31,7 @@
           'type'             => 'select',
           'show_option_none' => false,
           'default'          => 'Josefin Sans',
-          'options_cb'       => 'solwp_google_fonts',
+          'options_cb'       => 'twp_google_fonts',
           'attributes'			 => array(
             'data-default'	 => 'Josefin Sans'
           ),
@@ -64,7 +64,7 @@
           'type'             => 'select',
           'show_option_none' => false,
           'default'          => 'Archivo Narrow',
-          'options_cb'       => 'solwp_google_fonts',
+          'options_cb'       => 'twp_google_fonts',
           'attributes'			 => array(
             'data-default'	 => 'Archivo Narrow',
           ),
@@ -514,7 +514,7 @@
           'type'             => 'select',
           'show_option_none' => false,
           'default'          => 'Roboto Mono',
-          'options_cb'       => 'solwp_google_fonts',
+          'options_cb'       => 'twp_google_fonts',
           'attributes'			 => array(
             'data-default'	 => 'Roboto Mono',
           ),

@@ -107,7 +107,7 @@ gulp.task('browser-sync', ['build'], function() {
 // Compile Sass into CSS
 // In production, the CSS is compressed
 gulp.task('sass', function() {
-  return gulp.src('assets/scss/solwp.scss')
+  return gulp.src('assets/scss/twp.scss')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass
@@ -156,7 +156,7 @@ gulp.task('javascript', function() {
   return gulp.src(PATHS.javascript)
     .pipe($.sourcemaps.init())
     .pipe($.babel())
-    .pipe($.concat('solwp.js', {
+    .pipe($.concat('twp.js', {
       newLine:'\n;'
     }))
     .pipe($.if(isProduction, uglify))
@@ -226,15 +226,15 @@ gulp.task('clean', function(done) {
 // Clean JS
 gulp.task('clean:javascript', function() {
   return del([
-      'assets/javascript/solwp.js'
+      'assets/javascript/twp.js'
     ]);
 });
 
 // Clean CSS
 gulp.task('clean:css', function() {
   return del([
-      'assets/stylesheets/solwp.css',
-      'assets/stylesheets/solwp.css.map'
+      'assets/stylesheets/twp.css',
+      'assets/stylesheets/twp.css.map'
     ]);
 });
 

@@ -2,12 +2,12 @@
 /**
  * Callout shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an callout when the [solwp-callout] is used
+	* Outputs an callout when the [twp-callout] is used
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,12 +15,12 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_callout( $atts, $content = '' ) {
+	function twp_callout( $atts, $content = '' ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
 			'type' => 'primary'
-		), $atts, 'solwp-callout' );
+		), $atts, 'twp-callout' );
 
 		$type = '';
 		if( $atts['type'] !== 'primary' ){
@@ -29,5 +29,5 @@
 		$out = '<div id="'.$atts['id'].'" class="'.$type.' callout">'.do_shortcode($content).'</div>';
 		return $out;
 	}
-	add_shortcode( 'solwp-callout', 'solwp_callout' );
+	add_shortcode( 'twp-callout', 'twp_callout' );
 ?>

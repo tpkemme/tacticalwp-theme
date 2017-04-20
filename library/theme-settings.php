@@ -42,24 +42,24 @@
   	-table
   	-tabs
  	*/
-class SolWP_Settings
+class TacticalWP_Settings
 {
     /**
     * Theme prefix
     * @var string
     */
-    private $prefix = 'solwp';
+    private $prefix = 'twp';
 
     /**
      * Option key, and option page slug
      * @var string
      */
-    private $key = 'solwp_options';
+    private $key = 'twp_options';
     /**
      * Options page metabox id
      * @var string
      */
-    private $metabox_id = 'solwp_option_metabox';
+    private $metabox_id = 'twp_option_metabox';
     /**
      * Array of option names
      * @var string
@@ -78,13 +78,13 @@ class SolWP_Settings
     /**
      * Holds an instance of the object
      *
-     * @var SolWP_Settings
+     * @var TacticalWP_Settings
      */
     protected static $instance = null;
     /**
      * Returns the running object
      *
-     * @return SolWP_Settings
+     * @return TacticalWP_Settings
      */
     public static function get_instance()
     {
@@ -101,7 +101,7 @@ class SolWP_Settings
     protected function __construct()
     {
         // Set our title
-        $this->title = __('SolWP Settings', $this->prefix);
+        $this->title = __('TacticalWP Settings', $this->prefix);
     }
     /**
      * Initiate our hooks
@@ -133,7 +133,7 @@ class SolWP_Settings
      */
     public function add_options_page()
     {
-        $this->options_page = add_menu_page(__('SolWP Theme Settings', $this->prefix), $this->title, 'manage_options', $this->key, array( $this, 'admin_page_display' ), 'dashicons-art');
+        $this->options_page = add_menu_page(__('TacticalWP Settings', $this->prefix), $this->title, 'manage_options', $this->key, array( $this, 'admin_page_display' ), 'dashicons-art');
         // Include CMB CSS in the head to avoid FOUC
         add_action("admin_print_styles-{$this->options_page}", array( 'CMB2_hookup', 'enqueue_cmb_css' ));
     }
@@ -338,7 +338,7 @@ class SolWP_Settings
                 'value' => array( $this->key, )
             )
         ));
-        solwp_add_global_settings( $cmb, $this->prefix );
+        twp_add_global_settings( $cmb, $this->prefix );
         array_push($this->option_names, $cmb);
     }
 
@@ -360,7 +360,7 @@ class SolWP_Settings
 							'value' => array( $this->key . "-nav", )
 					),
 			));
-			solwp_add_nav_settings( $cmb, $this->prefix );
+			twp_add_nav_settings( $cmb, $this->prefix );
 			array_push($this->option_names, $cmb);
     }
 
@@ -382,7 +382,7 @@ class SolWP_Settings
               'value' => array( $this->key . "-footer", )
           ),
       ));
-      solwp_add_footer_settings( $cmb, $this->prefix );
+      twp_add_footer_settings( $cmb, $this->prefix );
       array_push($this->option_names, $cmb);
     }
 
@@ -404,12 +404,12 @@ class SolWP_Settings
               'value' => array( $this->key . "-layout", )
           ),
       ));
-      solwp_add_layout_settings( $cmb, $this->prefix );
+      twp_add_layout_settings( $cmb, $this->prefix );
 			array_push($this->option_names, $cmb);
 
       $cmb2 = new_cmb2_box( array(
           'id'           => $this->prefix . '-layout-edit',
-					'title'				 => 'SolWP Page Overrides',
+					'title'				 => 'TacticalWP Page Overrides',
           'hookup'       => true,
           'save_fields'  => true,
 					'object_types' => array( 'page' ), // post type
@@ -418,7 +418,7 @@ class SolWP_Settings
 					'show_names'   => true,
       ) );
 
-      solwp_add_layout_edit_settings( $cmb2, $this->prefix );
+      twp_add_layout_edit_settings( $cmb2, $this->prefix );
 
     }
 
@@ -440,7 +440,7 @@ class SolWP_Settings
                 'value' => array( $this->key . "-typo", )
             ),
         ));
-				solwp_add_typo_settings( $cmb, $this->prefix );
+				twp_add_typo_settings( $cmb, $this->prefix );
         array_push($this->option_names, $cmb);
     }
 
@@ -462,7 +462,7 @@ class SolWP_Settings
 								'value' => array( $this->key . "-obj", )
 						),
 				));
-				solwp_add_obj_settings( $cmb, $this->prefix );
+				twp_add_obj_settings( $cmb, $this->prefix );
         array_push($this->option_names, $cmb);
     }
 
@@ -484,7 +484,7 @@ class SolWP_Settings
 								'value' => array( $this->key . "-advanced", )
 						),
 				));
-				solwp_add_advanced_settings( $cmb, $this->prefix );
+				twp_add_advanced_settings( $cmb, $this->prefix );
         array_push($this->option_names, $cmb);
     }
 
@@ -521,13 +521,13 @@ class SolWP_Settings
 }
 
 /**
- * Helper function to get/return the SolWP_Settings object
+ * Helper function to get/return the TacticalWP_Settings object
  * @since  0.1.0
- * @return SolWP_Settings object
+ * @return TacticalWP_Settings object
  */
-function solwp_settings()
+function twp_settings()
 {
-    return SolWP_Settings::get_instance();
+    return TacticalWP_Settings::get_instance();
 }
 
 /**
@@ -537,14 +537,14 @@ function solwp_settings()
  * @param  mixed  $default Optional default value
  * @return mixed           Option value
  */
-function solwp_get_option($key = '', $default = null)
+function twp_get_option($key = '', $default = null)
 {
     if (function_exists('cmb2_get_option')) {
         // Use cmb2_get_option as it passes through some key filters.
-        return cmb2_get_option(solwp_settings()->key, $key, $default);
+        return cmb2_get_option(twp_settings()->key, $key, $default);
     }
     // Fallback to get_option if CMB2 is not loaded yet.
-    $opts = get_option(solwp_settings()->key, $key, $default);
+    $opts = get_option(twp_settings()->key, $key, $default);
     $val = $default;
     if ('all' == $key) {
         $val = $opts;
@@ -555,4 +555,4 @@ function solwp_get_option($key = '', $default = null)
 }
 
 // Get it started
-solwp_settings();
+twp_settings();

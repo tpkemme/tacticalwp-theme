@@ -1,16 +1,16 @@
 /* 
  * Foundation Icons v 3.0
- * Made by ZURB 2013 http://zurb.com/playground/solwp-icon-fonts-3
+ * Made by ZURB 2013 http://zurb.com/playground/twp-icon-fonts-3
  * MIT License
  */
 
 @font-face {
-  font-family: "solwp-icons";
-  src: url("solwp-icons.eot");
-  src: url("solwp-icons.eot?#iefix") format("embedded-opentype"),
-       url("solwp-icons.woff") format("woff"),
-       url("solwp-icons.ttf") format("truetype"),
-       url("solwp-icons.svg#fontcustom") format("svg");
+  font-family: "twp-icons";
+  src: url("twp-icons.eot");
+  src: url("twp-icons.eot?#iefix") format("embedded-opentype"),
+       url("twp-icons.woff") format("woff"),
+       url("twp-icons.ttf") format("truetype"),
+       url("twp-icons.svg#fontcustom") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -97,7 +97,7 @@
 .fi-folder-lock:before,
 .fi-folder:before,
 .fi-foot:before,
-.fi-solwp:before,
+.fi-twp:before,
 .fi-graph-bar:before,
 .fi-graph-horizontal:before,
 .fi-graph-pie:before,
@@ -298,7 +298,7 @@
 .fi-yen:before,
 .fi-zoom-in:before,
 .fi-zoom-out:before {
-  font-family: "solwp-icons";
+  font-family: "twp-icons";
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -391,7 +391,7 @@
 .fi-folder-lock:before { content: "\f14f"; }
 .fi-folder:before { content: "\f150"; }
 .fi-foot:before { content: "\f151"; }
-.fi-solwp:before { content: "\f152"; }
+.fi-twp:before { content: "\f152"; }
 .fi-graph-bar:before { content: "\f153"; }
 .fi-graph-horizontal:before { content: "\f154"; }
 .fi-graph-pie:before { content: "\f155"; }

@@ -3,8 +3,8 @@
  * Configure responsive images sizes
  *
  * @package WordPress
- * @subpackage SolWP
- * @since SolWP 2.6.0
+ * @subpackage TacticalWP
+ * @since TacticalWP 2.6.0
  */
 
 // Add featured image sizes
@@ -23,7 +23,7 @@ add_image_size( 'fp-large', 1200 );
 add_image_size( 'fp-xlarge', 1920 );
 
 // Register the new image sizes for use in the add media modal in wp-admin
-function solwp_custom_sizes( $sizes ) {
+function twp_custom_sizes( $sizes ) {
 	return array_merge( $sizes, array(
 		'fp-small'  => __( 'FP Small' ),
 		'fp-medium' => __( 'FP Medium' ),
@@ -31,10 +31,10 @@ function solwp_custom_sizes( $sizes ) {
 		'fp-xlarge'  => __( 'FP XLarge' ),
 	) );
 }
-add_filter( 'image_size_names_choose', 'solwp_custom_sizes' );
+add_filter( 'image_size_names_choose', 'twp_custom_sizes' );
 
 // Add custom image sizes attribute to enhance responsive image functionality for content images
-function solwp_adjust_image_sizes_attr( $sizes, $size ) {
+function twp_adjust_image_sizes_attr( $sizes, $size ) {
 
 	// Actual width of image
 	$width = $size[0];
@@ -56,7 +56,7 @@ function solwp_adjust_image_sizes_attr( $sizes, $size ) {
 
 	return $sizes;
 }
-add_filter( 'wp_calculate_image_sizes', 'solwp_adjust_image_sizes_attr', 10 , 2 );
+add_filter( 'wp_calculate_image_sizes', 'twp_adjust_image_sizes_attr', 10 , 2 );
 
 // Remove inline width and height attributes for post thumbnails
 function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {

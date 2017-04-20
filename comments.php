@@ -5,8 +5,8 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package SolWP
- * @since SolWP 1.0.0
+ * @package TacticalWP
+ * @since TacticalWP 1.0.0
  */
 
 if ( have_comments() ) :
@@ -17,13 +17,13 @@ if ( have_comments() ) :
 
 		wp_list_comments(
 			array(
-				'walker'            => new SolWP_Comments(),
+				'walker'            => new TacticalWP_Comments(),
 				'max_depth'         => '',
 				'style'             => 'ol',
 				'callback'          => null,
 				'end-callback'      => null,
 				'type'              => 'all',
-				'reply_text'        => __( 'Reply', 'solwp' ),
+				'reply_text'        => __( 'Reply', 'twp' ),
 				'page'              => '',
 				'per_page'          => '',
 				'avatar_size'       => 48,
@@ -32,7 +32,7 @@ if ( have_comments() ) :
 				'format'            => 'html5',
 				'short_ping'        => false,
 				'echo'  	    => true,
-				'moderation' 	    => __( 'Your comment is awaiting moderation.', 'solwp' ),
+				'moderation' 	    => __( 'Your comment is awaiting moderation.', 'twp' ),
 			)
 		);
 
@@ -51,12 +51,12 @@ endif;
 	Prevent access to this file directly
 	*/
 
-	defined( 'ABSPATH' ) || die( __( 'Please do not load this page directly. Thanks!', 'solwp' ) );
+	defined( 'ABSPATH' ) || die( __( 'Please do not load this page directly. Thanks!', 'twp' ) );
 
 	if ( post_password_required() ) { ?>
 	<section id="comments">
 		<div class="notice">
-			<p class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', 'solwp' ); ?></p>
+			<p class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', 'twp' ); ?></p>
 		</div>
 	</section>
 	<?php
@@ -72,9 +72,9 @@ if ( comments_open() ) :
 	<h3>
 		<?php
 			comment_form_title(
-				__( 'Leave a Reply', 'solwp' ),
+				__( 'Leave a Reply', 'twp' ),
 				/* translators: %s: author of comment being replied to */
-				__( 'Leave a Reply to %s', 'solwp' )
+				__( 'Leave a Reply to %s', 'twp' )
 			);
 		?>
 	</h3>
@@ -84,7 +84,7 @@ if ( comments_open() ) :
 		<?php
 			/* translators: %s: login url */
 			printf( __(
-				'You must be <a href="%s">logged in</a> to post a comment.', 'solwp' ),
+				'You must be <a href="%s">logged in</a> to post a comment.', 'twp' ),
 				wp_login_url( get_permalink() )
 			);
 		?>
@@ -96,17 +96,17 @@ if ( comments_open() ) :
 			<?php
 				/* translators: %1$s: site url, %2$s: user identity  */
 				printf( __(
-					'Logged in as <a href="%1$s/wp-admin/profile.php">%2$s</a>.', 'solwp' ),
+					'Logged in as <a href="%1$s/wp-admin/profile.php">%2$s</a>.', 'twp' ),
 					get_option( 'siteurl' ),
 					$user_identity
 				);
-			?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'solwp' ); ?>"><?php _e( 'Log out &raquo;', 'solwp' ); ?></a>
+			?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'twp' ); ?>"><?php _e( 'Log out &raquo;', 'twp' ); ?></a>
 		</p>
 		<?php else : ?>
 		<p>
 			<label for="author">
 				<?php
-					_e( 'Name', 'solwp' ); if ( $req ) { _e( ' (required)', 'solwp' ); }
+					_e( 'Name', 'twp' ); if ( $req ) { _e( ' (required)', 'twp' ); }
 				?>
 			</label>
 			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
@@ -114,7 +114,7 @@ if ( comments_open() ) :
 		<p>
 			<label for="email">
 				<?php
-					_e( 'Email (will not be published)', 'solwp' ); if ( $req ) { _e( ' (required)', 'solwp' ); }
+					_e( 'Email (will not be published)', 'twp' ); if ( $req ) { _e( ' (required)', 'twp' ); }
 				?>
 			</label>
 			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
@@ -122,7 +122,7 @@ if ( comments_open() ) :
 		<p>
 			<label for="url">
 				<?php
-					_e( 'Website', 'solwp' );
+					_e( 'Website', 'twp' );
 				?>
 			</label>
 			<input type="text" class="five" name="url" id="url" value="<?php echo esc_attr( $comment_author_url ); ?>" size="22" tabindex="3">
@@ -131,12 +131,12 @@ if ( comments_open() ) :
 		<p>
 			<label for="comment">
 					<?php
-						_e( 'Comment', 'solwp' );
+						_e( 'Comment', 'twp' );
 					?>
 			</label>
 			<textarea name="comment" id="comment" tabindex="4"></textarea>
 		</p>
-		<p><input name="submit" class="button" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'REPLY', 'solwp' ); ?>"></p>
+		<p><input name="submit" class="button" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'REPLY', 'twp' ); ?>"></p>
 		<?php comment_id_fields(); ?>
 		<?php do_action( 'comment_form', $post->ID ); ?>
 	</form>

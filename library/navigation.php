@@ -3,8 +3,8 @@
  * Register Menus
  *
  * @link http://codex.wordpress.org/Function_Reference/register_nav_menus#Examples
- * @package SolWP
- * @since SolWP 1.0.0
+ * @package TacticalWP
+ * @since TacticalWP 1.0.0
  */
 
 register_nav_menus(array(
@@ -18,8 +18,8 @@ register_nav_menus(array(
  *
  * @link http://codex.wordpress.org/Function_Reference/wp_nav_menu
  */
-if ( ! function_exists( 'solwp_top_bar_r' ) ) {
-	function solwp_top_bar_r() {
+if ( ! function_exists( 'twp_top_bar_r' ) ) {
+	function twp_top_bar_r() {
 		wp_nav_menu( array(
 			'container'      => false,
 			'menu_class'     => 'dropdown menu',
@@ -27,7 +27,7 @@ if ( ! function_exists( 'solwp_top_bar_r' ) ) {
 			'theme_location' => 'top-bar-r',
 			'depth'          => 3,
 			'fallback_cb'    => false,
-			'walker'         => new SolWP_Top_Bar_Walker(),
+			'walker'         => new TacticalWP_Top_Bar_Walker(),
 		));
 	}
 }
@@ -36,16 +36,16 @@ if ( ! function_exists( 'solwp_top_bar_r' ) ) {
 /**
  * Mobile navigation - topbar (default) or offcanvas
  */
-if ( ! function_exists( 'solwp_mobile_nav' ) ) {
-	function solwp_mobile_nav() {
+if ( ! function_exists( 'twp_mobile_nav' ) ) {
+	function twp_mobile_nav() {
 		wp_nav_menu( array(
 			'container'      => false,                         // Remove nav container
-			'menu'           => __( 'mobile-nav', 'solwp' ),
+			'menu'           => __( 'mobile-nav', 'twp' ),
 			'menu_class'     => 'vertical menu',
 			'theme_location' => 'mobile-nav',
 			'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
 			'fallback_cb'    => false,
-			'walker'         => new SolWP_Mobile_Walker(),
+			'walker'         => new TacticalWP_Mobile_Walker(),
 		));
 	}
 }
@@ -58,14 +58,14 @@ if ( ! function_exists( 'solwp_mobile_nav' ) ) {
  * 3) On your menu item, type 'has-form' in the CSS-classes field. Type 'button' in the XFN field
  * 4) Save Menu. Your menu item will now appear as a button in your top-menu
 */
-if ( ! function_exists( 'solwp_add_menuclass' ) ) {
-	function solwp_add_menuclass( $ulclass ) {
+if ( ! function_exists( 'twp_add_menuclass' ) ) {
+	function twp_add_menuclass( $ulclass ) {
 		$find = array('/<a rel="button"/', '/<a title=".*?" rel="button"/');
 		$replace = array('<a rel="button" class="button"', '<a rel="button" class="button"');
 
 		return preg_replace( $find, $replace, $ulclass, 1 );
 	}
-	add_filter( 'wp_nav_menu','solwp_add_menuclass' );
+	add_filter( 'wp_nav_menu','twp_add_menuclass' );
 }
 
 
@@ -76,8 +76,8 @@ if ( ! function_exists( 'solwp_add_menuclass' ) ) {
  * @param bool $separatorclass should a separator class be added (in case :before is not an option).
  */
 
-if ( ! function_exists( 'solwp_breadcrumb' ) ) {
-	function solwp_breadcrumb( $showhome = true, $separatorclass = false ) {
+if ( ! function_exists( 'twp_breadcrumb' ) ) {
+	function twp_breadcrumb( $showhome = true, $separatorclass = false ) {
 
 		// Settings
 		$separator  = '&gt;';
@@ -207,7 +207,7 @@ if ( ! function_exists( 'solwp_breadcrumb' ) ) {
 			} elseif ( get_query_var('paged') ) {
 
 				// Paginated archives
-				echo '<li class="current item-current-' . get_query_var('paged') . '">' . __('Page', 'solwp' ) . ' ' . get_query_var('paged') . '</li>';
+				echo '<li class="current item-current-' . get_query_var('paged') . '">' . __('Page', 'twp' ) . ' ' . get_query_var('paged') . '</li>';
 
 			} elseif ( is_search() ) {
 

@@ -2,7 +2,7 @@
 /**
  * Global settings
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
@@ -10,13 +10,13 @@
 	*	Adds all fields for global settings to custom meta box
 	*
 	* @param 	[cmb] 	 $cmb 	 [ custom metabox (cmb), required ]
-	* @param 	[string] $prefix [ plugin prefix (solwp), optional ]
+	* @param 	[string] $prefix [ plugin prefix (twp), optional ]
 	* @return	[cmb]		 $CMB2	 [ cmb with fields added ]
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	if ( ! function_exists( 'solwp_add_global_settings' ) ) :
-		function solwp_add_global_settings( $cmb, $prefix = 'solwp' ){
+	if ( ! function_exists( 'twp_add_global_settings' ) ) :
+		function twp_add_global_settings( $cmb, $prefix = 'twp' ){
 			$cmb->add_field(array(
 					'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
 															<li class="accordion-item" data-accordion-item>
@@ -73,7 +73,7 @@
 					'attributes' => array(
 						'data-default' => 'Quicksand'
 					),
-					'options_cb'       => 'solwp_google_fonts',
+					'options_cb'       => 'twp_google_fonts',
 			));
 			$cmb->add_field(array(
 					'name' => __('Global Margins', $prefix),

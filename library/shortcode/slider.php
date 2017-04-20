@@ -2,12 +2,12 @@
 /**
  * Slider shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an slider when the [solwp-slider] is used
+	* Outputs an slider when the [twp-slider] is used
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,14 +15,14 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_slider( $atts, $content = '' ) {
+	function twp_slider( $atts, $content = '' ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
 			'type'	=> 'horizontal',
 			'initial'	=> '50',
 			'total'		 => '100',
-		), $atts, 'solwp-slider' );
+		), $atts, 'twp-slider' );
 
 		$type = '';
 		if( $atts['type'] !== 'vertical' ){
@@ -43,5 +43,5 @@
 		</div>';
 		return $out;
 	}
-	add_shortcode( 'solwp-slider', 'solwp_slider' );
+	add_shortcode( 'twp-slider', 'twp_slider' );
 ?>

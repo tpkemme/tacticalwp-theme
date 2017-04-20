@@ -2,7 +2,7 @@
 /**
  * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the CMB2 directory)
  *
- * Be sure to replace all instances of 'solwp_' with your project's prefix.
+ * Be sure to replace all instances of 'twp_' with your project's prefix.
  * http://nacin.com/2010/05/11/in-wordpress-prefix-everything/
  *
  * @category YourThemeOrPlugin
@@ -30,7 +30,7 @@ if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
  *
  * @return bool             True if metabox should show
  */
-function solwp_show_if_front_page( $cmb ) {
+function twp_show_if_front_page( $cmb ) {
 	// Don't show this metabox if it's not the front page template.
 	if ( get_option( 'page_on_front' ) !== $cmb->object_id ) {
 		return false;
@@ -45,7 +45,7 @@ function solwp_show_if_front_page( $cmb ) {
  *
  * @return bool                     True if metabox should show
  */
-function solwp_hide_if_no_cats( $field ) {
+function twp_hide_if_no_cats( $field ) {
 	// Don't show this field if not in the cats category.
 	if ( ! has_tag( 'cats', $field->object_id ) ) {
 		return false;
@@ -59,7 +59,7 @@ function solwp_hide_if_no_cats( $field ) {
  * @param  array      $field_args Array of field arguments.
  * @param  CMB2_Field $field      The field object.
  */
-function solwp_render_row_cb( $field_args, $field ) {
+function twp_render_row_cb( $field_args, $field ) {
 	$classes     = $field->row_classes();
 	$id          = $field->args( 'id' );
 	$label       = $field->args( 'name' );
@@ -81,7 +81,7 @@ function solwp_render_row_cb( $field_args, $field ) {
  * @param  array      $field_args Array of field arguments.
  * @param  CMB2_Field $field      The field object.
  */
-function solwp_display_text_small_column( $field_args, $field ) {
+function twp_display_text_small_column( $field_args, $field ) {
 	?>
 	<div class="custom-column-display <?php echo esc_attr( $field->row_classes() ); ?>">
 		<p><?php echo $field->escaped_value(); ?></p>
@@ -98,7 +98,7 @@ function solwp_display_text_small_column( $field_args, $field ) {
  * @param  array             $field_args Array of field parameters.
  * @param  CMB2_Field object $field      Field object.
  */
-function solwp_before_row_if_2( $field_args, $field ) {
+function twp_before_row_if_2( $field_args, $field ) {
 	if ( 2 == $field->object_id ) {
 		echo '<p>Testing <b>"before_row"</b> parameter (on $post_id 2)</p>';
 	} else {

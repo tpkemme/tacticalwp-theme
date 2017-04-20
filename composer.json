@@ -1,13 +1,13 @@
 {
-    "name": "olefredrik/solwp",
-    "description": "SolWP is a WordPress starter theme based on Foundation 6 by Zurb",
+    "name": "tpkemme/twp",
+    "description": "TacticalWP is a WordPress starter theme based on Foundation 6 by Zurb",
     "type": "wordpress-theme",
     "minimum-stability" : "dev",
     "license": "MIT",
     "authors": [
         {
             "name": "Tyler Kemme",
-            "email": "mail@olefredrik.com"
+            "email": "mail@tpkemme.com"
         }
     ],
     "require": {

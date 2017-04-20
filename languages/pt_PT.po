@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: solwp-libsass-template 5.4.0\n"
+"Project-Id-Version: twp-libsass-template 5.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-14 16:54+0000\n"
 "PO-Revision-Date: 2016-10-16 10:08+0200\n"
@@ -66,7 +66,7 @@ msgstr "Artigos mais recentes &rarr;"
 msgid "Reply"
 msgstr "Responder"
 
-#: comments.php:35 library/solwp.php:155
+#: comments.php:35 library/twp.php:155
 msgid "Your comment is awaiting moderation."
 msgstr "O seu comentário aguarda moderação."
 
@@ -161,49 +161,49 @@ msgstr "Publicado em %1$s às %2$s."
 msgid "Written by"
 msgstr "Escrito por"
 
-#: library/solwp.php:24
+#: library/twp.php:24
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: library/solwp.php:25
+#: library/twp.php:25
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: library/solwp.php:53
+#: library/twp.php:53
 #, php-format
 msgid ""
 "Please assign a menu to the primary menu location under %1$s or %2$s the "
 "design."
 msgstr "Por favor, seleccione um Menu primário em %1$s ou em %2$s o design."
 
-#: library/solwp.php:54
+#: library/twp.php:54
 #, php-format
 msgid "<a href=\"%s\">Menus</a>"
 msgstr "<a href=\"%s\">Menus</a>"
 
-#: library/solwp.php:57
+#: library/twp.php:57
 #, php-format
 msgid "<a href=\"%s\">Customize</a>"
 msgstr "<a href=\"%s\">Personalizar</a>"
 
-#: library/solwp.php:105
+#: library/twp.php:105
 msgid "No Responses to"
 msgstr "Sem comentários a"
 
-#: library/solwp.php:105
+#: library/twp.php:105
 msgid "One Response to"
 msgstr "Um comentário a"
 
-#: library/solwp.php:105
+#: library/twp.php:105
 msgid "% Responses to"
 msgstr "% comentários a"
 
-#: library/solwp.php:145
+#: library/twp.php:145
 #, php-format
 msgid "<cite class=\"fn\">%s</cite>"
 msgstr "<cite class=\"fn\">%s</cite>"
 
-#: library/solwp.php:146
+#: library/twp.php:146
 #, php-format
 msgid "%1$s"
 msgstr "%1$s"

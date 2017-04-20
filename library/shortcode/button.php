@@ -2,12 +2,12 @@
 /**
  * Button shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an button when the [solwp-button] is used
+	* Outputs an button when the [twp-button] is used
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,14 +15,14 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_button( $atts, $content = '' ) {
+	function twp_button( $atts, $content = '' ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
 			'type'		 => 'primary',
 			'size'		 => 'default',
 			'toggle'   => '',
-		), $atts, 'solwp-button' );
+		), $atts, 'twp-button' );
 
 		$size = '';
 
@@ -40,5 +40,5 @@
 		$out = '<button type="button" '.$toggle.' class="'.$atts['type'].' button '.$size.'">'.do_shortcode($content).'</button>';
 		return $out;
 	}
-	add_shortcode( 'solwp-button', 'solwp_button' );
+	add_shortcode( 'twp-button', 'twp_button' );
 ?>

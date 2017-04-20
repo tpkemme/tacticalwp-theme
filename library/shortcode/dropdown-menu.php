@@ -2,7 +2,7 @@
 /**
  * Dropdown Menu shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
@@ -17,7 +17,7 @@
 	}
 
  /**
-	* Outputs an dropdown menu when the [solwp-dropdown-menu]
+	* Outputs an dropdown menu when the [twp-dropdown-menu]
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -25,12 +25,12 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_dropdown_menu( $atts ) {
+	function twp_dropdown_menu( $atts ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
 			'menu' => 'menu-header-menu',
-		), $atts, 'solwp-dropdown-menu' );
+		), $atts, 'twp-dropdown-menu' );
 
 		$out = '';
 		$locations = get_nav_menu_locations();
@@ -49,5 +49,5 @@
 
 		return $out;
 	}
-	add_shortcode( 'solwp-dropdown-menu', 'solwp_dropdown_menu' );
+	add_shortcode( 'twp-dropdown-menu', 'twp_dropdown_menu' );
 ?>

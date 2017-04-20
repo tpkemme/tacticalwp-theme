@@ -63,7 +63,7 @@ get_header(); ?>
 					  <div class="row">
 					    <div class="medium-6 columns">
 					      <label>URL Pattern, not required
-					        <input type="text" placeholder="http://solwp.zurb.com" pattern="url">
+					        <input type="text" placeholder="http://twp.zurb.com" pattern="url">
 					      </label>
 					    </div>
 					    <div class="medium-6 columns">

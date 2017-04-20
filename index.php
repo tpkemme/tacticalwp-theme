@@ -10,8 +10,8 @@
  *
  * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
  *
- * @package SolWP
- * @since SolWP 1.0.0
+ * @package TacticalWP
+ * @since TacticalWP 1.0.0
  */
 
 get_header(); ?>
@@ -32,13 +32,13 @@ get_header(); ?>
 
 		<?php /* Display navigation to next/previous pages when applicable */ ?>
 		<?php
-		if ( function_exists( 'solwp_pagination' ) ) :
-			solwp_pagination();
+		if ( function_exists( 'twp_pagination' ) ) :
+			twp_pagination();
 		elseif ( is_paged() ) :
 		?>
 			<nav id="post-nav">
-				<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'solwp' ) ); ?></div>
-				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'solwp' ) ); ?></div>
+				<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'twp' ) ); ?></div>
+				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'twp' ) ); ?></div>
 			</nav>
 		<?php endif; ?>
 

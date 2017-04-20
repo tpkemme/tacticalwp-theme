@@ -2,12 +2,12 @@
 /**
  * Toggle shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an toggle when the [solwp-toggle] is used
+	* Outputs an toggle when the [twp-toggle] is used
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,12 +15,12 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_toggle( $atts, $content = '' ) {
+	function twp_toggle( $atts, $content = '' ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
 			'position' => 'middle',
-		), $atts, 'solwp-toggle' );
+		), $atts, 'twp-toggle' );
 
 		$out = '';
 
@@ -43,5 +43,5 @@
 
 		return $out;
 	}
-	add_shortcode( 'solwp-toggle', 'solwp_toggle' );
+	add_shortcode( 'twp-toggle', 'twp_toggle' );
 ?>

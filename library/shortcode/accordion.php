@@ -2,12 +2,12 @@
 /**
  * Accordion shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an accordion when the [solwp-accordion]
+	* Outputs an accordion when the [twp-accordion]
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,7 +15,7 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_accordion( $atts, $content = '' ) {
+	function twp_accordion( $atts, $content = '' ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
@@ -24,7 +24,7 @@
 			'type'		 => 'default',
 			'close-all' => 'true',
 			'multi-expand' => 'true',
-		), $atts, 'solwp-accordion' );
+		), $atts, 'twp-accordion' );
 
 		$out = '';
 
@@ -74,5 +74,5 @@
 		}
 		return $out;
 	}
-	add_shortcode( 'solwp-accordion', 'solwp_accordion' );
+	add_shortcode( 'twp-accordion', 'twp_accordion' );
 ?>

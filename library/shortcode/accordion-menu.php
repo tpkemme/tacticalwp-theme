@@ -2,7 +2,7 @@
 /**
  * Accordion Menu shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
@@ -17,7 +17,7 @@
 	}
 
  /**
-	* Outputs an accordion menu when the [solwp-accordion-menu]
+	* Outputs an accordion menu when the [twp-accordion-menu]
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -25,12 +25,12 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_accordion_menu( $atts ) {
+	function twp_accordion_menu( $atts ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
 			'menu' => 'header-menu',
-		), $atts, 'solwp-accordion-menu' );
+		), $atts, 'twp-accordion-menu' );
 
 		$out = '';
 		$locations = get_nav_menu_locations();
@@ -51,5 +51,5 @@
 
 		return $out;
 	}
-	add_shortcode( 'solwp-accordion-menu', 'solwp_accordion_menu' );
+	add_shortcode( 'twp-accordion-menu', 'twp_accordion_menu' );
 ?>

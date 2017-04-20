@@ -1,17 +1,17 @@
 <?php
 /**
  * Author: Tyler Kemme
- * URL: http://olefredrik.com
+ * URL: http://tpkemme.com
  *
- * SolWP functions and definitions
+ * TacticalWP functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
  * hooks in WordPress to change core functionality.
  *
  * @link https://codex.wordpress.org/Theme_Development
- * @package SolWP
- * @since SolWP 1.0.0
+ * @package TacticalWP
+ * @since TacticalWP 1.0.0
  */
 
 /** cmb2 custom functions */
@@ -50,17 +50,17 @@ require_once( 'library/shortcode/visibility.php' );
 require_once( 'library/cleanup.php' );
 
 /** Required for Foundation to work properly */
-require_once( 'library/solwp.php' );
+require_once( 'library/twp.php' );
 
 /** Format comments */
-require_once( 'library/class-solwp-comments.php' );
+require_once( 'library/class-twp-comments.php' );
 
 /** Register all navigation menus */
 require_once( 'library/navigation.php' );
 
 /** Add menu walkers for top-bar and off-canvas */
-require_once( 'library/class-solwp-top-bar-walker.php' );
-require_once( 'library/class-solwp-mobile-walker.php' );
+require_once( 'library/class-twp-top-bar-walker.php' );
+require_once( 'library/class-twp-mobile-walker.php' );
 
 /** Create widget areas in sidebar and footer */
 require_once( 'library/widget-areas.php' );
@@ -94,4 +94,4 @@ require_once( 'library/settings/advanced-settings.php' );
 require_once( 'library/theme-settings.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
-// require_once( 'library/class-solwp-protocol-relative-theme-assets.php' );
+// require_once( 'library/class-twp-protocol-relative-theme-assets.php' );

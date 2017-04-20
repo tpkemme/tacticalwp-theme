@@ -2,12 +2,12 @@
 /**
  * Video shortcode
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
  /**
-	* Outputs an video when the [solwp-video] is used
+	* Outputs an video when the [twp-video] is used
 	*
 	* @param 	[string] $atts	 [ shortcode attributes, required ]
 	* @param 	[string] $option [ shortcode content, optional ]
@@ -15,7 +15,7 @@
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	function solwp_video( $atts ) {
+	function twp_video( $atts ) {
 
 		$atts = shortcode_atts( array(
 			'id' => wp_generate_password( 6, false ),
@@ -24,7 +24,7 @@
 			'loop'		 => 'false',
 			'muted'		 => 'false',
 			'controls' => 'true',
-		), $atts, 'solwp-video' );
+		), $atts, 'twp-video' );
 
 		$autoplay = '';
 		if($atts['autoplay'] !== 'false'){
@@ -56,5 +56,5 @@
 
 		return $out;
 	}
-	add_shortcode( 'solwp-video', 'solwp_video' );
+	add_shortcode( 'twp-video', 'twp_video' );
 ?>

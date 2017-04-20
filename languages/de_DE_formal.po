@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: SolWP v5.4\n"
+"Project-Id-Version: TacticalWP v5.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-12 17:53+0200\n"
 "PO-Revision-Date: 2016-10-16 10:06+0200\n"
@@ -18,12 +18,12 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-# @ SolWP
+# @ TacticalWP
 #: 404.php:8
 msgid "File Not Found"
 msgstr "Datei nicht gefunden"
 
-# @ SolWP
+# @ TacticalWP
 #: 404.php:12
 msgid ""
 "The page you are looking for might have been removed, had its name changed, "
@@ -32,173 +32,173 @@ msgstr ""
 "Die Seite, die du suchst, wurde möglicherweise entfernt oder umbenannt, oder "
 "ist vorübergehend nicht verfügbar."
 
-# @ SolWP
+# @ TacticalWP
 #: 404.php:14
 msgid "Please try the following:"
 msgstr "Bitte versuche folgendes:"
 
-# @ SolWP
+# @ TacticalWP
 #: 404.php:16
 msgid "Check your spelling"
 msgstr "Überprüfe deine Eingabe"
 
-# @ SolWP
+# @ TacticalWP
 #: 404.php:17
 #, php-format
 msgid "Return to the <a href=\"%s\">home page</a>"
 msgstr "Zurück zur <a href=\"%s\">Startseite</a>"
 
-# @ SolWP
+# @ TacticalWP
 #: 404.php:18
 msgid "Click the <a href=\"javascript:history.back()\">Back</a> button"
 msgstr ""
 "Klicke auf die <a href=\"javascript:history.back()\">Zurück</a> Schaltfläche"
 
-# @ SolWP
+# @ TacticalWP
 #. /previous pages when applicable
 #: archive.php:21 index.php:24 search.php:25
 msgid "&larr; Older posts"
 msgstr "&larr; ältere Beiträge"
 
-# @ SolWP
+# @ TacticalWP
 #: archive.php:22 index.php:25 search.php:26
 msgid "Newer posts &rarr;"
 msgstr "neuere Beiträge &rarr;"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:8
 #, php-format
 msgid "<cite class=\"fn\">%s</cite>"
 msgstr ""
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:9
 #, php-format
 msgid "%1$s"
 msgstr ""
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:10
 msgid "(Edit)"
 msgstr "(Bearbeiten)"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:16
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Freischaltung."
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:31
 msgid "Please do not load this page directly. Thanks!"
 msgstr "Bitte diese Seite nicht direkt laden. Vielen Dank!"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:36
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 "Dieser Beitrag ist passwortgeschützt. Um die Kommentare zu sehen, musst du "
 "das Passwort eingeben."
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:46
 msgid "No Responses to"
 msgstr "Keine Antworten auf"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:46
 msgid "One Response to"
 msgstr "Eine Antwort auf"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:46
 msgid "% Responses to"
 msgstr "% Antworten auf"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:53
 msgid "&larr; Older comments"
 msgstr "&larr; ältere Kommentare"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:54
 msgid "Newer comments &rarr;"
 msgstr "neuere Kommentare &rarr;"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:61
 msgid "Leave a Reply"
 msgstr "Antworten"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:61
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Antworte auf %s"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:64
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 "Du musst <a href=\"%s\">angemeldet</a> sein, um einen Kommentar abzugeben."
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:68
 #, php-format
 msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
 msgstr "Angemeldet als <a href=\"%s/wp-admin/profile.php\">%s</a>."
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:68
 msgid "Log out of this account"
 msgstr "Von diesem Konto abmelden"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:68
 msgid "Log out &raquo;"
 msgstr "Abmelden &raquo;"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:71
 msgid "Name"
 msgstr "Name"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:71 comments.php:75
 msgid " (required)"
 msgstr "(erforderlich)"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:75
 msgid "Email (will not be published)"
 msgstr "E-Mail (wird nicht veröffentlicht)"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:79
 msgid "Website"
 msgstr "Website"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:84
 msgid "Comment"
 msgstr "Kommentar"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:87
 msgid "You can use these tags:"
 msgstr "Sie können diese Tags verwenden:"
 
-# @ SolWP
+# @ TacticalWP
 #: comments.php:88
 msgid "Submit Comment"
 msgstr "Kommentar absenden"
 
-# @ SolWP
+# @ TacticalWP
 #: content-none.php:11
 msgid "Nothing Found"
 msgstr "nichts gefunden"
 
-# @ SolWP
+# @ TacticalWP
 #: content-none.php:17
 #, php-format
 msgid ""
@@ -207,7 +207,7 @@ msgstr ""
 "Bereit, deinen ersten Beitrag zu veröffentlichen? <a href=\"%1$s\">Hier "
 "geht's los</a>"
 
-# @ SolWP
+# @ TacticalWP
 #: content-none.php:21
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
@@ -216,7 +216,7 @@ msgstr ""
 "Es tut uns leid, aber es konnten keine Übereinstimmungen gefunden werden. "
 "Bitte versuche es mit einigen anderen Suchbegriffen erneut."
 
-# @ SolWP
+# @ TacticalWP
 #: content-none.php:26
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
@@ -225,79 +225,79 @@ msgstr ""
 "Leider konnten wir die angefragte Seite nicht finden. Vielleicht hilft dir "
 "die Suchfunktion weiter."
 
-# @ SolWP
+# @ TacticalWP
 #. /archive/search.
 #. *
-#. * @subpackage SolWP
-#. * @since SolWP 1.0.0
+#. * @subpackage TacticalWP
+#. * @since TacticalWP 1.0.0
 #.
 #: content.php:16
 msgid "Continue reading..."
 msgstr "Weiterlesen..."
 
-# @ SolWP
+# @ TacticalWP
 #: hero.php:40 kitchen-sink.php:739 page-full.php:19 page-sidebar-left.php:21
 #: page.php:18 single.php:27 woocommerce.php:18
 msgid "Pages:"
 msgstr "Seiten:"
 
-# @ SolWP
+# @ TacticalWP
 #: library/entry-meta.php:4
 #, php-format
 msgid "Posted on %1$s at %2$s."
 msgstr "Veröffentlicht am %1$s um %2$s."
 
-# @ SolWP
+# @ TacticalWP
 #: library/entry-meta.php:5
 msgid "Written by"
 msgstr "Geschrieben von"
 
-# @ SolWP
-#: library/solwp.php:16
+# @ TacticalWP
+#: library/twp.php:16
 msgid "&laquo;"
 msgstr "&laquo;"
 
-# @ SolWP
-#: library/solwp.php:17
+# @ TacticalWP
+#: library/twp.php:17
 msgid "&raquo;"
 msgstr "&raquo;"
 
-# @ SolWP
-#: library/solwp.php:40
+# @ TacticalWP
+#: library/twp.php:40
 #, php-format
 msgid ""
 "Please assign a menu to the primary menu location under %1$s or %2$s the "
 "design."
 msgstr "Bitte weise ein Menü zur primären Menüposition %1$s oder %2$s zu."
 
-# @ SolWP
-#: library/solwp.php:41
+# @ TacticalWP
+#: library/twp.php:41
 #, php-format
 msgid "<a href=\"%s\">Menus</a>"
 msgstr "<a href=\"%s\">Menüs</a>"
 
-# @ SolWP
-#: library/solwp.php:44
+# @ TacticalWP
+#: library/twp.php:44
 #, php-format
 msgid "<a href=\"%s\">Customize</a>"
 msgstr "<a href=\"%s\">Anpassen</a>"
 
-# @ SolWP
+# @ TacticalWP
 #: library/widget-areas.php:6
 msgid "Sidebar widgets"
 msgstr "Seitenleisten-Widgetbereich"
 
-# @ SolWP
+# @ TacticalWP
 #: library/widget-areas.php:7
 msgid "Drag widgets to this sidebar container."
 msgstr "Ziehen Sie Widgets zu diesem Seitenleisten-Bereich."
 
-# @ SolWP
+# @ TacticalWP
 #: library/widget-areas.php:16
 msgid "Footer widgets"
 msgstr "Footer-Widgetbereich"
 
-# @ SolWP
+# @ TacticalWP
 #: library/widget-areas.php:17
 msgid "Drag widgets to this footer container"
 msgstr "Ziehen Sie Widgets zu diesem Footer-Bereich."
@@ -322,12 +322,12 @@ msgstr[1] ""
 msgid "yyyy-mm-dd"
 msgstr "dd.mm.yyyy"
 
-# @ SolWP
+# @ TacticalWP
 #: search.php:7
 msgid "Search Results for"
 msgstr "Suchergebnisse für"
 
-# @ SolWP
+# @ TacticalWP
 #: searchform.php:6 searchform.php:10
 msgid "Search"
 msgstr "Suche"

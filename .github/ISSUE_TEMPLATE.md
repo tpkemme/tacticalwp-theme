@@ -1,4 +1,4 @@
-<!-- Please only file bugs with SolWP on GitHub. If you've got an issue with the Foundation framework itself, please file the bug in the Foundation repository: https://github.com/zurb/solwp-sites. If you've got a more general question about how to use SolWP, please use the Gitter chatroom: https://gitter.im/olefredrik/SolWP -->
+<!-- Please only file bugs with TacticalWP on GitHub. If you've got an issue with the Foundation framework itself, please file the bug in the Foundation repository: https://github.com/zurb/twp-sites. If you've got a more general question about how to use TacticalWP, please use the Gitter chatroom: https://gitter.im/tpkemme/tacticalwp -->
 
 **How can this bug be reproduced?**
 

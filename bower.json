@@ -1,8 +1,8 @@
 {
-  "name": "solwp",
+  "name": "twp",
   "main": [
-    "assets/stylesheets/solwp.css",
-    "assets/javascript/solwp.js"
+    "assets/stylesheets/twp.css",
+    "assets/javascript/twp.js"
   ],
   "ignore": [],
   "dependencies": {

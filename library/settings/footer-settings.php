@@ -2,7 +2,7 @@
 /**
  * Footer settings
  *
- * @package SolWP
+ * @package TacticalWP
  * @since 1.0.0
  */
 
@@ -10,13 +10,13 @@
 	*	Adds all fields for footer settings to custom meta box
 	*
 	* @param 	[cmb] 	 $cmb 	 [ custom metabox (cmb), required ]
-	* @param 	[string] $prefix [ plugin prefix (solwp), optional ]
+	* @param 	[string] $prefix [ plugin prefix (twp), optional ]
 	* @return	[cmb]		 $CMB2	 [ cmb with fields added ]
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
-	if ( ! function_exists( 'solwp_add_footer_settings' ) ) :
-		function solwp_add_footer_settings( $cmb, $prefix = 'solwp' ){
+	if ( ! function_exists( 'twp_add_footer_settings' ) ) :
+		function twp_add_footer_settings( $cmb, $prefix = 'twp' ){
       // Set our CMB2 fields
       $cmb->add_field(array(
           'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">

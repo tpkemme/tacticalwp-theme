@@ -2,12 +2,12 @@
 /**
  * Protocol Relative Theme Assets
  *
- * @package SolWP
- * @since SolWP 1.1.0
+ * @package TacticalWP
+ * @since TacticalWP 1.1.0
  */
 
-if ( ! class_exists( 'SolWP_Protocol_Relative_Theme_Assets' ) ) :
-	class SolWP_Protocol_Relative_Theme_Assets {
+if ( ! class_exists( 'TacticalWP_Protocol_Relative_Theme_Assets' ) ) :
+	class TacticalWP_Protocol_Relative_Theme_Assets {
 		/**
 		 * Plugin URI: https://github.com/ryanjbonnell/Protocol-Relative-Theme-Assets
 		 * Description: Transforms enqueued CSS and JavaScript theme URLs to use protocol-relative paths.
@@ -86,5 +86,5 @@ if ( ! class_exists( 'SolWP_Protocol_Relative_Theme_Assets' ) ) :
 		}
 	}
 
-	$solwp_protocol_relative_theme_assets = new SolWP_Protocol_Relative_Theme_Assets;
+	$twp_protocol_relative_theme_assets = new TacticalWP_Protocol_Relative_Theme_Assets;
 endif;
