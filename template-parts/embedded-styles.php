@@ -1258,7 +1258,7 @@ button.orbit-previous:hover, button.orbit-next:hover {
 	background-color: <?php solwp( 'global_secondary_color') ?>;
 }
 .orbit-slide.is-active {
-    padding: 0 50px;
+    padding: 0 70px;
 }
 
 .orbit-container{
@@ -1267,7 +1267,10 @@ button.orbit-previous:hover, button.orbit-next:hover {
 .orbit-bullets button.is-active {
 	background-color: <?php solwp( 'global_secondary_color') ?>;
 }
-
+.orbit-rating{
+	width: 80px;
+	height: 80px;
+}
 .orbit-bullets button {
 	background-color: <?php solwp( 'global_gray_color') ?>;
 }

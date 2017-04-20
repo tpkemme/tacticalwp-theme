@@ -40,6 +40,7 @@ require_once( 'library/shortcode/switch.php' );
 require_once( 'library/shortcode/video.php' );
 require_once( 'library/shortcode/table.php' );
 require_once( 'library/shortcode/tabs.php' );
+require_once( 'library/shortcode/testimonial.php' );
 require_once( 'library/shortcode/thumbnail.php' );
 require_once( 'library/shortcode/toggle.php' );
 require_once( 'library/shortcode/tooltip.php' );
