@@ -25,12 +25,12 @@
 																</a>
 																<div id="panel-global" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-global-heading">',
 					'name' => __('Font Size', $prefix),
-					'desc' => __('Global font size and units (default: 100%)', $prefix),
+					'desc' => __('Global font size and units (default: 95%)', $prefix),
 					'id'   => $prefix . '_global_font_size',
 					'type' => 'text_small',
-					'default' => '100%',
+					'default' => '95%',
 					'attributes' => array(
-						'data-default' => '100%'
+						'data-default' => '95%'
 					)
 			));
 			$cmb->add_field(array(
@@ -55,12 +55,12 @@
 			));
 			$cmb->add_field(array(
 					'name' => __('Body Font Color', $prefix),
-											'desc'    => __('Global body font color in hex (default: #b9bed5)', $prefix),
+											'desc'    => __('Global body font color in hex (default: #757575)', $prefix),
 					'id'      => $prefix . '_global_font_color',
 					'type'    => 'colorpicker',
-					'default' => '#b9bed5',
+					'default' => '#757575',
 					'attributes' => array(
-						'data-default' => '#b9bed5'
+						'data-default' => '#757575'
 					)
 			));
 			$cmb->add_field(array(
@@ -69,9 +69,9 @@
 					'id'            => $prefix . '_global_font_family',
 					'type'             => 'select',
 					'show_option_none' => false,
-					'default'          => 'Quicksand',
+					'default'          => 'Roboto',
 					'attributes' => array(
-						'data-default' => 'Quicksand'
+						'data-default' => 'Roboto'
 					),
 					'options_cb'       => 'twp_google_fonts',
 			));
@@ -113,12 +113,12 @@
 			));
 			$cmb->add_field(array(
 					'name' => __('Background Color', $prefix),
-											'desc'    => __('Global background color in hex (default: #202533)', $prefix),
+											'desc'    => __('Global background color in hex (default: #ffffff)', $prefix),
 					'id'      => $prefix . '_global_background_color',
 					'type'    => 'colorpicker',
-					'default' => '#202533',
+					'default' => '#ffffff',
 					'attributes' => array(
-							'data-default' => '#202533'
+							'data-default' => '#ffffff'
 					)
 			));
 			$cmb->add_field(array(
@@ -169,52 +169,52 @@
 															</a>
 															<div id="panel-global-colors" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-global-colors-heading">',
 					'name'    => __('Primary Color', $prefix),
-					'desc'    => __('The theme\'s primary color in hex (default: #5274ff)', $prefix),
+					'desc'    => __('The theme\'s primary color in hex (default: #1563ff)', $prefix),
 					'id'      => $prefix . '_global_primary_color',
 					'type'    => 'colorpicker',
-					'default' => '#5274ff',
+					'default' => '#1563ff',
 					'attributes' => array(
-						'data-default' => '#5274ff'
+						'data-default' => '#1563ff'
 					)
 			));
 			$cmb->add_field(array(
 					'name'    => __('Dark Primary Color', $prefix),
-					'desc'    => __('The theme\'s dark primary color in hex (default: #3F51B5)', $prefix),
+					'desc'    => __('The theme\'s dark primary color in hex (default: #0f51ff)', $prefix),
 					'id'      => $prefix . '_global_dark_primary_color',
 					'type'    => 'colorpicker',
-					'default' => '#3F51B5',
+					'default' => '#0f51ff',
 					'attributes' => array(
-						'data-default' => '#3F51B5'
+						'data-default' => '#0f51ff'
 					)
 			));
 			$cmb->add_field(array(
 					'name'    => __('Light Primary Color', $prefix),
-					'desc'    => __('The theme\'s light primary color in hex (default: #5c6bc0)', $prefix),
+					'desc'    => __('The theme\'s light primary color in hex (default: #536dfe)', $prefix),
 					'id'      => $prefix . '_global_light_primary_color',
 					'type'    => 'colorpicker',
-					'default' => '#5c6bc0',
+					'default' => '#536dfe',
 					'attributes' => array(
-						'data-default' => '#5c6bc0'
+						'data-default' => '#536dfe'
 					)
 			));
 			$cmb->add_field(array(
 					'name'    => __('Accent Color', $prefix),
-					'desc'    => __('The theme\'s accent color in hex (default: #33a0ff)', $prefix),
+					'desc'    => __('The theme\'s accent color in hex (default: #6deef6)', $prefix),
 					'id'      => $prefix . '_global_accent_color',
 					'type'    => 'colorpicker',
-					'default' => '#33a0ff',
+					'default' => '#6deef6',
 					'attributes' => array(
-						'data-default' => '#33a0ff'
+						'data-default' => '#6deef6'
 					)
 			));
 			$cmb->add_field(array(
 					'name'    => __('Secondary Color', $prefix),
-					'desc'    => __('The theme\'s secondary color in hex (default: #9aefea)', $prefix),
+					'desc'    => __('The theme\'s secondary color in hex (default: #5364fc)', $prefix),
 					'id'      => $prefix . '_global_secondary_color',
 					'type'    => 'colorpicker',
-					'default' => '#9aefea',
+					'default' => '#5364fc',
 					'attributes' => array(
-						'data-default' => '#9aefea'
+						'data-default' => '#5364fc'
 					)
 			));
 			$cmb->add_field(array(
@@ -239,32 +239,32 @@
 			));
 			$cmb->add_field(array(
 					'name'    => __('Warning Color', $prefix),
-					'desc'    => __('Color for warning notifications in hex (default: #e0c285)', $prefix),
+					'desc'    => __('Color for warning notifications in hex (default: #ffc836)', $prefix),
 					'id'      => $prefix . '_global_warning_color',
 					'type'    => 'colorpicker',
-					'default' => '#e0c285',
+					'default' => '#ffc836',
 					'attributes' => array(
-						'data-default' => '#e0c285'
+						'data-default' => '#ffc836'
 					)
 			));
 			$cmb->add_field(array(
 					'name'          => __('Alert Color', $prefix),
-					'desc'      => __('Color for alert notifications in hex (default: #e05252)', $prefix),
+					'desc'      => __('Color for alert notifications in hex (default: #ff6666)', $prefix),
 					'id'        => $prefix . '_global_alert_color',
 					'type'      => 'colorpicker',
-					'default'   => '#e05252',
+					'default'   => '#ff6666',
 					'attributes' => array(
-						'data-default' => '#e05252'
+						'data-default' => '#ff6666'
 					),
 			));
 			$cmb->add_field(array(
 					'name'          => __('Alert Hover Color', $prefix),
-					'desc'      => __('Color for alert notifications in hex (default: #e03333)', $prefix),
+					'desc'      => __('Color for alert notifications in hex (default: #ff5252)', $prefix),
 					'id'        => $prefix . '_global_alert_hover_color',
 					'type'      => 'colorpicker',
-					'default'   => '#e03333',
+					'default'   => '#ff5252',
 					'attributes' => array(
-						'data-default' => '#e03333'
+						'data-default' => '#ff5252'
 					),
 					'after_row' => '</div></li>'
 			));
@@ -275,52 +275,52 @@
 														</a>
 														<div id="panel-global-grays" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-global-grays-heading">',
           'name'    => __('White', $prefix),
-          'desc'    => __('Color for white in hex (default: #f5faff)', $prefix),
+          'desc'    => __('Color for white in hex (default: #ffffff)', $prefix),
           'id'      => $prefix . '_global_white_color',
           'type'    => 'colorpicker',
-          'default' => '#f5faff',
+          'default' => '#ffffff',
           'attributes' => array(
-            'data-default' => '#f5faff'
+            'data-default' => '#ffffff'
           )
       ));
 			$cmb->add_field(array(
           'name'    => __('Light Gray', $prefix),
-					'desc'    => __('Color for light gray in hex (default: #b9bed5)', $prefix),
+					'desc'    => __('Color for light gray in hex (default: #e3ecff)', $prefix),
 					'id'      => $prefix . '_global_light_gray_color',
 					'type'    => 'colorpicker',
-					'default' => '#b9bed5',
+					'default' => '#e3ecff',
 					'attributes' => array(
-						'data-default' => '#b9bed5'
+						'data-default' => '#e3ecff'
 					)
 			));
 			$cmb->add_field(array(
 					'name'    => __('Medium Gray', $prefix),
-					'desc'    => __('Color for medium gray in hex (default: #7b829d)', $prefix),
+					'desc'    => __('Color for medium gray in hex (default: #c0c9ff)', $prefix),
 					'id'      => $prefix . '_global_medium_gray_color',
 					'type'    => 'colorpicker',
-					'default' => '#7b829d',
+					'default' => '#c0c9ff',
 					'attributes' => array(
-						'data-default' => '#7b829d'
+						'data-default' => '#c0c9ff'
 					)
 			));
 			$cmb->add_field(array(
 					'name'    => __('Dark Gray', $prefix),
-					'desc'    => __('Color for dark gray in hex (default: #5f6786)', $prefix),
+					'desc'    => __('Color for dark gray in hex (default: #757575)', $prefix),
 					'id'      => $prefix . '_global_dark_gray_color',
 					'type'    => 'colorpicker',
-					'default' => '#5f6786',
+					'default' => '#757575',
 					'attributes' => array(
-						'data-default' => '#5f6786'
+						'data-default' => '#757575'
 					)
 			));
 			$cmb->add_field(array(
 					'name'    => __('Black', $prefix),
-					'desc'    => __('Color for black in hex (default: #262831)', $prefix),
+					'desc'    => __('Color for black in hex (default: #333333)', $prefix),
 					'id'      => $prefix . '_global_black_color',
 					'type'    => 'colorpicker',
-					'default' => '#262831',
+					'default' => '#333333',
 					'attributes' => array(
-						'data-default' => '#262831'
+						'data-default' => '#333333'
 					),
 					'after_row' => '</div></li></ul>'
 			));

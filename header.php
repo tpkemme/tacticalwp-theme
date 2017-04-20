@@ -49,7 +49,9 @@
 							<?php if( !empty( $logo ) ): ?>
 								<img src="<?php echo $logo ?>" class="site-logo" />
 							<?php endif; ?>
-							<?php bloginfo( 'name' ); ?>
+							<?php if( twp_get_option( 'twp_nav_top_title_show' ) === 'show' ): ?>
+								<?php bloginfo( 'name' ); ?>
+							<?php endif; ?>
 						</a>
 					</li>
 				</ul>
@@ -68,7 +70,9 @@
 								<?php if( !empty( $logo ) ): ?>
 									<img src="<?php echo $logo ?>" class="site-logo" />
 								<?php endif; ?>
-								<?php bloginfo( 'name' ); ?>
+								<?php if( twp_get_option( 'twp_nav_top_title_show' ) === 'show' ): ?>
+									<?php bloginfo( 'name' ); ?>
+								<?php endif; ?>
 							</a>
 						</li>
 					</ul>

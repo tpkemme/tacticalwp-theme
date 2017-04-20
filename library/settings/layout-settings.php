@@ -26,16 +26,16 @@
                 </a>
                 <div id="panel-layout-defaut" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-layout-defaut-heading">',
 					'name' => __('Page Title Visibility', $prefix),
-					'desc'    => __('Whether or not to show page title by default.', $prefix),
+					'desc'    => __('Whether or not to show page title by default. (default: Hide)', $prefix),
 					'id'            => $prefix . '_layout_title_show',
 					'type'    => 'radio_inline',
 					'options' => array(
 						'show' => __( 'Show', 'twp' ),
 						'hide'   => __( 'Hide', 'twp' ),
 					),
-					'default' => 'show',
+					'default' => 'hide',
 					'attributes'			 => array(
-						'data-default'	 => 'show'
+						'data-default'	 => 'hide'
 					),
       ));
       $cmb->add_field(array(
@@ -125,6 +125,20 @@
           'default' => __( 'Default', $prefix ),
 					'attributes'			 => array(
 						'data-default'	 => 'Default'
+					),
+      ) );
+      $cmb->add_field( array(
+          'name'    => __( 'Sticky Sidebar', $prefix ),
+          'id'      => $prefix . '_page_layout_sticky_sidebar',
+					'description' => 'Make the sidebar sticky.',
+          'type'    => 'select',
+					'options' => array(
+						'default' => 'Default',
+						'sticky' => 'Sticky'
+					),
+          'default' => __( 'default', $prefix ),
+					'attributes'			 => array(
+						'data-default'	 => 'default'
 					),
       ) );
 			return $cmb;

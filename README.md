@@ -1,15 +1,15 @@
-# TacticalWP [![Build Status](https://travis-ci.org/olefredrik/TacticalWP.svg?branch=master)](https://travis-ci.org/olefredrik/TacticalWP)
+# TacticalWP [![Build Status](https://travis-ci.org/tpkemme/tacticalwp.svg?branch=master)](https://travis-ci.org/tpkemme/tacticalwp)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tpkemme/twp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-TacticalWP is a Dark Material theme for WordPress created using Foundationpress, CMB2, and Gulp. The purpose of TacticalWP, is to act as a small and handy toolbox that contains the essentials needed to build any design using Wordpress.
+TacticalWP is a Wordpress theme based on Material design and built on Foundationpress and CMB2. The purpose of TacticalWP, is to act as a small and handy toolbox that contains the essentials needed to build any design using Wordpress.
 
 One of the advantages of using a framework like Foundation 6 is that the structure for all site elements is already created before you start.  This was the intended purpose of Foundationpress, the Wordpress Theme built upon Foundation 6.  However, Foundationpress lacked real Wordpress integrations: Foundation elements could only be configured using HTML.
 
-This is where TacticalWP really shines: every Foundation element of TacticalWP has an associated shortcode and widget.  Users can insert customized Foundation elements anywhere on the site by simply generating a shortcode or adding a widget to his/her page-builder plugin.  If that's not enough, the TacticalWP settings will give users complete control over every part of the site's design.  Although TacticalWP has a sleek, modern design already configured, every piece of TacticalWP can be customized to the user's liking.
+This is where TacticalWP really shines: every Foundation element of TacticalWP has an associated shortcode.  Users can insert customized Foundation elements anywhere on the site by simply generating a shortcode using the TacticalWP button in the Visual Editor.  If that's not enough, the TacticalWP settings will give users complete control over every part of the site's design.  This includes changing the global color palette and global typography settings with support for Google Fonts.
 
-All contributions are welcome!
+I did my best to keep everything well-documented.  If you are interested in contributing, please submit a pull request!  All contributions are welcome!
 
-## Requirements
+## Dev Requirements
 
 **This project requires [Node.js](http://nodejs.org) v4.x.x to v6.9.x to be installed on your machine.** Please be aware that you will most likely encounter problems with the installation if you are using v7.1.0 with all the latest features.
 
@@ -17,15 +17,13 @@ TacticalWP uses [Sass](http://Sass-lang.com/) (CSS with superpowers). In short, 
 
 The Sass is compiled using libsass, which requires the GCC to be installed on your machine. Windows users can install it through [MinGW](http://www.mingw.org/), and Mac users can install it through the [Xcode Command-line Tools](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/).
 
-If you have not worked with a Sass-based workflow before, I would recommend reading [TacticalWP for beginners](https://twp.olefredrik.com/posts/tutorials/twp-for-beginners), a short blog post that explains what you need to know.
-
 ## Quickstart
 
 ### 1. Clone the repository and install with npm
 ```bash
 $ cd my-wordpress-folder/wp-content/themes/
-$ git clone https://github.com/olefredrik/TacticalWP.git
-$ cd TacticalWP
+$ git clone https://github.com/tpkemme/tacticalwp.git
+$ cd tacticalwp
 $ npm install
 ```
 
@@ -35,7 +33,8 @@ $ npm install
 $ npm run watch
 ```
 
-If you want to take advantage of browser-sync (automatic browser refresh when a file is saved), simply open your Gulpfile.js and put your local dev-server address (e.g localhost) in this field ```var URL = '';``` , save the Gulpfile and run
+If you want to take advantage of browser-sync, there is a setting in the TacticalWP
+Advanced section that will let you turn on browser-sync.
 ```bash
 $ npm run watch
 ```
@@ -61,21 +60,25 @@ Running this command will build and minify the theme's assets and place a `.zip`
 
 ### Styles
 
- * `style.css`: Do not worry about this file. (For some reason) it's required by WordPress. All styling are handled in the Sass files described below
+ * `style.css`: Do not worry about this file. (For some reason) it's required by WordPress. All styling are handled in the PHP file described below
+
+ * `template-parts/embedded-styles.php`: This is the main stylesheet.  It creates a stylesheet with all the theme settings.
+
+ The 'basic' styles I mentioned are the base styles of Foundationpress.  They are located here:
 
  * `assets/scss/twp.scss`: Make imports for all your styles here
  * `assets/scss/global/*.scss`: Global settings
  * `assets/scss/components/*.scss`: Buttons etc.
  * `assets/scss/modules/*.scss`: Topbar, footer etc.
- * `assets/scss/templates/*.scss`: Page template spesific styling
+ * `assets/scss/templates/*.scss`: Page template specific styling
 
-Please note that you **must** run `npm run build` or `npm run watch` in your terminal for the styles to be copied and concatenated. See the [Gulpfile.js](https://github.com/olefredrik/TacticalWP/blob/master/gulpfile.js) for details
+Please note that you **must** run `npm run build` or `npm run watch` in your terminal for the styles to be copied and concatenated. See the [Gulpfile.js](https://github.com/tpkemme/tacticalwp/blob/master/gulpfile.js) for details
 
 ### Scripts
 
 * `assets/javascript/custom`: This is the folder where you put all your custom scripts. Every .js file you put in this directory will be minified and concatenated one single .js file. (This is good for site speed and performance)
 
-Please note that you must run `npm run build` or `npm run watch` in your terminal for the scripts to be copied and concatenated. See [Gulpfile.js](https://github.com/olefredrik/TacticalWP/blob/master/gulpfile.js) for details
+Please note that you must run `npm run build` or `npm run watch` in your terminal for the scripts to be copied and concatenated. See [Gulpfile.js](https://github.com/tpkemme/tacticalwp/blob/master/gulpfile.js) for details
 
 ### The main styles and scripts generated by the build
 
@@ -106,8 +109,8 @@ $ npm run phpcbf
 
 ## Demo
 
-* [Clean TacticalWP install](http://twp.olefredrik.com/)
-* [TacticalWP Kitchen Sink - see every single element in action](http://twp.olefredrik.com/kitchen-sink/)
+* [Clean TacticalWP install](http://twp.tpkemme.com/)
+* [TacticalWP Kitchen Sink - see every single element in action](http://twp.tpkemme.com/kitchen-sink/)
 
 ## Unit Testing With Travis-CI
 
@@ -122,7 +125,7 @@ TacticalWP is completely ready to be deployed to and tested by Travis-CI for Wor
 
 ## Tutorials
 
-* [TacticalWP for beginners](https://twp.olefredrik.com/posts/tutorials/twp-for-beginners/)
+* [TacticalWP for beginners](https://twp.tpkemme.com/posts/tutorials/twp-for-beginners/)
 * [Responsive images in WordPress with Interchange](http://rachievee.com/responsive-images-in-wordpress/)
 * [Build a Responsive WordPress theme](http://www.webdesignermag.co.uk/build-a-responsive-wordpress-theme/)
 * [Learn to use the _settings file to change almost every aspect of a Foundation site](http://zurb.com/university/lessons/66)
@@ -176,16 +179,16 @@ TacticalWP is completely ready to be deployed to and tested by Travis-CI for Wor
 * [Wirthschaftsjunioren](http://www.wirtschaftsjunioren.org/)
 
 
->Credit goes to all the brilliant designers and developers out there. Have **you** made a site that should be on this list? [Please let me know](https://twitter.com/olefredrik)
+>Credit goes to all the brilliant designers and developers out there. Have **you** made a site that should be on this list? [Please let me know](https://twitter.com/tpkemme)
 
 ## Contributing
 #### Here are ways to get involved:
 
-1. [Star](https://github.com/olefredrik/TacticalWP/stargazers) the project!
-2. Answer questions that come through [GitHub issues](https://github.com/olefredrik/TacticalWP/issues)
+1. [Star](https://github.com/tpkemme/tacticalwp/stargazers) the project!
+2. Answer questions that come through [GitHub issues](https://github.com/tpkemme/tacticalwp/issues)
 3. Report a bug that you find
 4. Share a theme you've built on top of TacticalWP
-5. [Tweet](https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Ftwp.olefredrik.com%2F&text=Check%20out%20TacticalWP%2C%20the%20ultimate%20%23WordPress%20starter-theme%20built%20on%20%23Foundation%206&tw_p=tweetbutton&url=http%3A%2F%2Ftwp.olefredrik.com&via=olefredrik) and [blog](http://www.justinfriebel.com/my-first-experience-with-twp-a-wordpress-starter-theme-106/) your experience of TacticalWP.
+5. [Tweet](https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Ftwp.tpkemme.com%2F&text=Check%20out%20TacticalWP%2C%20the%20ultimate%20%23WordPress%20starter-theme%20built%20on%20%23Foundation%206&tw_p=tweetbutton&url=http%3A%2F%2Ftwp.tpkemme.com&via=tpkemme) and [blog](http://www.justinfriebel.com/my-first-experience-with-twp-a-wordpress-starter-theme-106/) your experience of TacticalWP.
 
 #### Pull Requests
 

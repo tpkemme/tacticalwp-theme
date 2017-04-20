@@ -26,62 +26,62 @@
 								</a>
 								<div id="panel-obj-forms" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-nav-forms-heading">',
 					'name' => __('Form Background Color', $prefix),
-					'desc'    => __('The background color of form inputs (text areas, dropdowns, etc). (default: #353535)', $prefix),
+					'desc'    => __('The background color of form inputs (text areas, dropdowns, etc). (default: #ffffff)', $prefix),
 					'id'            => $prefix . '_obj_form_background_color',
 					'type'             => 'colorpicker',
-					'default'          => '#353535',
+					'default'          => '#ffffff',
 					'attributes'			 => array(
-						'data-default'	 => '#353535',
+						'data-default'	 => '#ffffff',
 					),
 			));
 			$cmb->add_field(array(
 				'name' => __('Form Border Color', $prefix),
-				'desc'    => __('The border color of form inputs (text areas, dropdowns, etc). (default: #202533)', $prefix),
+				'desc'    => __('The border color of form inputs (text areas, dropdowns, etc). (default: #ffffff)', $prefix),
 				'id'            => $prefix . '_obj_form_border_color',
 				'type'             => 'colorpicker',
-				'default'          => '#202533',
+				'default'          => '#ffffff',
 				'attributes'			 => array(
-					'data-default'	 => '#202533',
+					'data-default'	 => '#ffffff',
 				),
 			));
 			$cmb->add_field(array(
 				'name' => __('Form Border Color', $prefix),
-				'desc'    => __('The border color of form inputs (text areas, dropdowns, etc). (default: #202533)', $prefix),
+				'desc'    => __('The border color of form inputs (text areas, dropdowns, etc). (default: #387aff)', $prefix),
 				'id'            => $prefix . '_obj_form_border_color',
 				'type'             => 'colorpicker',
-				'default'          => '#202533',
+				'default'          => '#387aff',
 				'attributes'			 => array(
-					'data-default'	 => '#202533',
+					'data-default'	 => '#387aff',
 				),
 			));
 			$cmb->add_field(array(
 				'name' => __('Help Text Color', $prefix),
-				'desc'    => __('The color of the description text below form input. (default: #5f6786)', $prefix),
+				'desc'    => __('The color of the description text below form input. (default: #999999)', $prefix),
 				'id'            => $prefix . '_obj_form_helptext_color',
 				'type'             => 'colorpicker',
-				'default'          => '#5f6786',
+				'default'          => '#999999',
 				'attributes'			 => array(
-					'data-default'	 => '#5f6786',
+					'data-default'	 => '#999999',
 				),
 			));
 			$cmb->add_field(array(
 				'name' => __('Form Helper Text Size', $prefix),
-				'desc'    => __('The font size of form input helper text. (default: 0.75rem)', $prefix),
+				'desc'    => __('The font size of form input helper text. (default: 0.875rem)', $prefix),
 				'id'            => $prefix . '_obj_form_helptext_font_size',
 				'type'             => 'text_small',
-				'default'          => '0.75rem',
+				'default'          => '0.875rem',
 				'attributes'			 => array(
-					'data-default'	 => '0.75rem',
+					'data-default'	 => '0.875rem',
 				),
 			));
 			$cmb->add_field(array(
 				'name' => __('Form Label Text Color', $prefix),
-				'desc'    => __('The color of form input labels. (default: #b9bed5)', $prefix),
+				'desc'    => __('The color of form input labels. (default: #999999)', $prefix),
 				'id'            => $prefix . '_obj_form_label_color',
 				'type'             => 'colorpicker',
-				'default'          => '#b9bed5',
+				'default'          => '#999999',
 				'attributes'			 => array(
-					'data-default'	 => '#b9bed5',
+					'data-default'	 => '#999999',
 				),
 			));
 			$cmb->add_field(array(
@@ -96,32 +96,32 @@
 			));
 			$cmb->add_field(array(
 				'name' => __('Form Input Text Color', $prefix),
-				'desc'    => __('The color of form input text. (default: #b9bed5)', $prefix),
+				'desc'    => __('The color of form input text. (default: #666666)', $prefix),
 				'id'            => $prefix . '_obj_form_input_color',
 				'type'             => 'colorpicker',
-				'default'          => '#b9bed5',
+				'default'          => '#666666',
 				'attributes'			 => array(
-					'data-default'	 => '#b9bed5',
+					'data-default'	 => '#666666',
 				),
 			));
 			$cmb->add_field(array(
 				'name' => __('Form Input Text Focus Color', $prefix),
-				'desc'    => __('The color of form input text when focused. (default: #f5faff)', $prefix),
+				'desc'    => __('The color of form input text when focused. (default: #333333)', $prefix),
 				'id'            => $prefix . '_obj_form_input_focus_color',
 				'type'             => 'colorpicker',
-				'default'          => '#f5faff',
+				'default'          => '#333333',
 				'attributes'			 => array(
-					'data-default'	 => '#f5faff',
+					'data-default'	 => '#333333',
 				),
 			));
 			$cmb->add_field(array(
 				'name' => __('Form Placeholder Text Color', $prefix),
-				'desc'    => __('The color of form input placeholders. (default: #5f6786)', $prefix),
+				'desc'    => __('The color of form input placeholders. (default: #8ab1ff)', $prefix),
 				'id'            => $prefix . '_obj_form_placeholder_color',
 				'type'             => 'colorpicker',
-				'default'          => '#5f6786',
+				'default'          => '#8ab1ff',
 				'attributes'			 => array(
-					'data-default'	 => '#5f6786',
+					'data-default'	 => '#8ab1ff',
 				),
 				'after_row' => '</div></li>'
 			));

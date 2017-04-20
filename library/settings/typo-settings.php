@@ -26,53 +26,20 @@
                 </a>
                 <div id="panel-typo-base" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-typ-base-heading">',
           'name' => __('Header Font Family', $prefix),
-          'desc'    => __('Font family for header elements h1, h2, and h3. (default: Josefin Sans)', $prefix),
+          'desc'    => __('Font family for header elements h1, h2, and h3. (default: Titillium Web)', $prefix),
           'id'            => $prefix . '_typo_header_family',
           'type'             => 'select',
           'show_option_none' => false,
-          'default'          => 'Josefin Sans',
+          'default'          => 'Titillium Web',
           'options_cb'       => 'twp_google_fonts',
           'attributes'			 => array(
-            'data-default'	 => 'Josefin Sans'
+            'data-default'	 => 'Titillium Web'
           ),
       ));
       $cmb->add_field(array(
           'name' => __('Header Font Weight', $prefix),
-          'desc' => __('Set the weight of the header font (default = 300)', $prefix),
+          'desc' => __('Set the weight of the header font (default = 700)', $prefix),
           'id'   => $prefix . '_typo_header_weight',
-          'type'    => 'select',
-          'default' => '300',
-          'options' => array(
-            '100' => '100',
-            '200' => '200',
-            '300' => '300',
-            '400' => '400',
-            '500' => '500',
-            '600' => '600',
-            '700' => '700',
-            '800' => '800',
-            '900' => '900'
-          ),
-          'attributes'			 => array(
-            'data-default'	 => '300'
-          ),
-      ));
-      $cmb->add_field(array(
-          'name' => __('Sub-Header Font Family', $prefix),
-          'desc'    => __('Font family for header elements h4, h5, h6 (default: Archivo Narrow)', $prefix),
-          'id'            => $prefix . '_typo_sub_header_family',
-          'type'             => 'select',
-          'show_option_none' => false,
-          'default'          => 'Archivo Narrow',
-          'options_cb'       => 'twp_google_fonts',
-          'attributes'			 => array(
-            'data-default'	 => 'Archivo Narrow',
-          ),
-      ));
-      $cmb->add_field(array(
-          'name' => __('Sub-Header Font Weight', $prefix),
-          'desc' => __('Set the font weight for h4, h5, and h6 (default = 700)', $prefix),
-          'id'   => $prefix . '_typo_sub_header_weight',
           'type'    => 'select',
           'default' => '700',
           'options' => array(
@@ -88,6 +55,39 @@
           ),
           'attributes'			 => array(
             'data-default'	 => '700'
+          ),
+      ));
+      $cmb->add_field(array(
+          'name' => __('Sub-Header Font Family', $prefix),
+          'desc'    => __('Font family for header elements h4, h5, h6 (default: Archivo Narrow)', $prefix),
+          'id'            => $prefix . '_typo_sub_header_family',
+          'type'             => 'select',
+          'show_option_none' => false,
+          'default'          => 'Titillium Web',
+          'options_cb'       => 'twp_google_fonts',
+          'attributes'			 => array(
+            'data-default'	 => 'Titillium Web',
+          ),
+      ));
+      $cmb->add_field(array(
+          'name' => __('Sub-Header Font Weight', $prefix),
+          'desc' => __('Set the font weight for h4, h5, and h6 (default = 500)', $prefix),
+          'id'   => $prefix . '_typo_sub_header_weight',
+          'type'    => 'select',
+          'default' => '500',
+          'options' => array(
+            '100' => '100',
+            '200' => '200',
+            '300' => '300',
+            '400' => '400',
+            '500' => '500',
+            '600' => '600',
+            '700' => '700',
+            '800' => '800',
+            '900' => '900'
+          ),
+          'attributes'			 => array(
+            'data-default'	 => '500'
           ),
       ));
       $cmb->add_field(array(
@@ -118,42 +118,42 @@
                   </a>
                   <div id="panel-typo-headers" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-typo-headers-heading">',
           'name' => __('H1 Font Size', $prefix),
-          'desc' => __('Font size of all h1 elements (default: 1.75rem)', $prefix),
+          'desc' => __('Font size of all h1 elements (default: 4rem)', $prefix),
           'id'   => $prefix . '_typo_h1_size',
           'type' => 'text_small',
-          'default' => '1.75rem',
+          'default' => '4rem',
           'attributes'			 => array(
-            'data-default'	 => '1.75rem'
+            'data-default'	 => '4rem'
           ),
       ));
       $cmb->add_field(array(
           'name' => __('H1 Font Color', $prefix),
-          'desc' => __('Font color of all h1 elements (default: #f5faff)', $prefix),
+          'desc' => __('Font color of all h1 elements (default: #333333)', $prefix),
           'id'   => $prefix . '_typo_h1_color',
           'type' => 'colorpicker',
-          'default' => '#f5faff',
+          'default' => '#333333',
           'attributes'			 => array(
-            'data-default'	 => '#f5faff'
+            'data-default'	 => '#333333'
           ),
       ));
       $cmb->add_field(array(
           'name' => __('H2 Font Size', $prefix),
-          'desc' => __('Font size of all h2 elements (default: 1.5rem)', $prefix),
+          'desc' => __('Font size of all h2 elements (default: 3rem)', $prefix),
           'id'   => $prefix . '_typo_h2_size',
           'type' => 'text_small',
-          'default' => '1.5rem',
+          'default' => '3rem',
           'attributes'			 => array(
-            'data-default'	 => '1.5rem'
+            'data-default'	 => '3rem'
           ),
       ));
       $cmb->add_field(array(
           'name' => __('H2 Font Color', $prefix),
-          'desc' => __('Font color of all h2 elements (default: #93ddfb)', $prefix),
+          'desc' => __('Font color of all h2 elements (default: #444444)', $prefix),
           'id'   => $prefix . '_typo_h2_color',
           'type' => 'colorpicker',
-          'default' => '#93ddfb',
+          'default' => '#444444',
           'attributes'			 => array(
-            'data-default'	 => '#93ddfb'
+            'data-default'	 => '#444444'
           ),
       ));
       $cmb->add_field(array(
@@ -161,79 +161,79 @@
           'desc' => __('Font size of all h3 elements (default: 1.25rem)', $prefix),
           'id'   => $prefix . '_typo_h3_size',
           'type' => 'text_small',
-          'default' => '1.25rem',
+          'default' => '2.5rem',
           'attributes'			 => array(
-            'data-default'	 => '1.25rem'
+            'data-default'	 => '2.5rem'
           )
       ));
       $cmb->add_field(array(
           'name' => __('H3 Font Color', $prefix),
-          'desc' => __('Font color of all h3 elements (default: #85b1e0)', $prefix),
+          'desc' => __('Font color of all h3 elements (default: #555555)', $prefix),
           'id'   => $prefix . '_typo_h3_color',
           'type' => 'colorpicker',
-          'default' => '#85b1e0',
+          'default' => '#555555',
           'attributes'			 => array(
-            'data-default'	 => '#85b1e0'
+            'data-default'	 => '#555555'
           )
       ));
       $cmb->add_field(array(
           'name' => __('H4 Font Size', $prefix),
-          'desc' => __('Font size of all h4 elements (default: 1rem)', $prefix),
+          'desc' => __('Font size of all h4 elements (default: 2rem)', $prefix),
           'id'   => $prefix . '_typo_h4_size',
           'type' => 'text_small',
-          'default' => '1rem',
+          'default' => '2rem',
           'attributes'			 => array(
-            'data-default'	 => '1rem'
+            'data-default'	 => '2rem'
           )
       ));
       $cmb->add_field(array(
           'name' => __('H4 Font Color', $prefix),
-          'desc' => __('Font color of all h4 elements (default: #9aefea)', $prefix),
+          'desc' => __('Font color of all h4 elements (default: #555555)', $prefix),
           'id'   => $prefix . '_typo_h4_color',
           'type' => 'colorpicker',
-          'default' => '#9aefea',
+          'default' => '#555555',
           'attributes'			 => array(
-            'data-default'	 => '#9aefea'
+            'data-default'	 => '#555555'
           )
       ));
       $cmb->add_field(array(
           'name' => __('H5 Font Size', $prefix),
-          'desc' => __('Font size of all h5 elements (default: 0.875rem)', $prefix),
+          'desc' => __('Font size of all h5 elements (default: 1.75rem)', $prefix),
           'id'   => $prefix . '_typo_h5_size',
           'type' => 'text_small',
-          'default' => '0.875rem',
+          'default' => '1.75rem',
           'attributes'			 => array(
-            'data-default'	 => '0.875rem'
+            'data-default'	 => '1.75rem'
           )
       ));
       $cmb->add_field(array(
           'name' => __('H5 Font Color', $prefix),
-          'desc' => __('Font color of all h5 elements (default: #7e7edd)', $prefix),
+          'desc' => __('Font color of all h5 elements (default: #757575)', $prefix),
           'id'   => $prefix . '_typo_h5_color',
           'type' => 'colorpicker',
-          'default' => '#7e7edd',
+          'default' => '#757575',
           'attributes'			 => array(
-            'data-default'	 => '#7e7edd'
+            'data-default'	 => '#757575'
           )
       ));
       $cmb->add_field(array(
           'name' => __('H6 Font Size', $prefix),
-          'desc' => __('Font size of all h6 elements (default: 0.85rem)', $prefix),
+          'desc' => __('Font size of all h6 elements (default: 1.5rem)', $prefix),
           'id'   => $prefix . '_typo_h6_size',
           'type' => 'text_small',
-          'default' => '0.75rem',
+          'default' => '1.5rem',
           'attributes'			 => array(
-            'data-default'	 => '0.75rem'
+            'data-default'	 => '1.5rem'
           )
       ));
       $cmb->add_field(array(
           'name' => __('H6 Font Color', $prefix),
-          'desc' => __('Font color of all h6 elements (default: #99adff)', $prefix),
+          'desc' => __('Font color of all h6 elements (default: #757575)', $prefix),
           'id'   => $prefix . '_typo_h6_color',
           'type' => 'colorpicker',
-          'default' => '#99adff',
+          'default' => '#757575',
           'attributes'			 => array(
-            'data-default'	 => '#99adff'
+            'data-default'	 => '#757575'
           )
       ));
       $cmb->add_field(array(
@@ -253,22 +253,22 @@
       ));
       $cmb->add_field(array(
           'name' => __('Small Font Color', $prefix),
-          'desc'    => __('Font color for small text like meta info. (default: #7b829d)', $prefix),
+          'desc'    => __('Font color for small text like meta info. (default: #8d8d8d)', $prefix),
           'id'            => $prefix . '_typo_body_small_color',
-          'type'             => 'colorpicker',
-          'default'          => '#7b829d',
-          'attributes'			 => array(
-            'data-default'	 => '#7b829d'
-          ),
-      ));
-      $cmb->add_field(array(
-          'name' => __('Paragraph Font Color', $prefix),
-          'desc'    => __('Font color for paragraph text. (default: #8d8d8d)', $prefix),
-          'id'            => $prefix . '_typo_body_paragraph_color',
           'type'             => 'colorpicker',
           'default'          => '#8d8d8d',
           'attributes'			 => array(
             'data-default'	 => '#8d8d8d'
+          ),
+      ));
+      $cmb->add_field(array(
+          'name' => __('Paragraph Font Color', $prefix),
+          'desc'    => __('Font color for paragraph text. (default: #555555)', $prefix),
+          'id'            => $prefix . '_typo_body_paragraph_color',
+          'type'             => 'colorpicker',
+          'default'          => '#555555',
+          'attributes'			 => array(
+            'data-default'	 => '#555555'
           ),
       ));
       $cmb->add_field(array(
@@ -294,42 +294,42 @@
       ));
       $cmb->add_field(array(
           'name' => __('Paragraph Line Height', $prefix),
-          'desc'    => __('Line height for paragraph elements. (default: 1.6)', $prefix),
+          'desc'    => __('Line height for paragraph elements. (default: 1.4)', $prefix),
           'id'            => $prefix . '_typo_body_paragraph_line_height',
           'type'             => 'text_small',
-          'default'          => '1.6',
+          'default'          => '1.4',
           'attributes'			 => array(
-            'data-default'	 => '1.6'
+            'data-default'	 => '1.4'
           ),
       ));
       $cmb->add_field(array(
           'name' => __('Paragraph Margin Bottom', $prefix),
-          'desc'    => __('Extra space below paragraph elements. (default: 1rem)', $prefix),
+          'desc'    => __('Extra space below paragraph elements. (default: 1.25rem)', $prefix),
           'id'            => $prefix . '_typo_body_paragraph_margin_bottom',
           'type'             => 'text_small',
-          'default'          => '1rem',
+          'default'          => '1.25rem',
           'attributes'			 => array(
-            'data-default'	 => '1rem'
+            'data-default'	 => '1.25rem'
           ),
       ));
       $cmb->add_field(array(
           'name' => __('Link Font Color', $prefix),
-          'desc'    => __('Font color of all links. (default: #5274ff)', $prefix),
+          'desc'    => __('Font color of all links. (default: #1563ff)', $prefix),
           'id'            => $prefix . '_typo_body_link_font_color',
           'type'             => 'colorpicker',
-          'default'          => '#5274ff',
+          'default'          => '#1563ff',
           'attributes'			 => array(
-            'data-default'	 => '#5274ff'
+            'data-default'	 => '#1563ff'
           ),
       ));
       $cmb->add_field(array(
           'name' => __('Link Hover Font Color', $prefix),
-          'desc'    => __('Hover color for all links. (default: #5c6bc0)', $prefix),
+          'desc'    => __('Hover color for all links. (default: #6078ff)', $prefix),
           'id'            => $prefix . '_typo_body_link_hover_font_color',
           'type'             => 'colorpicker',
-          'default'          => '#5c6bc0',
+          'default'          => '#6078ff',
           'attributes'			 => array(
-            'data-default'	 => '#5c6bc0'
+            'data-default'	 => '#6078ff'
           ),
       ));
       $cmb->add_field(array(
@@ -412,22 +412,22 @@
       ));
       $cmb->add_field(array(
           'name' => __('Horizontal Line Color', $prefix),
-          'desc'    => __('Color of horizontal line used to separate elements. (default: #7b829d)', $prefix),
+          'desc'    => __('Color of horizontal line used to separate elements. (default: #aaaaaa)', $prefix),
           'id'            => $prefix . '_typo_body_hr_color',
           'type'    => 'colorpicker',
-          'default' => '#7b829d',
+          'default' => '#aaaaaa',
           'attributes'			 => array(
-            'data-default'	 => '#7b829d'
+            'data-default'	 => '#aaaaaa'
           ),
       ));
       $cmb->add_field(array(
           'name' => __('Horizontal Line Margin', $prefix),
-          'desc'    => __('Space above and below horizontal lines. (default: 1.6rem)', $prefix),
+          'desc'    => __('Space above and below horizontal lines. (default: 1.5rem)', $prefix),
           'id'            => $prefix . '_typo_body_hr_margin',
           'type'    => 'text_small',
-          'default' => '1.6rem',
+          'default' => '1.5rem',
           'attributes'			 => array(
-            'data-default'	 => '1.6rem'
+            'data-default'	 => '1.5rem'
           ),
           'after_row' => '</div></li>'
       ));
@@ -493,12 +493,12 @@
       ));
       $cmb->add_field(array(
           'name' => __('List Margin left', $prefix),
-          'desc'    => __('Space left of list elements. (default: 1.25rem)', $prefix),
+          'desc'    => __('Space left of list elements. (default: 1.45rem)', $prefix),
           'id'            => $prefix . '_typo_list_margin_left',
           'type'    => 'text_small',
-          'default' => '1.25rem',
+          'default' => '1.45rem',
           'attributes'			 => array(
-            'data-default'	 => '1.25rem'
+            'data-default'	 => '1.45rem'
           ),
           'after_row' => '</div></li>'
       ));

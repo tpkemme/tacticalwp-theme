@@ -46,52 +46,52 @@
       ));
       $cmb->add_field(array(
           'name' => __('Submenu Background Color', $prefix),
-          'desc'    => __('Color for submenus like drilldown or dropdown menus. (default: #15171d)', $prefix),
+          'desc'    => __('Color for submenus like drilldown or dropdown menus. (default: #e3ecff)', $prefix),
           'id'            => $prefix . '_nav_submenu_background_color',
           'type'             => 'colorpicker',
-          'default'          => '#15171d',
+          'default'          => '#e3ecff',
           'attributes'			 => array(
-            'data-default'	 => '#15171d',
+            'data-default'	 => '#e3ecff',
           ),
       ));
       $cmb->add_field(array(
           'name' => __('Breadcrumb Font Color', $prefix),
-          'desc'    => __('The color for breadcrumb navigation links. (default: #e05252)', $prefix),
+          'desc'    => __('The color for breadcrumb navigation links. (default: #ff5252)', $prefix),
           'id'            => $prefix . '_nav_breadcrumb_color',
           'type'             => 'colorpicker',
-          'default'          => '#e05252',
+          'default'          => '#ff5252',
           'attributes'			 => array(
-            'data-default'	 => '#e05252',
+            'data-default'	 => '#ff5252',
           ),
       ));
       $cmb->add_field(array(
           'name' => __('Breadcrumb Hover Font Color', $prefix),
-          'desc'    => __('The hover color for breadcrumb navigation links. (default: #e03333)', $prefix),
+          'desc'    => __('The hover color for breadcrumb navigation links. (default: #ff6666)', $prefix),
           'id'            => $prefix . '_nav_breadcrumb_hover_color',
           'type'             => 'colorpicker',
-          'default'          => '#e03333',
+          'default'          => '#ff6666',
           'attributes'			 => array(
-            'data-default'	 => '#e03333',
+            'data-default'	 => '#ff6666',
           ),
       ));
       $cmb->add_field(array(
           'name' => __('Breadcrumb Current Font Color', $prefix),
-          'desc'    => __('The color for breadcrumb link of the current page. (default: #f5faff)', $prefix),
+          'desc'    => __('The color for breadcrumb link of the current page. (default: #333333)', $prefix),
           'id'            => $prefix . '_nav_breadcrumb_current_color',
           'type'             => 'colorpicker',
-          'default'          => '#f5faff',
+          'default'          => '#333333',
           'attributes'			 => array(
-            'data-default'	 => '#f5faff',
+            'data-default'	 => '#333333',
           ),
       ));
       $cmb->add_field(array(
           'name' => __('Breadcrumb Divider Color', $prefix),
-          'desc'    => __('The color for divider between breadcrumb links. (default: #f5faff)', $prefix),
+          'desc'    => __('The color for divider between breadcrumb links. (default: #333333)', $prefix),
           'id'            => $prefix . '_nav_breadcrumb_divider_color',
           'type'             => 'colorpicker',
-          'default'          => '#f5faff',
+          'default'          => '#333333',
           'attributes'			 => array(
-            'data-default'	 => '#f5faff',
+            'data-default'	 => '#333333',
           ),
       ));
       $cmb->add_field(array(
@@ -109,9 +109,9 @@
           'desc'    => __('The font size for breadcrumb links. (default: 0.75rem)', $prefix),
           'id'            => $prefix . '_nav_breadcrumb_font_size',
           'type'             => 'text_small',
-          'default'          => '0.75rem',
+          'default'          => '0.875rem',
           'attributes'			 => array(
-            'data-default'	 => '0.75rem',
+            'data-default'	 => '0.875rem',
           ),
       ));
       $cmb->add_field(array(
@@ -161,94 +161,94 @@
       ));
       $cmb->add_field(array(
           'name' => __('Topbar Background Color', $prefix),
-          'desc'    => __('Background color of the top menu bar. (default: #5c6bc0)', $prefix),
+          'desc'    => __('Background color of the top menu bar. (default: #1563ff)', $prefix),
           'id'            => $prefix . '_nav_top_background_color',
           'type'    => 'colorpicker',
-          'default' => '#5c6bc0',
+          'default' => '#1563ff',
           'attributes'			 => array(
-            'data-default'	 => '#5c6bc0'
+            'data-default'	 => '#1563ff'
           ),
       ));
 			$cmb->add_field(array(
 				'name' => __('Topbar Menu Font Size', $prefix),
-				'desc'    => __('Font size of the topbar menu. (default: 80%)', $prefix),
+				'desc'    => __('Font size of the topbar menu. (default: 1.0725rem)', $prefix),
 				'id'            => $prefix . '_nav_top_item_font_size',
 				'type'    => 'text_small',
-				'default' => '80%',
+				'default' => '1.0725rem',
 				'attributes'			 => array(
-					'data-default'	 => '80%'
+					'data-default'	 => '1.0725rem'
 				),
 			));
 			$cmb->add_field(array(
 					'name' => __('Topbar Menu Font Family', $prefix),
-					'desc'    => __('Font family of the topbar menu. (default: Josefin Sans)', $prefix),
+					'desc'    => __('Font family of the topbar menu. (default: Open Sans)', $prefix),
 					'id'            => $prefix . '_nav_top_item_font_family',
 					'type'             => 'select',
 					'show_option_none' => false,
-					'default'          => 'Josefin Sans',
+					'default'          => 'Open Sans',
 					'attributes' => array(
-						'data-default' => 'Josefin Sans'
+						'data-default' => 'Open Sans'
 					),
 					'options_cb'       => 'twp_google_fonts',
 			));
 			$cmb->add_field(array(
 					'name' => __('Topbar Menu Font Color', $prefix),
-					'desc'    => __('Font color of the topbar menu items. (default: #f5faff)', $prefix),
+					'desc'    => __('Font color of the topbar menu items. (default: #f2f4ff)', $prefix),
 					'id'            => $prefix . '_nav_top_item_font_color',
 					'type'    => 'colorpicker',
-					'default' => '#f5faff',
+					'default' => '#f2f4ff',
 					'attributes'			 => array(
-						'data-default'	 => '#f5faff'
+						'data-default'	 => '#f2f4ff'
 					),
 			));
 			$cmb->add_field(array(
 					'name' => __('Topbar Menu Hover Font Color', $prefix),
-					'desc'    => __('Hover font color of the topbar menu items. (default: #f5faff)', $prefix),
+					'desc'    => __('Hover font color of the topbar menu items. (default: #e0edff)', $prefix),
 					'id'            => $prefix . '_nav_top_item_hover_font_color',
 					'type'    => 'colorpicker',
-					'default' => '#f5faff',
+					'default' => '#e0edff',
 					'attributes'			 => array(
-						'data-default'	 => '#f5faff'
+						'data-default'	 => '#e0edff'
 					),
 			));
 			$cmb->add_field(array(
 					'name' => __('Topbar Menu Background Color', $prefix),
-					'desc'    => __('Background color of the topbar menu items. (default: #4a569a)', $prefix),
+					'desc'    => __('Background color of the topbar menu items. (default: #1563ff)', $prefix),
 					'id'            => $prefix . '_nav_top_item_background_color',
 					'type'    => 'colorpicker',
-					'default' => '#4a569a',
+					'default' => '#1563ff',
 					'attributes'			 => array(
-						'data-default'	 => '#4a569a'
+						'data-default'	 => '#1563ff'
 					),
 			));
       $cmb->add_field(array(
           'name' => __('Topbar Menu Hover Background Color', $prefix),
-          'desc'    => __('Background color of the topbar menu items. (default: #3f51b5)', $prefix),
+          'desc'    => __('Background color of the topbar menu items. (default: #387aff)', $prefix),
           'id'            => $prefix . '_nav_top_item_hover_background_color',
           'type'    => 'colorpicker',
-          'default' => '#3f51b5',
+          'default' => '#387aff',
           'attributes'			 => array(
-            'data-default'	 => '#3f51b5'
+            'data-default'	 => '#387aff'
           ),
       ));
       $cmb->add_field(array(
           'name' => __('Topbar Submenu Background Color', $prefix),
-          'desc'    => __('Background color of the topbar submenu items. (default: #5c6bc0)', $prefix),
+          'desc'    => __('Background color of the topbar submenu items. (default: #387aff)', $prefix),
           'id'            => $prefix . '_nav_top_submenu_background_color',
           'type'    => 'colorpicker',
-          'default' => '#5c6bc0',
+          'default' => '#387aff',
           'attributes'			 => array(
-            'data-default'	 => '#5c6bc0'
+            'data-default'	 => '#387aff'
           ),
       ));
       $cmb->add_field(array(
           'name' => __('Topbar Submenu Hover Background Color', $prefix),
-          'desc'    => __('Background color of the topbar submenu items on hover. (default: #5c6bc0)', $prefix),
+          'desc'    => __('Background color of the topbar submenu items on hover. (default: #387aff)', $prefix),
           'id'            => $prefix . '_nav_top_submenu_hover_background_color',
           'type'    => 'colorpicker',
-          'default' => '#5c6bc0',
+          'default' => '#387aff',
           'attributes'			 => array(
-            'data-default'	 => '#5c6bc0'
+            'data-default'	 => '#387aff'
           ),
       ));
       $cmb->add_field(array(
@@ -307,28 +307,8 @@
       ));
       $cmb->add_field(array(
           'name' => __('Search Button Color', $prefix),
-          'desc'    => __('Color of the search button in the topbar. (default: #5274ff)', $prefix),
+          'desc'    => __('Color of the search button in the topbar. (default: #333333)', $prefix),
           'id'            => $prefix . '_nav_top_search_button_color',
-          'type'    => 'colorpicker',
-          'default' => '#5274ff',
-          'attributes'			 => array(
-            'data-default'	 => '#5274ff'
-          ),
-      ));
-      $cmb->add_field(array(
-          'name' => __('Search Button Hover Color', $prefix),
-          'desc'    => __('Hover color of the search button in the topbar. (default: #5c6bd0)', $prefix),
-          'id'            => $prefix . '_nav_top_search_button_hover_color',
-          'type'    => 'colorpicker',
-          'default' => '#5c6bd0',
-          'attributes'			 => array(
-            'data-default'	 => '#5c6bd0'
-          ),
-      ));
-      $cmb->add_field(array(
-          'name' => __('Search Button Text Color', $prefix),
-          'desc'    => __('Color of the search button text in the topbar. (default: #333333)', $prefix),
-          'id'            => $prefix . '_nav_top_search_button_text_color',
           'type'    => 'colorpicker',
           'default' => '#333333',
           'attributes'			 => array(
@@ -336,9 +316,9 @@
           ),
       ));
       $cmb->add_field(array(
-          'name' => __('Search Button Text Hover Color', $prefix),
-          'desc'    => __('Hover color of the search button text in the topbar. (default: #444444)', $prefix),
-          'id'            => $prefix . '_nav_top_search_button_text_hover_color',
+          'name' => __('Search Button Hover Color', $prefix),
+          'desc'    => __('Hover color of the search button in the topbar. (default: #444444)', $prefix),
+          'id'            => $prefix . '_nav_top_search_button_hover_color',
           'type'    => 'colorpicker',
           'default' => '#444444',
           'attributes'			 => array(
@@ -346,13 +326,33 @@
           ),
       ));
       $cmb->add_field(array(
+          'name' => __('Search Button Text Color', $prefix),
+          'desc'    => __('Color of the search button text in the topbar. (default: #ffffff)', $prefix),
+          'id'            => $prefix . '_nav_top_search_button_text_color',
+          'type'    => 'colorpicker',
+          'default' => '#ffffff',
+          'attributes'			 => array(
+            'data-default'	 => '#ffffff'
+          ),
+      ));
+      $cmb->add_field(array(
+          'name' => __('Search Button Text Hover Color', $prefix),
+          'desc'    => __('Hover color of the search button text in the topbar. (default: #ffffff)', $prefix),
+          'id'            => $prefix . '_nav_top_search_button_text_hover_color',
+          'type'    => 'colorpicker',
+          'default' => '#ffffff',
+          'attributes'			 => array(
+            'data-default'	 => '#ffffff'
+          ),
+      ));
+      $cmb->add_field(array(
           'name' => __('Search Placeholder Text', $prefix),
-          'desc'    => __('Search placeholder text in the topbar. (default: Search...)', $prefix),
+          'desc'    => __('Search placeholder text in the topbar. (default: Search)', $prefix),
           'id'            => $prefix . '_nav_top_search_placeholder_text',
           'type'    => 'text_medium',
-          'default' => 'Search...',
+          'default' => 'Search',
           'attributes'			 => array(
-            'data-default'	 => 'Search...'
+            'data-default'	 => 'Search'
           ),
           'after_row' => '</div></li>'
       ));
@@ -363,40 +363,40 @@
               </a>
               <div id="panel-nav-title" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-nav-title-heading">',
           'name' => __('Site Title Font Color', $prefix),
-          'desc'    => __('Font color of the site title in the topbar. (default: #f5faff)', $prefix),
+          'desc'    => __('Font color of the site title in the topbar. (default: #ffffff)', $prefix),
           'id'            => $prefix . '_nav_title_font_color',
           'type'    => 'colorpicker',
-          'default' => '#f5faff',
+          'default' => '#ffffff',
           'attributes'			 => array(
-            'data-default'	 => '#f5faff'
+            'data-default'	 => '#ffffff'
           ),
       ));
       $cmb->add_field(array(
           'name' => __('Site Title Font Size', $prefix),
-          'desc'    => __('Font size of the site title in the topbar. (default: 80%)', $prefix),
+          'desc'    => __('Font size of the site title in the topbar. (default: 180%)', $prefix),
           'id'            => $prefix . '_nav_title_font_size',
           'type'    => 'text_small',
-          'default' => '80%',
+          'default' => '180%',
           'attributes'			 => array(
-            'data-default'	 => '80%'
+            'data-default'	 => '180%'
           ),
       ));
       $cmb->add_field(array(
           'name' => __('Site Title Font Family', $prefix),
-          'desc'    => __('Font family of the site title in the topbar. (default: Josefin Sans)', $prefix),
+          'desc'    => __('Font family of the site title in the topbar. (default: Titillium Web)', $prefix),
           'id'            => $prefix . '_nav_title_font_family',
 					'type'             => 'select',
 					'show_option_none' => false,
-					'default'          => 'Josefin Sans',
+					'default'          => 'Titillium Web',
 					'attributes' => array(
-						'data-default' => 'Josefin Sans'
+						'data-default' => 'Titillium Web'
 					),
 					'options_cb'       => 'twp_google_fonts',
       ));
 			$cmb->add_field(array(
-					'name' => __('Title Background Shadow', $prefix),
-					'desc'    => __('Whether or not to show a shadow on the title and/or logo. (default: Show)', $prefix),
-					'id'            => $prefix . '_nav_top_title_shadow',
+					'name' => __('Show Site Title', $prefix),
+					'desc'    => __('Whether or not to show site title. (default: Show)', $prefix),
+					'id'            => $prefix . '_nav_top_title_show',
 					'type'    => 'radio_inline',
 					'options' => array(
 						'show' => __( 'Show', 'twp' ),
@@ -405,6 +405,20 @@
 					'default' => 'show',
 					'attributes'			 => array(
 						'data-default'	 => 'show'
+					),
+			));
+			$cmb->add_field(array(
+					'name' => __('Title Background Shadow', $prefix),
+					'desc'    => __('Whether or not to show a shadow on the title and/or logo. (default: Hide)', $prefix),
+					'id'            => $prefix . '_nav_top_title_shadow',
+					'type'    => 'radio_inline',
+					'options' => array(
+						'show' => __( 'Show', 'twp' ),
+						'hide'   => __( 'Hide', 'twp' ),
+					),
+					'default' => 'hide',
+					'attributes'			 => array(
+						'data-default'	 => 'hide'
 					),
 			));
 			$cmb->add_field(array(
