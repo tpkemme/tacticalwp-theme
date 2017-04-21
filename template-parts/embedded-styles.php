@@ -950,7 +950,9 @@ body.elementor-editor-active .site-header {
 
 .top-bar .top-bar-search button{
 	margin-right: <?php twp( 'global_margin_size' ) ?>; }
-
+.top-bar .top-bar-search .menu{
+  background: none !important;
+}
 .top-bar ul li a,
 .top-bar .menu a{
   color: <?php twp( 'nav_top_item_font_color' ) ?>;
