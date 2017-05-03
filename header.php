@@ -38,10 +38,11 @@
 	  					<li><button type="button" class="button"><i class="fa fa-search" aria-hidden="true"></i></button></li>
 	  				</ul>
 				</div>
+				<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 			<?php endif; ?>
 		<?php endif; ?>
 		<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
-			<div class="title-bar-title show-for-large show-for-medium show-for-small">
+			<div class="title-bar-title show-for-medium">
 				<ul class="title-bar-title dropdown menu" data-dropdown-menu>
 					<li class="menu-text">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -62,7 +63,7 @@
 			</div>
 		<?php else: ?>
 			<div class="top-bar-left">
-				<div class="title-bar-title show-for-large show-for-medium">
+				<div class="title-bar-title show-for-medium">
 					<ul class="title-bar-title dropdown menu" data-dropdown-menu>
 						<li class="menu-text">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">

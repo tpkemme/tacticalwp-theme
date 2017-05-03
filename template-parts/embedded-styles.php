@@ -880,11 +880,9 @@ code, .code{
 	transform: scale(1.01); }
 .top-bar .top-bar-search input {
   max-width: 200px;
-  margin-right: 1rem;
   <?php $p_top = strval( floatval( twp_get_option( 'twp_nav_top_padding' ) ) + .75 ); ?>
   <?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_nav_top_padding' ) ); ?>
   padding:   <?php echo $p_top . $units ?> <?php twp( 'global_padding_size' ) ?> <?php echo $p_top . $units ?>;
-	margin-left: -25px;
 	top: -1px;
 	position: relative;
 	border-top-right-radius: 0px;
@@ -963,7 +961,12 @@ aside.sidebar.sticky-sidebar {
 
 .top-bar .top-bar-search button{
 	margin-right: <?php twp( 'global_margin_size' ) ?>; }
-
+.top-bar .top-bar-search .menu{
+  background: none !important;
+}
+.top-bar-right.top-bar-search {
+    margin-left: 15px;
+}
 .top-bar ul li a,
 .top-bar .menu a{
   color: <?php twp( 'nav_top_item_font_color' ) ?>;

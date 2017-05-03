@@ -250,6 +250,7 @@
                   label  : 'Type',
                   values : [
                       { text: 'Primary', value: 'primary' },
+                      { text: 'Hollow', value: 'hollow' },
                       { text: 'Success', value: 'success' },
                       { text: 'Warning', value: 'warning' },
                       { text: 'Alert', value: 'alert' }
