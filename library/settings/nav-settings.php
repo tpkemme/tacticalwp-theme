@@ -147,7 +147,7 @@
       ));
       $cmb->add_field(array(
           'name' => __('Sticky Topbar', $prefix),
-          'desc'    => __('Whether or not the topbar is always at the top. (default: Sticky)', $prefix),
+          'desc'    => __('Whether or not the topbar is always visible. (default: Sticky)', $prefix),
           'id'            => $prefix . '_nav_top_sticky',
           'type'    => 'radio_inline',
           'options' => array(

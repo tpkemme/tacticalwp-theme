@@ -14,6 +14,7 @@
      return text;
  }
 (function() {
+  if ( typeof tinymce !== 'undefined' ) {
     tinymce.PluginManager.add('scbutton', function( editor, url ) {
       editor.addButton( 'scbutton', {
         text: tinyMCE_object.button_name,
@@ -353,7 +354,7 @@
           text: 'Card',
           onclick: function() {
             editor.windowManager.open( {
-              title: tinyMCE_object.button_title,
+              title: 'Card Shortcode',
               body: [
                 {
                   type   : 'textbox',
@@ -395,7 +396,7 @@
                 {
                   type: 'textbox',
                   name: 'cardImg',
-                  label: tinyMCE_object.image_title,
+                  label: 'Card Image',
                   value: '',
                   classes: 'my_input_image',
                   tooltip: 'Leave blank for no image.'
@@ -443,6 +444,126 @@
                 editor.insertContent( '[twp-card' + id + ' ' + type + ' ' + center + ' ' + title + ' ' + img + ' ' + height + '] CARD CONTENT HERE [/twp-card]');
               }
             });
+          }
+        },
+        {
+          text: 'Cube',
+          onclick: function() {
+            editor.windowManager.open( {
+              title: 'Cube Shortcode',
+              body: [
+                {
+                  type   : 'textbox',
+                  name   : 'cubeId',
+                  label  : 'ID',
+                  tooltip: 'The id of the cube.'
+                },
+                {
+                  type   : 'listbox',
+                  name   : 'cubeSide',
+                  label  : 'Side',
+                  values : [
+                      { text: 'Front', value: 'front' },
+                      { text: 'Back', value: 'back' }
+                  ],
+                  value : 'front',
+                  tooltip : 'The side of the cube.  Each cube needs one shortcode for the front side followed by another shortcode for the back side.'
+                },
+                {
+                  type: 'textbox', /* field type */
+                  name: 'cubeColor', /* field name */
+                  classes: 'colorpicker', /* field class */
+                  value: '',
+                  label: 'Background Color',
+                  tooltip: 'The background color of this side of the cube.  Default is #1563ff.'
+                },
+                {
+                  type: 'textbox', /* field type */
+                  name: 'cubeFontColor', /* field name */
+                  classes: 'colorpicker', /* field class */
+                  value: '',
+                  label: 'Font Color',
+                  tooltip: 'The font color of this side of the cube.  Default is #ffffff.'
+                },
+                {
+                  type: 'textbox',
+                  name: 'cubeImg',
+                  label: 'Background Image',
+                  value: '',
+                  classes: 'my_input_image',
+                  tooltip: 'Leave blank for no image.'
+                },
+                {
+                  type: 'button',
+                  name: 'my_upload_button',
+                  label: '',
+                  text: tinyMCE_object.image_button_title,
+                  classes: 'my_upload_button',
+                },
+                {
+                  type   : 'listbox',
+                  name   : 'cubeDirection',
+                  label  : 'Tilt Direction',
+                  values : [
+                      { text: 'Up', value: 'top' },
+                      { text: 'Down', value: 'bottom' },
+                      { text: 'Left', value: 'left' },
+                      { text: 'Right', value: 'right' }
+                  ],
+                  value : 'left',
+                  tooltip : 'The direction this cube will tilt to on hover.'
+                },
+                {
+                  type: 'textbox',
+                  name: 'cubeHeight',
+                  label: 'Height',
+                  value: '',
+                  tooltip: 'The height of the cube.  Be sure to include units like px, em, %, etc.',
+                }
+              ],
+              onsubmit: function( e ) {
+                var id = '';
+                if( e.data.cubeId !== '' ){
+                  id = ' id="' + e.data.cubeId + '" ';
+                }
+                var side = '';
+                if( e.data.cubeSide !== '' && e.data.cubeSide !== 'front' ){
+                  side = ' side="' + e.data.cubeSide + '" ';
+                }
+                var color = '';
+                if( e.data.cubeColor !== '' && e.data.cubeColor !== '#1563ff' ){
+                  color = ' color="' + e.data.cubeColor + '" ';
+                }
+                var fcolor = '';
+                if( e.data.cubeFontColor !== '' && e.data.cubeFontColor !== '#ffffff' ){
+                  fcolor = ' font-color="' + e.data.cubeFontColor + '" ';
+                }
+                var direction = '';
+                if( e.data.cubeDirection !== '' && e.data.cubeDirection !== 'left'){
+                  direction = ' direction="' + e.data.cubeDirection + '" ';
+                }
+                var img = '';
+                if( e.data.cubeImg !== ''){
+                  img = ' img="' + e.data.cubeImg + '" ';
+                }
+                var height = '';
+                if( e.data.cubeHeight !== ''){
+                  height = ' height="' + e.data.cubeHeight + '" ';
+                }
+                editor.insertContent( '[twp-cube' + id + side + color + fcolor + direction + img + height + '] CUBE CONTENT HERE [/twp-cube]');
+              }
+            });
+            /* Initialize our Colorpicker */
+
+            var windows = editor.windowManager.getWindows()[0]; /* get current opened windows */
+            var $el = jQuery( windows.$el[0] ); /* get the container object */
+
+            /* check if wpColorPicker available */
+
+            if( typeof jQuery.wp === 'object' && typeof jQuery.wp.wpColorPicker === 'function' ) {
+                /* BY DEFAULT TINYMCE WILL ADD mce- PREFIX TO THE CLASS */
+                $el.find( '.mce-colorpicker' ).wpColorPicker();
+            }
           }
         },
         {
@@ -1208,7 +1329,7 @@
                 {
                   type: 'textbox',
                   name: 'thumbnailImg',
-                  label: tinyMCE_object.image_title,
+                  label: 'Image',
                   value: '',
                   classes: 'my_input_image',
                 },
@@ -1235,10 +1356,10 @@
           }
         },
         {
-          text: 'Toggler',
+          text: 'Toggle',
           onclick: function() {
             editor.windowManager.open( {
-              title: 'Toggler Shortcode',
+              title: 'Toggle Shortcode',
               body: [
                 {
                   type: 'textbox',
@@ -1384,12 +1505,13 @@
         }]
       });
     });
+  }
 })();
 
 jQuery(document).ready(function($){
+  $('head').append( '<style>.mce-container .wp-picker-container { display: block ; margin: 0px ; } .mce-container .wp-picker-input-wrap input.mce-colorpicker { width: 65px ; position: static ; float: left ; margin: 0 ; line-height: 1 ; } .mce-container .wp-color-result { background-color: #f7f7f7 ; border: 1px solid #ccc ; border-radius: 3px ; box-shadow: 0 1px 0 #ccc ; cursor: pointer ; display: block ; height: 22px ; margin: 0 6px 6px 0 ; padding-left: 30px ; position: relative ; top: 1px ; float: right ; vertical-align: bottom ; } .wp-picker-open+.wp-picker-input-wrap { float: right ; margin-right: 16px ; } .wp-picker-container.wp-picker-active .wp-picker-holder { background: white ; position: relative ; z-index: 9 ; border: 1px solid #a8a8a8 ; padding: 1rem ; float: right ; right: -30px ; } .mce-container .wp-picker-container{ float: right ; }</style>' );
   $(document).on('click', '.mce-my_upload_button', upload_image_tinymce);
   $(document).on('click', '.mce-video_upload_button', upload_video_tinymce);
-
   function upload_image_tinymce(e) {
       e.preventDefault();
       var $input_field = $('.mce-my_input_image');

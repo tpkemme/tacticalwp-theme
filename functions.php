@@ -28,6 +28,7 @@ require_once( 'library/shortcode/breadcrumbs.php' );
 require_once( 'library/shortcode/button.php' );
 require_once( 'library/shortcode/callout.php' );
 require_once( 'library/shortcode/card.php' );
+require_once( 'library/shortcode/cube.php' );
 require_once( 'library/shortcode/drilldown-menu.php' );
 require_once( 'library/shortcode/dropdown-menu.php' );
 require_once( 'library/shortcode/dropdown-pane.php' );

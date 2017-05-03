@@ -1,47 +1,8 @@
 <?php
 /**
- * CMB2 Theme Options
- * @version 0.1.0
+ * TWP Theme Options
+ * @version 1.0.0
  */
- /*
-  1. Global
-  	-global styles
-  2. Navigation
-  	-top Bar
-  	-title Bar
-  	-breadcrumbs
-  	-menu
-	3. Colors
-	4. Posts
-		-posts ( card )
-		-pagination
-		-notifications ( callout, tooltip )
-		-thumnails
-  5. Layout
-  	-Breakpoints
-  	-The Grid
-  	-Off Canvas
-  6. Typography
-  	-Base Typography
-  	-Typography Helpers?
-  6. Object Default settings
-  	-accordions (accordions, accordion menu)
-  	-badges
-  	-buttons (button, button group, close button)
-  	-dropdown (dropdown, drilldown, dropdown menu)
-  	-forms (abide, forms)
-  	-labels
-  	-media objects
-  	-meters
-  	-orbits
-  	-progress bars
-  	-responsive embeds
-  	-reveals
-  	-sliders
-  	-switchs
-  	-table
-  	-tabs
- 	*/
 class TacticalWP_Settings
 {
     /**
@@ -133,7 +94,7 @@ class TacticalWP_Settings
      */
     public function add_options_page()
     {
-        $this->options_page = add_menu_page(__('TacticalWP Settings', $this->prefix), $this->title, 'manage_options', $this->key, array( $this, 'admin_page_display' ), get_template_directory_uri() . '/assets/images/icons/twp-logo.svg');
+        $this->options_page = add_menu_page(__('TacticalWP Settings', $this->prefix), $this->title, 'manage_options', $this->key, array( $this, 'admin_page_display' ), get_template_directory() . 'assets/images/icons/');
         // Include CMB CSS in the head to avoid FOUC
         add_action("admin_print_styles-{$this->options_page}", array( 'CMB2_hookup', 'enqueue_cmb_css' ));
     }

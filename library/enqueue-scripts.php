@@ -10,6 +10,11 @@
  * @since TacticalWP 1.0.0
  */
 
+/**
+ * [twp_admin_scripts enqueues all necessary styles and scripts for wp-admin]
+ * @param  [type] $hook [description]
+ * @return [type]       [description]
+ */
 if ( ! function_exists( 'twp_scripts' ) ) :
 	function twp_admin_scripts( $hook ) {
 		if( $hook === 'toplevel_page_twp_options' ){
@@ -34,8 +39,13 @@ if ( ! function_exists( 'twp_scripts' ) ) :
 		}
 	}
 	add_action( 'admin_enqueue_scripts', 'twp_admin_scripts' );
+
 endif;
 
+
+/**
+ * [twp_scripts enqueues all necessary styles and scripts for front-end pages]
+ */
 if ( ! function_exists( 'twp_scripts' ) ) :
 	function twp_scripts() {
 
@@ -56,6 +66,18 @@ if ( ! function_exists( 'twp_scripts' ) ) :
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+
+    wp_enqueue_style( 'tinymce-stylesheet', get_template_directory_uri() . '/assets/stylesheets/tinymce-custom-stylesheet.css', array(), '2.9.0', true );
+
 	}
 	add_action( 'wp_enqueue_scripts', 'twp_scripts' );
+
 endif;
+
+/**
+ * Registers an editor stylesheet for the TWP.
+ */
+function twp_add_editor_styles() {
+    wp_enqueue_style( 'tinymce-stylesheet', get_template_directory_uri() . '/assets/stylesheets/tinymce-custom-stylesheet.css' );
+}
+add_action( 'admin_init', 'twp_add_editor_styles' );
