@@ -94,7 +94,7 @@ class TacticalWP_Settings
      */
     public function add_options_page()
     {
-        $this->options_page = add_menu_page(__('TacticalWP Settings', $this->prefix), $this->title, 'manage_options', $this->key, array( $this, 'admin_page_display' ), get_template_directory() . 'assets/images/icons/');
+        $this->options_page = add_menu_page(__('TacticalWP Settings', $this->prefix), $this->title, 'manage_options', $this->key, array( $this, 'admin_page_display' ), get_template_directory_uri() . '/assets/images/icons/twpicon1.png');
         // Include CMB CSS in the head to avoid FOUC
         add_action("admin_print_styles-{$this->options_page}", array( 'CMB2_hookup', 'enqueue_cmb_css' ));
     }

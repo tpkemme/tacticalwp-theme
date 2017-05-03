@@ -1389,8 +1389,8 @@ input::placeholder, textarea::placeholder{
   border-radius: 0px; }
 
 input[type=radio]:checked + label:before {
-	content: "\2022";
-	color: <?php twp( 'obj_form_border_color' ) ?>;
+	content: "";
+	background-color: <?php twp( 'obj_form_border_color' ) ?>;
 	font-size: 30px;
 	text-align: center;
 	line-height: <?php twp( 'global_padding_size' ) ?>; }

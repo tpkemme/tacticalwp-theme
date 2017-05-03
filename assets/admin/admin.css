@@ -1,0 +1,9 @@
+#adminmenu .wp-menu-image img {
+    width: 30px;
+}
+#toplevel_page_twp_options.current img {
+    padding-top: 10px;
+}
+#toplevel_page_twp_options.current img {
+    padding-top: 2px;
+}

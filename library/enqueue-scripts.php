@@ -17,6 +17,8 @@
  */
 if ( ! function_exists( 'twp_scripts' ) ) :
 	function twp_admin_scripts( $hook ) {
+
+		// Settings page for TWP Theme
 		if( $hook === 'toplevel_page_twp_options' ){
 
 			// Enqueue the main Stylesheet.
@@ -37,6 +39,10 @@ if ( ! function_exists( 'twp_scripts' ) ) :
 				wp_enqueue_script( 'comment-reply' );
 			}
 		}
+
+		// Enqueue CSS containing admin overrides
+		wp_enqueue_style( 'admin-stylesheet', get_template_directory_uri() . '/assets/admin/admin.css', array(), '2.9.0', 'all' );
+
 	}
 	add_action( 'admin_enqueue_scripts', 'twp_admin_scripts' );
 
