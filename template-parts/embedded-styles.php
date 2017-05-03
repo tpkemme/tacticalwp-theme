@@ -1242,7 +1242,6 @@ div[class^="twp-cube-container"]{
 	transform: rotateX(0deg) rotateY(90deg);
 	-webkit-transform: rotateY(90deg);
 }
-
 /* Cube Up */
 .twp-cube-container-top .twp-cube-front {
 	transform: rotateY(0deg) rotateX(0deg);
