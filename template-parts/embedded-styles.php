@@ -1261,16 +1261,17 @@ div[class^="twp-cube-container"]{
 	-webkit-transform: rotateY(0deg) rotateX(90deg);
 }
 
-/* Cube Down */
+/* Cube bottom */
 .twp-cube-container-bottom .twp-cube-front {
 	transform: rotateX(0deg) rotateY(0deg);
 	-webkit-transform: rotateX(0deg) rotateY(0deg);
 	z-index: 2;
 }
 .twp-cube-container-bottom .twp-cube-back {
-	transform: rotateX(-90deg) rotateY(0deg);
-	z-index: 1;
-	bottom: 100%;
+  transform: rotateX(90deg);
+  transform-origin: bottom center;
+  z-index: 1;
+  bottom: 100%;
 }
 .twp-cube-container-bottom:hover .twp-cube {
 	transform: rotateX(-90deg) rotateY(0deg);
