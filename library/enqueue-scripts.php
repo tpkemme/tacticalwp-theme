@@ -42,6 +42,8 @@ if ( ! function_exists( 'twp_scripts' ) ) :
 
 		// Enqueue CSS containing admin overrides
 		wp_enqueue_style( 'admin-stylesheet', get_template_directory_uri() . '/assets/admin/admin.css', array(), '2.9.0', 'all' );
+		wp_enqueue_style( 'tinymce-stylesheet', get_template_directory_uri() . '/assets/admin/tinymce-custom-stylesheet.css', array(), '2.9.0', true );
+
 
 	}
 	add_action( 'admin_enqueue_scripts', 'twp_admin_scripts' );
@@ -73,7 +75,7 @@ if ( ! function_exists( 'twp_scripts' ) ) :
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-    wp_enqueue_style( 'tinymce-stylesheet', get_template_directory_uri() . '/assets/stylesheets/tinymce-custom-stylesheet.css', array(), '2.9.0', true );
+    wp_enqueue_style( 'tinymce-stylesheet', get_template_directory_uri() . '/assets/admin/tinymce-custom-stylesheet.css', array(), '2.9.0', true );
 
 	}
 	add_action( 'wp_enqueue_scripts', 'twp_scripts' );
@@ -84,6 +86,6 @@ endif;
  * Registers an editor stylesheet for the TWP.
  */
 function twp_add_editor_styles() {
-    wp_enqueue_style( 'tinymce-stylesheet', get_template_directory_uri() . '/assets/stylesheets/tinymce-custom-stylesheet.css' );
+    wp_enqueue_style( 'tinymce-stylesheet', get_template_directory_uri() . '/assets/admin/tinymce-custom-stylesheet.css' );
 }
 add_action( 'admin_init', 'twp_add_editor_styles' );

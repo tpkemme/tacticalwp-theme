@@ -1,0 +1,39 @@
+.mce-container .wp-picker-container { display: block !important; margin: 0px !important; }
+.mce-container .wp-picker-input-wrap input.mce-colorpicker {
+    width: 65px !important;
+    position: static !important;
+    float: left !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+}
+.mce-container .wp-color-result {
+    background-color: #f7f7f7 !important;
+    border: 1px solid #ccc !important;
+    border-radius: 3px !important;
+    box-shadow: 0 1px 0 #ccc !important;
+    cursor: pointer !important;
+    display: block !important;
+    height: 22px !important;
+    margin: 0 6px 6px 0 !important;
+    padding-left: 30px !important;
+    position: relative !important;
+    top: 1px !important;
+    float: right !important;
+    vertical-align: bottom !important;
+}
+.mce-container .wp-picker-open+.wp-picker-input-wrap {
+    float: right !important;
+    margin-right: 16px !important;
+}
+.mce-container .wp-picker-container.wp-picker-active .wp-picker-holder {
+    background: white !important;
+    position: relative !important;
+    z-index: 9 !important;
+    border: 1px solid #a8a8a8 !important;
+    padding: 1rem !important;
+    float: right !important;
+    right: -30px !important;
+}
+.mce-container .wp-picker-container{
+  float: right !important;
+}
