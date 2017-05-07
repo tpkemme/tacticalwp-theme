@@ -21,7 +21,6 @@
 			'id' => wp_generate_password( 6, false ),
 			'side'   => 'front',
 			'color'  => '#1563ff',
-			'font-color'  => '#ffffff',
 			'img'    => '',
 			'direction' => 'left',
 			'height'		=> '200px'
@@ -40,16 +39,14 @@
 
 
 		if( $atts['side'] === 'front' ){
-			$out .='<style>#'.$atts['id'] .' .twp-cube-front *{ color: '. $atts['font-color']. ' }</style>
-						<div id='.$atts['id'].' class="twp-cube-container-'.$atts['direction'].'">
+			$out .='<div id='.$atts['id'].' class="twp-cube-container-'.$atts['direction'].'">
 							<div style="height: '.$atts['height'].';width: '.$atts['height'].'; -webkit-transform-origin: '. $halfheight . $units .' '. $halfheight . $units .' -'. $halfheight . $units .'" class="twp-cube">
 						    <div '. $back .' class="twp-cube-front">
 			        		'.do_shortcode( $content ).'
 						    </div>';
 		}
 		else{
-			$out .= 	'<style>#'.$atts['id'].'.twp-cube-back *{ color: '.$atts['font-color'].' }</style>
-								<div id="'.$atts['id'].'" '. $back .' class="twp-cube-back">
+			$out .= 	'<div id="'.$atts['id'].'" '. $back .' class="twp-cube-back">
 			        		'.do_shortcode( $content ).'
 			    			</div>
 							</div>
