@@ -479,6 +479,14 @@
                   tooltip: 'The background color of this side of the cube.  Default is #1563ff.'
                 },
                 {
+                  type: 'textbox', /* field type */
+                  name: 'cubeFontColor', /* field name */
+                  classes: 'colorpicker', /* field class */
+                  value: '',
+                  label: 'Font Color',
+                  tooltip: 'The font color of this side of the cube.  Default is #ffffff.'
+                },
+                {
                   type: 'textbox',
                   name: 'cubeImg',
                   label: 'Background Image',
@@ -527,6 +535,10 @@
                 if( e.data.cubeColor !== '' && e.data.cubeColor !== '#1563ff' ){
                   color = ' color="' + e.data.cubeColor + '" ';
                 }
+                var fcolor = '';
+                if( e.data.cubeFontColor !== '' && e.data.cubeFontColor !== '#ffffff' ){
+                  fcolor = ' font-color="' + e.data.cubeFontColor + '" ';
+                }
                 var direction = '';
                 if( e.data.cubeDirection !== '' && e.data.cubeDirection !== 'left'){
                   direction = ' direction="' + e.data.cubeDirection + '" ';
@@ -539,7 +551,7 @@
                 if( e.data.cubeHeight !== ''){
                   height = ' height="' + e.data.cubeHeight + '" ';
                 }
-                editor.insertContent( '[twp-cube' + id + side + color + direction + img + height + '] CUBE CONTENT HERE [/twp-cube]');
+                editor.insertContent( '[twp-cube' + id + side + color + fcolor + direction + img + height + '] CUBE CONTENT HERE [/twp-cube]');
               }
             });
             /* Initialize our Colorpicker */
