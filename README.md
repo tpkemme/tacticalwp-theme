@@ -123,7 +123,7 @@ TacticalWP is completely ready to be deployed to and tested by Travis-CI for Wor
 ## Contributing
 #### Here are ways to get involved:
 
-1. [Star](https://github.com/tpkemme/tacticalwp-theme/startgazers) the project!
+1. [Star](https://github.com/tpkemme/tacticalwp-theme/stargazers) the project!
 2. Answer questions that come through [GitHub issues](https://github.com/tpkemme/tacticalwp-theme/issues)
 3. Report a bug that you find
 4. Share a theme you've built on top of TacticalWP
