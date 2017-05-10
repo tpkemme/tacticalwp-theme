@@ -96,6 +96,20 @@
 		add_shortcode( 'code', 'twp_code' );
 	endif;
 
+	/**
+	 * Displays settings demo on frontend
+	 *
+	 * @since  1.0.0
+	 * @return html div with code class
+	 */
+	if ( ! function_exists( 'twp_settings_demo' ) ) :
+		function twp_settings_demo( $atts, $content = '')
+		{
+				return $settings_demo;
+		}
+		add_shortcode( 'twp-settings-demo', 'twp_settings_demo' );
+	endif;
+
   /**
 	 * Registers shortcode button in the tinyMCE editor
 	 *

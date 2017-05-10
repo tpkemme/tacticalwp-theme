@@ -889,7 +889,7 @@ code, .code{
 	border-bottom-right-radius: 0px;
   border-right-width: 0; }
 .top-bar-right{
-  padding-left: 2rem;
+  padding-left: .5rem;
 }
 .top-bar-right.top-bar-search {
   position: relative;
@@ -965,7 +965,7 @@ aside.sidebar.sticky-sidebar {
   background: none !important;
 }
 .top-bar-right.top-bar-search {
-    margin-left: 15px;
+    margin-left: 10px;
 }
 .top-bar ul li a,
 .top-bar .menu a{
