@@ -1,38 +1,45 @@
 <?php
 /**
  * TWP Theme Options
+ *
  * @version 1.0.0
  */
-class TacticalWP_Settings
-{
+class TacticalWP_Settings {
+
     /**
-    * Theme prefix
-    * @var string
-    */
+     * Theme prefix
+     *
+     * @var string
+     */
     private $prefix = 'twp';
 
     /**
      * Option key, and option page slug
+     *
      * @var string
      */
     private $key = 'twp_options';
     /**
      * Options page metabox id
+     *
      * @var string
      */
     private $metabox_id = 'twp_option_metabox';
     /**
      * Array of option names
+     *
      * @var string
      */
     private $option_names = array();
     /**
      * Options Page title
+     *
      * @var string
      */
     protected $title = '';
     /**
      * Options Page hook
+     *
      * @var string
      */
     protected $options_page = '';
@@ -47,9 +54,8 @@ class TacticalWP_Settings
      *
      * @return TacticalWP_Settings
      */
-    public static function get_instance()
-    {
-        if (null === self::$instance) {
+    public static function get_instance() {
+        if (null === self::$instance ) {
             self::$instance = new self();
             self::$instance->hooks();
         }
@@ -57,19 +63,19 @@ class TacticalWP_Settings
     }
     /**
      * Constructor
+     *
      * @since 0.1.0
      */
-    protected function __construct()
-    {
+    protected function __construct() {
         // Set our title
         $this->title = __('TacticalWP Settings', $this->prefix);
     }
     /**
      * Initiate our hooks
+     *
      * @since 0.1.0
      */
-    public function hooks()
-    {
+    public function hooks() {
         add_action('admin_init', array( $this, 'init' ));
         add_action('admin_menu', array( $this, 'add_options_page' ));
         add_action('cmb2_admin_init', array( $this, 'add_options_page_metabox' ));
@@ -82,28 +88,28 @@ class TacticalWP_Settings
     }
     /**
      * Register our setting to WP
+     *
      * @since  0.1.0
      */
-    public function init()
-    {
+    public function init() {
         register_setting($this->key, $this->key);
     }
     /**
      * Add menu options page
+     *
      * @since 0.1.0
      */
-    public function add_options_page()
-    {
+    public function add_options_page() {
         $this->options_page = add_menu_page(__('TacticalWP Settings', $this->prefix), $this->title, 'manage_options', $this->key, array( $this, 'admin_page_display' ), get_template_directory_uri() . '/assets/images/icons/twpicon1.png');
         // Include CMB CSS in the head to avoid FOUC
         add_action("admin_print_styles-{$this->options_page}", array( 'CMB2_hookup', 'enqueue_cmb_css' ));
     }
     /**
      * Admin page markup. Mostly handled by CMB2
+     *
      * @since  0.1.0
      */
-    public function admin_page_display()
-    {
+    public function admin_page_display() {
         ?>
 				<?php /* embedded styles set with theme settings */ get_template_part( 'template-parts/embedded-styles' ); ?>
 
@@ -283,10 +289,10 @@ class TacticalWP_Settings
     }
     /**
      * Add the options metabox to the array of metaboxes
+     *
      * @since  0.1.0
      */
-    function add_options_page_metabox()
-		{
+    function add_options_page_metabox() {
         // hook in our save notices
         add_action("cmb2_save_options-page_fields_{$this->metabox_id}", array( $this, 'settings_notices' ), 10, 2);
         $cmb = new_cmb2_box(array(
@@ -296,8 +302,8 @@ class TacticalWP_Settings
             'show_on'    => array(
                 // These are important, don't remove
                 'key'   => 'options-page',
-                'value' => array( $this->key, )
-            )
+                'value' => array( $this->key ),
+            ),
         ));
         twp_add_global_settings( $cmb, $this->prefix );
         array_push($this->option_names, $cmb);
@@ -305,12 +311,12 @@ class TacticalWP_Settings
 
     /**
      * Add the options metabox to the array of metaboxes
+     *
      * @since  0.1.0
      */
-    function add_options_page_nav_metabox()
-    {
+    function add_options_page_nav_metabox() {
 			// hook in our save notices
-			add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-nav", array( $this, 'settings_notices' ), 10, 2);
+			add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . '-nav', array( $this, 'settings_notices' ), 10, 2);
 			$cmb = new_cmb2_box(array(
 					'id'         => $this->metabox_id . '-nav',
 					'hookup'     => false,
@@ -318,7 +324,7 @@ class TacticalWP_Settings
 					'show_on'    => array(
 							// These are important, don't remove
 							'key'   => 'options-page',
-							'value' => array( $this->key . "-nav", )
+							'value' => array( $this->key . '-nav' ),
 					),
 			));
 			twp_add_nav_settings( $cmb, $this->prefix );
@@ -327,12 +333,12 @@ class TacticalWP_Settings
 
     /**
      * Add the options metabox to the array of metaboxes
+     *
      * @since  0.1.0
      */
-    function add_options_page_footer_metabox()
-    {
+    function add_options_page_footer_metabox() {
       // hook in our save notices
-      add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-footer", array( $this, 'settings_notices' ), 10, 2);
+      add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . '-footer', array( $this, 'settings_notices' ), 10, 2);
       $cmb = new_cmb2_box(array(
           'id'         => $this->metabox_id . '-footer',
           'hookup'     => false,
@@ -340,7 +346,7 @@ class TacticalWP_Settings
           'show_on'    => array(
               // These are important, don't remove
               'key'   => 'options-page',
-              'value' => array( $this->key . "-footer", )
+              'value' => array( $this->key . '-footer' ),
           ),
       ));
       twp_add_footer_settings( $cmb, $this->prefix );
@@ -349,12 +355,12 @@ class TacticalWP_Settings
 
     /**
      * Add the options metabox to the array of metaboxes
+     *
      * @since  0.1.0
      */
-    function add_options_page_layout_metabox()
-    {
+    function add_options_page_layout_metabox() {
       // hook in our save notices
-      add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-layout", array( $this, 'settings_notices' ), 10, 2);
+      add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . '-layout', array( $this, 'settings_notices' ), 10, 2);
       $cmb = new_cmb2_box(array(
           'id'         => $this->metabox_id . '-layout',
           'hookup'     => false,
@@ -362,7 +368,7 @@ class TacticalWP_Settings
           'show_on'    => array(
               // These are important, don't remove
               'key'   => 'options-page',
-              'value' => array( $this->key . "-layout", )
+              'value' => array( $this->key . '-layout' ),
           ),
       ));
       twp_add_layout_settings( $cmb, $this->prefix );
@@ -374,8 +380,8 @@ class TacticalWP_Settings
           'hookup'       => true,
           'save_fields'  => true,
 					'object_types' => array( 'page' ), // post type
-					'context'      => 'normal', //  'normal', 'advanced', or 'side'
-					'priority'     => 'high',  //  'high', 'core', 'default' or 'low'
+					'context'      => 'normal', // 'normal', 'advanced', or 'side'
+					'priority'     => 'high',  // 'high', 'core', 'default' or 'low'
 					'show_names'   => true,
       ) );
 
@@ -385,12 +391,12 @@ class TacticalWP_Settings
 
     /**
      * Add the options metabox to the array of metaboxes
+     *
      * @since  0.1.0
      */
-    function add_options_page_typo_metabox()
-    {
+    function add_options_page_typo_metabox() {
         // hook in our save notices
-        add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-typo", array( $this, 'settings_notices' ), 10, 2);
+        add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . '-typo', array( $this, 'settings_notices' ), 10, 2);
         $cmb = new_cmb2_box(array(
             'id'         => $this->metabox_id . '-typo',
             'hookup'     => false,
@@ -398,7 +404,7 @@ class TacticalWP_Settings
             'show_on'    => array(
                 // These are important, don't remove
                 'key'   => 'options-page',
-                'value' => array( $this->key . "-typo", )
+                'value' => array( $this->key . '-typo' ),
             ),
         ));
 				twp_add_typo_settings( $cmb, $this->prefix );
@@ -407,12 +413,12 @@ class TacticalWP_Settings
 
     /**
      * Add the options metabox to the array of metaboxes
+     *
      * @since  0.1.0
      */
-    function add_options_page_obj_metabox()
-    {
+    function add_options_page_obj_metabox() {
         // hook in our save notices
-				add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-obj", array( $this, 'settings_notices' ), 10, 2);
+				add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . '-obj', array( $this, 'settings_notices' ), 10, 2);
 				$cmb = new_cmb2_box(array(
 						'id'         => $this->metabox_id . '-obj',
 						'hookup'     => false,
@@ -420,7 +426,7 @@ class TacticalWP_Settings
 						'show_on'    => array(
 								// These are important, don't remove
 								'key'   => 'options-page',
-								'value' => array( $this->key . "-obj", )
+								'value' => array( $this->key . '-obj' ),
 						),
 				));
 				twp_add_obj_settings( $cmb, $this->prefix );
@@ -429,12 +435,12 @@ class TacticalWP_Settings
 
     /**
      * Add the options metabox to the array of metaboxes
+     *
      * @since  0.1.0
      */
-    function add_options_page_advanced_metabox()
-    {
+    function add_options_page_advanced_metabox() {
         // hook in our save notices
-				add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . "-advanced", array( $this, 'settings_notices' ), 10, 2);
+				add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . '-advanced', array( $this, 'settings_notices' ), 10, 2);
 				$cmb = new_cmb2_box(array(
 						'id'         => $this->metabox_id . '-advanced',
 						'hookup'     => false,
@@ -442,7 +448,7 @@ class TacticalWP_Settings
 						'show_on'    => array(
 								// These are important, don't remove
 								'key'   => 'options-page',
-								'value' => array( $this->key . "-advanced", )
+								'value' => array( $this->key . '-advanced' ),
 						),
 				));
 				twp_add_advanced_settings( $cmb, $this->prefix );
@@ -457,9 +463,8 @@ class TacticalWP_Settings
      * @param  array $updated   Array of updated fields
      * @return void
      */
-    public function settings_notices($object_id, $updated)
-    {
-        if ($object_id !== $this->key || empty($updated)) {
+    public function settings_notices( $object_id, $updated ) {
+        if ($object_id !== $this->key || empty($updated) ) {
             return;
         }
         add_settings_error($this->key . '-notices', '', __('Settings updated.', $this->prefix), 'updated');
@@ -467,14 +472,14 @@ class TacticalWP_Settings
     }
     /**
      * Public getter method for retrieving protected/private variables
+     *
      * @since  0.1.0
-     * @param  string  $field Field to retrieve
+     * @param  string $field Field to retrieve
      * @return mixed          Field value or exception is thrown
      */
-    public function __get($field)
-    {
+    public function __get( $field ) {
         // Allowed fields to retrieve
-        if (in_array($field, array( 'key', 'metabox_id', 'title', 'options_page' ), true)) {
+        if (in_array($field, array( 'key', 'metabox_id', 'title', 'options_page' ), true) ) {
             return $this->{$field};
         }
         throw new Exception('Invalid property: ' . $field);
@@ -483,33 +488,33 @@ class TacticalWP_Settings
 
 /**
  * Helper function to get/return the TacticalWP_Settings object
+ *
  * @since  0.1.0
  * @return TacticalWP_Settings object
  */
-function twp_settings()
-{
+function twp_settings() {
     return TacticalWP_Settings::get_instance();
 }
 
 /**
  * Wrapper function around cmb2_get_option
+ *
  * @since  0.1.0
  * @param  string $key     Options array key
  * @param  mixed  $default Optional default value
  * @return mixed           Option value
  */
-function twp_get_option($key = '', $default = null)
-{
-    if (function_exists('cmb2_get_option')) {
+function twp_get_option( $key = '', $default = null ) {
+    if (function_exists('cmb2_get_option') ) {
         // Use cmb2_get_option as it passes through some key filters.
         return cmb2_get_option(twp_settings()->key, $key, $default);
     }
     // Fallback to get_option if CMB2 is not loaded yet.
     $opts = get_option(twp_settings()->key, $key, $default);
     $val = $default;
-    if ('all' == $key) {
+    if ('all' == $key ) {
         $val = $opts;
-    } elseif (array_key_exists($key, $opts) && false !== $opts[ $key ]) {
+    } elseif (array_key_exists($key, $opts) && false !== $opts[ $key ] ) {
         $val = $opts[ $key ];
     }
     return $val;

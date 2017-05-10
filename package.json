@@ -1,28 +1,28 @@
 {
-  "name": "tacticalwp",
+  "name": "tacticalwp-theme",
   "title": "TacticalWP",
   "version": "1.0.0",
-  "description": "TacticalWP is a WordPress starter theme based on TacticalWP",
+  "description": "TacticalWP is a WordPress theme based on Foundationpress and Foundation 6 by Zurb",
   "keywords": [
     "TacticalWP",
     "WordPress",
-    "starter theme",
-    "twp",
+    "foundation theme",
+    "tacticalwp-theme",
     "semantic",
     "mobile first",
     "customizable",
     "responsive",
-    "sole",
-    "soul",
-    "sol"
+    "foundationpress",
+    "foundation",
+    "zurb"
   ],
-  "homepage": "https://twp.com/",
-  "bugs": "https://github.com/tpkemme/twp/issues",
+  "homepage": "https://tacticalwp.com/",
+  "bugs": "https://github.com/tpkemme/tacticalwp-theme/issues",
   "license": "MIT",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tpkemme/twp.git"
+    "url": "https://github.com/tpkemme/tacticalwp-theme.git"
   },
   "devDependencies": {
     "autoprefixer": "^6.1.0",

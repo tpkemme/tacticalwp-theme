@@ -1,7 +1,7 @@
 <?php
 /**
  * Author: Tyler Kemme
- * URL: http://tpkemme.com
+ * URL: https://tpkemme.com
  *
  * TacticalWP functions and definitions
  *
@@ -20,7 +20,7 @@ require_once( 'library/cmb2-functions.php' );
 /** Utilities and helper functions */
 require_once( 'library/utilities.php' );
 
-/** Shortcodes **/
+/** Shortcodes */
 require_once( 'library/shortcode/accordion.php' );
 require_once( 'library/shortcode/accordion-menu.php' );
 require_once( 'library/shortcode/badge.php' );

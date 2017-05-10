@@ -60,7 +60,7 @@ endif;
 		</div>
 	</section>
 	<?php
-		return;
+	return;
 	}
 ?>
 

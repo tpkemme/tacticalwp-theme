@@ -30,7 +30,7 @@
 
 <?php wp_footer(); ?>
 <?php do_action( 'twp_before_closing_body' ); ?>
-<?php if( twp_get_option( 'twp_advanced_browser_sync' ) === 'yes' ): ?>
+<?php if ( twp_get_option( 'twp_advanced_browser_sync' ) === 'yes' ) : ?>
 	<script id="__bs_script__">//<![CDATA[
 	  document.write("<script async src='http://localhost:3001/browser-sync/browser-sync-client.js?v=2.18.8'><\/script>".replace("HOST", location.hostname));
 	</script>

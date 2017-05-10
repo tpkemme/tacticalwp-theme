@@ -12,6 +12,7 @@
 
 /**
  * [twp_admin_scripts enqueues all necessary styles and scripts for wp-admin]
+ *
  * @param  [type] $hook [description]
  * @return [type]       [description]
  */
@@ -19,7 +20,7 @@ if ( ! function_exists( 'twp_scripts' ) ) :
 	function twp_admin_scripts( $hook ) {
 
 		// Settings page for TWP Theme
-		if( $hook === 'toplevel_page_twp_options' ){
+		if ( $hook === 'toplevel_page_twp_options' ) {
 
 			// Enqueue the main Stylesheet.
 		  wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/twp.css', array(), false, 'all' );
@@ -40,7 +41,6 @@ if ( ! function_exists( 'twp_scripts' ) ) :
 		// Enqueue CSS containing admin overrides
 		wp_enqueue_style( 'admin-stylesheet', get_template_directory_uri() . '/assets/admin/admin.css', array(), false, 'all' );
 		wp_enqueue_style( 'tinymce-stylesheet', get_template_directory_uri() . '/assets/admin/tinymce-custom-stylesheet.css', array(), false, true );
-
 
 	}
 	add_action( 'admin_enqueue_scripts', 'twp_admin_scripts' );

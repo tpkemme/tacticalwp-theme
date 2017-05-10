@@ -11,7 +11,7 @@ Template Left & Right Sidebar
 <?php do_action( 'twp_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
   <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-			<?php if( twp_get_option( 'twp_layout_title_show' ) === 'show' ): ?>
+			<?php if ( twp_get_option( 'twp_layout_title_show' ) === 'show' ) : ?>
 				<header>
 						<h1 class="entry-title"><?php the_title(); ?></h1>
 				</header>

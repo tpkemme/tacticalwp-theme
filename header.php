@@ -30,8 +30,8 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
-		<?php if( twp_get_option( 'twp_nav_top_menu_alignment') === 'right' ): ?>
-  		<?php if( twp_get_option( 'twp_nav_top_search') === 'show' ): ?>
+		<?php if ( twp_get_option( 'twp_nav_top_menu_alignment') === 'right' ) : ?>
+  		<?php if ( twp_get_option( 'twp_nav_top_search') === 'show' ) : ?>
 				<div class="top-bar-right top-bar-search">
 	  				<ul class="menu">
 	  					<li><input type="search" placeholder="Search"></li>
@@ -47,10 +47,10 @@
 					<li class="menu-text">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 							<?php $logo = twp_get_option( 'twp_nav_top_logo_image' ); ?>
-							<?php if( !empty( $logo ) ): ?>
+							<?php if ( ! empty( $logo ) ) : ?>
 								<img src="<?php echo $logo ?>" class="site-logo" />
 							<?php endif; ?>
-							<?php if( twp_get_option( 'twp_nav_top_title_show' ) === 'show' ): ?>
+							<?php if ( twp_get_option( 'twp_nav_top_title_show' ) === 'show' ) : ?>
 								<?php bloginfo( 'name' ); ?>
 							<?php endif; ?>
 						</a>
@@ -61,17 +61,17 @@
 			<div class="top-bar-right">
 					<?php twp_top_bar_r(); ?>
 			</div>
-		<?php else: ?>
+		<?php else : ?>
 			<div class="top-bar-left">
 				<div class="title-bar-title show-for-medium">
 					<ul class="title-bar-title dropdown menu" data-dropdown-menu>
 						<li class="menu-text">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 								<?php $logo = twp_get_option( 'twp_nav_top_logo_image' ); ?>
-								<?php if( !empty( $logo ) ): ?>
+								<?php if ( ! empty( $logo ) ) : ?>
 									<img src="<?php echo $logo ?>" class="site-logo" />
 								<?php endif; ?>
-								<?php if( twp_get_option( 'twp_nav_top_title_show' ) === 'show' ): ?>
+								<?php if ( twp_get_option( 'twp_nav_top_title_show' ) === 'show' ) : ?>
 									<?php bloginfo( 'name' ); ?>
 								<?php endif; ?>
 							</a>
@@ -80,7 +80,7 @@
 				</div>
 			</div>
 			<?php twp_top_bar_r(); ?>
-      <?php if( twp_get_option( 'twp_nav_top_search') === 'show' ): ?>
+      <?php if ( twp_get_option( 'twp_nav_top_search') === 'show' ) : ?>
   			<div class="top-bar-right top-bar-search">
   				<ul class="menu">
   					<li><input type="search" placeholder="<?php twp( 'nav_top_search_placeholder_text' ) ?>"></li>

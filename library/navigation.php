@@ -9,7 +9,7 @@
 
 register_nav_menus(array(
 	'top-bar-r'  => 'Top Bar',
-	'mobile-nav' => 'Mobile'
+	'mobile-nav' => 'Mobile',
 ));
 
 

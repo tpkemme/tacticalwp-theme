@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitb58386e05f0a4f79b90da941ccad33c0
+class ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f
 {
     public static $prefixLengthsPsr4 = array (
         'C' => 
@@ -20,11 +20,86 @@ class ComposerStaticInitb58386e05f0a4f79b90da941ccad33c0
         ),
     );
 
+    public static $classMap = array (
+        'Accordion_Menu_Walker_Nav_Menu' => __DIR__ . '/../..' . '/library/shortcode/accordion-menu.php',
+        'CMB2' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2.php',
+        'CMB2_Ajax' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Ajax.php',
+        'CMB2_Base' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Base.php',
+        'CMB2_Bootstrap_224' => __DIR__ . '/../..' . '/library/cmb2/init.php',
+        'CMB2_Boxes' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Boxes.php',
+        'CMB2_Display_Checkbox' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_Colorpicker' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_File' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_File_List' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_Multicheck' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_Select' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_Taxonomy_Multicheck' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_Taxonomy_Radio' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_Text_Date' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_Text_Date_Timezone' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_Text_Money' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_Text_Time' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_Text_Url' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_Textarea' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_Textarea_Code' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Display_oEmbed' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Field' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field.php',
+        'CMB2_Field_Display' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Field_Display.php',
+        'CMB2_Hookup_Base' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Hookup_Base.php',
+        'CMB2_JS' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_JS.php',
+        'CMB2_Option' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Options.php',
+        'CMB2_Options' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Options.php',
+        'CMB2_REST' => __DIR__ . '/../..' . '/library/cmb2/includes/rest-api/CMB2_REST.php',
+        'CMB2_REST_Controller' => __DIR__ . '/../..' . '/library/cmb2/includes/rest-api/CMB2_REST_Controller.php',
+        'CMB2_REST_Controller_Boxes' => __DIR__ . '/../..' . '/library/cmb2/includes/rest-api/CMB2_REST_Controller_Boxes.php',
+        'CMB2_REST_Controller_Fields' => __DIR__ . '/../..' . '/library/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php',
+        'CMB2_Sanitize' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Sanitize.php',
+        'CMB2_Show_Filters' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Show_Filters.php',
+        'CMB2_Type_Base' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Base.php',
+        'CMB2_Type_Checkbox' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Checkbox.php',
+        'CMB2_Type_Colorpicker' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Colorpicker.php',
+        'CMB2_Type_File' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_File.php',
+        'CMB2_Type_File_Base' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_File_Base.php',
+        'CMB2_Type_File_List' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_File_List.php',
+        'CMB2_Type_Multi_Base' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Multi_Base.php',
+        'CMB2_Type_Multicheck' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Multicheck.php',
+        'CMB2_Type_Oembed' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Oembed.php',
+        'CMB2_Type_Picker_Base' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Picker_Base.php',
+        'CMB2_Type_Radio' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Radio.php',
+        'CMB2_Type_Select' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Select.php',
+        'CMB2_Type_Select_Timezone' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Select_Timezone.php',
+        'CMB2_Type_Taxonomy_Base' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Taxonomy_Base.php',
+        'CMB2_Type_Taxonomy_Multicheck' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Taxonomy_Multicheck.php',
+        'CMB2_Type_Taxonomy_Radio' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Taxonomy_Radio.php',
+        'CMB2_Type_Taxonomy_Select' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Taxonomy_Select.php',
+        'CMB2_Type_Text' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Text.php',
+        'CMB2_Type_Text_Date' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Text_Date.php',
+        'CMB2_Type_Text_Datetime_Timestamp' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Text_Datetime_Timestamp.php',
+        'CMB2_Type_Text_Datetime_Timestamp_Timezone' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Text_Datetime_Timestamp_Timezone.php',
+        'CMB2_Type_Text_Time' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Text_Time.php',
+        'CMB2_Type_Textarea' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Textarea.php',
+        'CMB2_Type_Textarea_Code' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Textarea_Code.php',
+        'CMB2_Type_Title' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Title.php',
+        'CMB2_Type_Wysiwyg' => __DIR__ . '/../..' . '/library/cmb2/includes/types/CMB2_Type_Wysiwyg.php',
+        'CMB2_Types' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Types.php',
+        'CMB2_Utils' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Utils.php',
+        'CMB2_hookup' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_hookup.php',
+        'Drilldown_Menu_Walker_Nav_Menu' => __DIR__ . '/../..' . '/library/shortcode/drilldown-menu.php',
+        'Dropdown_Menu_Walker_Nav_Menu' => __DIR__ . '/../..' . '/library/shortcode/dropdown-menu.php',
+        'TacticalWP_Comments' => __DIR__ . '/../..' . '/library/class-twp-comments.php',
+        'TacticalWP_Mobile_Walker' => __DIR__ . '/../..' . '/library/class-twp-mobile-walker.php',
+        'TacticalWP_Protocol_Relative_Theme_Assets' => __DIR__ . '/../..' . '/library/class-twp-protocol-relative-theme-assets.php',
+        'TacticalWP_Settings' => __DIR__ . '/../..' . '/library/theme-settings.php',
+        'TacticalWP_Top_Bar_Walker' => __DIR__ . '/../..' . '/library/class-twp-top-bar-walker.php',
+        'WP_REST_Controller' => __DIR__ . '/../..' . '/library/cmb2/includes/shim/WP_REST_Controller.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb58386e05f0a4f79b90da941ccad33c0::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb58386e05f0a4f79b90da941ccad33c0::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f::$classMap;
 
         }, null, ClassLoader::class);
     }

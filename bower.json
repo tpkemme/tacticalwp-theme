@@ -1,5 +1,5 @@
 {
-  "name": "twp",
+  "name": "tacticalwp-theme",
   "main": [
     "assets/stylesheets/twp.css",
     "assets/javascript/twp.js"

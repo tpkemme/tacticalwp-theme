@@ -13,23 +13,29 @@
 <?php
 // Only enqueue Google Font families if they're being used
 $families = array();
-$global_family	  = 	twp_get_option( 'twp_global_font_family' );
-$header_family	  = 	twp_get_option( 'twp_typo_header_family' );
-$subheader_family = 	twp_get_option( 'twp_typo_sub_header_family' );
-$title_family 		= 	twp_get_option( 'twp_nav_title_font_family' );
-$menu_family 			= 	twp_get_option( 'twp_nav_top_item_font_family' );
-$code_family 			= 	twp_get_option( 'twp_typo_code_font_family' );
-if( !in_array($global_family, 	 $families)) array_push( $families , $global_family );
-if( !in_array($header_family, 	 $families)) array_push( $families , $header_family );
-if( !in_array($subheader_family, $families)) array_push( $families , $subheader_family );
-if( !in_array($title_family, 	   $families)) array_push( $families , $title_family );
-if( !in_array($menu_family,	     $families)) array_push( $families , $menu_family );
-if( !in_array($code_family,	     $families)) array_push( $families , $code_family );
-foreach( $families as $family ){
+$global_family	  = twp_get_option( 'twp_global_font_family' );
+$header_family	  = twp_get_option( 'twp_typo_header_family' );
+$subheader_family = twp_get_option( 'twp_typo_sub_header_family' );
+$title_family 		= twp_get_option( 'twp_nav_title_font_family' );
+$menu_family 			= twp_get_option( 'twp_nav_top_item_font_family' );
+$code_family 			= twp_get_option( 'twp_typo_code_font_family' );
+if ( ! in_array($global_family, 	 $families) ) { array_push( $families , $global_family );
+}
+if ( ! in_array($header_family, 	 $families) ) { array_push( $families , $header_family );
+}
+if ( ! in_array($subheader_family, $families) ) { array_push( $families , $subheader_family );
+}
+if ( ! in_array($title_family, 	   $families) ) { array_push( $families , $title_family );
+}
+if ( ! in_array($menu_family,	     $families) ) { array_push( $families , $menu_family );
+}
+if ( ! in_array($code_family,	     $families) ) { array_push( $families , $code_family );
+}
+foreach ( $families as $family ) {
 	$variants = twp_google_fonts_src( $family );
 	$variants_string = '';
-	foreach( $variants as $variant){
-		$variants_string .=  $variant . ',';
+	foreach ( $variants as $variant ) {
+		$variants_string .= $variant . ',';
 	}
 	$fontUrl = substr( $family . ':' . $variants_string, 0, -1);
 	?>
@@ -464,11 +470,11 @@ c	olor: <?php twp( 'global_white_color' ) ?>;
 	Global Background
 	================================
  */
-<?php if( twp_get_option( 'twp_global_background_type' ) === 'color' ): ?>
+<?php if ( twp_get_option( 'twp_global_background_type' ) === 'color' ) : ?>
 	body, .fieldset legend  {
 		background: <?php twp( 'global_background_color' ) ?>;
 	}
-<?php elseif( twp_get_option( 'twp_global_background_type' ) === 'image' ): ?>
+<?php elseif ( twp_get_option( 'twp_global_background_type' ) === 'image' ) : ?>
 	body, .fieldset legend  {
 		background-color: <?php twp( 'global_background_color' ) ?>;
 		background: url('<?php twp( 'global_background_image' ) ?>');
@@ -479,7 +485,7 @@ c	olor: <?php twp( 'global_white_color' ) ?>;
 	.dropdown-pane{
 		background-color: <?php twp( 'global_background_color' ) ?>;
 	}
-<?php else: ?>
+<?php else : ?>
 	body, .fieldset legend  {
 		background: <?php twp( 'global_background_color' ) ?>;
 	}
@@ -562,7 +568,7 @@ letter-spacing: -0.04rem;
 }
 h1 {
 font-weight: <?php twp( 'typo_header_weight' ) ?>;
-<?php $h1 =  strval( floatval( twp_get_option( 'twp_typo_h1_size' ) ) / 2.0 );
+<?php $h1 = strval( floatval( twp_get_option( 'twp_typo_h1_size' ) ) / 2.0 );
 $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_typo_h1_size' ) ); ?>
 font-size: <?php echo $h1 . $units ?>;
 color: <?php twp( 'typo_h1_color' ) ?>;
@@ -570,7 +576,7 @@ font-family: <?php '"' . twp( 'typo_header_family' ) . '"' ?>;
 }
 h2 {
 font-weight: <?php twp( 'typo_header_weight' ) ?>;
-<?php $h2 =  strval( floatval( twp_get_option( 'twp_typo_h2_size' ) ) / 2.0 );
+<?php $h2 = strval( floatval( twp_get_option( 'twp_typo_h2_size' ) ) / 2.0 );
 $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_typo_h2_size' ) ); ?>
 font-size: <?php echo $h2 . $units ?>;
 color: <?php twp( 'typo_h2_color' ) ?>;
@@ -578,7 +584,7 @@ font-family: <?php '"' . twp( 'typo_header_family' ) . '"' ?>;
 }
 h3 {
 font-weight: <?php twp( 'typo_header_weight' ) ?>;
-<?php $h3 =  strval( floatval( twp_get_option( 'twp_typo_h3_size' ) ) / 2.0 );
+<?php $h3 = strval( floatval( twp_get_option( 'twp_typo_h3_size' ) ) / 2.0 );
 $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_typo_h3_size' ) ); ?>
 font-size: <?php echo $h3 . $units ?>;
 color: <?php twp( 'typo_h3_color' ) ?>;
@@ -586,7 +592,7 @@ font-family: <?php '"' . twp( 'typo_header_family' ) . '"' ?>;
 }
 h4 {
 font-weight: <?php twp( 'typo_sub_header_weight' ) ?>;
-<?php $h4 =  strval( floatval( twp_get_option( 'twp_typo_h4_size' ) ) / 2.0 );
+<?php $h4 = strval( floatval( twp_get_option( 'twp_typo_h4_size' ) ) / 2.0 );
 $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_typo_h4_size' ) ); ?>
 font-size: <?php echo $h4 . $units ?>;
 color: <?php twp( 'typo_h4_color' ) ?>;
@@ -594,7 +600,7 @@ font-family: <?php '"' . twp( 'typo_sub_header_family' ) . '"' ?>;
 }
 h5 {
 font-weight: <?php twp( 'typo_sub_header_weight' ) ?>;
-<?php $h5 =  strval( floatval( twp_get_option( 'twp_typo_h5_size' ) ) / 2.0 );
+<?php $h5 = strval( floatval( twp_get_option( 'twp_typo_h5_size' ) ) / 2.0 );
 $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_typo_h5_size' ) ); ?>
 font-size: <?php echo $h5 . $units ?>;
 color: <?php twp( 'typo_h5_color' ) ?>;
@@ -602,7 +608,7 @@ font-family: <?php '"' . twp( 'typo_sub_header_family' ) . '"' ?>;
 }
 h6 {
 font-weight: <?php twp( 'typo_sub_header_weight' ) ?>;
-<?php $h6 =  strval( floatval( twp_get_option( 'twp_typo_h6_size' ) ) / 2.0 );
+<?php $h6 = strval( floatval( twp_get_option( 'twp_typo_h6_size' ) ) / 2.0 );
 $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_typo_h6_size' ) ); ?>
 font-size: <?php echo $h6 . $units ?>;
 color: <?php twp( 'typo_h6_color' ) ?>;
@@ -611,42 +617,42 @@ font-family: <?php '"' . twp( 'typo_sub_header_family' ) . '"' ?>;
 @media print, screen and (min-width: 40em) {
  h1 {
 	 <?php
-	 		$h1 =  strval( floatval( twp_get_option( 'twp_typo_h1_size' ) ) );
+	 		$h1 = strval( floatval( twp_get_option( 'twp_typo_h1_size' ) ) );
 			$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_typo_h1_size' ) );
 	  ?>
    font-size: <?php echo $h1 . $units ?>;
  }
  h2 {
 	 <?php
-	 		$h2 =  strval( floatval( twp_get_option( 'twp_typo_h2_size' ) ) );
+	 		$h2 = strval( floatval( twp_get_option( 'twp_typo_h2_size' ) ) );
 			$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_typo_h2_size' ) );
 	  ?>
    font-size: <?php echo $h2 . $units ?>;
  }
  h3 {
 	 <?php
-	 		$h3 =  strval( floatval( twp_get_option( 'twp_typo_h3_size' ) ) );
+	 		$h3 = strval( floatval( twp_get_option( 'twp_typo_h3_size' ) ) );
 			$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_typo_h3_size' ) );
 	  ?>
    font-size: <?php echo $h3 . $units ?>;
  }
  h4 {
 	 <?php
-	 		$h4 =  strval( floatval( twp_get_option( 'twp_typo_h4_size' ) ) );
+	 		$h4 = strval( floatval( twp_get_option( 'twp_typo_h4_size' ) ) );
 			$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_typo_h4_size' ) );
 	  ?>
    font-size: <?php echo $h4 . $units ?>;
  }
  h5 {
 	 <?php
-	 		$h5 =  strval( floatval( twp_get_option( 'twp_typo_h5_size' ) ) );
+	 		$h5 = strval( floatval( twp_get_option( 'twp_typo_h5_size' ) ) );
 			$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_typo_h5_size' ) );
 	  ?>
    font-size: <?php echo $h5 . $units ?>;
  }
  h6 {
 	 <?php
-	 		$h6 =  strval( floatval( twp_get_option( 'twp_typo_h6_size' ) ) );
+	 		$h6 = strval( floatval( twp_get_option( 'twp_typo_h6_size' ) ) );
 			$units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_typo_h6_size' ) );
 	  ?>
    font-size: <?php echo $h6 . $units ?>;
@@ -813,7 +819,7 @@ code, .code{
   box-shadow: 0 2px 5px rgba(0,0,0,.18), 0 4px 10px rgba(0,0,0,.15); 	}
 .top-bar ul{
 	background: <?php twp( 'nav_top_item_background_color') ?>; }
-<?php if( twp_get_option( 'twp_nav_top_title_shadow') === 'show' ): ?>
+<?php if ( twp_get_option( 'twp_nav_top_title_shadow') === 'show' ) : ?>
 	.top-bar ul.title-bar-title li a{
 		box-shadow: 0px 0px 4px 0px rgba(0,0,0,.18), 1px 0px 8px 0px rgba(0,0,0,.15);
 	 	position: relative;
@@ -905,7 +911,7 @@ code, .code{
   <?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_nav_top_padding' ) ); ?>
   padding:   <?php echo $p_top . $units ?> <?php twp( 'global_padding_size' ) ?> <?php echo $p_top . $units ?>;  }
 /* sticky topbar */
-<?php if ( twp_get_option( 'twp_nav_top_sticky' ) === 'sticky' ): ?>
+<?php if ( twp_get_option( 'twp_nav_top_sticky' ) === 'sticky' ) : ?>
 .site-header {
   position: fixed;
   top: 0px;
@@ -919,7 +925,7 @@ code, .code{
   padding-top: 45px;
 }
 .admin-bar .site-header + .container {
-	<?php $p_top = strval( ( floatval( twp_get_option( 'twp_nav_top_padding' ) ) + 1 )  * 2.0 ); ?>
+	<?php $p_top = strval( ( floatval( twp_get_option( 'twp_nav_top_padding' ) ) + 1 ) * 2.0 ); ?>
 	<?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_nav_top_padding' ) ); ?>
 	padding-top: <?php echo $p_top . $units ?>;
 }
@@ -1017,7 +1023,7 @@ aside.sidebar.sticky-sidebar {
 #footer-container a:hover {
     color: <?php twp( 'footer_link_hover_font_color' ) ?>;
 }
-<?php if( twp_get_option( 'twp_footer_sticky') === 'sticky' ): ?>
+<?php if ( twp_get_option( 'twp_footer_sticky') === 'sticky' ) : ?>
 #footer-container{
 	position: fixed;
 	bottom: 0rem;
