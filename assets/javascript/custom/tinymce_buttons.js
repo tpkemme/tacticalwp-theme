@@ -18,7 +18,7 @@
     tinymce.PluginManager.add('scbutton', function( editor, url ) {
       editor.addButton( 'scbutton', {
         text: tinyMCE_object.button_name,
-        icon: false,
+        icon: 'twpicon1',
         type: 'menubutton',
         menu: [
         {
@@ -1498,8 +1498,7 @@
 })();
 
 jQuery(document).ready(function($){
-  $('head').append( '<style>.mce-container .wp-picker-container { display: block ; margin: 0px ; } .mce-container .wp-picker-input-wrap input.mce-colorpicker { width: 65px ; position: static ; float: left ; margin: 0 ; line-height: 1 ; } .mce-container .wp-color-result { background-color: #f7f7f7 ; border: 1px solid #ccc ; border-radius: 3px ; box-shadow: 0 1px 0 #ccc ; cursor: pointer ; display: block ; height: 22px ; margin: 0 6px 6px 0 ; padding-left: 30px ; position: relative ; top: 1px ; float: right ; vertical-align: bottom ; } .wp-picker-open+.wp-picker-input-wrap { float: right ; margin-right: 16px ; } .wp-picker-container.wp-picker-active .wp-picker-holder { background: white ; position: relative ; z-index: 9 ; border: 1px solid #a8a8a8 ; padding: 1rem ; float: right ; right: -30px ; } .mce-container .wp-picker-container{ float: right ; }</style>' );
-  $(document).on('click', '.mce-my_upload_button', upload_image_tinymce);
+
   $(document).on('click', '.mce-video_upload_button', upload_video_tinymce);
   function upload_image_tinymce(e) {
       e.preventDefault();

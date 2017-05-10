@@ -1,39 +1,56 @@
-.mce-container .wp-picker-container { display: block !important; margin: 0px !important; }
+.mce-container .wp-picker-container { display: block; margin: 0px; }
 .mce-container .wp-picker-input-wrap input.mce-colorpicker {
-    width: 65px !important;
-    position: static !important;
-    float: left !important;
-    margin: 0 !important;
-    line-height: 1 !important;
+    width: 65px;
+    position: static;
+    float: left;
+    margin: 0;
+    line-height: 1;
 }
 .mce-container .wp-color-result {
-    background-color: #f7f7f7 !important;
-    border: 1px solid #ccc !important;
-    border-radius: 3px !important;
-    box-shadow: 0 1px 0 #ccc !important;
-    cursor: pointer !important;
-    display: block !important;
-    height: 22px !important;
-    margin: 0 6px 6px 0 !important;
-    padding-left: 30px !important;
-    position: relative !important;
-    top: 1px !important;
-    float: right !important;
-    vertical-align: bottom !important;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 #ccc;
+    cursor: pointer;
+    display: block;
+    height: 22px;
+    margin: 0 6px 6px 0;
+    padding-left: 30px;
+    position: relative;
+    top: 1px;
+    float: right;
+    vertical-align: bottom;
 }
 .mce-container .wp-picker-open+.wp-picker-input-wrap {
-    float: right !important;
-    margin-right: 16px !important;
+    float: right;
+    margin-right: 16px;
 }
 .mce-container .wp-picker-container.wp-picker-active .wp-picker-holder {
-    background: white !important;
-    position: relative !important;
-    z-index: 9 !important;
-    border: 1px solid #a8a8a8 !important;
-    padding: 1rem !important;
-    float: right !important;
-    right: -30px !important;
+    background: white;
+    position: relative;
+    z-index: 9;
+    border: 1px solid #a8a8a8;
+    padding: 1rem;
+    float: right;
+    right: -30px;
 }
 .mce-container .wp-picker-container{
-  float: right !important;
+  float: right;
+}
+
+
+.mce-i-twpicon1{
+  background: url('../images/icons/twpicon1.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+}
+
+.mce-i-twpicon1 + .mce-txt{
+  line-height: 1.5 !important;
+  padding-right: 5px !important;
+}
+
+.mce-i-twpicon1 + .mce-txt + .mce-caret {
+    display: none !important;
 }

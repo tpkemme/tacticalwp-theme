@@ -22,17 +22,14 @@ if ( ! function_exists( 'twp_scripts' ) ) :
 		if( $hook === 'toplevel_page_twp_options' ){
 
 			// Enqueue the main Stylesheet.
-		  wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/twp.css', array(), '2.9.0', 'all' );
-
-			// Deregister the jquery version bundled with WordPress.
-			wp_deregister_script( 'jquery' );
+		  wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/twp.css', array(), false, 'all' );
 
 			// CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
-			wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js', array(), '2.1.0', true );
+			wp_enqueue_script( 'jquery' );
 
 			// If you'd like to cherry-pick the twp components you need in your project, head over to gulpfile.js and see lines 35-54.
 			// It's a good idea to do this, performance-wise. No need to load everything if you're just going to use the grid anyway, you know :)
-			wp_enqueue_script( 'twp-js', get_template_directory_uri() . '/assets/javascript/twp.js', array('jquery'), '2.1.0', false );
+			wp_enqueue_script( 'twp-js', get_template_directory_uri() . '/assets/javascript/twp.js', array('jquery'), false, false );
 
 			// Add the comment-reply library on pages where it is necessary
 			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -41,8 +38,8 @@ if ( ! function_exists( 'twp_scripts' ) ) :
 		}
 
 		// Enqueue CSS containing admin overrides
-		wp_enqueue_style( 'admin-stylesheet', get_template_directory_uri() . '/assets/admin/admin.css', array(), '2.9.0', 'all' );
-		wp_enqueue_style( 'tinymce-stylesheet', get_template_directory_uri() . '/assets/admin/tinymce-custom-stylesheet.css', array(), '2.9.0', true );
+		wp_enqueue_style( 'admin-stylesheet', get_template_directory_uri() . '/assets/admin/admin.css', array(), false, 'all' );
+		wp_enqueue_style( 'tinymce-stylesheet', get_template_directory_uri() . '/assets/admin/tinymce-custom-stylesheet.css', array(), false, true );
 
 
 	}
@@ -60,12 +57,8 @@ if ( ! function_exists( 'twp_scripts' ) ) :
 		// Enqueue the main Stylesheet.
 		wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/twp.css', array(), '2.9.0', 'all' );
 
-		// Deregister the jquery version bundled with WordPress.
-		wp_deregister_script( 'jquery' );
-
 		// CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
-		wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js', array(), '2.1.0', true );
-
+		wp_enqueue_script( 'jquery');
 		// If you'd like to cherry-pick the twp components you need in your project, head over to gulpfile.js and see lines 35-54.
 		// It's a good idea to do this, performance-wise. No need to load everything if you're just going to use the grid anyway, you know :)
 		wp_enqueue_script( 'twp-js', get_template_directory_uri() . '/assets/javascript/twp.js', array('jquery'), '2.1.0', false );
