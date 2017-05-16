@@ -75,7 +75,6 @@ var PATHS = {
   pkg: [
     '**/*',
     '!**/node_modules/**',
-    '!**/components/**',
     '!**/scss/**',
     '!**/bower.json',
     '!**/gulpfile.js',
@@ -84,6 +83,7 @@ var PATHS = {
     '!**/composer.lock',
     '!**/codesniffer.ruleset.xml',
     '!**/packaged/*',
+    '!**/wcs/*',
   ]
 };
 

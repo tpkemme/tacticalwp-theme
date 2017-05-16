@@ -91,13 +91,13 @@ body {
 	Primary Color
 	================================
 */
-a, .hollow.primary, .button.hollow, .button.hollow:focus {
+a, .hollow.primary, .button.hollow, .button.hollow:focus{
 	color: <?php twp( 'global_primary_color' ) ?>;
 }
 a:hover, .hollow.primary:hover, .button.hollow:hover {
 	color: <?php twp( 'global_light_primary_color' ) ?>;
 }
-button, .button, .button.primary, button:focus, .button:focus, .button.primary:focus {
+button, .button, .button.primary, button:focus, .button:focus, .button.primary:focus, input[type="button"]  {
 	background-color: <?php twp( 'global_primary_color' ) ?>;
 }
 button:hover, .button:hover, .button.primary:hover, .button.disabled.primary:hover,
@@ -109,22 +109,22 @@ button:hover, .button:hover, .button.primary:hover, .button.disabled.primary:hov
 .progress.primary .progress-meter {
 	background-color: <?php twp( 'global_primary_color' ) ?>;
 }
-.button.hollow.primary, .button.hollow, .button.hollow:focus {
+.button.hollow.primary, .button.hollow, .button.hollow:focus, input[type="button"]  {
 	border-color: <?php twp( 'global_primary_color' ) ?>;
 }
-.button.hollow.primary:hover, .button.hollow:hover {
+.button.hollow.primary:hover, .button.hollow:hover, input[type="button"]  {
 	border-color: <?php twp( 'global_secondary_color' ) ?>;
 }
 .button.dropdown.hollow.primary::after {
 	border-top-color: <?php twp( 'global_primary_color' ) ?>;
 }
-.badge.primary, .active{
-	background: <?php twp( 'global_primary_color' ) ?> !important;
-	color: <?php twp( 'global_white_color' ) ?> !important;
+.badge.primary, .active, input[type="button"] {
+	background: <?php twp( 'global_primary_color' ) ?>;
+	color: <?php twp( 'global_white_color' ) ?>;
 }
 .label.primary, .label.primary * {
-	background: <?php twp( 'global_primary_color' ) ?> !important;
-	color: <?php twp( 'global_white_color' ) ?> !important;
+	background: <?php twp( 'global_primary_color' ) ?>;
+	color: <?php twp( 'global_white_color' ) ?>;
 	margin-bottom: 0;
 }
 /*
@@ -711,13 +711,11 @@ a {
 		border-color: transparent <?php twp( 'global_primary_color' ) ?> transparent transparent; }
 	.dropdown.menu.large-vertical > li.opens-right > a::after {
 		border-color: transparent transparent transparent <?php twp( 'typo_body_link_font_color' ) ?>; } }
-.is-dropdown-submenu .is-dropdown-submenu-parent.opens-left > a::after {
+.is-dropdown-submenu-parent.opens-left > a::after {
 	border-color: transparent <?php twp( 'global_primary_color' ) ?> transparent transparent; }
-.is-dropdown-submenu .is-dropdown-submenu-parent.opens-right > a::after {
+.is-dropdown-submenu-parent.opens-right > a::after {
 	border-color: transparent transparent transparent <?php twp( 'global_primary_color' ) ?>; }
-.is-dropdown-submenu-parent{
-	padding-right: 25px;
-}
+
 .dropdown-pane {
     width: auto;
 }
@@ -910,6 +908,18 @@ code, .code{
 	<?php $p_top = strval( floatval( twp_get_option( 'twp_nav_top_padding' ) ) + .725 ); ?>
   <?php $units = preg_replace( array( '/\d+/u', '/[.,]/' ), '', twp_get_option( 'twp_nav_top_padding' ) ); ?>
   padding:   <?php echo $p_top . $units ?> <?php twp( 'global_padding_size' ) ?> <?php echo $p_top . $units ?>;  }
+
+.top-bar .menu:not(.submenu) > li:not(.menu-text):last-child > a {
+    background: <?php twp( 'global_primary_color' ) ?>;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+    transition:  0.2s ease-in-out;
+    transition:  0.2s ease-in-out;
+    -webkit-font-smoothing: subpixel-antialiased; }
+.top-bar .menu:not(.submenu) > li:not(.menu-text):last-child > a:hover {
+    background: <?php twp( 'global_secondary_color' ) ?>;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
+    transform: translate(0px, -1px) scale(1.01); }
+
 /* sticky topbar */
 <?php if ( twp_get_option( 'twp_nav_top_sticky' ) === 'sticky' ) : ?>
 .site-header {
@@ -1010,6 +1020,7 @@ aside.sidebar.sticky-sidebar {
 	background-color: <?php twp( 'footer_background_color' ) ?>;
 	border: none;
 	color: <?php twp( 'footer_font_color' ) ?>;
+  position: relative;
 }
 
 #footer-container p {
@@ -1145,8 +1156,8 @@ button, .button{
 .card, button, .button, .btn, section.container button,
 section.container .button, section.container.btn{
 	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
-	transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+	transition:  0.2s ease-in-out;
+  transition:  0.2s ease-in-out;
   -webkit-font-smoothing: subpixel-antialiased; }
 .card:hover, section.container button:hover,
 section.container .button:hover, section.container.btn:hover{
@@ -1217,6 +1228,7 @@ div[class^="twp-cube-container"]{
 	height: 100%;
 	-webkit-backface-visibility: visible;
 	-webkit-transform-origin: 0 0;
+  box-shadow: 0 0px 16px rgba(0,0,0,0.16), 0 0px 16px rgba(0,0,0,0.23);
 }
 
 /* Cube Left */
@@ -1325,7 +1337,7 @@ div.dropdown-pane.is-open{
 [type='week'], [type='email'], [type='number'],
 [type='tel'], [type='time'], [type='url'],
 [type='color'], textarea.fieldset, select, .input-group-label, textarea{
-    padding: 8px 30px 8px 10px;
+    padding: 7px 30px 5px 10px;
 }
 [type='text'], [type='password'], [type='date'],
 [type='datetime'], [type='datetime-local'], [type='month'],

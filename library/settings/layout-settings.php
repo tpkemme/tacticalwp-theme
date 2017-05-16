@@ -119,7 +119,6 @@
 				'options' => array(
 					'Default' => 'Default',
 					'Page Left Sidebar' => 'Page Left Sidebar',
-					'Left & Right Sidebar' => 'Left & Right Sidebar',
 					'Full Width' => 'Full Width',
 				),
 	  'default' => __( 'Default', $prefix ),
@@ -144,5 +143,3 @@
 		return $cmb;
 	}
 	endif;
-
-

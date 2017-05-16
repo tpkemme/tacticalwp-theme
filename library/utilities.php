@@ -19,10 +19,32 @@
   * @version 1.0.0
   */
 	if ( ! function_exists( 'twp' ) ) :
-	function twp( $option, $prefix = 'twp_' ) {
-		echo twp_get_option( $prefix . $option );
-		}
+  	function twp( $option, $prefix = 'twp_' ) {
+  		echo twp_get_option( $prefix . $option );
+  	}
 	endif;
+
+ /**
+  * Outputs the twp option with correct prefix given option name
+  *
+  * Echos output of twp_get_option( $prefix . 'option_name' ).  This function
+  * isn't necessary but it keeps the embedded styles template a lot cleaner
+  *
+  * @param 	[string] $option [ option name, required ]
+  * @param 	[string] $option [ option name, optional ]
+  * @return	void         		[ echos output ]
+  * @since 	1.0.0
+  * @version 1.0.0
+  */
+  function twp_custom_excerpt_length( $length ) {
+     return 40;
+  }
+  function twp_custom_excerpt_more($more) {
+     global $post;
+     return '<a class="more-link" href="'. get_permalink($post->ID) . '">'. __('Read More', 'themify') .'</a>';
+  }
+  add_filter( 'excerpt_length', 'twp_custom_excerpt_length', 999 );
+  add_filter('excerpt_more', 'twp_custom_excerpt_more');
 
 	/**
 	 * Gets a list of google fonts for font settings

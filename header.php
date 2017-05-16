@@ -40,27 +40,28 @@
 				</div>
 				<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 			<?php endif; ?>
-		<?php endif; ?>
-		<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
-			<div class="title-bar-title show-for-medium">
-				<ul class="title-bar-title dropdown menu" data-dropdown-menu>
-					<li class="menu-text">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<?php $logo = twp_get_option( 'twp_nav_top_logo_image' ); ?>
-							<?php if ( ! empty( $logo ) ) : ?>
-								<img src="<?php echo $logo ?>" class="site-logo" />
-							<?php endif; ?>
-							<?php if ( twp_get_option( 'twp_nav_top_title_show' ) === 'show' ) : ?>
-								<?php bloginfo( 'name' ); ?>
-							<?php endif; ?>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
-			<div class="top-bar-right">
-					<?php twp_top_bar_r(); ?>
-			</div>
+
+			<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
+				<div class="title-bar-title show-for-medium">
+					<ul class="title-bar-title dropdown menu" data-dropdown-menu>
+						<li class="menu-text">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+								<?php $logo = twp_get_option( 'twp_nav_top_logo_image' ); ?>
+								<?php if ( ! empty( $logo ) ) : ?>
+									<img src="<?php echo $logo ?>" class="site-logo" />
+								<?php endif; ?>
+								<?php if ( twp_get_option( 'twp_nav_top_title_show' ) === 'show' ) : ?>
+									<?php bloginfo( 'name' ); ?>
+								<?php endif; ?>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
+				<div class="top-bar-right">
+						<?php twp_top_bar_r(); ?>
+				</div>
+			<?php endif; ?>
 		<?php else : ?>
 			<div class="top-bar-left">
 				<div class="title-bar-title show-for-medium">
