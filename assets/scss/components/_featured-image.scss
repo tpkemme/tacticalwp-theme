@@ -12,3 +12,18 @@
     height: rem-calc(400);
   }
 }
+
+.twp-featured-image-thumb {
+  display: inline-block;
+  width: 170px;
+  margin-bottom: 1rem;
+  top: -15px;
+  position: relative;
+}
+
+.twp-featured-meta {
+  display: inline-block;
+  width: calc(99% - 170px);
+  top: 20px;
+  position: relative;
+}
