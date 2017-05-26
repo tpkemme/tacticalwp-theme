@@ -4,21 +4,23 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f {
-
-    public static $prefixLengthsPsr4 = array(
-        'C' => array(
+class ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f
+{
+    public static $prefixLengthsPsr4 = array (
+        'C' => 
+        array (
             'Composer\\Installers\\' => 20,
         ),
     );
 
-    public static $prefixDirsPsr4 = array(
-        'Composer\\Installers\\' => array(
+    public static $prefixDirsPsr4 = array (
+        'Composer\\Installers\\' => 
+        array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
     );
 
-    public static $classMap = array(
+    public static $classMap = array (
         'Accordion_Menu_Walker_Nav_Menu' => __DIR__ . '/../..' . '/library/shortcode/accordion-menu.php',
         'CMB2' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2.php',
         'CMB2_Ajax' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Ajax.php',
@@ -92,8 +94,9 @@ class ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f {
         'WP_REST_Controller' => __DIR__ . '/../..' . '/library/cmb2/includes/shim/WP_REST_Controller.php',
     );
 
-    public static function getInitializer(ClassLoader $loader ) {
-        return \Closure::bind(function () use ( $loader ) {
+    public static function getInitializer(ClassLoader $loader)
+    {
+        return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f::$classMap;
