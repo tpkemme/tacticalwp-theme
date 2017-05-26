@@ -1340,7 +1340,14 @@ div.dropdown-pane.is-open{
 	border: none;
 	color: <?php twp( 'typo_body_paragraph_color') ?>;
 }
-
+#mobile-menu .submenu {
+    margin-left: 0px;
+    padding-left: 1rem;
+}
+#mobile-menu > .menu {
+    display: none;
+    transition: .2s ease-in-out;
+}
 /* Forms */
 [type='text'], [type='password'], [type='date'],
 [type='datetime'], [type='datetime-local'], [type='month'],

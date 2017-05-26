@@ -1,5 +1,5 @@
 # TacticalWP Wordpress Theme
-<img align="right" src="https://raw.githubusercontent.com/tpkemme/tacticalwp-theme/master/assets/images/icons/twpicon1.png?token=ADQ_6k1I-Re1f-O915IhNfQN4OwXe7Tpks5ZHHIcwA%3D%3D" width="250" height="250" />
+<img align="right" src="assets/images/icons/twpicon1.png" width="250" height="250" />
 
 TacticalWP is a Wordpress theme based on Material design and built on Foundationpress and CMB2. The purpose of TacticalWP, is to act as a small and handy toolbox that contains the essentials needed to build any design using Wordpress.
 
@@ -60,9 +60,11 @@ Running this command will build and minify the theme's assets and place a `.zip`
 
 ### Styles
 
+Because all of the styles can be changed through the Wordpress admin section, their stylesheet is being generated as a php file.  All of the sass styles control the 'basic' Foundationpress styles and for the most part haven't been changed.
+
  * `style.css`: Do not worry about this file. (For some reason) it's required by WordPress. All styling are handled in the PHP file described below
 
- * `template-parts/embedded-styles.php`: This is the main stylesheet.  It creates a stylesheet with all the theme settings.
+ * `template-parts/embedded-styles.php`: This is the main stylesheet.  It creates a stylesheet with all the saved theme settings.
 
  The 'basic' styles I mentioned are the base styles of Foundationpress.  They are located here:
 
@@ -76,7 +78,7 @@ Please note that you **must** run `npm run build` or `npm run watch` in your ter
 
 ### JQuery
 
-Unlike Foundationpress, TacticalWP does not deregister the version of JQuery that is bundled with the Wordpress core.  All scripts in TacticalWP that depend on JQuery are working functionally with the core-registered version.  This reduces the possibility of code conflicts with other Wordpress plugins using JQuery.  In general, it's best to avoid modifying Wordpress core behavior because it will only cause you problems in the future.
+Unlike Foundationpress, TacticalWP does not deregister the version of JQuery that is bundled with the Wordpress core.  All scripts in TacticalWP that depend on JQuery are working functionally with the core-registered version.  This reduces the possibility of code conflicts with other Wordpress plugins using JQuery.  I believe that it's best not to change any of the core behavior of Wordpress to maximize compatibility.
 
 ### Scripts
 

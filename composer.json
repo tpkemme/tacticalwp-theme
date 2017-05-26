@@ -23,6 +23,6 @@
   		"classmap": ["functions.php", "library/"]
   	},
 	"scripts": {
-		"dist": "git push origin dist && git branch -D dist && git push origin :dist && git checkout -B dist && rm -rf .bowerrc .editorconfig .eslintrc.json .travis.yml .gitignore .sass-lint.yml .yo-rc.json bower.json codesniffer.ruleset.xml phpcs.xml phpunit.xml wcs node_modules packaged/ assets/javascript/custom assets/javascript/.DS_Store assets/scss assets/.DS_Store composer.lock  && composer install && rm -rf .gitignore .DS_Store assets/.DS_Store && git add -A && git commit -m $(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[\", ]//g') && git push origin dist"
+		"dist": "git push origin dist && git branch -D dist && git push origin :dist && git checkout -B dist && rm -rf .bowerrc .babelrc .editorconfig .eslintrc.json .travis.yml .sass-lint.yml .yo-rc.json bower.json codesniffer.ruleset.xml phpcs.xml phpunit.xml wcs node_modules packaged/ assets/javascript/custom assets/javascript/.DS_Store assets/scss assets/.DS_Store composer.lock  && composer install && rm -rf .gitignore .DS_Store assets/.DS_Store && git add -A && git commit -m $(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[\", ]//g') && git push origin dist"
 	}
 }

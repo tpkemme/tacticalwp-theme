@@ -57,6 +57,21 @@
 						</li>
 					</ul>
 				</div>
+        <div class="title-bar-title show-for-small-only">
+					<ul class="title-bar-title dropdown menu" data-dropdown-menu>
+						<li class="menu-text">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+								<?php $logo = twp_get_option( 'twp_nav_top_logo_image' ); ?>
+								<?php if ( ! empty( $logo ) ) : ?>
+									<img src="<?php echo $logo ?>" class="site-logo" />
+								<?php endif; ?>
+								<?php if ( twp_get_option( 'twp_nav_top_title_show' ) === 'show' ) : ?>
+									<?php bloginfo( 'name' ); ?>
+								<?php endif; ?>
+							</a>
+						</li>
+					</ul>
+				</div>
 				<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 				<div class="top-bar-right">
 						<?php twp_top_bar_r(); ?>

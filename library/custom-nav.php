@@ -60,7 +60,7 @@ function mobile_nav_class( $classes ) {
 			$classes[] = 'offcanvas';
 			elseif ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) :
 				$classes[] = 'topbar';
-			endif;
+				endif;
 			return $classes;
 }
 endif;

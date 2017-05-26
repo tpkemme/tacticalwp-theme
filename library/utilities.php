@@ -37,11 +37,11 @@
   * @version 1.0.0
   */
   function twp_custom_excerpt_length( $length ) {
-     return 40;
+   return 40;
   }
-  function twp_custom_excerpt_more($more) {
-     global $post;
-     return '<a class="more-link" href="'. get_permalink($post->ID) . '">'. __('Read More', 'themify') .'</a>';
+  function twp_custom_excerpt_more( $more ) {
+   global $post;
+   return '<a class="more-link" href="' . get_permalink($post->ID) . '">' . __('Read More', 'themify') . '</a>';
   }
   add_filter( 'excerpt_length', 'twp_custom_excerpt_length', 999 );
   add_filter('excerpt_more', 'twp_custom_excerpt_more');
