@@ -56,12 +56,12 @@
   ));
   $cmb->add_field(array(
 	'name' => __('Footer Link Hover Color', $prefix),
-	'desc'    => __('Hover color of links in the footer. (default: #6deef6)', $prefix),
+	'desc'    => __('Hover color of links in the footer. (default: #1563ff)', $prefix),
 	'id'            => $prefix . '_footer_link_hover_font_color',
 	'type'             => 'colorpicker',
-	'default'          => '#6deef6',
+	'default'          => '#1563ff',
 	'attributes'			 => array(
-	  'data-default'	 => '#6deef6',
+	  'data-default'	 => '#1563ff',
 	  ),
 		));
 		$cmb->add_field(array(
@@ -82,5 +82,3 @@
 		return $cmb;
 	}
 	endif;
-
-

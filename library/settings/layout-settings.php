@@ -39,34 +39,33 @@
 				),
       ));
   $cmb->add_field(array(
-	  'name' => __('Menu Item Padding', $prefix),
-	  'desc' => __('Space around menu item text (default = .7rem)', $prefix),
-	  'id'            => $prefix . '_layout_menu_padding',
-	  'type'             => 'text_small',
-	  'default'          => '.7rem',
-	  'attributes'			 => array(
-		'data-default'	 => '.7rem',
-	  ),
+		'name' => __('Page Layout', $prefix),
+		'desc'    => __('What page template to use by default. (default: Page Right Sidebar)', $prefix),
+		'id'            => $prefix . '_layout_default_layout',
+		'type'    => 'radio_inline',
+		'options' => array(
+			'Page Right Sidebar' => __( 'Page Right Sidebar', 'twp' ),
+			'Page Left Sidebar'   => __( 'Page Left Sidebar', 'twp' ),
+			'Full Width'   => __( 'Full Width', 'twp' ),
+		),
+		'default' => 'hide',
+		'attributes'			 => array(
+			'data-default'	 => 'Page Right Sidebar',
+		),
   ));
   $cmb->add_field(array(
-	  'name' => __('Search Button Color', $prefix),
-	  'desc'    => __('Color of the search button in the topbar. (default: #5274ff)', $prefix),
-	  'id'            => $prefix . '_layout_top_search_button_color',
-	  'type'    => 'colorpicker',
-	  'default' => '#5274ff',
-	  'attributes'			 => array(
-		'data-default'	 => '#5274ff',
-	  ),
-  ));
-  $cmb->add_field(array(
-	  'name' => __('Search Button Hover Color', $prefix),
-	  'desc'    => __('Hover color of the search button in the topbar. (default: #5c6bd0)', $prefix),
-	  'id'            => $prefix . '_layout_top_search_button_hover_color',
-	  'type'    => 'colorpicker',
-	  'default' => '#5c6bd0',
-	  'attributes'			 => array(
-		'data-default'	 => '#5c6bd0',
-	  ),
+		'name' => __('Sticky Sidebar', $prefix),
+		'desc'    => __('What page template to use by default. (default: Not Sticky)', $prefix),
+		'id'            => $prefix . '_layout_sidebar_sticky',
+		'type'    => 'radio_inline',
+		'options' => array(
+			'sticky' => __( 'Sticky', 'twp' ),
+			'not-sticky'   => __( 'Not Sticky', 'twp' )
+		),
+		'default' => 'hide',
+		'attributes'			 => array(
+			'data-default'	 => 'not-sticky',
+		),
 				'after_row' => '</div></li></ul>',
 		));
 		return $cmb;
@@ -119,6 +118,7 @@
 				'options' => array(
 					'Default' => 'Default',
 					'Page Left Sidebar' => 'Page Left Sidebar',
+					'Page Left Sidebar' => 'Page Right Sidebar',
 					'Full Width' => 'Full Width',
 				),
 	  'default' => __( 'Default', $prefix ),
@@ -134,6 +134,7 @@
 				'options' => array(
 					'default' => 'Default',
 					'sticky' => 'Sticky',
+					'not-sticky' => 'Sticky',
 				),
 	  'default' => __( 'default', $prefix ),
 				'attributes'			 => array(

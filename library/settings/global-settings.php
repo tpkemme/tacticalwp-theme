@@ -65,13 +65,13 @@
 		));
 		$cmb->add_field(array(
 				'name' => __('Body Font Family', $prefix),
-				'desc'    => __('Global body font family (default: Quicksand)', $prefix),
+				'desc'    => __('Global body font family (default: Titillium Web)', $prefix),
 				'id'            => $prefix . '_global_font_family',
 				'type'             => 'select',
 				'show_option_none' => false,
-				'default'          => 'Roboto',
+				'default'          => 'Titillium Web',
 				'attributes' => array(
-					'data-default' => 'Roboto',
+					'data-default' => 'Titillium Web',
 				),
 				'options_cb'       => 'twp_google_fonts',
 		));
@@ -327,5 +327,3 @@
 		return $cmb;
 	}
 	endif;
-
-

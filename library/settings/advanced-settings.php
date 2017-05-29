@@ -37,30 +37,9 @@
 				'attributes'			 => array(
 					'data-default'	 => 'no',
 				),
-		));
-		$cmb->add_field(array(
-			'name' => __('Form Label Text Color', $prefix),
-			'desc'    => __('The color of form input labels. (default: #b9bed5)', $prefix),
-			'id'            => $prefix . '_advanced_form_label_color',
-			'type'             => 'colorpicker',
-			'default'          => '#b9bed5',
-			'attributes'			 => array(
-				'data-default'	 => '#b9bed5',
-			),
-		));
-		$cmb->add_field(array(
-			'name' => __('Form Placeholder Text Color', $prefix),
-			'desc'    => __('The color of form input placeholders. (default: #5f6786)', $prefix),
-			'id'            => $prefix . '_advanced_form_placeholder_color',
-			'type'             => 'colorpicker',
-			'default'          => '#5f6786',
-			'attributes'			 => array(
-				'data-default'	 => '#5f6786',
-			),
-			'after_row' => '</div></li></ul>',
+				'after_row' => '</div></li></ul>',
+
 		));
 		return $cmb;
 	}
 	endif;
-
-

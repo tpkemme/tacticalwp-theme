@@ -59,7 +59,7 @@
   ));
   $cmb->add_field(array(
 	  'name' => __('Sub-Header Font Family', $prefix),
-	  'desc'    => __('Font family for header elements h4, h5, h6 (default: Archivo Narrow)', $prefix),
+	  'desc'    => __('Font family for header elements h4, h5, h6 (default: Titillium Web)', $prefix),
 	  'id'            => $prefix . '_typo_sub_header_family',
 	  'type'             => 'select',
 	  'show_option_none' => false,
@@ -273,10 +273,10 @@
   ));
   $cmb->add_field(array(
 	  'name' => __('Paragraph Font Weight', $prefix),
-	  'desc' => __('Set the weight of the paragraph font (default = 300)', $prefix),
+	  'desc' => __('Set the weight of the paragraph font (default = 400)', $prefix),
 	  'id'   => $prefix . '_typo_paragraph_weight',
 	  'type'    => 'select',
-	  'default' => '300',
+	  'default' => '400',
 	  'options' => array(
 		'100' => '100',
 		'200' => '200',
@@ -289,7 +289,7 @@
 		'900' => '900',
 	  ),
 	  'attributes'			 => array(
-		'data-default'	 => '300',
+		'data-default'	 => '400',
 	  ),
   ));
   $cmb->add_field(array(
@@ -543,5 +543,3 @@
 		return $cmb;
 	}
 	endif;
-
-
