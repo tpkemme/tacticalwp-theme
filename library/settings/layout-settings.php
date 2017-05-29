@@ -60,7 +60,7 @@
 		'type'    => 'radio_inline',
 		'options' => array(
 			'sticky' => __( 'Sticky', 'twp' ),
-			'not-sticky'   => __( 'Not Sticky', 'twp' )
+			'not-sticky'   => __( 'Not Sticky', 'twp' ),
 		),
 		'default' => 'hide',
 		'attributes'			 => array(

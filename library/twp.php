@@ -158,9 +158,6 @@ function twp_responsive_video_oembed_html( $html, $url, $attr, $post_id ) {
 add_filter( 'embed_oembed_html', 'twp_responsive_video_oembed_html', 10, 4 );
 endif;
 
-// if ( ! function_exists( 'twp_excerpt_more' ) ) :
-// function twp_excerpt_more( $more ) {
-// return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'your-text-domain') . '</a>';
-// }
-// add_filter( 'excerpt_more', 'twp_excerpt_more' );
-// endif;
+// Handle plugin updates
+require_once('wp-updates-theme.php');
+new WPUpdatesThemeUpdater_2050( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
