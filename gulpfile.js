@@ -68,6 +68,7 @@ var PATHS = {
     'assets/javascript/custom/*.js',
     ],
     phpcs: [
+    '*.php',
     '**/*.php',
     '**/**/*.php',
     '!wpcs',

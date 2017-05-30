@@ -72,8 +72,8 @@
   "scripts": {
     "build": "gulp build",
     "package": "gulp package --production",
-    "phpcs": "./wpcs/vendor/bin/phpcs -p -s -v -n ./ --standard=./codesniffer.ruleset.xml --extensions=php",
-    "phpcbf": "./wpcs/vendor/bin/phpcbf -p -s -v -n ./ --standard=./codesniffer.ruleset.xml --extensions=php",
+    "phpcs": "gulp phpcs",
+    "phpcbf": "gulp phpcbf",
     "postinstall": "bower install && gulp build",
     "production": "gulp --production",
     "watch": "gulp"
