@@ -10,10 +10,10 @@
   * Outputs the twp option with correct prefix given option name
   *
   * Echos output of twp_get_option( $prefix . 'option_name' ).  This function
-  * isn't necessary but it keeps the embedded styles template a lot cleaner
+  * isn't necessary but it keeps the embedded styles template a lot cleaner.
   *
   * @param 	[string] $option [ option name, required ]
-  * @param 	[string] $option [ option name, optional ]
+  * @param 	[string] $prefix [ option name, optional ]
   * @return	void         		[ echos output ]
   * @since 	1.0.0
   * @version 1.0.0
@@ -28,11 +28,10 @@
   * Outputs the twp option with correct prefix given option name
   *
   * Echos output of twp_get_option( $prefix . 'option_name' ).  This function
-  * isn't necessary but it keeps the embedded styles template a lot cleaner
+  * isn't necessary but it keeps the embedded styles template a lot cleaner.
   *
-  * @param 	[string] $option [ option name, required ]
-  * @param 	[string] $option [ option name, optional ]
-  * @return	void         		[ echos output ]
+  * @param 	[string] $length [ excerpt length ].
+  * @return	[int] $exerpt_length [ length of excerpt ]
   * @since 	1.0.0
   * @version 1.0.0
   */
@@ -102,7 +101,7 @@
 	endif;
 
 	/**
-	 * code shortcode
+	 * Code shortcode
 	 *
 	 * @since  1.0.0
 	 * @return html div with code class

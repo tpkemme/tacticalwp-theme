@@ -3,7 +3,12 @@
  * Foundation PHP template
  *
  * @package TacticalWP
- * @since TacticalWP 1.0.0
+ * @since 1.0.0
+ * @version 1.0.0
+ * @category twp-theme
+ * @author Tyler Kemme
+ * @license MIT
+ * @link http://tacticalwp.com
  */
 
 // Pagination.
@@ -159,5 +164,5 @@ add_filter( 'embed_oembed_html', 'twp_responsive_video_oembed_html', 10, 4 );
 endif;
 
 // Handle plugin updates
-require_once('wp-updates-theme.php');
+require_once( get_template_directory() . '/wp-updates-theme.php' );
 new WPUpdatesThemeUpdater_2050( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );

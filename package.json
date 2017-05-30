@@ -16,7 +16,7 @@
     "foundation",
     "zurb"
   ],
-  "homepage": "https://tacticalwp.com/",
+  "homepage": "http://tacticalwp.com/",
   "bugs": "https://github.com/tpkemme/tacticalwp-theme/issues",
   "license": "MIT",
   "main": "gulpfile.js",
@@ -72,8 +72,8 @@
   "scripts": {
     "build": "gulp build",
     "package": "gulp package --production",
-    "phpcs": "gulp phpcs",
-    "phpcbf": "gulp phpcbf",
+    "phpcs": "./wpcs/vendor/bin/phpcs -p -s -v -n ./ --standard=./codesniffer.ruleset.xml --extensions=php",
+    "phpcbf": "./wpcs/vendor/bin/phpcbf -p -s -v -n ./ --standard=./codesniffer.ruleset.xml --extensions=php",
     "postinstall": "bower install && gulp build",
     "production": "gulp --production",
     "watch": "gulp"

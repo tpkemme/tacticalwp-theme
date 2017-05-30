@@ -28,12 +28,12 @@ var COMPATIBILITY = [
 
 // File paths to various assets are defined here.
 var PATHS = {
-  sass: [
+    sass: [
     'assets/components/foundation-sites/scss',
     'assets/components/motion-ui/src',
     'assets/components/fontawesome/scss',
-  ],
-  javascript: [
+    ],
+    javascript: [
     'assets/components/what-input/what-input.js',
     'assets/components/foundation-sites/js/foundation.core.js',
     'assets/components/foundation-sites/js/foundation.util.*.js',
@@ -66,16 +66,24 @@ var PATHS = {
 
     // Include your own custom scripts (located in the custom folder)
     'assets/javascript/custom/*.js',
-  ],
-  phpcs: [
+    ],
+    phpcs: [
     '**/*.php',
+    '**/**/*.php',
     '!wpcs',
     '!wpcs/**',
-  ],
-  pkg: [
+    '!node_modules',
+    '!node_modules/**',
+    '!vendor',
+    '!vendor/**',
+    '!library/cmb2',
+    '!library/cmb2/**',
+    ],
+    pkg: [
     '**/*',
     '**/**/*',
-    '!**/node_modules/**',
+    '!node_modules',
+    '!node_modules/**',
     '!**/scss/**',
     '!**/bower.json',
     '!**/gulpfile.js',
@@ -83,180 +91,257 @@ var PATHS = {
     '!**/composer.json',
     '!**/composer.lock',
     '!**/codesniffer.ruleset.xml',
-    '!**/packaged/*',
-    '!**/wcs/*',
-  ]
+    '!packaged',
+    '!packaged/**',
+    '!wpcs',
+    '!wpcs/**',
+    ]
 };
 
 // Browsersync task
-gulp.task('browser-sync', ['build'], function() {
+gulp.task(
+    'browser-sync', ['build'], function () {
 
-  var files = [
+        var files = [
             '**/*.php',
             'assets/images/**/*.{png,jpg,gif}',
           ];
 
-  browserSync.init(files, {
-    // Proxy address
-    proxy: URL,
+        browserSync.init(
+            files, {
+                // Proxy address
+                proxy: URL,
 
-    // Port #
-    // port: PORT
-  });
-});
+                // Port #
+                // port: PORT
+            }
+        );
+    }
+);
 
 // Compile Sass into CSS
 // In production, the CSS is compressed
-gulp.task('sass', function() {
-  return gulp.src('assets/scss/twp.scss')
-    .pipe($.sourcemaps.init())
-    .pipe($.sass({
-      includePaths: PATHS.sass
-    }))
-    .on('error', $.notify.onError({
-        message: "<%= error.message %>",
-        title: "Sass Error"
-    }))
-    .pipe($.autoprefixer({
-      browsers: COMPATIBILITY
-    }))
-    // Minify CSS if run with --production flag
-    .pipe($.if(isProduction, cleanCSS()))
-    .pipe($.if(!isProduction, $.sourcemaps.write('.')))
-    .pipe(gulp.dest('assets/stylesheets'))
-    .pipe(browserSync.stream({match: '**/*.css'}));
-});
+gulp.task(
+    'sass', function () {
+        return gulp.src('assets/scss/twp.scss')
+        .pipe($.sourcemaps.init())
+        .pipe(
+            $.sass(
+                {
+                    includePaths: PATHS.sass
+                }
+            )
+        )
+        .on(
+            'error', $.notify.onError(
+                {
+                    message: "<%= error.message %>",
+                    title: "Sass Error"
+                }
+            )
+        )
+        .pipe(
+            $.autoprefixer(
+                {
+                    browsers: COMPATIBILITY
+                }
+            )
+        )
+        // Minify CSS if run with --production flag
+        .pipe($.if(isProduction, cleanCSS()))
+        .pipe($.if(!isProduction, $.sourcemaps.write('.')))
+        .pipe(gulp.dest('assets/stylesheets'))
+        .pipe(browserSync.stream({match: '**/*.css'}));
+    }
+);
 
 // Lint all JS files in custom directory
-gulp.task('lint', function() {
-  return gulp.src('assets/javascript/custom/*.js')
-    .pipe($.jshint())
-    .pipe($.notify(function (file) {
-      if (file.jshint.success) {
-        return false;
-      }
+gulp.task(
+    'lint', function () {
+        return gulp.src('assets/javascript/custom/*.js')
+        .pipe($.jshint())
+        .pipe(
+            $.notify(
+                function (file) {
+                    if (file.jshint.success) {
+                        return false;
+                    }
 
-      var errors = file.jshint.results.map(function (data) {
-        if (data.error) {
-          return "(" + data.error.line + ':' + data.error.character + ') ' + data.error.reason;
-        }
-      }).join("\n");
-      return file.relative + " (" + file.jshint.results.length + " errors)\n" + errors;
-    }));
-});
+                    var errors = file.jshint.results.map(
+                        function (data) {
+                            if (data.error) {
+                                return "(" + data.error.line + ':' + data.error.character + ') ' + data.error.reason;
+                            }
+                        }
+                    ).join("\n");
+                    return file.relative + " (" + file.jshint.results.length + " errors)\n" + errors;
+                }
+            )
+        );
+    }
+);
 
 // Combine JavaScript into one file
 // In production, the file is minified
-gulp.task('javascript', function() {
-  var uglify = $.uglify()
-    .on('error', $.notify.onError({
-      message: "<%= error.message %>",
-      title: "Uglify JS Error"
-    }));
+gulp.task(
+    'javascript', function () {
+        var uglify = $.uglify()
+        .on(
+            'error', $.notify.onError(
+                {
+                    message: "<%= error.message %>",
+                    title: "Uglify JS Error"
+                }
+            )
+        );
 
-  return gulp.src(PATHS.javascript)
-    .pipe($.sourcemaps.init())
-    .pipe($.babel())
-    .pipe($.concat('twp.js', {
-      newLine:'\n;'
-    }))
-    .pipe($.if(isProduction, uglify))
-    .pipe($.if(!isProduction, $.sourcemaps.write()))
-    .pipe(gulp.dest('assets/javascript'))
-    .pipe(browserSync.stream());
-});
+        return gulp.src(PATHS.javascript)
+        .pipe($.sourcemaps.init())
+        .pipe($.babel())
+        .pipe(
+            $.concat(
+                'twp.js', {
+                    newLine:'\n;'
+                }
+            )
+        )
+        .pipe($.if(isProduction, uglify))
+        .pipe($.if(!isProduction, $.sourcemaps.write()))
+        .pipe(gulp.dest('assets/javascript'))
+        .pipe(browserSync.stream());
+    }
+);
 
 // Copy task
-gulp.task('copy', function() {
-  // Font Awesome
-  var fontAwesome = gulp.src('assets/components/fontawesome/fonts/**/*.*')
-      .pipe(gulp.dest('assets/fonts'));
+gulp.task(
+    'copy', function () {
+        // Font Awesome
+        var fontAwesome = gulp.src('assets/components/fontawesome/fonts/**/*.*')
+        .pipe(gulp.dest('assets/fonts'));
 
-  return merge(fontAwesome);
-});
+        return merge(fontAwesome);
+    }
+);
 
 // Package task
-gulp.task('package', ['build'], function() {
-  var fs = require('fs');
-  var time = dateFormat(new Date(), "yyyy-mm-dd_HH-MM");
-  var pkg = JSON.parse(fs.readFileSync('./package.json'));
-  var title = pkg.name + '_' + time + '.zip';
+gulp.task(
+    'package', ['build'], function () {
+        var fs = require('fs');
+        var time = dateFormat(new Date(), "yyyy-mm-dd_HH-MM");
+        var pkg = JSON.parse(fs.readFileSync('./package.json'));
+        var title = pkg.name + '_' + time + '.zip';
 
-  return gulp.src(PATHS.pkg)
-    .pipe($.zip(title))
-    .pipe(gulp.dest('packaged'));
-});
+        return gulp.src(PATHS.pkg)
+        .pipe($.zip(title))
+        .pipe(gulp.dest('packaged'));
+    }
+);
 
 // Build task
 // Runs copy then runs sass & javascript in parallel
-gulp.task('build', ['clean'], function(done) {
-  sequence('copy',
-          ['sass', 'javascript', 'lint'],
-          done);
-});
+gulp.task(
+    'build', ['clean'], function (done) {
+        sequence(
+            'copy',
+            ['sass', 'javascript', 'lint'],
+            done
+        );
+    }
+);
 
 // PHP Code Sniffer task
-gulp.task('phpcs', function() {
-  return gulp.src(PATHS.phpcs)
-    .pipe($.phpcs({
-      bin: 'wpcs/vendor/bin/phpcs',
-      standard: './codesniffer.ruleset.xml',
-      showSniffCode: true,
-    }))
-    .pipe($.phpcs.reporter('log'));
-});
+gulp.task(
+    'phpcs', function () {
+        return gulp.src(PATHS.phpcs)
+        .pipe(
+            $.phpcs(
+                {
+                    bin: 'wpcs/vendor/bin/phpcs',
+                    standard: './codesniffer.ruleset.xml',
+                    showSniffCode: true,
+                }
+            )
+        )
+        .pipe($.phpcs.reporter('log'));
+    }
+);
 
 // PHP Code Beautifier task
-gulp.task('phpcbf', function () {
-  return gulp.src(PATHS.phpcs)
-  .pipe($.phpcbf({
-    bin: 'wpcs/vendor/bin/phpcbf',
-    standard: './codesniffer.ruleset.xml',
-    warningSeverity: 0
-  }))
-  .on('error', $.util.log)
-  .pipe(gulp.dest('.'));
-});
+gulp.task(
+    'phpcbf', function () {
+        return gulp.src(PATHS.phpcs)
+        .pipe(
+            $.phpcbf(
+                {
+                    bin: 'wpcs/vendor/bin/phpcbf',
+                    standard: './codesniffer.ruleset.xml',
+                    warningSeverity: 0
+                }
+            )
+        )
+        .on('error', $.util.log)
+        .pipe(gulp.dest('.'));
+    }
+);
 
 // Clean task
-gulp.task('clean', function(done) {
-  sequence(['clean:javascript', 'clean:css'],
-            done);
-});
+gulp.task(
+    'clean', function (done) {
+        sequence(
+            ['clean:javascript', 'clean:css'],
+            done
+        );
+    }
+);
 
 // Clean JS
-gulp.task('clean:javascript', function() {
-  return del([
-      'assets/javascript/twp.js'
-    ]);
-});
+gulp.task(
+    'clean:javascript', function () {
+        return del(
+            [
+            'assets/javascript/twp.js'
+            ]
+        );
+    }
+);
 
 // Clean CSS
-gulp.task('clean:css', function() {
-  return del([
-      'assets/stylesheets/twp.css',
-      'assets/stylesheets/twp.css.map'
-    ]);
-});
+gulp.task(
+    'clean:css', function () {
+        return del(
+            [
+            'assets/stylesheets/twp.css',
+            'assets/stylesheets/twp.css.map'
+            ]
+        );
+    }
+);
 
 // Default gulp task
 // Run build task and watch for file changes
-gulp.task('default', ['build', 'browser-sync'], function() {
-  // Log file changes to console
-  function logFileChange(event) {
-    var fileName = require('path').relative(__dirname, event.path);
-    console.log('[' + 'WATCH'.green + '] ' + fileName.magenta + ' was ' + event.type + ', running tasks...');
-  }
+gulp.task(
+    'default', ['build', 'browser-sync'], function () {
+        // Log file changes to console
+        function logFileChange(event)
+        {
+            var fileName = require('path').relative(__dirname, event.path);
+            console.log('[' + 'WATCH'.green + '] ' + fileName.magenta + ' was ' + event.type + ', running tasks...');
+        }
 
-  // Sass Watch
-  gulp.watch(['assets/scss/**/*.scss'], ['clean:css', 'sass'])
-    .on('change', function(event) {
-      logFileChange(event);
-    });
+        // Sass Watch
+        gulp.watch(['assets/scss/**/*.scss'], ['clean:css', 'sass'])
+        .on(
+            'change', function (event) {
+                logFileChange(event);
+            }
+        );
 
-  // JS Watch
-  gulp.watch(['assets/javascript/custom/**/*.js'], ['clean:javascript', 'javascript', 'lint'])
-    .on('change', function(event) {
-      logFileChange(event);
-    });
-});
+        // JS Watch
+        gulp.watch(['assets/javascript/custom/**/*.js'], ['clean:javascript', 'javascript', 'lint'])
+        .on(
+            'change', function (event) {
+                logFileChange(event);
+            }
+        );
+    }
+);

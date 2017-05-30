@@ -6,7 +6,12 @@
  * and the comment form.
  *
  * @package TacticalWP
- * @since TacticalWP 1.0.0
+ * @since 1.0.0
+ * @version 1.0.0
+ * @category twp-theme
+ * @author Tyler Kemme
+ * @license MIT
+ * @link http://tacticalwp.com
  */
 
 if ( have_comments() ) :

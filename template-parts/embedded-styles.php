@@ -1012,7 +1012,8 @@ aside.sidebar.sticky-sidebar {
 	font-family: <?php twp( 'nav_title_font_family' ) ?>;
 	line-height: .5; }
 .top-bar .title-bar-title {
-	box-shadow: none; }
+	box-shadow: none;
+  float:left }
 
 
 /* Logo */

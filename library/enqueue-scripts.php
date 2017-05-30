@@ -7,7 +7,12 @@
  *
  * @param   $hook    [ string ] [ hook used so javascript is only enqueued on correct admin page ]
  * @package TacticalWP
- * @since TacticalWP 1.0.0
+ * @since 1.0.0
+ * @version 1.0.0
+ * @category twp-theme
+ * @author Tyler Kemme
+ * @license MIT
+ * @link http://tacticalwp.com
  */
 
 /**
@@ -82,3 +87,10 @@ function twp_add_editor_styles() {
     wp_enqueue_style( 'tinymce-stylesheet', get_template_directory_uri() . '/assets/admin/tinymce-custom-stylesheet.css' );
 }
 add_action( 'admin_init', 'twp_add_editor_styles' );
+
+function twp_add_browser_sync() {
+	if ( twp_get_option( 'twp_advanced_browser_sync' ) === 'yes' ) {
+		wp_enqueue_script( 'comment-reply', get_site_url() . '/browser-sync/browser-sync-client.js?v=2.18.8', array(), null, false);
+	}
+}
+add_action( 'twp_before_closing_body', 'twp_add_browser_sync' );

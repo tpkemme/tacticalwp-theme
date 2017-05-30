@@ -14,7 +14,7 @@ class TacticalWP_Settings {
     private $prefix = 'twp';
 
     /**
-     * Option key, and option page slug
+     * Option key and option page slug
      *
      * @var string
      */
