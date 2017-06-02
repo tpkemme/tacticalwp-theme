@@ -74,6 +74,7 @@
     "package": "gulp package --production",
     "phpcs": "gulp phpcs",
     "phpcbf": "gulp phpcbf",
+    "phpcsf": "php-cs-fixer -vvv fix ./ --config-file=.php_cs",
     "postinstall": "bower install && gulp build",
     "production": "gulp --production",
     "watch": "gulp"

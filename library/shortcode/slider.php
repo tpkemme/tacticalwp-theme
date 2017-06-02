@@ -1,36 +1,36 @@
 <?php
 /**
- * Slider shortcode
+ * Slider shortcode.
  *
- * @package TacticalWP
  * @since 1.0.0
  */
 
- /**
-  * Outputs an slider when the [twp-slider] is used
-  *
-  * @param 	[string] $atts	 [ shortcode attributes, required ]
-  * @param 	[string] $option [ shortcode content, optional ]
-  * @return	output of shortcode
-  * @since 	1.0.0
-  * @version 1.0.0
-  */
-	function twp_slider( $atts, $content = '' ) {
-
-	$atts = shortcode_atts( array(
-	'id' => wp_generate_password( 6, false ),
-	'type'	=> 'horizontal',
-	'initial'	=> '50',
-	'total'		 => '100',
-	), $atts, 'twp-slider' );
+    /**
+     * Outputs an slider when the [twp-slider] is used.
+     *
+     * @param [string] $atts   [ shortcode attributes, required ]
+     * @param [string] $option [ shortcode content, optional ]
+     *
+     * @return output of shortcode
+     *
+     * @since 	1.0.0
+     *
+     * @version 1.0.0
+     */
+    function twp_slider( $atts, $content = '' ) {
+	$atts = shortcode_atts(array(
+    'id' => wp_generate_password(6, false),
+    'type' => 'horizontal',
+    'initial' => '50',
+    'total' => '100',
+    ), $atts, 'twp-slider');
 
 $type = '';
-if ( $atts['type'] !== 'vertical' ) {
+if ($atts['type'] !== 'vertical' ) {
 	$type = '';
 	$data_type = 'data-slider-handle';
 	$vertical = 'false';
-	}
-else {
+	} else {
 	$type = $atts['type'];
 	$data_type = 'data-slider-handle';
 	$vertical = 'true';
@@ -41,7 +41,7 @@ $out .= '<div class="slider ' . $type . '" data-slider="' . $atts['id'] . '" id=
 			<span class="slider-fill" data-slider-fill></span>
 			<input id="' . $atts['initial'] . '" name="' . $atts['initial'] . '" type="hidden">
 		</div>';
-return $out;
-	}
-	add_shortcode( 'twp-slider', 'twp_slider' );
 
+return $out;
+    }
+    add_shortcode('twp-slider', 'twp_slider');

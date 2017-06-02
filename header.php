@@ -1,13 +1,11 @@
 <?php
 /**
- * The template for displaying the header
+ * The template for displaying the header.
  *
  * Displays all of the head element and everything up until the "container" div.
  *
- * @package TacticalWP
  * @since   TacticalWP 1.0.0
  */
-
 ?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?> >
@@ -15,7 +13,8 @@
         <meta charset="<?php bloginfo('charset'); ?>" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <?php wp_head(); ?>
-    <?php /* embedded styles set with theme settings */ get_template_part('template-parts/embedded-styles'); ?>
+    <?php get_template_part('template-parts/embedded-styles'); /* embedded styles set with theme settings **/ ?>
+    <?php get_template_part('template-parts/google-analytics'); /* Google Analytics Script **/ ?>
     </head>
     <body <?php body_class(); ?>>
     <?php do_action('twp_after_body'); ?>

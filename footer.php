@@ -1,18 +1,20 @@
 <?php
 /**
- * The template for displaying the footer
+ * The template for displaying the footer.
  *
  * Contains the closing of the "off-canvas-wrap" div and all content after.
  *
- * @package  TacticalWP
  * @since    1.0.0
+ *
  * @version  1.0.0
+ *
  * @category twp-theme
+ *
  * @author   Tyler Kemme
  * @license  MIT
+ *
  * @link     http://tacticalwp.com
  */
-
 ?>
 
         </section>

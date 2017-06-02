@@ -1,11 +1,9 @@
 <?php
 /**
- * Template part for off canvas menu
+ * Template part for off canvas menu.
  *
- * @package TacticalWP
  * @since TacticalWP 1.0.0
  */
-
 ?>
 
 <nav class="off-canvas position-left" id="mobile-menu" data-off-canvas data-auto-focus="false" data-position="left" role="navigation">

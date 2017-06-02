@@ -1,11 +1,9 @@
 <?php
 /**
- * The sidebar containing the main widget area
+ * The sidebar containing the main widget area.
  *
- * @package TacticalWP
  * @since   TacticalWP 1.0.0
  */
-
 ?>
 <?php if (get_post_meta(get_the_ID(), 'twp_page_layout_sticky_sidebar', true) === 'sticky' ) : ?>
     <div class="sticky-sidebar-container"><aside class="sidebar sticky-sidebar">

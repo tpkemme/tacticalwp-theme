@@ -1,11 +1,9 @@
 <?php
 /**
- * The template for displaying search form
+ * The template for displaying search form.
  *
- * @package TacticalWP
  * @since   TacticalWP 1.0.0
  */
-
 do_action('twp_before_searchform'); ?>
 <form role="search" method="get" id="searchform" action="<?php echo home_url('/'); ?>">
     <?php do_action('twp_searchform_top'); ?>

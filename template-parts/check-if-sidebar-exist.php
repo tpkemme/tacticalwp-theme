@@ -1,6 +1,6 @@
 <?php
   // Display a suitable column layout depending on whether sidebar exists
-  if ( is_active_sidebar( 'sidebar-widgets' ) ) :
+  if (is_active_sidebar('sidebar-widgets') ) :
     echo '<div class="small-12 large-8 columns" role="main">';
 
   else :
