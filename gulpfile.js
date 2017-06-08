@@ -103,20 +103,19 @@ var PATHS = {
 gulp.task(
     'browser-sync', ['build'], function () {
 
-        var files = [
-            '**/*.php',
-            'assets/images/**/*.{png,jpg,gif}',
-          ];
+      var files = [
+        '**/*.php',
+        'assets/images/**/*.{png,jpg,gif}',
+        ];
+      browserSync.init(
+        files, {
+          // Proxy address
+          proxy: URL,
 
-        browserSync.init(
-            files, {
-                // Proxy address
-                proxy: URL,
-
-                // Port #
-                // port: PORT
-            }
-        );
+          // Port #
+          // port: PORT
+        }
+      );
     }
 );
 
@@ -252,19 +251,20 @@ gulp.task(
 
 // PHP Code Sniffer task
 gulp.task(
-    'phpcs', function () {
-        return gulp.src(PATHS.phpcs)
-        .pipe(
-            $.phpcs(
-                {
-                    bin: 'wpcs/vendor/bin/phpcs',
-                    standard: './codesniffer.ruleset.xml',
-                    showSniffCode: true,
-                }
-            )
-        )
-        .pipe($.phpcs.reporter('log'));
-    }
+  'phpcs', function () {
+    return gulp.src(PATHS.phpcs)
+    .pipe(
+      $.phpcs(
+        {
+          bin: 'wpcs/vendor/bin/phpcs',
+          standard: './codesniffer.ruleset.xml',
+          showSniffCode: true,
+          warningSeverity: 0
+        }
+      )
+    )
+    .pipe($.phpcs.reporter('log'));
+  }
 );
 
 // PHP Code Beautifier task

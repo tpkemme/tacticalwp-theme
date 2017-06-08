@@ -3,7 +3,7 @@
  * Clean up WordPress defaults
  *
  * @package TacticalWP
- * @since TacticalWP 1.0.0
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'twp_start_cleanup' ) ) :

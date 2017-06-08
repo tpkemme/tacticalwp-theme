@@ -2,13 +2,13 @@
 /**
  * Foundation PHP template
  *
+ * @category TacticalWP-Theme
  * @package TacticalWP
- * @since 1.0.0
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
  * @version 1.0.0
- * @category twp-theme
- * @author Tyler Kemme
- * @license MIT
- * @link http://tacticalwp.com
+ * @link https://github.com/tpkemme/tacticalwp-theme
+ * @since 1.0.0
  */
 
 // Pagination.
@@ -165,4 +165,4 @@ endif;
 
 // Handle plugin updates
 require_once( get_template_directory() . '/wp-updates-theme.php' );
-new WPUpdatesThemeUpdater_2050( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
+new WP_Updates_Theme( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );

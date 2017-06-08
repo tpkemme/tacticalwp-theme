@@ -1,10 +1,28 @@
 <?php
 /**
- * TWP Theme Options
+ * TacticalWP Theme Settings
  *
+ * @category TacticalWP-Theme
+ * @package TacticalWP
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
  * @version 1.0.0
+ * @link https://github.com/tpkemme/tacticalwp-theme
+ * @since 1.0.0
  */
-class TacticalWP_Settings {
+
+ /**
+  * TWP Theme Settings
+  *
+  * @category TacticalWP-Theme
+  * @package TacticalWP
+  * @author   Tyler Kemme <dev@tylerkemme.com>
+  * @license  MIT https://opensource.org/licenses/MIT
+  * @version 1.0.0
+  * @link https://github.com/tpkemme/tacticalwp-theme
+  * @since 1.0.0
+  */
+class TWP_Theme_Settings {
 
     /**
      * Theme prefix
@@ -64,16 +82,16 @@ class TacticalWP_Settings {
     /**
      * Constructor
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     protected function __construct() {
         // Set our title
-        $this->title = __('TacticalWP Settings', $this->prefix);
+        $this->title = __('TacticalWP Settings', 'twp' );
     }
     /**
      * Initiate our hooks
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public function hooks() {
         add_action('admin_init', array( $this, 'init' ));
@@ -89,7 +107,7 @@ class TacticalWP_Settings {
     /**
      * Register our setting to WP
      *
-     * @since  0.1.0
+     * @since  1.0.0
      */
     public function init() {
         register_setting($this->key, $this->key);
@@ -97,17 +115,17 @@ class TacticalWP_Settings {
     /**
      * Add menu options page
      *
-     * @since 0.1.0
+     * @since 1.0.0
      */
     public function add_options_page() {
-        $this->options_page = add_menu_page(__('TacticalWP Settings', $this->prefix), $this->title, 'manage_options', $this->key, array( $this, 'admin_page_display' ), get_template_directory_uri() . '/assets/images/icons/twpicon1.png');
+        $this->options_page = add_menu_page(__('TacticalWP Settings', 'twp' ), $this->title, 'manage_options', $this->key, array( $this, 'admin_page_display' ), get_template_directory_uri() . '/assets/images/icons/twpicon1.png');
         // Include CMB CSS in the head to avoid FOUC
         add_action("admin_print_styles-{$this->options_page}", array( 'CMB2_hookup', 'enqueue_cmb_css' ));
     }
     /**
      * Admin page markup. Mostly handled by CMB2
      *
-     * @since  0.1.0
+     * @since  1.0.0
      */
     public function admin_page_display() {
         ?>
@@ -131,154 +149,154 @@ class TacticalWP_Settings {
                     <?php cmb2_metabox_form($this->metabox_id, $this->key, array(
 											'save_button' => 'Save Settings',
 											'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
-																					<input type="hidden" name="object_id" value="%2$s">
-																					%3$s
-																					<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-global" class="button button-primary" value="%4$s" /></p>
-																					<p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
-																					<br/><br/><i>Reset all the settings on this page to their default values.</i></p>
-																					<div class="reveal" id="resetSettingsModal" data-reveal>
-																						<p class="reset-confirmation">
-																							<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
-																							<p>Are you sure you want to continue?</p>
-																							<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-global" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
-																						</p>
-																						<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
-																							<span aria-hidden="true">&times;</span>
-																						</button>
-																					</div>
-																				</form>',
+													<input type="hidden" name="object_id" value="%2$s">
+													%3$s
+													<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-global" class="button button-primary" value="%4$s" /></p>
+													<p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
+													<br/><br/><i>Reset all the settings on this page to their default values.</i></p>
+													<div class="reveal" id="resetSettingsModal" data-reveal>
+														<p class="reset-confirmation">
+															<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
+															<p>Are you sure you want to continue?</p>
+															<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-global" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
+														</p>
+														<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+												</form>',
 										)); ?>
                 </div>
                 <div class="tabs-panel" id="nav">
                     <?php cmb2_metabox_form($this->metabox_id . '-nav', $this->key, array(
 											'save_button' => 'Save Settings',
 											'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
-																					<input type="hidden" name="object_id" value="%2$s">
-																					%3$s
-																					<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-nav" class="button button-primary" value="%4$s" /></p>
-																					<p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
-																					<br/><br/><i>Reset all the settings on this page to their default values.</i></p>
-																					<div class="reveal" id="resetSettingsModal" data-reveal>
-																						<p class="reset-confirmation">
-																							<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
-																							<p>Are you sure you want to continue?</p>
-																							<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-nav" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
-																						</p>
-																						<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
-																							<span aria-hidden="true">&times;</span>
-																						</button>
-																					</div>
-																				</form>',
+													<input type="hidden" name="object_id" value="%2$s">
+													%3$s
+													<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-nav" class="button button-primary" value="%4$s" /></p>
+													<p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
+													<br/><br/><i>Reset all the settings on this page to their default values.</i></p>
+													<div class="reveal" id="resetSettingsModal" data-reveal>
+														<p class="reset-confirmation">
+															<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
+															<p>Are you sure you want to continue?</p>
+															<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-nav" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
+														</p>
+														<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+												</form>',
 										)); ?>
                 </div>
                 <div class="tabs-panel" id="footer">
                     <?php cmb2_metabox_form($this->metabox_id . '-footer', $this->key, array(
 											'save_button' => 'Save Settings',
 											'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
-																					<input type="hidden" name="object_id" value="%2$s">
-																					%3$s
-																					<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-footer" class="button button-primary" value="%4$s" /></p>
-																					<p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
-																					<br/><br/><i>Reset all the settings on this page to their default values.</i></p>
-																					<div class="reveal" id="resetSettingsModal" data-reveal>
-																						<p class="reset-confirmation">
-																							<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
-																							<p>Are you sure you want to continue?</p>
-																							<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-footer" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
-																						</p>
-																						<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
-																							<span aria-hidden="true">&times;</span>
-																						</button>
-																					</div>
-																				</form>',
+													<input type="hidden" name="object_id" value="%2$s">
+													%3$s
+													<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-footer" class="button button-primary" value="%4$s" /></p>
+													<p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
+													<br/><br/><i>Reset all the settings on this page to their default values.</i></p>
+													<div class="reveal" id="resetSettingsModal" data-reveal>
+														<p class="reset-confirmation">
+															<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
+															<p>Are you sure you want to continue?</p>
+															<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-footer" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
+														</p>
+														<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+												</form>',
 										)); ?>
                 </div>
                 <div class="tabs-panel" id="layout">
                     <?php cmb2_metabox_form($this->metabox_id . '-layout', $this->key, array(
 											'save_button' => 'Save Settings',
 											'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
-																					<input type="hidden" name="object_id" value="%2$s">
-																					%3$s
-																					<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-layout" class="button button-primary" value="%4$s" /></p>
-																					<p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
-																					<br/><br/><i>Reset all the settings on this page to their default values.</i></p>
-																					<div class="reveal" id="resetSettingsModal" data-reveal>
-																						<p class="reset-confirmation">
-																							<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
-																							<p>Are you sure you want to continue?</p>
-																							<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-layout" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
-																						</p>
-																						<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
-																							<span aria-hidden="true">&times;</span>
-																						</button>
-																					</div>
-																				</form>',
+												<input type="hidden" name="object_id" value="%2$s">
+												%3$s
+												<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-layout" class="button button-primary" value="%4$s" /></p>
+												<p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
+												<br/><br/><i>Reset all the settings on this page to their default values.</i></p>
+												<div class="reveal" id="resetSettingsModal" data-reveal>
+													<p class="reset-confirmation">
+														<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
+														<p>Are you sure you want to continue?</p>
+														<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-layout" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
+													</p>
+													<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+											</form>',
 										)); ?>
                 </div>
                 <div class="tabs-panel" id="typo">
                     <?php cmb2_metabox_form($this->metabox_id . '-typo', $this->key, array(
 											'save_button' => 'Save Settings',
 											'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
-																					<input type="hidden" name="object_id" value="%2$s">
-																					%3$s
-																					<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-typo" class="button button-primary" value="%4$s" /></p>
-																					<p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
-																					<br/><br/><i>Reset all the settings on this page to their default values.</i></p>
-																					<div class="reveal" id="resetSettingsModal" data-reveal>
-																						<p class="reset-confirmation">
-																							<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
-																							<p>Are you sure you want to continue?</p>
-																							<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-typo" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
-																						</p>
-																						<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
-																							<span aria-hidden="true">&times;</span>
-																						</button>
-																					</div>
-																				</form>',
+													<input type="hidden" name="object_id" value="%2$s">
+													%3$s
+													<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-typo" class="button button-primary" value="%4$s" /></p>
+													<p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
+													<br/><br/><i>Reset all the settings on this page to their default values.</i></p>
+													<div class="reveal" id="resetSettingsModal" data-reveal>
+														<p class="reset-confirmation">
+															<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
+															<p>Are you sure you want to continue?</p>
+															<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-typo" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
+														</p>
+														<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+												</form>',
 										)); ?>
                 </div>
                 <div class="tabs-panel" id="obj">
                     <?php cmb2_metabox_form($this->metabox_id . '-obj', $this->key, array(
 											'save_button' => 'Save Settings',
 											'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
-																					<input type="hidden" name="object_id" value="%2$s">
-																					%3$s
-																					<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-obj" class="button button-primary" value="%4$s" /></p>
-																					<p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
-																					<br/><br/><i>Reset all the settings on this page to their default values.</i></p>
-																					<div class="reveal" id="resetSettingsModal" data-reveal>
-																						<p class="reset-confirmation">
-																							<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
-																							<p>Are you sure you want to continue?</p>
-																							<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-obj" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
-																						</p>
-																						<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
-																							<span aria-hidden="true">&times;</span>
-																						</button>
-																					</div>
-																				</form>',
+													<input type="hidden" name="object_id" value="%2$s">
+													%3$s
+													<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-obj" class="button button-primary" value="%4$s" /></p>
+													<p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
+													<br/><br/><i>Reset all the settings on this page to their default values.</i></p>
+													<div class="reveal" id="resetSettingsModal" data-reveal>
+														<p class="reset-confirmation">
+															<h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
+															<p>Are you sure you want to continue?</p>
+															<button style="color:white" name="reset-confirmation-global" id="reset-confirmation-obj" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
+														</p>
+														<button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+												</form>',
 										)); ?>
                 </div>
                 <div class="tabs-panel" id="advanced">
                     <?php cmb2_metabox_form($this->metabox_id . '-advanced', $this->key, array(
                       'save_button' => 'Save Settings',
                       'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
-                                          <input type="hidden" name="object_id" value="%2$s">
-                                          %3$s
-                                          <p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-advanced" class="button button-primary" value="%4$s" /></p>
-                                          <p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
-                                          <br/><br/><i>Reset all the settings on this page to their default values.</i></p>
-                                          <div class="reveal" id="resetSettingsModal" data-reveal>
-                                            <p class="reset-confirmation">
-                                              <h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
-                                              <p>Are you sure you want to continue?</p>
-                                              <button style="color:white" name="reset-confirmation-global" id="reset-confirmation-colors" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
-                                            </p>
-                                            <button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
-                                              <span aria-hidden="true">&times;</span>
-                                            </button>
-                                          </div>
-                                        </form>',
+                          <input type="hidden" name="object_id" value="%2$s">
+                          %3$s
+                          <p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-advanced" class="button button-primary" value="%4$s" /></p>
+                          <p style="width: 40vw; float: right; margin-top: 35px; text-align: right;"><button style="color:white" type="reset" data-open="resetSettingsModal" id="reset-cmb-%1$s" name="reset-cmb-%1$s" value="Reset" class="button alert">Reset to Default</button>
+                          <br/><br/><i>Reset all the settings on this page to their default values.</i></p>
+                          <div class="reveal" id="resetSettingsModal" data-reveal>
+                            <p class="reset-confirmation">
+                              <h5><strong>This will set all the settings on this tab to their default values.</strong></h5>
+                              <p>Are you sure you want to continue?</p>
+                              <button style="color:white" name="reset-confirmation-global" id="reset-confirmation-colors" class="button alert" type="reset" value="Reset to Default">Reset to Default</button>
+                            </p>
+                            <button class="close-button" data-close aria-label="Close reveal" name="reset-settings-close" type="button">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                        </form>',
                     )); ?>
                 </div>
             </div>
@@ -290,7 +308,7 @@ class TacticalWP_Settings {
     /**
      * Add the options metabox to the array of metaboxes
      *
-     * @since  0.1.0
+     * @since  1.0.0
      */
     function add_options_page_metabox() {
         // hook in our save notices
@@ -305,14 +323,14 @@ class TacticalWP_Settings {
                 'value' => array( $this->key ),
             ),
         ));
-        twp_add_global_settings( $cmb, $this->prefix );
+        twp_add_global_settings( $cmb, 'twp' );
         array_push($this->option_names, $cmb);
     }
 
     /**
      * Add the options metabox to the array of metaboxes
      *
-     * @since  0.1.0
+     * @since  1.0.0
      */
     function add_options_page_nav_metabox() {
 			// hook in our save notices
@@ -327,14 +345,14 @@ class TacticalWP_Settings {
 							'value' => array( $this->key . '-nav' ),
 					),
 			));
-			twp_add_nav_settings( $cmb, $this->prefix );
+			twp_add_nav_settings( $cmb, 'twp' );
 			array_push($this->option_names, $cmb);
     }
 
     /**
      * Add the options metabox to the array of metaboxes
      *
-     * @since  0.1.0
+     * @since  1.0.0
      */
     function add_options_page_footer_metabox() {
       // hook in our save notices
@@ -349,14 +367,14 @@ class TacticalWP_Settings {
               'value' => array( $this->key . '-footer' ),
           ),
       ));
-      twp_add_footer_settings( $cmb, $this->prefix );
+      twp_add_footer_settings( $cmb, 'twp' );
       array_push($this->option_names, $cmb);
     }
 
     /**
      * Add the options metabox to the array of metaboxes
      *
-     * @since  0.1.0
+     * @since  1.0.0
      */
     function add_options_page_layout_metabox() {
       // hook in our save notices
@@ -371,28 +389,28 @@ class TacticalWP_Settings {
               'value' => array( $this->key . '-layout' ),
           ),
       ));
-      twp_add_layout_settings( $cmb, $this->prefix );
+      twp_add_layout_settings( $cmb, 'twp' );
 			array_push($this->option_names, $cmb);
 
       $cmb2 = new_cmb2_box( array(
-          'id'           => $this->prefix . '-layout-edit',
+          'id'           => 'twp' . '-layout-edit',
 					'title'				 => 'TacticalWP Page Overrides',
           'hookup'       => true,
           'save_fields'  => true,
-					'object_types' => array( 'page' ), // post type
-					'context'      => 'normal', // 'normal', 'advanced', or 'side'
-					'priority'     => 'high',  // 'high', 'core', 'default' or 'low'
+					'object_types' => array( 'page' ),
+					'context'      => 'normal',
+					'priority'     => 'high',
 					'show_names'   => true,
       ) );
 
-      twp_add_layout_edit_settings( $cmb2, $this->prefix );
+      twp_add_layout_edit_settings( $cmb2, 'twp' );
 
     }
 
     /**
      * Add the options metabox to the array of metaboxes
      *
-     * @since  0.1.0
+     * @since  1.0.0
      */
     function add_options_page_typo_metabox() {
         // hook in our save notices
@@ -407,14 +425,14 @@ class TacticalWP_Settings {
                 'value' => array( $this->key . '-typo' ),
             ),
         ));
-				twp_add_typo_settings( $cmb, $this->prefix );
+				twp_add_typo_settings( $cmb, 'twp' );
         array_push($this->option_names, $cmb);
     }
 
     /**
      * Add the options metabox to the array of metaboxes
      *
-     * @since  0.1.0
+     * @since  1.0.0
      */
     function add_options_page_obj_metabox() {
         // hook in our save notices
@@ -429,14 +447,14 @@ class TacticalWP_Settings {
 								'value' => array( $this->key . '-obj' ),
 						),
 				));
-				twp_add_obj_settings( $cmb, $this->prefix );
+				twp_add_obj_settings( $cmb, 'twp' );
         array_push($this->option_names, $cmb);
     }
 
     /**
      * Add the options metabox to the array of metaboxes
      *
-     * @since  0.1.0
+     * @since  1.0.0
      */
     function add_options_page_advanced_metabox() {
         // hook in our save notices
@@ -451,31 +469,32 @@ class TacticalWP_Settings {
 								'value' => array( $this->key . '-advanced' ),
 						),
 				));
-				twp_add_advanced_settings( $cmb, $this->prefix );
+				twp_add_advanced_settings( $cmb, 'twp' );
         array_push($this->option_names, $cmb);
     }
 
     /**
      * Register settings notices for display
      *
-     * @since  0.1.0
-     * @param  int   $object_id Option key
-     * @param  array $updated   Array of updated fields
+     * @since  1.0.0
+     * @param  int   $object_id Option key.
+     * @param  array $updated   Array of updated fields.
      * @return void
      */
     public function settings_notices( $object_id, $updated ) {
         if ($object_id !== $this->key || empty($updated) ) {
             return;
         }
-        add_settings_error($this->key . '-notices', '', __('Settings updated.', $this->prefix), 'updated');
+        add_settings_error($this->key . '-notices', '', __('Settings updated.', 'twp'), 'updated');
         settings_errors($this->key . '-notices');
     }
     /**
      * Public getter method for retrieving protected/private variables
      *
-     * @since  0.1.0
-     * @param  string $field Field to retrieve
-     * @return mixed          Field value or exception is thrown
+     * @since  1.0.0
+     * @param  string $field  Field to retrieve.
+     * @return mixed          Field value or exception is thrown.
+     * @throws Exception      Exception thrown when supplied field is invalid.
      */
     public function __get( $field ) {
         // Allowed fields to retrieve
@@ -489,7 +508,7 @@ class TacticalWP_Settings {
 /**
  * Helper function to get/return the TacticalWP_Settings object
  *
- * @since  0.1.0
+ * @since  1.0.0
  * @return TacticalWP_Settings object
  */
 function twp_settings() {
@@ -499,9 +518,9 @@ function twp_settings() {
 /**
  * Wrapper function around cmb2_get_option
  *
- * @since  0.1.0
- * @param  string $key     Options array key
- * @param  mixed  $default Optional default value
+ * @since  1.0.0
+ * @param  string $key     Options array key.
+ * @param  mixed  $default Optional default value.
  * @return mixed           Option value
  */
 function twp_get_option( $key = '', $default = null ) {
@@ -512,7 +531,7 @@ function twp_get_option( $key = '', $default = null ) {
     // Fallback to get_option if CMB2 is not loaded yet.
     $opts = get_option(twp_settings()->key, $key, $default);
     $val = $default;
-    if ('all' == $key ) {
+    if ('all' === $key ) {
         $val = $opts;
     } elseif (array_key_exists($key, $opts) && false !== $opts[ $key ] ) {
         $val = $opts[ $key ];

@@ -14,7 +14,7 @@
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
  * @version  1.0.0
- * @link     http://tacticalwp.com
+ * @link https://github.com/tpkemme/tacticalwp-theme
  * @since    1.0.0
  */
 

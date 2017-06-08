@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for off canvas menu
+ * Displays Google Analytics tracking code if it is set
  *
  * @category TacticalWP-Theme
  * @package TacticalWP
@@ -11,10 +11,8 @@
  * @since 1.0.0
  */
 
-?>
+$ga = twp_get_option('twp_google_analytics');
 
-<nav class="vertical menu" id="mobile-menu" role="navigation">
-  <?php twp_mobile_nav(); ?>
-</nav>
-<div class="off-canvas-content" data-off-canvas-content>
-</div>
+if ( ! empty($ga) ) {
+	echo $ga;
+}

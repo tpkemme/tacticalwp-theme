@@ -2,9 +2,13 @@
 /**
  * Register Menus
  *
- * @link http://codex.wordpress.org/Function_Reference/register_nav_menus#Examples
+ * @category TacticalWP-Theme
  * @package TacticalWP
- * @since TacticalWP 1.0.0
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
+ * @version 1.0.0
+ * @link https://github.com/tpkemme/tacticalwp-theme
+ * @since 1.0.0
  */
 
 register_nav_menus(array(

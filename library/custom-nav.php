@@ -2,8 +2,13 @@
 /**
  * Allow users to select Topbar or Offcanvas menu. Adds body class of offcanvas or topbar based on which they choose.
  *
+ * @category TacticalWP-Theme
  * @package TacticalWP
- * @since TacticalWP 1.0.0
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
+ * @version 1.0.0
+ * @link https://github.com/tpkemme/tacticalwp-theme
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'wpt_register_theme_customizer' ) ) :

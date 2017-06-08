@@ -2,7 +2,12 @@
 /**
  * Layout settings
  *
+ * @category TacticalWP-Theme
  * @package TacticalWP
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
+ * @version 1.0.0
+ * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
 
@@ -10,13 +15,12 @@
   *	Adds all fields for layout settings to custom meta box
   *
   * @param 	[cmb] 	 $cmb 	 [ custom metabox (cmb), required ]
-  * @param 	[string] $prefix [ plugin prefix (twp), optional ]
   * @return	[cmb]		 $CMB2	 [ cmb with fields added ]
   * @since 	1.0.0
   * @version 1.0.0
   */
 	if ( ! function_exists( 'twp_add_layout_settings' ) ) :
-	function twp_add_layout_settings( $cmb, $prefix = 'twp' ) {
+	function twp_add_layout_settings( $cmb ) {
       // Set our CMB2 fields
       $cmb->add_field(array(
 	  'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
@@ -25,9 +29,9 @@
                   <h6>Default Layouts</h6>
                 </a>
                 <div id="panel-layout-defaut" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-layout-defaut-heading">',
-				'name' => __('Page Title Visibility', $prefix),
-				'desc'    => __('Whether or not to show page title by default. (default: Hide)', $prefix),
-				'id'            => $prefix . '_layout_title_show',
+				'name' => __('Page Title Visibility', 'twp'),
+				'desc'    => __('Whether or not to show page title by default. (default: Hide)', 'twp'),
+				'id'            => 'twp_layout_title_show',
 				'type'    => 'radio_inline',
 				'options' => array(
 					'show' => __( 'Show', 'twp' ),
@@ -39,9 +43,9 @@
 				),
       ));
   $cmb->add_field(array(
-		'name' => __('Page Layout', $prefix),
-		'desc'    => __('What page template to use by default. (default: Page Right Sidebar)', $prefix),
-		'id'            => $prefix . '_layout_default_layout',
+		'name' => __('Page Layout', 'twp'),
+		'desc'    => __('What page template to use by default. (default: Page Right Sidebar)', 'twp'),
+		'id'            => 'twp_layout_default_layout',
 		'type'    => 'radio_inline',
 		'options' => array(
 			'Page Right Sidebar' => __( 'Page Right Sidebar', 'twp' ),
@@ -54,9 +58,9 @@
 		),
   ));
   $cmb->add_field(array(
-		'name' => __('Sticky Sidebar', $prefix),
-		'desc'    => __('What page template to use by default. (default: Not Sticky)', $prefix),
-		'id'            => $prefix . '_layout_sidebar_sticky',
+		'name' => __('Sticky Sidebar', 'twp'),
+		'desc'    => __('What page template to use by default. (default: Not Sticky)', 'twp'),
+		'id'            => 'twp_layout_sidebar_sticky',
 		'type'    => 'radio_inline',
 		'options' => array(
 			'sticky' => __( 'Sticky', 'twp' ),
@@ -76,43 +80,42 @@
 	*	Adds all fields for layout settings the edit page screen
 	*
 	* @param 	[cmb] 	 $cmb 	 [ custom metabox (cmb), required ]
-	* @param 	[string] $prefix [ plugin prefix (twp), optional ]
 	* @return	[cmb]		 $CMB2	 [ cmb with fields added ]
 	* @since 	1.0.0
 	* @version 1.0.0
 	*/
 	if ( ! function_exists( 'twp_add_layout_edit_settings' ) ) :
-	function twp_add_layout_edit_settings( $cmb, $prefix = 'twp' ) {
+	function twp_add_layout_edit_settings( $cmb ) {
 		// Add fields to edit screen for pages only at this point
 		$cmb = new_cmb2_box( array(
 	  'id'           => 'twp-layout-edit',
 				'title'				 => 'TacticalWP Page Overrides',
 	  'hookup'       => true,
 	  'save_fields'  => true,
-				'object_types' => array( 'page' ), // post type
-				'context'      => 'normal', // 'normal', 'advanced', or 'side'
-				'priority'     => 'high',  // 'high', 'core', 'default' or 'low'
+				'object_types' => array( 'page' ),
+				'context'      => 'normal',
+				'priority'     => 'high',
 				'show_names'   => true,
       ) );
 
 		$cmb->add_field( array(
-				'name'    => __( 'Page Title', $prefix ),
-				'id'      => $prefix . '_page_title_single',
+				'name'    => __( 'Page Title', 'twp' ),
+				'id'      => 'twp_page_title_single',
 				'description' => 'Change the layout for this specific page.',
 				'type'    => 'select',
 				'options' => array(
 					'Hide' => 'Hide',
 					'Show' => 'Show',
 				),
-				'default' => __( 'Show', $prefix ),
+				'default' => __( 'Show', 'twp' ),
 				'attributes'			 => array(
 					'data-default'	 => 'Show',
 				),
 		) );
 
   $cmb->add_field( array(
-	  'name'    => __( 'Page Layout', $prefix ),
-	  'id'      => $prefix . '_page_layout_single',
+	  'name'    => __( 'Page Layout', 'twp' ),
+	  'id'      => 'twp_page_layout_single',
 				'description' => 'Change the layout for this specific page.',
 	  'type'    => 'select',
 				'options' => array(
@@ -121,14 +124,14 @@
 					'Page Left Sidebar' => 'Page Right Sidebar',
 					'Full Width' => 'Full Width',
 				),
-	  'default' => __( 'Default', $prefix ),
+	  'default' => __( 'Default', 'twp' ),
 				'attributes'			 => array(
 					'data-default'	 => 'Default',
 				),
   ) );
   $cmb->add_field( array(
-	  'name'    => __( 'Sticky Sidebar', $prefix ),
-	  'id'      => $prefix . '_page_layout_sticky_sidebar',
+	  'name'    => __( 'Sticky Sidebar', 'twp' ),
+	  'id'      => 'twp_page_layout_sticky_sidebar',
 				'description' => 'Make the sidebar sticky.',
 	  'type'    => 'select',
 				'options' => array(
@@ -136,7 +139,7 @@
 					'sticky' => 'Sticky',
 					'not-sticky' => 'Sticky',
 				),
-	  'default' => __( 'default', $prefix ),
+	  'default' => __( 'default', 'twp' ),
 				'attributes'			 => array(
 					'data-default'	 => 'default',
 				),

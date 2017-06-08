@@ -2,11 +2,17 @@
 /**
  * TacticalWP Comments
  *
+ * @category TacticalWP-Theme
  * @package TacticalWP
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
+ * @version 1.0.0
+ * @link https://github.com/tpkemme/tacticalwp-theme
+ * @since 1.0.0
  */
 
-if ( ! class_exists( 'TacticalWP_Comments' ) ) :
-class TacticalWP_Comments extends Walker_Comment {
+if ( ! class_exists( 'TWP_Comments' ) ) :
+class TWP_Comments extends Walker_Comment {
 
 		// Init classwide variables.
 		public $tree_type = 'comment';

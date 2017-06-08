@@ -5,13 +5,13 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
+ * @category TacticalWP-Theme
  * @package TacticalWP
- * @since 1.0.0
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
  * @version 1.0.0
- * @category twp-theme
- * @author Tyler Kemme
- * @license MIT
- * @link http://tacticalwp.com
+ * @link https://github.com/tpkemme/tacticalwp-theme
+ * @since 1.0.0
  */
 
 if ( have_comments() ) :

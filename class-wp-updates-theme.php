@@ -14,18 +14,40 @@
  * @link     http://wp-updates.com
  * @since    2.0.0
  */
-if ( ! class_exists('WPUpdatesThemeUpdater_2050') ) {
+
+if ( ! class_exists('WP_Updates_Theme') ) {
 
     /**
-     * [WPUpdatesThemeUpdater_2050 Allows TacticalWP to serve updates through WP-Updates.com]
+     * [WP_Updates_Theme Allows TacticalWP to serve updates through WP-Updates.com]
      */
-    class WPUpdatesThemeUpdater_2050 {
+    class WP_Updates_Theme {
 
-
-
+				/**
+				 * $api_url wp-updates api_url.
+                 *
+				 * @var string
+				 */
         var $api_url;
+
+				/**
+				 * $theme_id theme id used on wp-updates.com.
+                 *
+				 * @var integer
+				 */
         var $theme_id = 2050;
+
+				/**
+				 * $theme_slug the theme's slug.
+                 *
+				 * @var string
+				 */
         var $theme_slug;
+
+				/**
+				 * $license_key license key for pro accounts.
+                 *
+				 * @var string
+				 */
         var $license_key;
 
         function __construct( $api_url, $theme_slug, $license_key = null ) {
@@ -48,14 +70,15 @@ if ( ! class_exists('WPUpdatesThemeUpdater_2050') ) {
              'slug' => $this->theme_slug,
              'version' => $transient->checked[ $this->theme_slug ],
             );
-            if ($this->license_key ) { $request_args['license'] = $this->license_key;
+            if ($this->license_key ) {
+							$request_args['license'] = $this->license_key;
             }
 
             $request_string = $this->prepare_request('theme_update', $request_args);
             $raw_response = wp_remote_post($this->api_url, $request_string);
 
             $response = null;
-            if ( ! is_wp_error($raw_response) && ($raw_response['response']['code'] == 200) ) {
+            if ( ! is_wp_error($raw_response) && ( 200 == $raw_response['response']['code'] ) ) {
                  $response = unserialize($raw_response['body']);
             }
 

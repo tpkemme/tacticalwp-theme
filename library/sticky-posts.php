@@ -2,8 +2,13 @@
 /**
  * Change the class for sticky posts to .wp-sticky to avoid conflicts with Foundation's Sticky plugin
  *
+ * @category TacticalWP-Theme
  * @package TacticalWP
- * @since TacticalWP 2.2.0
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
+ * @version 1.0.0
+ * @link https://github.com/tpkemme/tacticalwp-theme
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'twp_sticky_posts' ) ) :

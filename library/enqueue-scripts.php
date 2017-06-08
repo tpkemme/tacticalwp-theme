@@ -5,27 +5,26 @@
  * Learn more about enqueue_script: {@link https://codex.wordpress.org/Function_Reference/wp_enqueue_script}
  * Learn more about enqueue_style: {@link https://codex.wordpress.org/Function_Reference/wp_enqueue_style }
  *
- * @param   $hook    [ string ] [ hook used so javascript is only enqueued on correct admin page ]
+ * @category TacticalWP-Theme
  * @package TacticalWP
- * @since 1.0.0
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
  * @version 1.0.0
- * @category twp-theme
- * @author Tyler Kemme
- * @license MIT
- * @link http://tacticalwp.com
+ * @link https://github.com/tpkemme/tacticalwp-theme
+ * @since 1.0.0
  */
 
-/**
- * [twp_admin_scripts enqueues all necessary styles and scripts for wp-admin]
- *
- * @param  [type] $hook [description]
- * @return [type]       [description]
- */
 if ( ! function_exists( 'twp_scripts' ) ) :
+	/**
+	 * Function twp_admin_scripts enqueues all necessary styles and scripts for wp-admin.
+	 *
+	 * @param  string $hook hook of the page attempting to enqueue scripts/styles.
+	 * @return void
+	 */
 	function twp_admin_scripts( $hook ) {
 
 		// Settings page for TWP Theme
-		if ( $hook === 'toplevel_page_twp_options' ) {
+		if ( 'toplevel_page_twp_options' === $hook ) {
 
 			// Enqueue the main Stylesheet.
 		  wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/twp.css', array(), false, 'all' );
@@ -54,7 +53,7 @@ endif;
 
 
 /**
- * [twp_scripts enqueues all necessary styles and scripts for front-end pages]
+ * Function twp_scripts enqueues all necessary styles and scripts for front-end pages
  */
 if ( ! function_exists( 'twp_scripts' ) ) :
 	function twp_scripts() {
@@ -88,6 +87,9 @@ function twp_add_editor_styles() {
 }
 add_action( 'admin_init', 'twp_add_editor_styles' );
 
+/**
+ * Adds support for browser-sync if enabled in Advanced Settings
+ */
 function twp_add_browser_sync() {
 	if ( twp_get_option( 'twp_advanced_browser_sync' ) === 'yes' ) {
 		wp_enqueue_script( 'comment-reply', get_site_url() . '/browser-sync/browser-sync-client.js?v=2.18.8', array(), null, false);

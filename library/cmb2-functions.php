@@ -1,14 +1,14 @@
 <?php
 /**
- * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the CMB2 directory)
+ * Include and setup custom metaboxes and fields.
  *
- * Be sure to replace all instances of 'twp_' with your project's prefix.
- * http://nacin.com/2010/05/11/in-wordpress-prefix-everything/
- *
- * @category YourThemeOrPlugin
- * @package  Demo_CMB2
- * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
- * @link     https://github.com/WebDevStudios/CMB2
+ * @category TacticalWP-Theme
+ * @package TacticalWP
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
+ * @version 1.0.0
+ * @link https://github.com/tpkemme/tacticalwp-theme
+ * @since 1.0.0
  */
 
 /**

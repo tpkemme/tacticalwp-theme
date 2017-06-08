@@ -2,9 +2,15 @@
 /**
  * The template for embedding styles set by theme settings in the header
  *
+ * @category TacticalWP-Theme
  * @package TacticalWP
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
+ * @version 1.0.0
+ * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
+
 ?>
 <style>
 
@@ -37,9 +43,9 @@ foreach ( $families as $family ) {
 	foreach ( $variants as $variant ) {
 		$variants_string .= $variant . ',';
 	}
-	$fontUrl = substr( $family . ':' . $variants_string, 0, -1);
+	$font_url = substr( $family . ':' . $variants_string, 0, -1);
 	?>
-	@import url('https://fonts.googleapis.com/css?family=<?php echo $fontUrl; ?>');
+	@import url('https://fonts.googleapis.com/css?family=<?php echo $font_url; ?>');
 	<?php
 }
 

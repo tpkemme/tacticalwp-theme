@@ -1,7 +1,5 @@
 <?php
 /**
- * Author: Tyler Kemme
- * URL: https://tpkemme.com
  *
  * TacticalWP functions and definitions
  *
@@ -9,17 +7,17 @@
  * theme as custom template tags. Others are attached to action and filter
  * hooks in WordPress to change core functionality.
  *
- * @package  TacticalWP
- * @since    1.0.0
- * @version  1.0.0
- * @category twp-theme
- * @author   Tyler Kemme
- * @license  MIT
- * @link     http://tacticalwp.com
+ * @category TacticalWP-Theme
+ * @package TacticalWP
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
+ * @version 1.0.0
+ * @link https://github.com/tpkemme/tacticalwp-theme
+ * @since 1.0.0
  */
 
 /**
- * cmb2 custom functions
+ * Cmb2 custom functions
  */
 require_once 'library/cmb2-functions.php';
 

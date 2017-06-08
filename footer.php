@@ -4,13 +4,13 @@
  *
  * Contains the closing of the "off-canvas-wrap" div and all content after.
  *
- * @package  TacticalWP
- * @since    1.0.0
- * @version  1.0.0
- * @category twp-theme
- * @author   Tyler Kemme
- * @license  MIT
- * @link     http://tacticalwp.com
+ * @category TacticalWP-Theme
+ * @package TacticalWP
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
+ * @version 1.0.0
+ * @link https://github.com/tpkemme/tacticalwp-theme
+ * @since 1.0.0
  */
 
 ?>

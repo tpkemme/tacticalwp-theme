@@ -2,9 +2,13 @@
 /**
  * Configure responsive images sizes
  *
- * @package WordPress
- * @subpackage TacticalWP
- * @since TacticalWP 2.6.0
+ * @category TacticalWP-Theme
+ * @package TacticalWP
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
+ * @version 1.0.0
+ * @link https://github.com/tpkemme/tacticalwp-theme
+ * @since 1.0.0
  */
 
 // Add featured image sizes

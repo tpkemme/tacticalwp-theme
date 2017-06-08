@@ -6,18 +6,23 @@
  * Please note that this is the WordPress construct of pages and that
  * other "pages" on your WordPress site will use a different template.
  *
+ * @category TacticalWP-Theme
  * @package TacticalWP
- * @since   TacticalWP 1.0.0
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
+ * @version 1.0.0
+ * @link https://github.com/tpkemme/tacticalwp-theme
+ * @since 1.0.0
  */
 
  get_header(); ?>
 <?php $layout = get_post_meta(get_the_ID(), 'twp_page_layout_single', true); ?>
 <?php get_template_part('template-parts/featured-image'); ?>
-<?php if ($layout === 'Page Left Sidebar' ) : ?>
+<?php if ( 'Page Left Sidebar' === $layout ) : ?>
     <?php get_template_part('page-templates/page-sidebar-left'); ?>
-<?php elseif ($layout === 'Left & Right Sidebar' ) : ?>
+<?php elseif ( 'Left & Right Sidebar' === $layout ) : ?>
     <?php get_template_part('page-templates/page-sidebar-double'); ?>
-<?php elseif ($layout === 'Full Width' ) : ?>
+<?php elseif ( 'Full Width' === $layout ) : ?>
     <?php get_template_part('page-templates/page-full-width'); ?>
 <?php else : ?>
      <div id="page" role="main">
@@ -26,17 +31,17 @@
     <?php while ( have_posts() ) : the_post(); ?>
        <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
         <?php $showtitle = get_post_meta(get_the_ID(), 'twp_page_title_single', true); ?>
-        <?php if (twp_get_option('twp_layout_title_show') === 'show' ) : ?>
-        <?php if ($showtitle === 'Show' ) : ?>
-                         <header>
-                                 <h1 class="entry-title"><?php the_title(); ?></h1>
-                         </header>
+        <?php if ( 'show' === twp_get_option('twp_layout_title_show') ) : ?>
+        <?php if ( 'Show' === $showtitle ) : ?>
+           <header>
+                   <h1 class="entry-title"><?php the_title(); ?></h1>
+           </header>
         <?php endif; ?>
         <?php else : ?>
-        <?php if ($showtitle === 'Show' ) : ?>
-                         <header>
-                                 <h1 class="entry-title"><?php the_title(); ?></h1>
-                         </header>
+        <?php if ( 'Show' === $showtitle ) : ?>
+           <header>
+                   <h1 class="entry-title"><?php the_title(); ?></h1>
+           </header>
         <?php endif; ?>
         <?php endif; ?>
             <?php do_action('twp_page_before_entry_content'); ?>

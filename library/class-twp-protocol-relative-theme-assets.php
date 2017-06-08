@@ -2,12 +2,17 @@
 /**
  * Protocol Relative Theme Assets
  *
+ * @category TacticalWP-Theme
  * @package TacticalWP
- * @since TacticalWP 1.1.0
+ * @author   Tyler Kemme <dev@tylerkemme.com>
+ * @license  MIT https://opensource.org/licenses/MIT
+ * @version 1.0.0
+ * @link https://github.com/tpkemme/tacticalwp-theme
+ * @since 1.0.0
  */
 
-if ( ! class_exists( 'TacticalWP_Protocol_Relative_Theme_Assets' ) ) :
-	class TacticalWP_Protocol_Relative_Theme_Assets {
+if ( ! class_exists( 'TWP_Protocol_Relative_Theme_Assets' ) ) :
+	class TWP_Protocol_Relative_Theme_Assets {
 		/**
 		 * Plugin URI: https://github.com/ryanjbonnell/Protocol-Relative-Theme-Assets
 		 * Description: Transforms enqueued CSS and JavaScript theme URLs to use protocol-relative paths.
