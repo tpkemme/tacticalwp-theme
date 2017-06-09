@@ -1,4 +1,5 @@
 # TacticalWP Wordpress Theme
+[![Build Status](https://travis-ci.org/tpkemme/tacticalwp-theme.svg?branch=master)](https://travis-ci.org/tpkemme/tacticalwp-theme)
 <img align="right" src="assets/images/icons/twpicon1.png" width="250" height="250" />
 
 TacticalWP is a Wordpress theme based on Material design and built on Foundationpress and CMB2. The purpose of TacticalWP, is to act as a small and handy toolbox that contains the essentials needed to build any design using Wordpress.
