@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Accordion_Menu_Walker_Nav_Menu' => $baseDir . '/library/shortcode/accordion-menu.php',
     'CMB2' => $baseDir . '/library/cmb2/includes/CMB2.php',
     'CMB2_Ajax' => $baseDir . '/library/cmb2/includes/CMB2_Ajax.php',
     'CMB2_Base' => $baseDir . '/library/cmb2/includes/CMB2_Base.php',
@@ -69,12 +68,12 @@ return array(
     'CMB2_Types' => $baseDir . '/library/cmb2/includes/CMB2_Types.php',
     'CMB2_Utils' => $baseDir . '/library/cmb2/includes/CMB2_Utils.php',
     'CMB2_hookup' => $baseDir . '/library/cmb2/includes/CMB2_hookup.php',
-    'Drilldown_Menu_Walker_Nav_Menu' => $baseDir . '/library/shortcode/drilldown-menu.php',
-    'Dropdown_Menu_Walker_Nav_Menu' => $baseDir . '/library/shortcode/dropdown-menu.php',
-    'TacticalWP_Comments' => $baseDir . '/library/class-twp-comments.php',
-    'TacticalWP_Mobile_Walker' => $baseDir . '/library/class-twp-mobile-walker.php',
-    'TacticalWP_Protocol_Relative_Theme_Assets' => $baseDir . '/library/class-twp-protocol-relative-theme-assets.php',
-    'TacticalWP_Settings' => $baseDir . '/library/theme-settings.php',
-    'TacticalWP_Top_Bar_Walker' => $baseDir . '/library/class-twp-top-bar-walker.php',
+    'TWP_Accordion_Menu_Walker' => $baseDir . '/library/class-twp-accordion-menu-walker.php',
+    'TWP_Comments' => $baseDir . '/library/class-twp-comments.php',
+    'TWP_Drilldown_Menu_Walker' => $baseDir . '/library/class-twp-drilldown-menu-walker.php',
+    'TWP_Mobile_Walker' => $baseDir . '/library/class-twp-mobile-walker.php',
+    'TWP_Protocol_Relative_Theme_Assets' => $baseDir . '/library/class-twp-protocol-relative-theme-assets.php',
+    'TWP_Theme_Settings' => $baseDir . '/library/class-twp-theme-settings.php',
+    'TWP_Top_Bar_Walker' => $baseDir . '/library/class-twp-top-bar-walker.php',
     'WP_REST_Controller' => $baseDir . '/library/cmb2/includes/shim/WP_REST_Controller.php',
 );
