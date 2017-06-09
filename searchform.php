@@ -1,7 +1,8 @@
 <?php
 /**
- * The template for displaying search form
+ * The template for displaying search form.
  *
+<<<<<<< HEAD
  * @category TacticalWP-Theme
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
@@ -9,8 +10,10 @@
  * @version 1.0.0
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
+=======
+ * @since   TacticalWP 1.0.0
+>>>>>>> de83f76ce415f7f0b0e8f3ba53032085ea188470
  */
-
 do_action('twp_before_searchform'); ?>
 <form role="search" method="get" id="searchform" action="<?php echo home_url('/'); ?>">
     <?php do_action('twp_searchform_top'); ?>

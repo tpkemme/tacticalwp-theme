@@ -1,7 +1,8 @@
 <?php
 /**
- * Basic WooCommerce support
+ * Basic WooCommerce support.
  *
+<<<<<<< HEAD
  * @category TacticalWP-Theme
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
@@ -9,8 +10,10 @@
  * @version 1.0.0
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
+=======
+ * @since   TacticalWP 1.0.0
+>>>>>>> de83f76ce415f7f0b0e8f3ba53032085ea188470
  */
-
 get_header(); ?>
 
 <div class="row">
@@ -18,7 +21,7 @@ get_header(); ?>
 
     <?php do_action('twp_before_content'); ?>
 
-    <?php while ( woocommerce_content() ) : the_post(); ?>
+    <?php while (woocommerce_content() ) : the_post(); ?>
         <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
             <header>
                 <h1 class="entry-title"><?php the_title(); ?></h1>
@@ -32,7 +35,7 @@ get_header(); ?>
                     wp_link_pages(
                         array(
                             'before' => '<nav id="page-nav"><p>' . __('Pages:', 'twp'),
-                            'after'  => '</p></nav>',
+                            'after' => '</p></nav>',
                         )
                     );
                 ?>
@@ -42,7 +45,7 @@ get_header(); ?>
     <?php comments_template(); ?>
     <?php do_action('twp_page_after_comments'); ?>
         </article>
-    <?php endwhile;?>
+    <?php endwhile; ?>
 
     <?php do_action('twp_after_content'); ?>
 

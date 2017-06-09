@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * Display a suitable column layout depending on whether sidebar email_exists
  *
@@ -12,6 +13,10 @@
  */
 
   if ( is_active_sidebar( 'sidebar-widgets' ) ) :
+=======
+  // Display a suitable column layout depending on whether sidebar exists
+  if (is_active_sidebar('sidebar-widgets') ) :
+>>>>>>> de83f76ce415f7f0b0e8f3ba53032085ea188470
     echo '<div class="small-12 large-8 columns" role="main">';
 
   else :

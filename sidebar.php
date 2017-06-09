@@ -1,7 +1,8 @@
 <?php
 /**
- * The sidebar containing the main widget area
+ * The sidebar containing the main widget area.
  *
+<<<<<<< HEAD
  * @category TacticalWP-Theme
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
@@ -9,8 +10,10 @@
  * @version 1.0.0
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
+=======
+ * @since   TacticalWP 1.0.0
+>>>>>>> de83f76ce415f7f0b0e8f3ba53032085ea188470
  */
-
 ?>
 <?php if (get_post_meta(get_the_ID(), 'twp_page_layout_sticky_sidebar', true) === 'sticky' ) : ?>
     <div class="sticky-sidebar-container"><aside class="sidebar sticky-sidebar">

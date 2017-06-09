@@ -1,11 +1,12 @@
 <?php
 /**
- * The template for displaying pages
+ * The template for displaying pages.
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages and that
  * other "pages" on your WordPress site will use a different template.
  *
+<<<<<<< HEAD
  * @category TacticalWP-Theme
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
@@ -13,8 +14,10 @@
  * @version 1.0.0
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
+=======
+ * @since   TacticalWP 1.0.0
+>>>>>>> de83f76ce415f7f0b0e8f3ba53032085ea188470
  */
-
  get_header(); ?>
 <?php $layout = get_post_meta(get_the_ID(), 'twp_page_layout_single', true); ?>
 <?php get_template_part('template-parts/featured-image'); ?>
@@ -28,7 +31,7 @@
      <div id="page" role="main">
 
     <?php do_action('twp_before_content'); ?>
-    <?php while ( have_posts() ) : the_post(); ?>
+    <?php while (have_posts() ) : the_post(); ?>
        <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
         <?php $showtitle = get_post_meta(get_the_ID(), 'twp_page_title_single', true); ?>
         <?php if ( 'show' === twp_get_option('twp_layout_title_show') ) : ?>
@@ -54,7 +57,7 @@
                 wp_link_pages(
                     array(
                     'before' => '<nav id="page-nav"><p>' . __('Pages:', 'twp'),
-                    'after'  => '</p></nav>',
+                    'after' => '</p></nav>',
                     )
                 );
             ?>
@@ -64,7 +67,7 @@
             <?php comments_template(); ?>
             <?php do_action('twp_page_after_comments'); ?>
        </article>
-    <?php endwhile;?>
+    <?php endwhile; ?>
 
     <?php do_action('twp_after_content'); ?>
     <?php get_sidebar(); ?>

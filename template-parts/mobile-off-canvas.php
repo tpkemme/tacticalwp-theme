@@ -1,7 +1,8 @@
 <?php
 /**
- * Template part for off canvas menu
+ * Template part for off canvas menu.
  *
+<<<<<<< HEAD
  * @category TacticalWP-Theme
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
@@ -9,8 +10,10 @@
  * @version 1.0.0
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
+=======
+ * @since TacticalWP 1.0.0
+>>>>>>> de83f76ce415f7f0b0e8f3ba53032085ea188470
  */
-
 ?>
 
 <nav class="off-canvas position-left" id="mobile-menu" data-off-canvas data-auto-focus="false" data-position="left" role="navigation">

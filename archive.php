@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying archive pages.
  *
  * Used to display archive-type pages if nothing more specific matches a query.
  * For example, puts together date-based pages if no date.php file exists.
@@ -10,14 +10,13 @@
  * category.php (Category archives), author.php (Author archives), etc.
  *
  * @category TacticalWP-Theme
- * @package  TacticalWP
+ *
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
  * @version  1.0.0
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since    1.0.0
  */
-
 get_header(); ?>
 
 <div id="page" role="main">
@@ -25,14 +24,14 @@ get_header(); ?>
     <?php if (have_posts() ) : ?>
 
     <?php /* Start the Loop */ ?>
-    <?php while ( have_posts() ) : the_post(); ?>
+    <?php while (have_posts() ) : the_post(); ?>
     <?php get_template_part('template-parts/content', get_post_format()); ?>
     <?php endwhile; ?>
 
     <?php else : ?>
     <?php get_template_part('template-parts/content', 'none'); ?>
 
-    <?php endif; // End have_posts() check. ?>
+    <?php endif; // End have_posts() check.?>
 
     <?php /* Display navigation to next/previous pages when applicable */ ?>
     <?php

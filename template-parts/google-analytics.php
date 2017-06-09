@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * Displays Google Analytics tracking code if it is set
  *
@@ -16,3 +17,11 @@ $ga = twp_get_option('twp_google_analytics');
 if ( ! empty($ga) ) {
 	echo $ga;
 }
+=======
+    // If Google Analytics tracking code is set, display it now
+    $ga = twp_get_option('twp_google_analytics');
+
+    if ( ! empty($ga) ) {
+	echo $ga;
+    }
+>>>>>>> de83f76ce415f7f0b0e8f3ba53032085ea188470

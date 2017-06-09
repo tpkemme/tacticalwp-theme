@@ -1,9 +1,10 @@
 <?php
 /**
- * The template part for displaying a message that posts cannot be found
+ * The template part for displaying a message that posts cannot be found.
  *
  * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
  *
+<<<<<<< HEAD
  * @category TacticalWP-Theme
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
@@ -11,35 +12,37 @@
  * @version 1.0.0
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
+=======
+ * @since TacticalWP 1.0.0
+>>>>>>> de83f76ce415f7f0b0e8f3ba53032085ea188470
  */
-
 ?>
 
 <header class="page-header">
-	<h1 class="page-title"><?php _e( 'Nothing Found', 'twp' ); ?></h1>
+	<h1 class="page-title"><?php _e('Nothing Found', 'twp'); ?></h1>
 </header>
 
 <div class="page-content">
-	<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+	<?php if (is_home() && current_user_can('publish_posts') ) : ?>
 
 	<p>
 		<?php
-			/* translators: %1$s: new post url */
-			printf( __(
-				'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'twp' ),
-				admin_url( 'post-new.php' )
-			);
-		?>
+            /* translators: %1$s: new post url */
+            printf(__(
+                'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'twp'),
+                admin_url('post-new.php')
+            );
+        ?>
 	</p>
 
-	<?php elseif ( is_search() ) : ?>
+	<?php elseif (is_search() ) : ?>
 
-	<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'twp' ); ?></p>
+	<p><?php _e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'twp'); ?></p>
 	<?php get_search_form(); ?>
 
 	<?php else : ?>
 
-	<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'twp' ); ?></p>
+	<p><?php _e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'twp'); ?></p>
 	<?php get_search_form(); ?>
 
 	<?php endif; ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file
+ * The main template file.
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -9,6 +9,7 @@
  *
  * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
  *
+<<<<<<< HEAD
  * @category TacticalWP-Theme
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
@@ -16,8 +17,10 @@
  * @version 1.0.0
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
+=======
+ * @since   TacticalWP 1.0.0
+>>>>>>> de83f76ce415f7f0b0e8f3ba53032085ea188470
  */
-
 get_header(); ?>
 
 <div id="page" role="main">
@@ -25,14 +28,14 @@ get_header(); ?>
     <?php if (have_posts() ) : ?>
 
     <?php /* Start the Loop */ ?>
-    <?php while ( have_posts() ) : the_post(); ?>
+    <?php while (have_posts() ) : the_post(); ?>
     <?php get_template_part('template-parts/content', get_post_format()); ?>
     <?php endwhile; ?>
 
     <?php else : ?>
     <?php get_template_part('template-parts/content', 'none'); ?>
 
-    <?php endif; // End have_posts() check. ?>
+    <?php endif; // End have_posts() check.?>
 
     <?php /* Display navigation to next/previous pages when applicable */ ?>
     <?php

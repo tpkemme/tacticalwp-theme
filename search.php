@@ -2,6 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
+<<<<<<< HEAD
  * @category TacticalWP-Theme
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
@@ -9,8 +10,10 @@
  * @version 1.0.0
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
+=======
+ * @since   TacticalWP 1.0.0
+>>>>>>> de83f76ce415f7f0b0e8f3ba53032085ea188470
  */
-
 get_header(); ?>
 
 <div class="row">
@@ -22,14 +25,14 @@ get_header(); ?>
 
     <?php if (have_posts() ) : ?>
 
-    <?php while ( have_posts() ) : the_post(); ?>
+    <?php while (have_posts() ) : the_post(); ?>
     <?php get_template_part('template-parts/content', get_post_format()); ?>
     <?php endwhile; ?>
 
     <?php else : ?>
     <?php get_template_part('template-parts/content', 'none'); ?>
 
-    <?php endif;?>
+    <?php endif; ?>
 
     <?php do_action('twp_before_pagination'); ?>
 
