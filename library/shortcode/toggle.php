@@ -14,17 +14,17 @@
  /**
   * Outputs an toggle when the [twp-toggle] is used
   *
-  * @param 	[string] $atts	  shortcode attributes, required.
-  * @param 	[string] $content shortcode content, optional.
-  * @return	output of shortcode
-  * @since 	1.0.0
+  * @param  [string] $atts    shortcode attributes, required.
+  * @param  [string] $content shortcode content, optional.
+  * @return output of shortcode
+  * @since  1.0.0
   * @version 1.0.0
   */
 function twp_toggle( $atts, $content = '' ) {
 
 	$atts = shortcode_atts( array(
-    	'id' => wp_generate_password( 6, false ),
-    	'position' => 'middle',
+		'id' => wp_generate_password( 6, false ),
+		'position' => 'middle',
 	), $atts, 'twp-toggle' );
 
     $out = '';

@@ -14,17 +14,17 @@
  /**
   * Outputs an dropdown pane when the [twp-dropdown-pane] is used
   *
-  * @param 	[string] $atts	   shortcode attributes, required.
-  * @param 	[string] $content  shortcode content, optional.
-  * @return	output of shortcode
-  * @since 	1.0.0
+  * @param  [string] $atts     shortcode attributes, required.
+  * @param  [string] $content  shortcode content, optional.
+  * @return output of shortcode
+  * @since  1.0.0
   * @version 1.0.0
   */
 function twp_dropdown_pane( $atts, $content = '' ) {
 
 	$atts = shortcode_atts( array(
 		'id' => wp_generate_password( 6, false ),
-		'button'	 => 'Toggle Button',
+		'button'     => 'Toggle Button',
 	), $atts, 'twp-dropdown-pane' );
 
 	$out = '<button class="button" type="button" data-toggle="' . $atts['id'] . '">' . $atts['button'] . '</button>

@@ -19,9 +19,9 @@ class TWP_Comments extends Walker_Comment {
 
 		// Comment ID
 		public $db_fields = array(
-		'parent' => 'comment_parent',
-		'id'     => 'comment_ID',
-			);
+			'parent' => 'comment_parent',
+			'id'     => 'comment_ID',
+		);
 
 			/** CONSTRUCTOR
              * You'll have to use this if you plan to get to the top of the comments list, as
@@ -96,9 +96,9 @@ class TWP_Comments extends Walker_Comment {
 
 					<div class="reply">
 					<?php $reply_args = array(
-						'depth' => $depth,
-						'max_depth' => $args['max_depth'],
-								);
+	'depth' => $depth,
+	'max_depth' => $args['max_depth'],
+);
 
 							comment_reply_link( array_merge( $args, $reply_args ) );  ?>
 							</div><!-- /.reply -->

@@ -14,10 +14,10 @@
  /**
   * Outputs an table when the [twp-table]
   *
-  * @param 	[string] $atts	  shortcode attributes, required.
-  * @param 	[string] $content  shortcode content, optional.
-  * @return	output of shortcode
-  * @since 	1.0.0
+  * @param  [string] $atts    shortcode attributes, required.
+  * @param  [string] $content  shortcode content, optional.
+  * @return output of shortcode
+  * @since  1.0.0
   * @version 1.0.0
   */
 function twp_table( $atts, $content = '' ) {
@@ -25,7 +25,7 @@ function twp_table( $atts, $content = '' ) {
 	$atts = shortcode_atts( array(
 		'id' => wp_generate_password( 6, false ),
 		'position' => 'middle',
-		'header'	 => 'false',
+		'header'     => 'false',
 		'final'    => 'false',
 	), $atts, 'twp-table' );
 

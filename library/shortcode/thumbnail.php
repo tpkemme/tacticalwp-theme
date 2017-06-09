@@ -14,17 +14,17 @@
  /**
   * Outputs an thumbnail when the [twp-thumbnail] is used
   *
-  * @param 	[string] $atts	   shortcode attributes, required.
-  * @param 	[string] $content  shortcode content, optional.
-  * @return	output of shortcode
-  * @since 	1.0.0
+  * @param  [string] $atts     shortcode attributes, required.
+  * @param  [string] $content  shortcode content, optional.
+  * @return output of shortcode
+  * @since  1.0.0
   * @version 1.0.0
   */
 function twp_thumbnail( $atts, $content = '' ) {
 
 	$atts = shortcode_atts( array(
-    	'id' => wp_generate_password( 6, false ),
-    	'url'	=> 'http://placeimg.com/200/200/arch',
+		'id' => wp_generate_password( 6, false ),
+		'url'   => 'http://placeimg.com/200/200/arch',
 	), $atts, 'twp-thumbnail' );
 
     $out = '';

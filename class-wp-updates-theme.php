@@ -66,9 +66,9 @@ if ( ! class_exists('WP_Updates_Theme') ) {
             }
 
             $request_args = array(
-             'id' => $this->theme_id,
-             'slug' => $this->theme_slug,
-             'version' => $transient->checked[ $this->theme_slug ],
+				'id' => $this->theme_id,
+				'slug' => $this->theme_slug,
+				'version' => $transient->checked[ $this->theme_slug ],
             );
             if ($this->license_key ) {
 							$request_args['license'] = $this->license_key;
@@ -93,12 +93,12 @@ if ( ! class_exists('WP_Updates_Theme') ) {
             global $wp_version;
 
             return array(
-            'body' => array(
-            'action' => $action,
-            'request' => serialize($args),
-            'api-key' => md5(home_url()),
-            ),
-            'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url(),
+				'body' => array(
+					'action' => $action,
+					'request' => serialize($args),
+					'api-key' => md5(home_url()),
+				),
+				'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url(),
             );
         }
 

@@ -14,21 +14,21 @@
  /**
   * Outputs an testimonial when the [twp-testimonial] is used
   *
-  * @param 	[string] $atts	   shortcode attributes, required.
-  * @param 	[string] $content  shortcode content, optional.
-  * @return	output of shortcode
-  * @since 	1.0.0
+  * @param  [string] $atts     shortcode attributes, required.
+  * @param  [string] $content  shortcode content, optional.
+  * @return output of shortcode
+  * @since  1.0.0
   * @version 1.0.0
   */
 function twp_testimonial( $atts, $content = '' ) {
 
 	$atts = shortcode_atts( array(
-    'id' => wp_generate_password( 6, false ),
-    'rating'   => '5',
-    'img'      => get_template_directory_uri() . '/assets/images/icons/testimonial.png',
-    'position' => 'middle',
-    'buttons'  => 'true',
-    'center'   => 'true',
+		'id' => wp_generate_password( 6, false ),
+		'rating'   => '5',
+		'img'      => get_template_directory_uri() . '/assets/images/icons/testimonial.png',
+		'position' => 'middle',
+		'buttons'  => 'true',
+		'center'   => 'true',
 	), $atts, 'twp-testimonial' );
 
 	$out = '';

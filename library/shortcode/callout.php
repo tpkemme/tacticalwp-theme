@@ -14,10 +14,10 @@
  /**
   * Outputs an callout when the [twp-callout] is used
   *
-  * @param 	[string] $atts	   shortcode attributes, required.
-  * @param 	[string] $content  shortcode content, optional.
-  * @return	output of shortcode
-  * @since 	1.0.0
+  * @param  [string] $atts     shortcode attributes, required.
+  * @param  [string] $content  shortcode content, optional.
+  * @return output of shortcode
+  * @since  1.0.0
   * @version 1.0.0
   */
 function twp_callout( $atts, $content = '' ) {

@@ -40,8 +40,7 @@ matrix:
   include:
     - php: nightly
       env:
-        - WP_VERSION=master WP_MULTISITE=0
-        - WP_VERSION=master WP_MULTISITE=1
+        - WP_VERSION=master WP_MULTISITE=0 WP_VERSION=master WP_MULTISITE=1
   allow_failures:
     - php: nightly
   fast_finish: true
@@ -101,9 +100,12 @@ script:
   # -s flag: Show sniff codes in all reports.
   # -v flag: Print verbose output.
   # -n flag: Do not print warnings. (shortcut for --warning-severity=0)
+  # -ignore: Ignore these directories when testing with PHPUnit (separated by commas)
   # --standard: Use WordPress as the standard.
   # --extensions: Only sniff PHP files.
-  - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php
+  # Run PHPCBF before testing :)
+  - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcbf -p -s -v -n --ignore=*/wpcs/*,*/vendor/*,*/node_modules/*,*/library/cmb2/*,*/wordpress-coding-standards/*,*/php-codesniffer/* . --standard=./codesniffer.ruleset.xml --extensions=php
+  - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n --ignore=*/wpcs/*,*/vendor/*,*/node_modules/*,*/library/cmb2/*,*/wordpress-coding-standards/*,*/php-codesniffer/* . --standard=./codesniffer.ruleset.xml --extensions=php
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications

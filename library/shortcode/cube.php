@@ -14,10 +14,10 @@
  /**
   * Outputs an cube when the [twp-cube] is used
   *
-  * @param 	[string] $atts	   shortcode attributes, required.
-  * @param 	[string] $content  shortcode content, optional.
-  * @return	output of shortcode
-  * @since 	1.0.0
+  * @param  [string] $atts     shortcode attributes, required.
+  * @param  [string] $content  shortcode content, optional.
+  * @return output of shortcode
+  * @since  1.0.0
   * @version 1.0.0
   */
 function twp_cube( $atts, $content = '' ) {
@@ -28,7 +28,7 @@ function twp_cube( $atts, $content = '' ) {
 		'color'  => '#1563ff',
 		'img'    => '',
 		'direction' => 'left',
-		'height'		=> '200px',
+		'height'        => '200px',
 	), $atts, 'twp-cube' );
 
 	$halfheight = strval( floatval( $atts['height'] ) / 2.0 );

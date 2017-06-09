@@ -14,18 +14,18 @@
  /**
   * Outputs an button when the [twp-button] is used
   *
-  * @param 	[string] $atts	   shortcode attributes, required.
-  * @param 	[string] $content  shortcode content, optional.
-  * @return	output of shortcode
-  * @since 	1.0.0
+  * @param  [string] $atts     shortcode attributes, required.
+  * @param  [string] $content  shortcode content, optional.
+  * @return output of shortcode
+  * @since  1.0.0
   * @version 1.0.0
   */
 function twp_button( $atts, $content = '' ) {
 
 	$atts = shortcode_atts( array(
 		'id' => wp_generate_password( 6, false ),
-		'type'		 => 'primary',
-		'size'		 => 'default',
+		'type'       => 'primary',
+		'size'       => 'default',
 		'toggle'   => '',
 	), $atts, 'twp-button' );
 

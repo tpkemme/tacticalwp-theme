@@ -12,31 +12,31 @@
  */
 
  /**
-  *	Adds all fields for nav settings to custom meta box
+  * Adds all fields for nav settings to custom meta box
   *
-  * @param 	[cmb] 	 $cmb 	 [ custom metabox (cmb), required ]
-  * @return	[cmb]		 $CMB2	 [ cmb with fields added ]
-  * @since 	1.0.0
+  * @param  [cmb]    $cmb    [ custom metabox (cmb), required ]
+  * @return [cmb]        $CMB2   [ cmb with fields added ]
+  * @since  1.0.0
   * @version 1.0.0
   */
 	if ( ! function_exists( 'twp_add_nav_settings' ) ) :
 	function twp_add_nav_settings( $cmb ) {
     // Set our CMB2 fields
     $cmb->add_field(array(
-		  'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
+		'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
         <li class="accordion-item" data-accordion-item>
           <a href="#panel-nav-menu" role="tab" class="accordion-title" id="panel-nav-menu-heading" aria-controls="panel-nav-menu">
             <h6>Menus and Breadcrumbs</h6>
           </a>
           <div id="panel-nav-menu" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-nav-menu-heading">',
-		  'name' => __('Menu Margin', 'twp'),
-		  'desc'    => __('Space around all menu objects. (default: 0rem)', 'twp'),
-		  'id'            => 'twp_nav_menu_margin',
-		  'type'             => 'text_small',
-		  'default'          => '0rem',
-		  'attributes'			 => array(
-				'data-default'	 => '0rem',
-	  	),
+		'name' => __('Menu Margin', 'twp'),
+		'desc'    => __('Space around all menu objects. (default: 0rem)', 'twp'),
+		'id'            => 'twp_nav_menu_margin',
+		'type'             => 'text_small',
+		'default'          => '0rem',
+		'attributes'           => array(
+			'data-default'   => '0rem',
+		),
   	));
 	  $cmb->add_field(array(
 		  'name' => __('Menu Item Padding', 'twp'),
@@ -44,8 +44,8 @@
 		  'id'            => 'twp_nav_menu_padding',
 		  'type'             => 'text_small',
 		  'default'          => '.7rem',
-		  'attributes'			 => array(
-				'data-default'	 => '.7rem',
+		  'attributes'           => array(
+			  'data-default'   => '.7rem',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -54,8 +54,8 @@
 		  'id'            => 'twp_nav_submenu_background_color',
 		  'type'             => 'colorpicker',
 		  'default'          => '#e3ecff',
-		  'attributes'			 => array(
-				'data-default'	 => '#e3ecff',
+		  'attributes'           => array(
+			  'data-default'   => '#e3ecff',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -64,8 +64,8 @@
 		  'id'            => 'twp_nav_breadcrumb_color',
 		  'type'             => 'colorpicker',
 		  'default'          => '#ff5252',
-		  'attributes'			 => array(
-				'data-default'	 => '#ff5252',
+		  'attributes'           => array(
+			  'data-default'   => '#ff5252',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -74,8 +74,8 @@
 		  'id'            => 'twp_nav_breadcrumb_hover_color',
 		  'type'             => 'colorpicker',
 		  'default'          => '#ff6666',
-		  'attributes'			 => array(
-				'data-default'	 => '#ff6666',
+		  'attributes'           => array(
+			  'data-default'   => '#ff6666',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -84,8 +84,8 @@
 		  'id'            => 'twp_nav_breadcrumb_current_color',
 		  'type'             => 'colorpicker',
 		  'default'          => '#333333',
-		  'attributes'			 => array(
-				'data-default'	 => '#333333',
+		  'attributes'           => array(
+			  'data-default'   => '#333333',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -94,8 +94,8 @@
 		  'id'            => 'twp_nav_breadcrumb_divider_color',
 		  'type'             => 'colorpicker',
 		  'default'          => '#333333',
-		  'attributes'			 => array(
-				'data-default'	 => '#333333',
+		  'attributes'           => array(
+			  'data-default'   => '#333333',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -104,8 +104,8 @@
 		  'id'            => 'twp_nav_breadcrumb_divider_symbol',
 		  'type'             => 'text_small',
 		  'default'          => '>',
-		  'attributes'			 => array(
-			'data-default'	 => '>',
+		  'attributes'           => array(
+			  'data-default'   => '>',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -114,8 +114,8 @@
 		  'id'            => 'twp_nav_breadcrumb_font_size',
 		  'type'             => 'text_small',
 		  'default'          => '0.875rem',
-		  'attributes'			 => array(
-				'data-default'	 => '0.875rem',
+		  'attributes'           => array(
+			  'data-default'   => '0.875rem',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -145,8 +145,8 @@
 		  'id'            => 'twp_nav_top_padding',
 		  'type'    => 'text_small',
 		  'default' => '0rem',
-		  'attributes'			 => array(
-				'data-default'	 => '0rem',
+		  'attributes'           => array(
+			  'data-default'   => '0rem',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -155,12 +155,12 @@
 		  'id'            => 'twp_nav_top_sticky',
 		  'type'    => 'radio_inline',
 		  'options' => array(
-				'sticky' => __( 'Sticky', 'twp' ),
-				'none'   => __( 'Not Sticky', 'twp' ),
+			  'sticky' => __( 'Sticky', 'twp' ),
+			  'none'   => __( 'Not Sticky', 'twp' ),
 		  ),
 		  'default' => 'sticky',
-		  'attributes'			 => array(
-				'data-default'	 => 'sticky',
+		  'attributes'           => array(
+			  'data-default'   => 'sticky',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -169,8 +169,8 @@
 		  'id'            => 'twp_nav_top_background_color',
 		  'type'    => 'colorpicker',
 		  'default' => '#222222',
-		  'attributes'			 => array(
-			'data-default'	 => '#222222',
+		  'attributes'           => array(
+			  'data-default'   => '#222222',
 		  ),
 	  ));
 			$cmb->add_field(array(
@@ -179,8 +179,8 @@
 				'id'            => 'twp_nav_top_item_font_size',
 				'type'    => 'text_small',
 				'default' => '1.0875rem',
-				'attributes'			 => array(
-					'data-default'	 => '1.0875rem',
+				'attributes'             => array(
+					'data-default'   => '1.0875rem',
 				),
 			));
 			$cmb->add_field(array(
@@ -201,8 +201,8 @@
 				'id'            => 'twp_nav_top_item_font_color',
 				'type'    => 'colorpicker',
 				'default' => '#f8f8f8',
-				'attributes'			 => array(
-					'data-default'	 => '#f8f8f8',
+				'attributes'             => array(
+					'data-default'   => '#f8f8f8',
 				),
 			));
 			$cmb->add_field(array(
@@ -211,8 +211,8 @@
 				'id'            => 'twp_nav_top_item_hover_font_color',
 				'type'    => 'colorpicker',
 				'default' => '#f8f8f8',
-				'attributes'			 => array(
-					'data-default'	 => '#f8f8f8',
+				'attributes'             => array(
+					'data-default'   => '#f8f8f8',
 				),
 			));
 			$cmb->add_field(array(
@@ -221,8 +221,8 @@
 				'id'            => 'twp_nav_top_item_background_color',
 				'type'    => 'colorpicker',
 				'default' => '#222222',
-				'attributes'			 => array(
-					'data-default'	 => '#222222',
+				'attributes'             => array(
+					'data-default'   => '#222222',
 				),
 			));
 	  $cmb->add_field(array(
@@ -231,8 +231,8 @@
 		  'id'            => 'twp_nav_top_item_hover_background_color',
 		  'type'    => 'colorpicker',
 		  'default' => '#444444',
-		  'attributes'			 => array(
-				'data-default'	 => '#444444',
+		  'attributes'           => array(
+			  'data-default'   => '#444444',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -241,8 +241,8 @@
 		  'id'            => 'twp_nav_top_submenu_background_color',
 		  'type'    => 'colorpicker',
 		  'default' => '#444444',
-		  'attributes'			 => array(
-				'data-default'	 => '#444444',
+		  'attributes'           => array(
+			  'data-default'   => '#444444',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -251,8 +251,8 @@
 		  'id'            => 'twp_nav_top_submenu_hover_background_color',
 		  'type'    => 'colorpicker',
 		  'default' => '#444444',
-		  'attributes'			 => array(
-				'data-default'	 => '#444444',
+		  'attributes'           => array(
+			  'data-default'   => '#444444',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -261,8 +261,8 @@
 		  'id'            => 'twp_nav_top_submenu_font_color',
 		  'type'    => 'colorpicker',
 		  'default' => '#f8f8f8',
-		  'attributes'			 => array(
-				'data-default'	 => '#f8f8f8',
+		  'attributes'           => array(
+			  'data-default'   => '#f8f8f8',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -271,8 +271,8 @@
 		  'id'            => 'twp_nav_top_submenu_hover_font_color',
 		  'type'    => 'colorpicker',
 		  'default' => '#c0c9ff',
-		  'attributes'			 => array(
-				'data-default'	 => '#c0c9ff',
+		  'attributes'           => array(
+			  'data-default'   => '#c0c9ff',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -281,12 +281,12 @@
 		  'id'            => 'twp_nav_top_menu_alignment',
 		  'type'    => 'radio_inline',
 		  'options' => array(
-			'left' => __( 'Left', 'twp' ),
-			'right'   => __( 'Right', 'twp' ),
+			  'left' => __( 'Left', 'twp' ),
+			  'right'   => __( 'Right', 'twp' ),
 		  ),
 		  'default' => 'right',
-		  'attributes'			 => array(
-				'data-default'	 => 'right',
+		  'attributes'           => array(
+			  'data-default'   => 'right',
 		  ),
 		  'after_row' => '</div></li>',
 	  ));
@@ -301,12 +301,12 @@
 		  'id'            => 'twp_nav_top_search',
 		  'type'    => 'radio_inline',
 		  'options' => array(
-			'show' => __( 'Show', 'twp' ),
-			'hide'   => __( 'Hide', 'twp' ),
+			  'show' => __( 'Show', 'twp' ),
+			  'hide'   => __( 'Hide', 'twp' ),
 		  ),
 		  'default' => 'hide',
-		  'attributes'			 => array(
-				'data-default'	 => 'hide',
+		  'attributes'           => array(
+			  'data-default'   => 'hide',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -315,8 +315,8 @@
 		  'id'            => 'twp_nav_top_search_button_color',
 		  'type'    => 'colorpicker',
 		  'default' => '#1563ff',
-		  'attributes'			 => array(
-				'data-default'	 => '#1563ff',
+		  'attributes'           => array(
+			  'data-default'   => '#1563ff',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -325,8 +325,8 @@
 		  'id'            => 'twp_nav_top_search_button_hover_color',
 		  'type'    => 'colorpicker',
 		  'default' => '#5364fc',
-		  'attributes'			 => array(
-				'data-default'	 => '#5364fc',
+		  'attributes'           => array(
+			  'data-default'   => '#5364fc',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -335,8 +335,8 @@
 		  'id'            => 'twp_nav_top_search_button_text_color',
 		  'type'    => 'colorpicker',
 		  'default' => '#ffffff',
-		  'attributes'			 => array(
-				'data-default'	 => '#ffffff',
+		  'attributes'           => array(
+			  'data-default'   => '#ffffff',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -345,8 +345,8 @@
 		  'id'            => 'twp_nav_top_search_button_text_hover_color',
 		  'type'    => 'colorpicker',
 		  'default' => '#ffffff',
-		  'attributes'			 => array(
-				'data-default'	 => '#ffffff',
+		  'attributes'           => array(
+			  'data-default'   => '#ffffff',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -355,10 +355,10 @@
 		  'id'            => 'twp_nav_top_search_placeholder_text',
 		  'type'    => 'text_medium',
 		  'default' => 'Search',
-		  'attributes'			 => array(
-			'data-default'	 => 'Search',
+		  'attributes'           => array(
+			  'data-default'   => 'Search',
 		  ),
-		  	'after_row' => '</div></li>',
+		  'after_row' => '</div></li>',
 	  ));
 	  $cmb->add_field(array(
 		  'before_row'  => '<li class="accordion-item" data-accordion-item>
@@ -371,8 +371,8 @@
 		  'id'            => 'twp_nav_title_font_color',
 		  'type'    => 'colorpicker',
 		  'default' => '#ffffff',
-		  'attributes'			 => array(
-				'data-default'	 => '#ffffff',
+		  'attributes'           => array(
+			  'data-default'   => '#ffffff',
 		  ),
 	  ));
 	  $cmb->add_field(array(
@@ -381,21 +381,21 @@
 		  'id'            => 'twp_nav_title_font_size',
 		  'type'    => 'text_small',
 		  'default' => '200%',
-		  'attributes'			 => array(
-				'data-default'	 => '200%',
+		  'attributes'           => array(
+			  'data-default'   => '200%',
 		  ),
 	  ));
 	  $cmb->add_field(array(
 		  'name' => __('Site Title Font Family', 'twp'),
 		  'desc'    => __('Font family of the site title in the topbar. (default: Titillium Web)', 'twp'),
 		  'id'            => 'twp_nav_title_font_family',
-			'type'             => 'select',
-			'show_option_none' => false,
-			'default'          => 'Titillium Web',
-			'attributes' => array(
-				'data-default' => 'Titillium Web',
-			),
-			'options_cb'       => 'twp_google_fonts',
+		  'type'             => 'select',
+		  'show_option_none' => false,
+		  'default'          => 'Titillium Web',
+		  'attributes' => array(
+			  'data-default' => 'Titillium Web',
+		  ),
+		  'options_cb'       => 'twp_google_fonts',
 	  ));
 		$cmb->add_field(array(
 			'name' => __('Show Site Title', 'twp'),
@@ -407,8 +407,8 @@
 				'hide'   => __( 'Hide', 'twp' ),
 			),
 			'default' => 'show',
-			'attributes'			 => array(
-				'data-default'	 => 'show',
+			'attributes'             => array(
+				'data-default'   => 'show',
 			),
 		));
 		$cmb->add_field(array(
@@ -421,13 +421,13 @@
 				'hide'   => __( 'Hide', 'twp' ),
 			),
 			'default' => 'hide',
-			'attributes'			 => array(
-				'data-default'	 => 'hide',
+			'attributes'             => array(
+				'data-default'   => 'hide',
 			),
 		));
 		$cmb->add_field(array(
 			'name' => __('Logo Image', 'twp'),
-									'desc'    => __('Logo image for topbar, as url or image. (no default)', 'twp'),
+			'desc'    => __('Logo image for topbar, as url or image. (no default)', 'twp'),
 			'id'      => 'twp_nav_top_logo_image',
 			'type'    => 'file',
 			'options' => array(

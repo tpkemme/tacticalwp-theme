@@ -17,10 +17,10 @@
   * Echos output of twp_get_option( $prefix . 'option_name' ).  This function
   * isn't necessary but it keeps the embedded styles template a lot cleaner.
   *
-  * @param 	[string] $option [ option name, required ]
-  * @param 	[string] $prefix [ option name, optional ]
-  * @return	void         		[ echos output ]
-  * @since 	1.0.0
+  * @param  [string] $option [ option name, required ]
+  * @param  [string] $prefix [ option name, optional ]
+  * @return void                [ echos output ]
+  * @since  1.0.0
   * @version 1.0.0
   */
 	if ( ! function_exists( 'twp' ) ) :
@@ -35,9 +35,9 @@
   * Echos output of twp_get_option( $prefix . 'option_name' ).  This function
   * isn't necessary but it keeps the embedded styles template a lot cleaner.
   *
-  * @param 	[string] $length [ excerpt length ].
-  * @return	[int] $exerpt_length [ length of excerpt ]
-  * @since 	1.0.0
+  * @param  [string] $length [ excerpt length ].
+  * @return [int] $exerpt_length [ length of excerpt ]
+  * @since  1.0.0
   * @version 1.0.0
   */
   function twp_custom_excerpt_length( $length ) {
@@ -74,7 +74,7 @@
 	 * Gets a list of source files for a given Google Font Family
 	 *
 	 * @since  1.0.0
-	 * @param  $family	name of the family to retrieve variants
+	 * @param  $family  name of the family to retrieve variants
 	 * @return $files   array of font source urls or false if family doesn't exist
 	 */
 	if ( ! function_exists( 'twp_google_fonts_src' ) ) :
@@ -181,10 +181,10 @@
   		<script type="text/javascript">
   			var tinyMCE_object = <?php echo json_encode(
   				array(
-  					'button_name' => esc_html__('TacticalWP', 'twp'),
-  					'button_title' => esc_html__('TacticalWP Shortcodes', 'twp'),
-  					'image_title' => esc_html__('Image', 'twp'),
-  					'image_button_title' => esc_html__('Add image', 'twp'),
+					'button_name' => esc_html__('TacticalWP', 'twp'),
+					'button_title' => esc_html__('TacticalWP Shortcodes', 'twp'),
+					'image_title' => esc_html__('Image', 'twp'),
+					'image_button_title' => esc_html__('Add image', 'twp'),
   				)
   				);
   			?>;

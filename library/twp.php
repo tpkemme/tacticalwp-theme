@@ -21,14 +21,14 @@ function twp_pagination() {
 		// For more options and info view the docs for paginate_links()
 		// http://codex.wordpress.org/Function_Reference/paginate_links
 		$paginate_links = paginate_links( array(
-		'base' => str_replace( $big, '%#%', html_entity_decode( get_pagenum_link( $big ) ) ),
-		'current' => max( 1, get_query_var( 'paged' ) ),
-		'total' => $wp_query->max_num_pages,
-		'mid_size' => 5,
-		'prev_next' => true,
-	    'prev_text' => __( 'Previous', 'twp' ),
-	    'next_text' => __( 'Next', 'twp' ),
-		'type' => 'list',
+			'base' => str_replace( $big, '%#%', html_entity_decode( get_pagenum_link( $big ) ) ),
+			'current' => max( 1, get_query_var( 'paged' ) ),
+			'total' => $wp_query->max_num_pages,
+			'mid_size' => 5,
+			'prev_next' => true,
+			'prev_text' => __( 'Previous', 'twp' ),
+			'next_text' => __( 'Next', 'twp' ),
+			'type' => 'list',
 		) );
 
 			$paginate_links = str_replace( "<ul class='page-numbers'>", "<ul class='pagination' role='navigation' aria-label='Pagination'>", $paginate_links );
@@ -109,14 +109,14 @@ function twp_responsive_video_oembed_html( $html, $url, $attr, $post_id ) {
 		// support multiple embed types such as Facebook.
 		// Official list can be found here https://codex.wordpress.org/Embeds
 		$video_sites = array(
-		'youtube', // first for performance
-		'collegehumor',
-		'dailymotion',
-		'funnyordie',
-		'ted',
-		'videopress',
-		'vimeo',
-			);
+			'youtube', // first for performance
+			'collegehumor',
+			'dailymotion',
+			'funnyordie',
+			'ted',
+			'videopress',
+			'vimeo',
+		);
 
 			$is_video = false;
 

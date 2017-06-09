@@ -19,23 +19,23 @@
 <?php
 // Only enqueue Google Font families if they're being used
 $families = array();
-$global_family	  = twp_get_option( 'twp_global_font_family' );
-$header_family	  = twp_get_option( 'twp_typo_header_family' );
+$global_family    = twp_get_option( 'twp_global_font_family' );
+$header_family    = twp_get_option( 'twp_typo_header_family' );
 $subheader_family = twp_get_option( 'twp_typo_sub_header_family' );
-$title_family 		= twp_get_option( 'twp_nav_title_font_family' );
-$menu_family 			= twp_get_option( 'twp_nav_top_item_font_family' );
-$code_family 			= twp_get_option( 'twp_typo_code_font_family' );
-if ( ! in_array($global_family, 	 $families) ) { array_push( $families , $global_family );
+$title_family       = twp_get_option( 'twp_nav_title_font_family' );
+$menu_family            = twp_get_option( 'twp_nav_top_item_font_family' );
+$code_family            = twp_get_option( 'twp_typo_code_font_family' );
+if ( ! in_array($global_family,      $families) ) { array_push( $families , $global_family );
 }
-if ( ! in_array($header_family, 	 $families) ) { array_push( $families , $header_family );
+if ( ! in_array($header_family,      $families) ) { array_push( $families , $header_family );
 }
 if ( ! in_array($subheader_family, $families) ) { array_push( $families , $subheader_family );
 }
-if ( ! in_array($title_family, 	   $families) ) { array_push( $families , $title_family );
+if ( ! in_array($title_family,     $families) ) { array_push( $families , $title_family );
 }
-if ( ! in_array($menu_family,	     $families) ) { array_push( $families , $menu_family );
+if ( ! in_array($menu_family,        $families) ) { array_push( $families , $menu_family );
 }
-if ( ! in_array($code_family,	     $families) ) { array_push( $families , $code_family );
+if ( ! in_array($code_family,        $families) ) { array_push( $families , $code_family );
 }
 foreach ( $families as $family ) {
 	$variants = twp_google_fonts_src( $family );

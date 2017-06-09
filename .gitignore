@@ -9,3 +9,5 @@ assets/javascript/twp.js
 assets/javascript/custom/demosite.js
 packaged/
 wpcs/
+wordpress-coding-standards
+php-codesniffer

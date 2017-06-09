@@ -14,10 +14,10 @@
  /**
   * Outputs an accordion when the [twp-accordion]
   *
-  * @param 	[string] $atts	   shortcode attributes, required.
-  * @param 	[string] $content  shortcode content, optional.
-  * @return	output of shortcode
-  * @since 	1.0.0
+  * @param  [string] $atts     shortcode attributes, required.
+  * @param  [string] $content  shortcode content, optional.
+  * @return output of shortcode
+  * @since  1.0.0
   * @version 1.0.0
   */
 function twp_accordion( $atts, $content = '' ) {
@@ -25,8 +25,8 @@ function twp_accordion( $atts, $content = '' ) {
 	$atts = shortcode_atts( array(
 		'id' => wp_generate_password( 6, false ),
 		'position' => 'middle',
-		'title'		 => 'Accordion Title',
-		'type'		 => 'default',
+		'title'      => 'Accordion Title',
+		'type'       => 'default',
 		'close-all' => 'true',
 		'multi-expand' => 'true',
 	), $atts, 'twp-accordion' );

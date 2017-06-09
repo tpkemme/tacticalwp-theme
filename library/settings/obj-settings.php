@@ -12,11 +12,11 @@
  */
 
  /**
-  *	Adds all fields for object defaults settings to custom meta box
+  * Adds all fields for object defaults settings to custom meta box
   *
-  * @param 	[cmb] 	 $cmb 	 [ custom metabox (cmb), required ]
-  * @return	[cmb]		 $CMB2	 [ cmb with fields added ]
-  * @since 	1.0.0
+  * @param  [cmb]    $cmb    [ custom metabox (cmb), required ]
+  * @return [cmb]        $CMB2   [ cmb with fields added ]
+  * @since  1.0.0
   * @version 1.0.0
   */
 	if ( ! function_exists( 'twp_add_obj_settings' ) ) :
@@ -34,8 +34,8 @@
 			'id'            => 'twp_obj_form_background_color',
 			'type'             => 'colorpicker',
 			'default'          => '#ffffff',
-			'attributes'			 => array(
-				'data-default'	 => '#ffffff',
+			'attributes'             => array(
+				'data-default'   => '#ffffff',
 			),
 		));
 		$cmb->add_field(array(
@@ -44,8 +44,8 @@
 			'id'            => 'twp_obj_form_border_color',
 			'type'             => 'colorpicker',
 			'default'          => '#ffffff',
-			'attributes'			 => array(
-				'data-default'	 => '#ffffff',
+			'attributes'             => array(
+				'data-default'   => '#ffffff',
 			),
 		));
 		$cmb->add_field(array(
@@ -54,8 +54,8 @@
 			'id'            => 'twp_obj_form_border_color',
 			'type'             => 'colorpicker',
 			'default'          => '#387aff',
-			'attributes'			 => array(
-				'data-default'	 => '#387aff',
+			'attributes'             => array(
+				'data-default'   => '#387aff',
 			),
 		));
 		$cmb->add_field(array(
@@ -64,8 +64,8 @@
 			'id'            => 'twp_obj_form_helptext_color',
 			'type'             => 'colorpicker',
 			'default'          => '#999999',
-			'attributes'			 => array(
-				'data-default'	 => '#999999',
+			'attributes'             => array(
+				'data-default'   => '#999999',
 			),
 		));
 		$cmb->add_field(array(
@@ -74,8 +74,8 @@
 			'id'            => 'twp_obj_form_helptext_font_size',
 			'type'             => 'text_small',
 			'default'          => '0.875rem',
-			'attributes'			 => array(
-				'data-default'	 => '0.875rem',
+			'attributes'             => array(
+				'data-default'   => '0.875rem',
 			),
 		));
 		$cmb->add_field(array(
@@ -84,8 +84,8 @@
 			'id'            => 'twp_obj_form_label_color',
 			'type'             => 'colorpicker',
 			'default'          => '#999999',
-			'attributes'			 => array(
-				'data-default'	 => '#999999',
+			'attributes'             => array(
+				'data-default'   => '#999999',
 			),
 		));
 		$cmb->add_field(array(
@@ -94,8 +94,8 @@
 			'id'            => 'twp_obj_form_label_font_size',
 			'type'             => 'text_small',
 			'default'          => '0.875rem',
-			'attributes'			 => array(
-				'data-default'	 => '0.875rem',
+			'attributes'             => array(
+				'data-default'   => '0.875rem',
 			),
 		));
 		$cmb->add_field(array(
@@ -104,8 +104,8 @@
 			'id'            => 'twp_obj_form_input_color',
 			'type'             => 'colorpicker',
 			'default'          => '#666666',
-			'attributes'			 => array(
-				'data-default'	 => '#666666',
+			'attributes'             => array(
+				'data-default'   => '#666666',
 			),
 		));
 		$cmb->add_field(array(
@@ -114,8 +114,8 @@
 			'id'            => 'twp_obj_form_input_focus_color',
 			'type'             => 'colorpicker',
 			'default'          => '#333333',
-			'attributes'			 => array(
-				'data-default'	 => '#333333',
+			'attributes'             => array(
+				'data-default'   => '#333333',
 			),
 		));
 		$cmb->add_field(array(
@@ -124,8 +124,8 @@
 			'id'            => 'twp_obj_form_placeholder_color',
 			'type'             => 'colorpicker',
 			'default'          => '#8ab1ff',
-			'attributes'			 => array(
-				'data-default'	 => '#8ab1ff',
+			'attributes'             => array(
+				'data-default'   => '#8ab1ff',
 			),
 			'after_row' => '</div></li>',
 		));
@@ -140,8 +140,8 @@
 			'id'            => 'twp_obj_tab_active_color',
 			'type'             => 'colorpicker',
 			'default'          => '#5364fc',
-			'attributes'			 => array(
-				'data-default'	 => '#5364fc',
+			'attributes'             => array(
+				'data-default'   => '#5364fc',
 			),
 		));
 		$cmb->add_field(array(
@@ -150,8 +150,8 @@
 			'id'            => 'twp_obj_tab_inactive_color',
 			'type'             => 'colorpicker',
 			'default'          => '#8ab1ff',
-			'attributes'			 => array(
-				'data-default'	 => '#8ab1ff',
+			'attributes'             => array(
+				'data-default'   => '#8ab1ff',
 			),
 		));
 		$cmb->add_field(array(
@@ -160,8 +160,8 @@
 			'id'            => 'twp_obj_tab_hover_color',
 			'type'             => 'colorpicker',
 			'default'          => '#5b92ff',
-			'attributes'			 => array(
-				'data-default'	 => '#5b92ff',
+			'attributes'             => array(
+				'data-default'   => '#5b92ff',
 			),
 		));
 		$cmb->add_field(array(
@@ -170,8 +170,8 @@
 			'id'            => 'twp_obj_tab_font_color',
 			'type'             => 'colorpicker',
 			'default'          => '#ffffff',
-			'attributes'			 => array(
-				'data-default'	 => '#ffffff',
+			'attributes'             => array(
+				'data-default'   => '#ffffff',
 			),
 			'after_row' => '</div></li>',
 		));
@@ -186,8 +186,8 @@
 			'id'            => 'twp_obj_accord_active_color',
 			'type'             => 'colorpicker',
 			'default'          => '#5364fc',
-			'attributes'			 => array(
-				'data-default'	 => '#5364fc',
+			'attributes'             => array(
+				'data-default'   => '#5364fc',
 			),
 		));
 		$cmb->add_field(array(
@@ -196,8 +196,8 @@
 			'id'            => 'twp_obj_accord_inactive_color',
 			'type'             => 'colorpicker',
 			'default'          => '#8ab1ff',
-			'attributes'			 => array(
-				'data-default'	 => '#8ab1ff',
+			'attributes'             => array(
+				'data-default'   => '#8ab1ff',
 			),
 		));
 		$cmb->add_field(array(
@@ -206,8 +206,8 @@
 			'id'            => 'twp_obj_accord_hover_color',
 			'type'             => 'colorpicker',
 			'default'          => '#5b92ff',
-			'attributes'			 => array(
-				'data-default'	 => '#5b92ff',
+			'attributes'             => array(
+				'data-default'   => '#5b92ff',
 			),
 		));
 		$cmb->add_field(array(
@@ -216,10 +216,10 @@
 			'id'            => 'twp_obj_accord_font_color',
 			'type'             => 'colorpicker',
 			'default'          => '#ffffff',
-			'attributes'			 => array(
-				'data-default'	 => '#ffffff',
+			'attributes'             => array(
+				'data-default'   => '#ffffff',
 			),
-			'after_row' 			=> '</div></li>',
+			'after_row'             => '</div></li>',
 		));
 		$cmb->add_field(array(
 			'before_row'  => '<li class="accordion-item" data-accordion-item>
@@ -232,8 +232,8 @@
 			'id'            => 'twp_obj_table_header_color',
 			'type'             => 'colorpicker',
 			'default'          => '#dceeff',
-			'attributes'			 => array(
-				'data-default'	 => '#dceeff',
+			'attributes'             => array(
+				'data-default'   => '#dceeff',
 			),
 		));
 		$cmb->add_field(array(
@@ -242,8 +242,8 @@
 			'id'            => 'twp_obj_table_even_color',
 			'type'             => 'colorpicker',
 			'default'          => '#f5faff',
-			'attributes'			 => array(
-				'data-default'	 => '#f5faff',
+			'attributes'             => array(
+				'data-default'   => '#f5faff',
 			),
 		));
 		$cmb->add_field(array(
@@ -252,8 +252,8 @@
 			'id'            => 'twp_obj_table_odd_color',
 			'type'             => 'colorpicker',
 			'default'          => '#e9f4ff',
-			'attributes'			 => array(
-				'data-default'	 => '#e9f4ff',
+			'attributes'             => array(
+				'data-default'   => '#e9f4ff',
 			),
 		));
 		$cmb->add_field(array(
@@ -262,8 +262,8 @@
 			'id'            => 'twp_obj_table_font_color',
 			'type'             => 'colorpicker',
 			'default'          => '#ffffff',
-			'attributes'			 => array(
-				'data-default'	 => '#ffffff',
+			'attributes'             => array(
+				'data-default'   => '#ffffff',
 			),
 			'after_row' => '</div></li></ul>',
 		));

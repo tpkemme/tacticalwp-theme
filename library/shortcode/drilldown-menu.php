@@ -14,9 +14,9 @@
  /**
   * Outputs an drilldown menu when the [twp-drilldown-menu]
   *
-  * @param 	[string] $atts	   shortcode attributes, required.
-  * @return	output of shortcode
-  * @since 	1.0.0
+  * @param  [string] $atts     shortcode attributes, required.
+  * @return output of shortcode
+  * @since  1.0.0
   * @version 1.0.0
   */
 function twp_drilldown_menu( $atts ) {
@@ -31,15 +31,15 @@ function twp_drilldown_menu( $atts ) {
 
 	if ( 0 !== $locations['header'] ) {
 		$out = wp_nav_menu( array(
-		'theme_location' 	=> 'header',
-		'menu' => $atts['menu'],
-		'menu_class' => 'vertical menu',
-		'menu_id' => $atts['id'],
-		'container' => '',
-		'items_wrap' => '<ul id="%1$s" data-drilldown class="%2$s">%3$s</ul>',
-		'echo'			 => false,
-		'walker'		 => new TWP_Drilldown_Menu_Walker(),
-		'fallback_cb'    => false,
+			'theme_location'    => 'header',
+			'menu' => $atts['menu'],
+			'menu_class' => 'vertical menu',
+			'menu_id' => $atts['id'],
+			'container' => '',
+			'items_wrap' => '<ul id="%1$s" data-drilldown class="%2$s">%3$s</ul>',
+			'echo'           => false,
+			'walker'         => new TWP_Drilldown_Menu_Walker(),
+			'fallback_cb'    => false,
 		));
 		}
 

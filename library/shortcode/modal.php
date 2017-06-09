@@ -14,18 +14,18 @@
  /**
   * Outputs an modal when the [twp-modal] is used
   *
-  * @param 	[string] $atts	   shortcode attributes, required.
-  * @param 	[string] $content  shortcode content, optional.
-  * @return	output of shortcode
-  * @since 	1.0.0
+  * @param  [string] $atts     shortcode attributes, required.
+  * @param  [string] $content  shortcode content, optional.
+  * @return output of shortcode
+  * @since  1.0.0
   * @version 1.0.0
   */
 function twp_modal( $atts, $content = '' ) {
 
 	$atts = shortcode_atts( array(
 		'id' => wp_generate_password( 6, false ),
-		'type'		 => 'button',
-		'size'		 => 'basic',
+		'type'       => 'button',
+		'size'       => 'basic',
 		'reveal-text' => 'Open Modal',
 	), $atts, 'twp-modal' );
 

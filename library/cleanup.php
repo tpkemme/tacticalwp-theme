@@ -104,11 +104,11 @@ endif;
 if ( ! function_exists( 'twp_remove_figure_inline_style' ) ) :
 function twp_remove_figure_inline_style( $output, $attr, $content ) {
 		$atts = shortcode_atts( array(
-		'id'	  => '',
-		'align'	  => 'alignnone',
-		'width'	  => '',
-		'caption' => '',
-		'class'   => '',
+			'id'      => '',
+			'align'   => 'alignnone',
+			'width'   => '',
+			'caption' => '',
+			'class'   => '',
 		), $attr, 'caption' );
 
 			$atts['width'] = (int) $atts['width'];

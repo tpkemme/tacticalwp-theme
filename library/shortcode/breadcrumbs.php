@@ -14,9 +14,9 @@
  /**
   * Outputs an breadcrumb when the [twp-breadcrumbs] is used
   *
-  * @param 	[string] $atts	   shortcode attributes, required.
-  * @return	output of shortcode
-  * @since 	1.0.0
+  * @param  [string] $atts     shortcode attributes, required.
+  * @return output of shortcode
+  * @since  1.0.0
   * @version 1.0.0
   */
 function twp_breadcrumb_shortcode( $atts ) {

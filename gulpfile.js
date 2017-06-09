@@ -259,7 +259,8 @@ gulp.task(
           bin: 'wpcs/vendor/bin/phpcs',
           standard: './codesniffer.ruleset.xml',
           showSniffCode: true,
-          warningSeverity: 0
+          warningSeverity: 0,
+          report: 'summary'
         }
       )
     )
@@ -276,7 +277,9 @@ gulp.task(
                 {
                     bin: 'wpcs/vendor/bin/phpcbf',
                     standard: './codesniffer.ruleset.xml',
-                    warningSeverity: 0
+                    showSniffCode: true,
+                    warningSeverity: 0,
+                    report: 'summary'
                 }
             )
         )

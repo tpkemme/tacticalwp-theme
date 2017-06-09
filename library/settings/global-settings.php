@@ -12,11 +12,11 @@
  */
 
  /**
-  *	Adds all fields for global settings to custom meta box
+  * Adds all fields for global settings to custom meta box
   *
-  * @param 	[cmb] 	 $cmb 	 [ custom metabox (cmb), required ]
-  * @return	[cmb]		 $CMB2	 [ cmb with fields added ]
-  * @since 	1.0.0
+  * @param  [cmb]    $cmb    [ custom metabox (cmb), required ]
+  * @return [cmb]        $CMB2   [ cmb with fields added ]
+  * @since  1.0.0
   * @version 1.0.0
   */
 	if ( ! function_exists( 'twp_add_global_settings' ) ) :
@@ -122,7 +122,7 @@
 			'type'    => 'colorpicker',
 			'default' => '#ffffff',
 			'attributes' => array(
-					'data-default' => '#ffffff',
+				'data-default' => '#ffffff',
 			),
 		));
 		$cmb->add_field(array(
@@ -273,7 +273,7 @@
 			'after_row' => '</div></li>',
 		));
   $cmb->add_field(array(
-		'before_row'  => '<li class="accordion-item" data-accordion-item>
+	  'before_row'  => '<li class="accordion-item" data-accordion-item>
 			<a href="#panel-global-grays" role="tab" class="accordion-title" id="panel-global-grays-heading" aria-controls="panel-global-grays">
 				<h6>Global Blacks & Whites</h6>
 			</a>
@@ -284,11 +284,11 @@
 	  'type'    => 'colorpicker',
 	  'default' => '#ffffff',
 	  'attributes' => array(
-			'data-default' => '#ffffff',
+		  'data-default' => '#ffffff',
 	  ),
   ));
 		$cmb->add_field(array(
-	  	'name'    => __('Light Gray', 'twp'),
+			'name'    => __('Light Gray', 'twp'),
 			'desc'    => __('Color for light gray in hex (default: #e3ecff)', 'twp'),
 			'id'      => 'twp_global_light_gray_color',
 			'type'    => 'colorpicker',

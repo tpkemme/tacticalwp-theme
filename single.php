@@ -33,8 +33,8 @@ get_header(); ?>
     <?php
                 wp_link_pages(
                     array(
-                        'before' => '<nav id="page-nav"><p>' . __('Pages:', 'twp'),
-                        'after'  => '</p></nav>',
+						'before' => '<nav id="page-nav"><p>' . __('Pages:', 'twp'),
+						'after'  => '</p></nav>',
                     )
                 );
     ?>
