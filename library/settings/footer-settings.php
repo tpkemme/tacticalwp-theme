@@ -6,7 +6,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.0
+ * @version 1.0.1
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -17,7 +17,7 @@
   * @param  [cmb]    $cmb    [ custom metabox (cmb), required ]
   * @return [cmb]        $CMB2   [ cmb with fields added ]
   * @since  1.0.0
-  * @version 1.0.0
+  * @version 1.0.1
   */
 	if ( ! function_exists( 'twp_add_footer_settings' ) ) :
 	function twp_add_footer_settings( $cmb ) {

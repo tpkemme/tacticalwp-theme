@@ -8,7 +8,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.0
+ * @version 1.0.1
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
