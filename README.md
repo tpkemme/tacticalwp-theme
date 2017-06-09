@@ -97,7 +97,7 @@ Version control on these files are turned off because they are automatically gen
 
 ### Check For WordPress Coding Standards
 
-Foundation comes with everything you need to run tests that will check your theme for WordPress Coding Standards. To enable this feature you'll need to install PHP Codesniffer, along with the WordPress Coding Standards set of "Sniffs". You'll need to have [Composer](https://getcomposer.org/) To install both run the following:
+TacticalWP comes with everything you need to run tests that will check your theme for WordPress Coding Standards. To enable this feature you'll need to install PHP Codesniffer, along with the WordPress Coding Standards set of "Sniffs". You'll need to have [Composer](https://getcomposer.org/) To install both run the following:
 ```bash
 $ composer create-project wp-coding-standards/wpcs:dev-master --no-dev
 ```
@@ -112,6 +112,12 @@ If there are errors that Code Sniffer can fix automatically, run the following c
 ```bash
 $ npm run phpcbf
 ```
+
+I have found through testing that running phpcs using the above command (gulp-phpcs) is different that running phpcs through Travis-CI using the provided .travis.yml config file.  Despite using the same arguments, gulp-phpcs appears to not be as extensive when testing our code against the Wordpress Coding Standards.  Therefore, you can also use the following code to run phpcs using the same command that Travis uses:
+```bash
+$ npm run travis
+```
+The `travis` command will run phpcbf and phpcs and give you the same results that you would see from Travis-CI.  Because it seems to be more expansive when testing for coding standards than gulp-phpcs, it can take considerably longer than running `npm run phpcs`.  The best workflow would be to use `npm run phpcs` to test your code while you're making corrections.  When you've finished fixing all of the errors found by `npm run phpcs`, run `npm run travis` so you can verify you build will pass before pushing to your remote repository.
 
 ## Demo
 

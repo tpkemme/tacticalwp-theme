@@ -76,6 +76,7 @@
     "phpcbf": "gulp phpcbf",
     "postinstall": "bower install && gulp build",
     "production": "gulp --production",
+    "travis": "rm -rf php-codesniffer && rm -rf wordpress-coding-standards && git clone https://github.com/squizlabs/PHP_CodeSniffer.git -b 2.9 php-codesniffer --depth=1 && git clone https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git wordpress-coding-standards --depth=1 && cd php-codesniffer && scripts/phpcs --config-set installed_paths ../wordpress-coding-standards && cd .. && ./php-codesniffer/scripts/phpcbf -p -s -n --ignore=*/wpcs/*,*/vendor/*,*/node_modules/*,*/library/cmb2/*,*/wordpress-coding-standards/*,*/php-codesniffer/* . --standard=./codesniffer.ruleset.xml --extensions=php &&  ./php-codesniffer/scripts/phpcs -p -s -n --ignore=*/wpcs/*,*/vendor/*,*/node_modules/*,*/library/cmb2/*,*/wordpress-coding-standards/*,*/php-codesniffer/* . --standard=./codesniffer.ruleset.xml --extensions=php && rm -rf php-codesniffer && rm -rf wordpress-coding-standards",
     "watch": "gulp"
   }
 }
