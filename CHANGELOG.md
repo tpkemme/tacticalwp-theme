@@ -1,5 +1,16 @@
 # Change Log
 
+## [v1.0.2](https://github.com/tpkemme/tacticalwp-theme/tree/v1.0.2) (2017-06-08)
+
+**Fixed bugs:**
+
+- Fixed two fatal errors that prevent the plugin from installing
+- Fixed update functionality
+- Modified composer script to remove all development files from release zip
+
+
+# Change Log
+
 ## [v1.0.1](https://github.com/tpkemme/tacticalwp-theme/tree/v1.0.1) (2017-06-08)
 
 **Implemented enhancements:**

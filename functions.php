@@ -11,7 +11,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.1
+ * @version 1.0.2
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -126,9 +126,17 @@ require_once 'library/settings/layout-settings.php';
 require_once 'library/settings/typo-settings.php';
 require_once 'library/settings/obj-settings.php';
 require_once 'library/settings/advanced-settings.php';
-require_once 'library/theme-settings.php';
+require_once 'library/class-twp-theme-settings.php';
 
 /**
  * If your site requires protocol relative url's for theme assets, uncomment the line below
 */
 // require_once( 'library/class-twp-protocol-relative-theme-assets.php' );
+
+// @codingStandardsIgnoreStart
+/**
+ * This code is for updating the theme through the Wordpress Admin panel using WP-Updates.com
+ */
+require_once('wp-updates-theme.php');
+new WPUpdatesThemeUpdater_2050( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
+// @codingStandardsIgnoreEnd

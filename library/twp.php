@@ -6,7 +6,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.1
+ * @version 1.0.2
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -162,7 +162,3 @@ function twp_responsive_video_oembed_html( $html, $url, $attr, $post_id ) {
 }
 add_filter( 'embed_oembed_html', 'twp_responsive_video_oembed_html', 10, 4 );
 endif;
-
-// Handle plugin updates
-require_once( get_template_directory() . '/wp-updates-theme.php' );
-new WP_Updates_Theme( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );

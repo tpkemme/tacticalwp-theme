@@ -6,7 +6,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.1
+ * @version 1.0.2
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -31,7 +31,7 @@ if ( ! function_exists( 'twp_top_bar_r' ) ) {
 			'theme_location' => 'top-bar-r',
 			'depth'          => 3,
 			'fallback_cb'    => false,
-			'walker'         => new TacticalWP_Top_Bar_Walker(),
+			'walker'         => new TWP_Top_Bar_Walker(),
 		));
 	}
 }
@@ -49,7 +49,7 @@ if ( ! function_exists( 'twp_mobile_nav' ) ) {
 			'theme_location' => 'mobile-nav',
 			'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
 			'fallback_cb'    => false,
-			'walker'         => new TacticalWP_Mobile_Walker(),
+			'walker'         => new TWP_Mobile_Walker(),
 		));
 	}
 }

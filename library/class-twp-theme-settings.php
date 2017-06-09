@@ -6,7 +6,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.1
+ * @version 1.0.2
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -18,7 +18,7 @@
   * @package TacticalWP
   * @author   Tyler Kemme <dev@tylerkemme.com>
   * @license  MIT https://opensource.org/licenses/MIT
-  * @version 1.0.1
+  * @version 1.0.2
   * @link https://github.com/tpkemme/tacticalwp-theme
   * @since 1.0.0
   */
@@ -512,7 +512,7 @@ class TWP_Theme_Settings {
  * @return TacticalWP_Settings object
  */
 function twp_settings() {
-    return TacticalWP_Settings::get_instance();
+    return TWP_Theme_Settings::get_instance();
 }
 
 /**
