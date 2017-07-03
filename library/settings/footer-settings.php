@@ -6,7 +6,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.2
+ * @version 1.0.3
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -17,25 +17,25 @@
   * @param  [cmb]    $cmb    [ custom metabox (cmb), required ]
   * @return [cmb]        $CMB2   [ cmb with fields added ]
   * @since  1.0.0
-  * @version 1.0.2
+  * @version 1.0.3
   */
 	if ( ! function_exists( 'twp_add_footer_settings' ) ) :
 	function twp_add_footer_settings( $cmb ) {
       // Set our CMB2 fields
       $cmb->add_field(array(
-		  'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
+	      'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
             <li class="accordion-item" data-accordion-item>
               <a href="#panel-footer-menu" role="tab" class="accordion-title" id="panel-footer-menu-heading" aria-controls="panel-footer-menu">
                 <h6>Footer Styles</h6>
               </a>
               <div id="panel-footer-menu" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-footer-menu-heading">',
-		  'name' => __('Footer Background Color', 'twp'),
-		  'desc'    => __('Background color of the footer. (default: #222222)', 'twp'),
-		  'id'            => 'twp_footer_background_color',
-		  'type'             => 'colorpicker',
-		  'default'          => '#222222',
-		  'attributes'             => array(
-			  'data-default'     => '#222222',
+	      'name' => __('Footer Background Color', 'twp'),
+	      'desc'    => __('Background color of the footer. (default: #222222)', 'twp'),
+	      'id'            => 'twp_footer_background_color',
+	      'type'             => 'colorpicker',
+	      'default'          => '#222222',
+	      'attributes'             => array(
+		      'data-default'     => '#222222',
 		  ),
       ));
   $cmb->add_field(array(

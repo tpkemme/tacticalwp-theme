@@ -6,7 +6,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.2
+ * @version 1.0.3
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -18,8 +18,11 @@ get_header(); ?>
 <div id="single-post" role="main">
 
 <?php do_action('twp_before_content'); ?>
-<?php while ( have_posts() ) : the_post(); ?>
-    <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
+<?php
+while ( have_posts() ) :
+the_post();
+?>
+    <article <?php post_class('main-content'); ?> id="post-<?php the_ID(); ?>">
         <header>
             <h1 class="entry-title"><?php the_title(); ?></h1>
     <?php twp_entry_meta(); ?>
@@ -33,8 +36,8 @@ get_header(); ?>
     <?php
                 wp_link_pages(
                     array(
-						'before' => '<nav id="page-nav"><p>' . __('Pages:', 'twp'),
-						'after'  => '</p></nav>',
+	                    'before' => '<nav id="page-nav"><p>' . __('Pages:', 'twp'),
+	                    'after'  => '</p></nav>',
                     )
                 );
     ?>
@@ -45,9 +48,10 @@ get_header(); ?>
     <?php comments_template(); ?>
     <?php do_action('twp_post_after_comments'); ?>
     </article>
-<?php endwhile;?>
+<?php endwhile; ?>
 
 <?php do_action('twp_after_content'); ?>
 <?php get_sidebar(); ?>
 </div>
-<?php get_footer();
+<?php
+get_footer();

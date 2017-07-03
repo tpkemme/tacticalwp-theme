@@ -8,7 +8,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.2
+ * @version 1.0.3
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -38,7 +38,10 @@
 		<?php endif; ?>
 	</div>
 	<footer>
-		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>
+		<?php
+        $tag = get_the_tags(); if ( $tag ) {
+?>
+<p><?php the_tags(); ?></p><?php } ?>
 	</footer>
 	<hr />
 </div>

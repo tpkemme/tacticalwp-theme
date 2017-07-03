@@ -6,7 +6,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.2
+ * @version 1.0.3
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -23,4 +23,5 @@ do_action('twp_before_searchform'); ?>
     </div>
     <?php do_action('twp_searchform_after_search_button'); ?>
 </form>
-<?php do_action('twp_after_searchform');
+<?php
+do_action('twp_after_searchform');

@@ -6,7 +6,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.2
+ * @version 1.0.3
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -18,7 +18,7 @@
   * @param  [string] $content shortcode content, optional.
   * @return output of shortcode
   * @since  1.0.0
-  * @version 1.0.2
+  * @version 1.0.3
   */
 function twp_visibility( $atts, $content = '' ) {
 

@@ -11,7 +11,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.2
+ * @version 1.0.3
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -80,6 +80,8 @@ require_once 'library/navigation.php';
 */
 require_once 'library/class-twp-top-bar-walker.php';
 require_once 'library/class-twp-mobile-walker.php';
+require_once 'library/class-twp-accordion-menu-walker.php';
+require_once 'library/class-twp-drilldown-menu-walker.php';
 
 /**
  * Create widget areas in sidebar and footer

@@ -6,7 +6,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.2
+ * @version 1.0.3
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -18,7 +18,7 @@
   * @package TacticalWP
   * @author   Tyler Kemme <dev@tylerkemme.com>
   * @license  MIT https://opensource.org/licenses/MIT
-  * @version 1.0.2
+  * @version 1.0.3
   * @link https://github.com/tpkemme/tacticalwp-theme
   * @since 1.0.0
   */
@@ -146,9 +146,10 @@ class TWP_Theme_Settings {
 
             <div class="tabs-content" data-tabs-content="settings-tabs">
                 <div class="tabs-panel is-active" id="global">
-                    <?php cmb2_metabox_form($this->metabox_id, $this->key, array(
-	'save_button' => 'Save Settings',
-	'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
+                    <?php
+                    cmb2_metabox_form($this->metabox_id, $this->key, array(
+	                    'save_button' => 'Save Settings',
+	                    'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
 													<input type="hidden" name="object_id" value="%2$s">
 													%3$s
 													<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-global" class="button button-primary" value="%4$s" /></p>
@@ -165,12 +166,14 @@ class TWP_Theme_Settings {
 														</button>
 													</div>
 												</form>',
-)); ?>
+                    ));
+?>
                 </div>
                 <div class="tabs-panel" id="nav">
-                    <?php cmb2_metabox_form($this->metabox_id . '-nav', $this->key, array(
-	'save_button' => 'Save Settings',
-	'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
+                    <?php
+                    cmb2_metabox_form($this->metabox_id . '-nav', $this->key, array(
+	                    'save_button' => 'Save Settings',
+	                    'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
 													<input type="hidden" name="object_id" value="%2$s">
 													%3$s
 													<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-nav" class="button button-primary" value="%4$s" /></p>
@@ -187,12 +190,14 @@ class TWP_Theme_Settings {
 														</button>
 													</div>
 												</form>',
-)); ?>
+                    ));
+?>
                 </div>
                 <div class="tabs-panel" id="footer">
-                    <?php cmb2_metabox_form($this->metabox_id . '-footer', $this->key, array(
-	'save_button' => 'Save Settings',
-	'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
+                    <?php
+                    cmb2_metabox_form($this->metabox_id . '-footer', $this->key, array(
+	                    'save_button' => 'Save Settings',
+	                    'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
 													<input type="hidden" name="object_id" value="%2$s">
 													%3$s
 													<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-footer" class="button button-primary" value="%4$s" /></p>
@@ -209,12 +214,14 @@ class TWP_Theme_Settings {
 														</button>
 													</div>
 												</form>',
-)); ?>
+                    ));
+?>
                 </div>
                 <div class="tabs-panel" id="layout">
-                    <?php cmb2_metabox_form($this->metabox_id . '-layout', $this->key, array(
-	'save_button' => 'Save Settings',
-	'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
+                    <?php
+                    cmb2_metabox_form($this->metabox_id . '-layout', $this->key, array(
+	                    'save_button' => 'Save Settings',
+	                    'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
 												<input type="hidden" name="object_id" value="%2$s">
 												%3$s
 												<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-layout" class="button button-primary" value="%4$s" /></p>
@@ -231,12 +238,14 @@ class TWP_Theme_Settings {
 													</button>
 												</div>
 											</form>',
-)); ?>
+                    ));
+?>
                 </div>
                 <div class="tabs-panel" id="typo">
-                    <?php cmb2_metabox_form($this->metabox_id . '-typo', $this->key, array(
-	'save_button' => 'Save Settings',
-	'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
+                    <?php
+                    cmb2_metabox_form($this->metabox_id . '-typo', $this->key, array(
+	                    'save_button' => 'Save Settings',
+	                    'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
 													<input type="hidden" name="object_id" value="%2$s">
 													%3$s
 													<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-typo" class="button button-primary" value="%4$s" /></p>
@@ -253,12 +262,14 @@ class TWP_Theme_Settings {
 														</button>
 													</div>
 												</form>',
-)); ?>
+                    ));
+?>
                 </div>
                 <div class="tabs-panel" id="obj">
-                    <?php cmb2_metabox_form($this->metabox_id . '-obj', $this->key, array(
-	'save_button' => 'Save Settings',
-	'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
+                    <?php
+                    cmb2_metabox_form($this->metabox_id . '-obj', $this->key, array(
+	                    'save_button' => 'Save Settings',
+	                    'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
 													<input type="hidden" name="object_id" value="%2$s">
 													%3$s
 													<p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-obj" class="button button-primary" value="%4$s" /></p>
@@ -275,12 +286,14 @@ class TWP_Theme_Settings {
 														</button>
 													</div>
 												</form>',
-)); ?>
+                    ));
+?>
                 </div>
                 <div class="tabs-panel" id="advanced">
-                    <?php cmb2_metabox_form($this->metabox_id . '-advanced', $this->key, array(
-	'save_button' => 'Save Settings',
-	'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
+                    <?php
+                    cmb2_metabox_form($this->metabox_id . '-advanced', $this->key, array(
+	                    'save_button' => 'Save Settings',
+	                    'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data">
                           <input type="hidden" name="object_id" value="%2$s">
                           %3$s
                           <p style="width: 40vw; float: left; margin-top: 35px;"><input type="submit" name="submit-cmb" id="submit-cmb-advanced" class="button button-primary" value="%4$s" /></p>
@@ -297,12 +310,12 @@ class TWP_Theme_Settings {
                             </button>
                           </div>
                         </form>',
-)); ?>
+                    ));
+?>
                 </div>
             </div>
         </div>
-        <?php // this is so all our javascript is happy ?>
-        <div style="margin-top: 6rem;" id="footer-container"></div>
+                <div style="margin-top: 6rem;" id="footer-container"></div>
         <?php
     }
     /**
@@ -314,13 +327,13 @@ class TWP_Theme_Settings {
         // hook in our save notices
         add_action("cmb2_save_options-page_fields_{$this->metabox_id}", array( $this, 'settings_notices' ), 10, 2);
         $cmb = new_cmb2_box(array(
-			'id'         => $this->metabox_id,
-			'hookup'     => false,
-			'cmb_styles' => false,
-			'show_on'    => array(
+	        'id'         => $this->metabox_id,
+	        'hookup'     => false,
+	        'cmb_styles' => false,
+	        'show_on'    => array(
                 // These are important, don't remove
-				'key'   => 'options-page',
-				'value' => array( $this->key ),
+		        'key'   => 'options-page',
+		        'value' => array( $this->key ),
             ),
         ));
         twp_add_global_settings( $cmb, 'twp' );
@@ -358,13 +371,13 @@ class TWP_Theme_Settings {
       // hook in our save notices
       add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . '-footer', array( $this, 'settings_notices' ), 10, 2);
       $cmb = new_cmb2_box(array(
-		  'id'         => $this->metabox_id . '-footer',
-		  'hookup'     => false,
-		  'cmb_styles' => false,
-		  'show_on'    => array(
+	      'id'         => $this->metabox_id . '-footer',
+	      'hookup'     => false,
+	      'cmb_styles' => false,
+	      'show_on'    => array(
               // These are important, don't remove
-			  'key'   => 'options-page',
-			  'value' => array( $this->key . '-footer' ),
+		      'key'   => 'options-page',
+		      'value' => array( $this->key . '-footer' ),
           ),
       ));
       twp_add_footer_settings( $cmb, 'twp' );
@@ -380,27 +393,27 @@ class TWP_Theme_Settings {
       // hook in our save notices
       add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . '-layout', array( $this, 'settings_notices' ), 10, 2);
       $cmb = new_cmb2_box(array(
-		  'id'         => $this->metabox_id . '-layout',
-		  'hookup'     => false,
-		  'cmb_styles' => false,
-		  'show_on'    => array(
+	      'id'         => $this->metabox_id . '-layout',
+	      'hookup'     => false,
+	      'cmb_styles' => false,
+	      'show_on'    => array(
               // These are important, don't remove
-			  'key'   => 'options-page',
-			  'value' => array( $this->key . '-layout' ),
+		      'key'   => 'options-page',
+		      'value' => array( $this->key . '-layout' ),
           ),
       ));
       twp_add_layout_settings( $cmb, 'twp' );
 			array_push($this->option_names, $cmb);
 
       $cmb2 = new_cmb2_box( array(
-		  'id'           => 'twp' . '-layout-edit',
-		  'title'              => 'TacticalWP Page Overrides',
-		  'hookup'       => true,
-		  'save_fields'  => true,
-		  'object_types' => array( 'page' ),
-		  'context'      => 'normal',
-		  'priority'     => 'high',
-		  'show_names'   => true,
+	      'id'           => 'twp' . '-layout-edit',
+	      'title'              => 'TacticalWP Page Overrides',
+	      'hookup'       => true,
+	      'save_fields'  => true,
+	      'object_types' => array( 'page' ),
+	      'context'      => 'normal',
+	      'priority'     => 'high',
+	      'show_names'   => true,
       ) );
 
       twp_add_layout_edit_settings( $cmb2, 'twp' );
@@ -416,13 +429,13 @@ class TWP_Theme_Settings {
         // hook in our save notices
         add_action("cmb2_save_options-page_fields_{$this->metabox_id}" . '-typo', array( $this, 'settings_notices' ), 10, 2);
         $cmb = new_cmb2_box(array(
-			'id'         => $this->metabox_id . '-typo',
-			'hookup'     => false,
-			'cmb_styles' => false,
-			'show_on'    => array(
+	        'id'         => $this->metabox_id . '-typo',
+	        'hookup'     => false,
+	        'cmb_styles' => false,
+	        'show_on'    => array(
                 // These are important, don't remove
-				'key'   => 'options-page',
-				'value' => array( $this->key . '-typo' ),
+		        'key'   => 'options-page',
+		        'value' => array( $this->key . '-typo' ),
             ),
         ));
 				twp_add_typo_settings( $cmb, 'twp' );

@@ -8,7 +8,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.2
+ * @version 1.0.3
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -53,7 +53,7 @@
                             <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                                 <?php $logo = twp_get_option('twp_nav_top_logo_image'); ?>
                                 <?php if ( ! empty($logo) ) : ?>
-                                    <img src="<?php echo $logo ?>" class="site-logo" />
+                                    <img src="<?php echo $logo; ?>" class="site-logo" />
                                 <?php endif; ?>
                                 <?php if (twp_get_option('twp_nav_top_title_show') === 'show' ) : ?>
             <?php bloginfo('name'); ?>
@@ -68,7 +68,7 @@
                             <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                                 <?php $logo = twp_get_option('twp_nav_top_logo_image'); ?>
                                 <?php if ( ! empty($logo) ) : ?>
-                                    <img src="<?php echo $logo ?>" class="site-logo" />
+                                    <img src="<?php echo $logo; ?>" class="site-logo" />
                                 <?php endif; ?>
                                 <?php if (twp_get_option('twp_nav_top_title_show') === 'show' ) : ?>
             <?php bloginfo('name'); ?>
@@ -90,7 +90,7 @@
                             <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                                 <?php $logo = twp_get_option('twp_nav_top_logo_image'); ?>
                                 <?php if ( ! empty($logo) ) : ?>
-                                    <img src="<?php echo $logo ?>" class="site-logo" />
+                                    <img src="<?php echo $logo; ?>" class="site-logo" />
                                 <?php endif; ?>
                                 <?php if (twp_get_option('twp_nav_top_title_show') === 'show' ) : ?>
             <?php bloginfo('name'); ?>
@@ -104,7 +104,7 @@
         <?php if (twp_get_option('twp_nav_top_search') === 'show' ) : ?>
               <div class="top-bar-right top-bar-search">
                   <ul class="menu">
-                      <li><input type="search" placeholder="<?php twp('nav_top_search_placeholder_text') ?>"></li>
+                      <li><input type="search" placeholder="<?php twp('nav_top_search_placeholder_text'); ?>"></li>
                       <li><button type="button" class="button"><i class="fa fa-search" aria-hidden="true"></i></button></li>
                   </ul>
         <?php if ( ! get_theme_mod('wpt_mobile_menu_layout') || get_theme_mod('wpt_mobile_menu_layout') === 'topbar' ) : ?>
@@ -116,4 +116,5 @@
         </nav>
     </header>
     <section class="container">
-    <?php do_action('twp_after_header');
+    <?php
+    do_action('twp_after_header');

@@ -6,7 +6,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.2
+ * @version 1.0.3
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -17,29 +17,29 @@
   * @param  [cmb]    $cmb    [ custom metabox (cmb), required ]
   * @return [cmb]        $CMB2   [ cmb with fields added ]
   * @since  1.0.0
-  * @version 1.0.2
+  * @version 1.0.3
   */
 	if ( ! function_exists( 'twp_add_layout_settings' ) ) :
 	function twp_add_layout_settings( $cmb ) {
       // Set our CMB2 fields
       $cmb->add_field(array(
-		  'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
+	      'before_row'  => '<ul class="accordion" data-accordion role="tablist" data-allow-all-closed="true" data-accordion data-multi-expand="true">
               <li class="accordion-item" data-accordion-item>
                 <a href="#panel-layout-defaut" role="tab" class="accordion-title" id="panel-layout-defaut-heading" aria-controls="panel-layout-default">
                   <h6>Default Layouts</h6>
                 </a>
                 <div id="panel-layout-defaut" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel-layout-defaut-heading">',
-		  'name' => __('Page Title Visibility', 'twp'),
-		  'desc'    => __('Whether or not to show page title by default. (default: Hide)', 'twp'),
-		  'id'            => 'twp_layout_title_show',
-		  'type'    => 'radio_inline',
-		  'options' => array(
-			  'show' => __( 'Show', 'twp' ),
-			  'hide'   => __( 'Hide', 'twp' ),
+	      'name' => __('Page Title Visibility', 'twp'),
+	      'desc'    => __('Whether or not to show page title by default. (default: Hide)', 'twp'),
+	      'id'            => 'twp_layout_title_show',
+	      'type'    => 'radio_inline',
+	      'options' => array(
+		      'show' => __( 'Show', 'twp' ),
+		      'hide'   => __( 'Hide', 'twp' ),
 		  ),
-		  'default' => 'hide',
-		  'attributes'             => array(
-			  'data-default'   => 'hide',
+	      'default' => 'hide',
+	      'attributes'             => array(
+		      'data-default'   => 'hide',
 		  ),
       ));
   $cmb->add_field(array(

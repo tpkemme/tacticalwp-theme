@@ -6,7 +6,7 @@
  * @package TacticalWP
  * @author   Tyler Kemme <dev@tylerkemme.com>
  * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.2
+ * @version 1.0.3
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -31,34 +31,40 @@ class TWP_Comments extends Walker_Comment {
 					<h3><?php comments_number( __( 'No Responses to', 'twp' ), __( 'One Response to', 'twp' ), __( '% Responses to', 'twp' ) ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 					<ol class="comment-list">
 
-				<?php }
+				<?php
+                }
 
 			/** START_LVL
              * Starts the list before the CHILD elements are added. */
 			function start_lvl( &$output, $depth = 0, $args = array() ) {
-				$GLOBALS['comment_depth'] = $depth + 1; ?>
+				$GLOBALS['comment_depth'] = $depth + 1;
+                ?>
 
 							<ul class="children">
-				<?php }
+				<?php
+                }
 
 			/** END_LVL
              * Ends the children list of after the elements are added. */
 			function end_lvl( &$output, $depth = 0, $args = array() ) {
-				$GLOBALS['comment_depth'] = $depth + 1; ?>
+				$GLOBALS['comment_depth'] = $depth + 1;
+                ?>
 
 					</ul><!-- /.children -->
 
-				<?php }
+				<?php
+                }
 
 			/** START_EL */
 			function start_el( &$output, $comment, $depth = 0, $args = array(), $id = 0 ) {
 				$depth++;
 				$GLOBALS['comment_depth'] = $depth;
 				$GLOBALS['comment'] = $comment;
-				$parent_class = ( empty( $args['has_children'] ) ? '' : 'parent' ); ?>
+				$parent_class = ( empty( $args['has_children'] ) ? '' : 'parent' );
+                ?>
 
-					<li <?php comment_class( $parent_class ); ?> id="comment-<?php comment_ID() ?>">
-						<article id="comment-body-<?php comment_ID() ?>" class="comment-body">
+					<li <?php comment_class( $parent_class ); ?> id="comment-<?php comment_ID(); ?>">
+						<article id="comment-body-<?php comment_ID(); ?>" class="comment-body">
 
 
 
@@ -75,7 +81,7 @@ class TWP_Comments extends Walker_Comment {
 						get_comment_author_link()
 						);
 						?>
-						<time datetime="<?php echo comment_date( 'c' ) ?>"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf( get_comment_date(), get_comment_time() ) ?></a></time>
+						<time datetime="<?php echo comment_date( 'c' ); ?>"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( get_comment_date(), get_comment_time() ); ?></a></time>
 
 				</div><!-- /.comment-author -->
 
@@ -86,37 +92,47 @@ class TWP_Comments extends Walker_Comment {
 							<div class="notice">
 					<p class="bottom"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
 				</div>
-					<?php else : comment_text(); ?>
+					<?php
+                    else :
+comment_text();
+?>
 					<?php endif; ?>
 					</section><!-- /.comment-content -->
 
 					<div class="comment-meta comment-meta-data hide">
-					<a href="<?php echo htmlspecialchars( get_comment_link( get_comment_ID() ) ) ?>"><?php comment_date(); ?> at <?php comment_time(); ?></a> <?php edit_comment_link( '(Edit)' ); ?>
+					<a href="<?php echo htmlspecialchars( get_comment_link( get_comment_ID() ) ); ?>"><?php comment_date(); ?> at <?php comment_time(); ?></a> <?php edit_comment_link( '(Edit)' ); ?>
 					</div><!-- /.comment-meta -->
 
 					<div class="reply">
-					<?php $reply_args = array(
-	'depth' => $depth,
-	'max_depth' => $args['max_depth'],
-);
+					<?php
+                    $reply_args = array(
+	                    'depth' => $depth,
+	                    'max_depth' => $args['max_depth'],
+                    );
 
-							comment_reply_link( array_merge( $args, $reply_args ) );  ?>
+							comment_reply_link( array_merge( $args, $reply_args ) );
+                            ?>
 							</div><!-- /.reply -->
 						</article><!-- /.comment-body -->
 
-				<?php }
+				<?php
+                }
 
-			function end_el(& $output, $comment, $depth = 0, $args = array() ) { ?>
+			function end_el(& $output, $comment, $depth = 0, $args = array() ) {
+            ?>
 
 					</li><!-- /#comment-' . get_comment_ID() . ' -->
 
-				<?php }
+				<?php
+                }
 
 			/** DESTRUCTOR */
-			function __destruct() { ?>
+			function __destruct() {
+            ?>
 
 				</ol><!-- /#comment-list -->
 
-				<?php }
+				<?php
+                }
 }
 endif;
