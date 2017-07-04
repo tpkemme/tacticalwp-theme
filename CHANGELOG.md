@@ -1,10 +1,11 @@
 # Change Log
 
-## [v1.0.3](https://github.com/tpkemme/tacticalwp-theme/tree/v1.0.3) (2017-07-03)
+## [v1.0.3](https://github.com/tpkemme/tacticalwp-theme/tree/v1.0.3) (2017-07-04)
 
 **Fixed bugs:**
 
-- Fixed an error with the accordion menu walker class
+- Fixed an error where the accordion menu shortcode was calling the incorrect walker class
+- Fixed gulp phpcs and travis script so they correctly exclude the 'wpcs' and 'php-codesniffer' directories used only for testing
 
 
 ## [v1.0.2](https://github.com/tpkemme/tacticalwp-theme/tree/v1.0.2) (2017-06-08)
