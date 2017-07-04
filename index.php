@@ -35,7 +35,10 @@ the_post();
     <?php else : ?>
     <?php get_template_part('template-parts/content', 'none'); ?>
 
-    <?php endif; // End have_posts() check.                            ?>
+    <?php
+			// End have_posts() check.
+			endif;
+            ?>
 
     <?php ;/* Display navigation to next/previous pages when applicable */ ?>
     <?php

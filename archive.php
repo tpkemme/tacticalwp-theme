@@ -1,58 +1,33 @@
-<?php
-/**
- * The template for displaying archive pages
- *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * If you'd like to further customize these archive views, you may create a
- * new template file for each one. For example, tag.php (Tag archives),
- * category.php (Category archives), author.php (Author archives), etc.
- *
- * @category TacticalWP-Theme
- * @package  TacticalWP
- * @author   Tyler Kemme <dev@tylerkemme.com>
- * @license  MIT https://opensource.org/licenses/MIT
- * @version  1.0.0
- * @link https://github.com/tpkemme/tacticalwp-theme
- * @since    1.0.0
- */
+ERROR: You must supply at least one file or directory to process.
 
-get_header(); ?>
-
-<div id="page" role="main">
-    <article class="main-content">
-    <?php if (have_posts() ) : ?>
-
-    <?php ;/* Start the Loop */ ?>
-    <?php
-    while ( have_posts() ) :
-the_post();
-?>
-    <?php get_template_part('template-parts/content', get_post_format()); ?>
-    <?php endwhile; ?>
-
-    <?php else : ?>
-    <?php get_template_part('template-parts/content', 'none'); ?>
-
-    <?php endif; // End have_posts() check.                            ?>
-
-    <?php ;/* Display navigation to next/previous pages when applicable */ ?>
-    <?php
-    if (function_exists('twp_pagination') ) :
-        twp_pagination();
-        elseif (is_paged() ) :
-    ?>
-            <nav id="post-nav">
-                <div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'twp')); ?></div>
-                <div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'twp')); ?></div>
-            </nav>
-        <?php endif; ?>
-
-    </article>
-    <?php get_sidebar(); ?>
-
-</div>
-
-<?php
-get_footer();
+Usage: phpcbf [-nwli] [-d key[=value]] [--stdin-path=<stdinPath>]
+    [--standard=<standard>] [--sniffs=<sniffs>] [--exclude=<sniffs>] [--suffix=<suffix>]
+    [--severity=<severity>] [--error-severity=<severity>] [--warning-severity=<severity>]
+    [--tab-width=<tabWidth>] [--encoding=<encoding>]
+    [--extensions=<extensions>] [--ignore=<patterns>] [--bootstrap=<bootstrap>]
+    [--file-list=<fileList>] <file> ...
+        -n            Do not fix warnings (shortcut for --warning-severity=0)
+        -w            Fix both warnings and errors (on by default)
+        -l            Local directory only, no recursion
+        -i            Show a list of installed coding standards
+        -d            Set the [key] php.ini value to [value] or [true] if value is omitted
+        --help        Print this help message
+        --version     Print version information
+        --no-patch    Do not make use of the "diff" or "patch" programs
+        <file>        One or more files and/or directories to fix
+        <fileList>    A file containing a list of files and/or directories to fix (one per line)
+        <stdinPath>   If processing STDIN, the file path that STDIN will be processed as 
+        <bootstrap>   A comma separated list of files to run before processing starts
+        <encoding>    The encoding of the files being fixed (default is iso-8859-1)
+        <extensions>  A comma separated list of file extensions to fix
+                      (extension filtering only valid when checking a directory)
+                      The type of the file can be specified using: ext/type
+                      e.g., module/php,es/js
+        <patterns>    A comma separated list of patterns to ignore files and directories
+        <sniffs>      A comma separated list of sniff codes to include or exclude during fixing
+                      (all sniffs must be part of the specified standard)
+        <severity>    The minimum severity required to fix an error or warning
+        <standard>    The name or path of the coding standard to use
+        <suffix>      Write modified files to a filename using this suffix
+                      ("diff" and "patch" are not used in this mode)
+        <tabWidth>    The number of spaces each tab represents

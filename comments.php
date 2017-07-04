@@ -118,7 +118,7 @@ if ( comments_open() ) :
 _e( ' (required)', 'twp' ); }
 				?>
 			</label>
-			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1" 
+			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1"
                                                                                         <?php
             if ( $req ) {
 																																						echo "aria-required='true'"; }
@@ -132,7 +132,7 @@ _e( ' (required)', 'twp' ); }
 _e( ' (required)', 'twp' ); }
 				?>
 			</label>
-			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2" 
+			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2"
                                                                                       <?php
             if ( $req ) {
 																																						echo "aria-required='true'"; }
@@ -160,7 +160,10 @@ _e( ' (required)', 'twp' ); }
 		<?php comment_id_fields(); ?>
 		<?php do_action( 'comment_form', $post->ID ); ?>
 	</form>
-	<?php endif; // If registration required and not logged in.                            ?>
+	<?php
+		// If registration required and not logged in.
+		endif;
+        ?>
 </section>
 <?php
 	endif; // If you delete this the sky will fall on your head.

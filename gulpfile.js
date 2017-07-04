@@ -73,6 +73,8 @@ var PATHS = {
     '**/**/*.php',
     '!wpcs',
     '!wpcs/**',
+    '!php-codesniffer',
+    '!php-codesniffer/**',
     '!node_modules',
     '!node_modules/**',
     '!vendor',
@@ -83,6 +85,8 @@ var PATHS = {
     pkg: [
     '**/*',
     '**/**/*',
+    'library/cmb2',
+    'library/cmb2/**',
     '!node_modules',
     '!node_modules/**',
     '!**/scss/**',
@@ -96,6 +100,8 @@ var PATHS = {
     '!packaged/**',
     '!wpcs',
     '!wpcs/**',
+    '!php-codesniffer',
+    '!php-codesniffer/**',
     ]
 };
 

@@ -4,22 +4,23 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f {
-
-    public static $prefixLengthsPsr4 = array(
-        'C' => array(
+class ComposerStaticInit5f060b47d7fd340315963c8d6555004c
+{
+    public static $prefixLengthsPsr4 = array (
+        'C' => 
+        array (
             'Composer\\Installers\\' => 20,
         ),
     );
 
-    public static $prefixDirsPsr4 = array(
-        'Composer\\Installers\\' => array(
+    public static $prefixDirsPsr4 = array (
+        'Composer\\Installers\\' => 
+        array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
     );
 
-    public static $classMap = array(
-        'Accordion_Menu_Walker_Nav_Menu' => __DIR__ . '/../..' . '/library/shortcode/accordion-menu.php',
+    public static $classMap = array (
         'CMB2' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2.php',
         'CMB2_Ajax' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Ajax.php',
         'CMB2_Base' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Base.php',
@@ -82,21 +83,22 @@ class ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f {
         'CMB2_Types' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Types.php',
         'CMB2_Utils' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_Utils.php',
         'CMB2_hookup' => __DIR__ . '/../..' . '/library/cmb2/includes/CMB2_hookup.php',
-        'Drilldown_Menu_Walker_Nav_Menu' => __DIR__ . '/../..' . '/library/shortcode/drilldown-menu.php',
-        'Dropdown_Menu_Walker_Nav_Menu' => __DIR__ . '/../..' . '/library/shortcode/dropdown-menu.php',
-        'TacticalWP_Comments' => __DIR__ . '/../..' . '/library/class-twp-comments.php',
-        'TacticalWP_Mobile_Walker' => __DIR__ . '/../..' . '/library/class-twp-mobile-walker.php',
-        'TacticalWP_Protocol_Relative_Theme_Assets' => __DIR__ . '/../..' . '/library/class-twp-protocol-relative-theme-assets.php',
-        'TacticalWP_Settings' => __DIR__ . '/../..' . '/library/theme-settings.php',
-        'TacticalWP_Top_Bar_Walker' => __DIR__ . '/../..' . '/library/class-twp-top-bar-walker.php',
+        'TWP_Accordion_Menu_Walker' => __DIR__ . '/../..' . '/library/class-twp-accordion-menu-walker.php',
+        'TWP_Comments' => __DIR__ . '/../..' . '/library/class-twp-comments.php',
+        'TWP_Drilldown_Menu_Walker' => __DIR__ . '/../..' . '/library/class-twp-drilldown-menu-walker.php',
+        'TWP_Mobile_Walker' => __DIR__ . '/../..' . '/library/class-twp-mobile-walker.php',
+        'TWP_Protocol_Relative_Theme_Assets' => __DIR__ . '/../..' . '/library/class-twp-protocol-relative-theme-assets.php',
+        'TWP_Theme_Settings' => __DIR__ . '/../..' . '/library/class-twp-theme-settings.php',
+        'TWP_Top_Bar_Walker' => __DIR__ . '/../..' . '/library/class-twp-top-bar-walker.php',
         'WP_REST_Controller' => __DIR__ . '/../..' . '/library/cmb2/includes/shim/WP_REST_Controller.php',
     );
 
-    public static function getInitializer(ClassLoader $loader ) {
-        return \Closure::bind(function () use ( $loader ) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit6cf7e7aca6541b70415ab3e1dd3e5b9f::$classMap;
+    public static function getInitializer(ClassLoader $loader)
+    {
+        return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit5f060b47d7fd340315963c8d6555004c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit5f060b47d7fd340315963c8d6555004c::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit5f060b47d7fd340315963c8d6555004c::$classMap;
 
         }, null, ClassLoader::class);
     }
