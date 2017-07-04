@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="df5456a1-5b8f-472a-a91f-a836016d730d" name="TWP.dev" url="http://tacticalwp.dev">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+      <webServer id="43bff755-0628-4b5d-92bf-050f3cca2dcb" name="TWP.live" url="http://ftp.tylerkemme.com">
+        <fileTransfer explicitFtps="false" host="ftp.tylerkemme.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

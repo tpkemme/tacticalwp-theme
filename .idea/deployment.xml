@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="TWP.dev">
+    <serverData>
+      <paths name="TWP.dev">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="wp-content/themes/tacticalwp" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="TWP.live">
+        <serverdata>
+          <mappings>
+            <mapping deploy="" local="$PROJECT_DIR$/../../.." web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
