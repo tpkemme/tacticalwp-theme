@@ -4,9 +4,9 @@
  *
  * @category TacticalWP-Theme
  * @package TacticalWP
- * @author   Tyler Kemme <dev@tylerkemme.com>
- * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.3
+ * @author Tyler Kemme <dev@tylerkemme.com>
+ * @license MIT https://opensource.org/licenses/MIT
+ * @version 1.0.4
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -21,7 +21,7 @@
   * @param  [string] $prefix [ option name, optional ]
   * @return void                [ echos output ]
   * @since  1.0.0
-  * @version 1.0.3
+  * @version 1.0.4
   */
 	if ( ! function_exists( 'twp' ) ) :
   	function twp( $option, $prefix = 'twp_' ) {
@@ -38,7 +38,7 @@
   * @param  [string] $length [ excerpt length ].
   * @return [int] $exerpt_length [ length of excerpt ]
   * @since  1.0.0
-  * @version 1.0.3
+  * @version 1.0.4
   */
   function twp_custom_excerpt_length( $length ) {
    return 40;
@@ -179,7 +179,7 @@
   if ( ! function_exists( 'twp_mce_tinymce_extra_vars' ) ) {
   	function twp_mce_tinymce_extra_vars() { ?>
   		<script type="text/javascript">
-  			var tinyMCE_object = 
+  			var tinyMCE_object =
             <?php
             echo json_encode(
   				array(

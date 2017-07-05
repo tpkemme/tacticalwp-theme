@@ -4,9 +4,9 @@
  *
  * @category TacticalWP-Theme
  * @package TacticalWP
- * @author   Tyler Kemme <dev@tylerkemme.com>
- * @license  MIT https://opensource.org/licenses/MIT
- * @version 1.0.3
+ * @author Tyler Kemme <dev@tylerkemme.com>
+ * @license MIT https://opensource.org/licenses/MIT
+ * @version 1.0.4
  * @link https://github.com/tpkemme/tacticalwp-theme
  * @since 1.0.0
  */
@@ -17,7 +17,7 @@
   * @param  [string] $atts     shortcode attributes, required.
   * @return output of shortcode
   * @since  1.0.0
-  * @version 1.0.3
+  * @version 1.0.4
   */
 function twp_accordion_menu( $atts ) {
 
