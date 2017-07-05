@@ -23,6 +23,6 @@
   		"classmap": ["functions.php", "library/"]
   	},
 	"scripts": {
-		"dist": "git push origin dist && git branch -D dist && git push origin :dist && git checkout -B dist && rm -rf .php_cs .github/ wpcs .bowerrc .babelrc .editorconfig .eslintrc.json .travis.yml .sass-lint.yml .yo-rc.json bower.json codesniffer.ruleset.xml phpcs.xml phpunit.xml wpcs node_modules packaged/ assets/javascript/custom assets/javascript/.DS_Store assets/scss assets/.DS_Store composer.lock vendor .gitignore .DS_Store assets/.DS_Store && composer install && git checkout assets/javascript/custom/tinymce_buttons.js && git add -A && git commit -m $(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[\", ]//g') && git push origin dist && git checkout master"
+		"dist": "git push origin dist && git branch -D dist && git push origin :dist && git checkout -B dist && rm -rf .php_cs .github/ wpcs .bowerrc .babelrc .editorconfig .eslintrc.json .travis.yml .sass-lint.yml .yo-rc.json bower.json codesniffer.ruleset.xml phpcs.xml phpunit.xml wpcs node_modules packaged/ assets/javascript/custom assets/javascript/.DS_Store assets/scss assets/.DS_Store composer.lock vendor .gitignore .DS_Store assets/.DS_Store .idea && composer install && git checkout assets/javascript/custom/tinymce_buttons.js && git add -A && git commit -m $(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[\", ]//g') && git push origin dist && git checkout master"
 	}
 }
